@@ -13,9 +13,10 @@ type ContactMessage = {
  * .env.example. Returns whether the message was accepted for delivery.
  */
 export async function sendContactEmail(message: ContactMessage): Promise<boolean> {
-  const apiKey = process.env.RESEND_API_KEY;
-  const to = process.env.CONTACT_FORM_TO ?? "info@sacleaninggroup.ca";
-  const from = process.env.CONTACT_FORM_FROM ?? "SA Cleaning Group <onboarding@resend.dev>";
+  // `||` rather than `??` so a variable that exists but is blank still falls back.
+  const apiKey = process.env.RESEND_API_KEY?.trim();
+  const to = process.env.CONTACT_FORM_TO?.trim() || "info@sacleaninggroup.ca";
+  const from = process.env.CONTACT_FORM_FROM?.trim() || "SA Cleaning Group <onboarding@resend.dev>";
 
   if (!apiKey) {
     if (process.env.NODE_ENV === "development") {

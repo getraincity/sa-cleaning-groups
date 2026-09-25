@@ -1,6 +1,22 @@
+const DEFAULT_SITE_URL = "https://www.sacleaninggroup.ca";
+
+/**
+ * Reads NEXT_PUBLIC_SITE_URL, tolerating an empty value, a missing protocol
+ * or a trailing slash, and falls back to the live domain if it is unusable.
+ */
+function resolveSiteUrl(value = process.env.NEXT_PUBLIC_SITE_URL?.trim()): string {
+  if (!value) return DEFAULT_SITE_URL;
+  const withProtocol = /^https?:\/\//i.test(value) ? value : `https://${value}`;
+  try {
+    return new URL(withProtocol).origin;
+  } catch {
+    return DEFAULT_SITE_URL;
+  }
+}
+
 export const siteConfig = {
   name: "SA Cleaning Group",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.sacleaninggroup.ca",
+  url: resolveSiteUrl(),
   email: "info@sacleaninggroup.ca",
   phone: "(778) 558-8715",
   phoneHref: "tel:(778)558-8715",
