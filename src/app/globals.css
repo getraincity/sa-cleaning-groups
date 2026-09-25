@@ -1,0 +1,132 @@
+@import "tailwindcss";
+
+/*
+ * Design tokens, carried over 1:1 from the original Webflow stylesheet
+ * (legacy/webflow-site/css/sa-cleaning-group.webflow.css).
+ */
+@theme {
+  /* Webflow's desktop-first breakpoints. Use the max-* variants:
+     max-lg = tablet (≤991px), max-md = mobile landscape (≤767px), max-sm = mobile (≤479px). */
+  --breakpoint-*: initial;
+  --breakpoint-sm: 480px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+
+  --font-sans: Arial, sans-serif;
+  --font-heading: var(--font-be-vietnam-pro), sans-serif;
+  --font-text: var(--font-montserrat), sans-serif;
+
+  --color-brand: #de0a0a;
+  --color-brand-alt: #db1111;
+  --color-brand-tint: #de0a0a40;
+  --color-brand-line: #f300004d;
+  --color-brand-border: #ffc3cf80;
+
+  --color-ink: #1a1b1f;
+  --color-ink-soft: #1f1f1f;
+  --color-body: #333333;
+  --color-muted: #666c89;
+  --color-charcoal: #383838;
+  --color-mint: #f2fffa;
+  --color-card: #e4e4e4;
+  --color-footer-line: #e4ebf3;
+  --color-footer-title: #0c261a;
+
+  --color-plan-silver: #979797;
+  --color-plan-gold: #e4b016;
+  --color-plan-diamond: #34ced6;
+
+  --ease-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/*
+ * Webflow's base typography. Every section of the design was built on top of
+ * these defaults, so they are restored after Tailwind's preflight reset.
+ */
+@layer base {
+  body {
+    background-color: #fff;
+    color: var(--color-body);
+    font-family: var(--font-sans);
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-bottom: 10px;
+    font-weight: 700;
+  }
+  h1 {
+    margin-top: 20px;
+    font-size: 38px;
+    line-height: 44px;
+  }
+  h2 {
+    margin-top: 20px;
+    font-size: 32px;
+    line-height: 36px;
+  }
+  h3 {
+    margin-top: 20px;
+    font-size: 24px;
+    line-height: 30px;
+  }
+  h4 {
+    margin-top: 10px;
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  p {
+    margin-bottom: 10px;
+  }
+
+  /* Preflight uses `bolder`, which turns bold inside headings into 900. */
+  b,
+  strong {
+    font-weight: 700;
+  }
+
+  ul {
+    margin-bottom: 10px;
+    padding-left: 40px;
+    list-style: disc;
+  }
+
+  img {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
+/* Section backgrounds that layer several images. */
+@utility bg-services-shape {
+  background-image: linear-gradient(#fff9, #fff9), url("/images/backgrounds/services-shape.svg");
+  background-position:
+    0 0,
+    50% 0;
+  background-size:
+    auto,
+    100% 100%;
+  background-repeat: no-repeat;
+}
+
+@utility bg-cta {
+  background-color: #242424;
+  background-image: url("/images/backgrounds/cta.png");
+  background-position: 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@utility bg-pricing {
+  background-color: var(--color-brand-alt);
+  background-image: url("/images/backgrounds/pricing.png");
+  background-position: 50% 0;
+  background-repeat: no-repeat;
+}

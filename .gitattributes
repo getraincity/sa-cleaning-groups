@@ -1,0 +1,2 @@
+# Keep LF line endings on every OS (Prettier and the Linux build on Vercel expect LF).
+* text=auto eol=lf
