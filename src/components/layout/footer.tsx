@@ -2,7 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import logoSquare from "@/assets/images/brand/logo-square.png";
 import { ContactDetails } from "@/components/sections/contact-details";
-import { bookingLinks } from "@/lib/site";
+import { FacebookIcon, InstagramIcon } from "@/components/ui/icons";
+import { locations } from "@/content/locations";
+import { bookingLinks, socialLinks } from "@/lib/site";
 
 type FooterLink = { label: string; href: string; external?: boolean };
 
@@ -12,7 +14,7 @@ const columns: { title: string; links: FooterLink[] }[] = [
     links: [
       { label: "Home Cleaning", href: "/home-cleaning" },
       { label: "Car Detailing", href: "/car-detailing" },
-      { label: "Snow Removal (coming soon)", href: "/" },
+      { label: "Custodian Services", href: "/custodian-services" },
     ],
   },
   {
@@ -21,21 +23,54 @@ const columns: { title: string; links: FooterLink[] }[] = [
       { label: "Home Cleaning Pricing", href: "/home-cleaning#book" },
       { label: "Car Detailing Pricing", href: "/car-detailing#book" },
       { label: "About us", href: "/about-us" },
+      { label: "Blog", href: "/blog" },
       { label: "Contact", href: "/contact-us" },
     ],
+  },
+  {
+    title: "Locations",
+    links: locations.map((location) => ({
+      label: location.name,
+      href: `/locations/${location.slug}`,
+    })),
   },
   {
     title: "Book now",
     links: [
       { label: "Home Cleaning", href: bookingLinks.homeCleaning },
       { label: "Car Detailing", href: bookingLinks.carDetailing, external: true },
-      { label: "Snow Removal", href: "/contact-us" },
+      { label: "Custodian Services", href: "/contact-us" },
     ],
   },
 ];
 
 const linkClass =
   "mt-3 mb-[6px] font-text text-[16px] leading-4 text-ink no-underline hover:text-ink/75";
+
+const socials = [
+  { label: "Instagram", href: socialLinks.instagram, Icon: InstagramIcon },
+  { label: "Facebook", href: socialLinks.facebook, Icon: FacebookIcon },
+].filter((social) => social.href);
+
+function SocialIcons() {
+  if (socials.length === 0) return null;
+  return (
+    <div className="mt-6 flex gap-3 max-md:justify-center">
+      {socials.map(({ label, href, Icon }) => (
+        <a
+          key={label}
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`SA Cleaning Group on ${label}`}
+          className="flex size-10 items-center justify-center rounded-full bg-brand-tint text-[20px] text-brand transition-colors hover:bg-brand hover:text-white"
+        >
+          <Icon />
+        </a>
+      ))}
+    </div>
+  );
+}
 
 export function Footer() {
   return (
@@ -47,16 +82,18 @@ export function Footer() {
               <Image src={logoSquare} alt="SA Cleaning Group" width={140} />
             </Link>
             <p className="mt-5 font-text text-[16px] leading-6 text-body">
-              SA Cleaning Group offers home cleaning and car detailing services in Vancouver.
+              SA Cleaning Group offers home cleaning, car detailing and custodian services across
+              Greater Vancouver.
             </p>
             <ContactDetails />
+            <SocialIcons />
           </div>
 
-          <div className="grid grid-cols-[auto_auto_1fr] gap-x-[70px] gap-y-10 max-lg:grid-cols-[auto_auto] max-lg:gap-x-[60px] max-md:mt-10 max-md:grid-cols-1">
+          <div className="grid grid-cols-[auto_auto_auto_auto] gap-x-[56px] gap-y-10 max-xl:grid-cols-[auto_auto] max-lg:gap-x-[60px] max-md:mt-10 max-md:grid-cols-1">
             {columns.map((column) => (
               <div
                 key={column.title}
-                className="flex w-[130px] flex-col items-start justify-start max-md:w-full max-md:items-center"
+                className="flex w-[160px] flex-col items-start justify-start max-md:w-full max-md:items-center"
               >
                 <div className="mb-3 font-text text-[18px] leading-4 font-bold tracking-[1px] text-footer-title capitalize">
                   {column.title}

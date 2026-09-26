@@ -14,6 +14,7 @@ import { Gallery, type GalleryImage } from "@/components/sections/gallery";
 import { PageHero } from "@/components/sections/page-hero";
 import { PricingSection } from "@/components/sections/pricing-section";
 import { ReviewsSection } from "@/components/sections/reviews-section";
+import { VehicleTypes } from "@/components/sections/vehicle-types";
 import { carDetailingPlans } from "@/content/pricing";
 import { pageMetadata } from "@/lib/metadata";
 import { bookingLinks, embeds } from "@/lib/site";
@@ -48,24 +49,26 @@ export default function CarDetailingPage() {
       />
 
       <ChecklistSection
-        title="Keep Your Car Clean Without The Hastle"
+        title="Keep Your Car Clean Without The Hassle"
         image={checklistIllustration}
         imageAlt="Keep your car clean before after"
         items={[
-          "Our team professional and experienced.",
+          "Our team is professional and experienced.",
           "Quick and efficient cleaning service.",
           "100% satisfaction guaranteed.",
-          "Quick and efficient cleaning service.",
-          "Highly Discipline in Workplace.",
+          "Eco-friendly, pet-friendly products.",
+          "Highly disciplined in the workplace.",
         ]}
       />
+
+      <VehicleTypes />
 
       <CareSection
         layout="car-detailing"
         booking={carBooking}
         photos={{
           ecoFriendly: { image: carExterior, alt: "Local eco-friendly green products" },
-          professionals: { image: detailingDashboard, alt: "Snow Removal" },
+          professionals: { image: detailingDashboard, alt: "Detailing a car dashboard" },
           petFriendly: { image: carInteriorDashboard, alt: "Pet-friendly at car " },
         }}
       />

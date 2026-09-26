@@ -11,6 +11,9 @@
   --breakpoint-sm: 480px;
   --breakpoint-md: 768px;
   --breakpoint-lg: 992px;
+  /* Not a Webflow breakpoint: the navbar collapses into the menu button below
+     this width, since six links plus two booking buttons need the room. */
+  --breakpoint-xl: 1200px;
 
   --font-sans: Arial, sans-serif;
   --font-heading: var(--font-be-vietnam-pro), sans-serif;

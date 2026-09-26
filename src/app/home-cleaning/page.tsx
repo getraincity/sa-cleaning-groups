@@ -14,6 +14,7 @@ import { BookingCta } from "@/components/sections/booking-cta";
 import { CareSection } from "@/components/sections/care-section";
 import { ChecklistSection } from "@/components/sections/checklist-section";
 import { Gallery, type GalleryImage } from "@/components/sections/gallery";
+import { HomeServiceTypes } from "@/components/sections/home-service-types";
 import { PageHero } from "@/components/sections/page-hero";
 import { PricingSection } from "@/components/sections/pricing-section";
 import { ReviewsSection } from "@/components/sections/reviews-section";
@@ -63,13 +64,15 @@ export default function HomeCleaningPage() {
         imageAlt="Get your time back with every clean"
         wrapImage
         items={[
-          "Our team professional and experienced.",
+          "Our team is professional and experienced.",
           "Quick and efficient cleaning service.",
           "100% satisfaction guaranteed.",
-          "Quick and efficient cleaning service.",
-          "Highly Discipline in Workplace.",
+          "Eco-friendly, pet-friendly products.",
+          "Highly disciplined in the workplace.",
         ]}
       />
+
+      <HomeServiceTypes />
 
       <CareSection
         layout="home-cleaning"
