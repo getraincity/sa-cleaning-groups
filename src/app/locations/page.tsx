@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { AreaIllustration } from "@/components/locations/area-illustration";
 import { AreaMap } from "@/components/locations/area-map";
 import { CtaBand } from "@/components/sections/cta-band";
 import { ArrowRightIcon, MapPinIcon, MessageIcon } from "@/components/ui/icons";
@@ -121,8 +120,7 @@ export default function LocationsPage() {
                         </li>
                       )}
                     </ul>
-                    <AreaIllustration slug={location.slug} className="mt-auto text-brand/25" />
-                    <span className="mt-4 inline-flex items-center gap-1.5 font-text text-[14px] font-semibold text-brand">
+                    <span className="mt-auto inline-flex items-center gap-1.5 font-text text-[14px] font-semibold text-brand">
                       Explore {location.short}
                       <ArrowRightIcon className="size-4 transition-transform group-hover:translate-x-1" />
                     </span>

@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { AreaIllustration } from "@/components/locations/area-illustration";
 import { AreaMap } from "@/components/locations/area-map";
 import { CtaBand } from "@/components/sections/cta-band";
 import { FaqSection } from "@/components/sections/faq-section";
@@ -80,8 +79,11 @@ export default async function LocationPage({ params }: Props) {
         }}
       />
 
-      {/* Hero: copy and photo, with the area's skyline along the bottom. */}
-      <section className="overflow-hidden px-5 pt-10" style={{ backgroundColor: location.tint }}>
+      {/* Hero: copy beside a photo of the team at work. */}
+      <section
+        className="overflow-hidden px-5 pt-10 pb-[96px] max-md:pb-16"
+        style={{ backgroundColor: location.tint }}
+      >
         <div className="mx-auto max-w-[1440px]">
           <nav aria-label="Breadcrumb" className="font-text text-[13px] text-muted">
             <ol className="mb-0 flex list-none flex-wrap items-center gap-1.5 pl-0">
@@ -159,7 +161,8 @@ export default async function LocationPage({ params }: Props) {
                   src={location.hero.image}
                   alt={location.hero.alt}
                   fill
-                  priority
+                  loading="eager"
+                  fetchPriority="high"
                   sizes="(max-width: 991px) 100vw, 480px"
                   className="object-cover"
                 />
@@ -179,11 +182,6 @@ export default async function LocationPage({ params }: Props) {
             </Reveal>
           </div>
         </div>
-
-        <AreaIllustration
-          slug={location.slug}
-          className="mx-auto mt-16 max-w-[1200px] text-brand/30 max-md:mt-12"
-        />
       </section>
 
       {/* Local know-how, then a local tip. */}
@@ -312,7 +310,7 @@ export default async function LocationPage({ params }: Props) {
             </ul>
             <Link
               href="/locations"
-              className="mt-5 inline-flex items-center gap-1.5 font-text text-[15px] font-semibold text-brand no-underline hover:underline"
+              className="mt-3 inline-flex items-center gap-1.5 py-2 font-text text-[15px] font-semibold text-brand no-underline hover:underline"
             >
               View all locations
             </Link>

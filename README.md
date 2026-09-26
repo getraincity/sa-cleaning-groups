@@ -42,7 +42,7 @@ src/
 ├─ components/
 │  ├─ layout/              Navbar, AnnouncementBar (home only), Footer
 │  ├─ sections/            Page sections shared across pages (hero, pricing, gallery…)
-│  ├─ locations/           Area map and the line-art skyline for each area
+│  ├─ locations/           Schematic map of the service areas
 │  ├─ blog/                Post cards, filterable grid, article renderer
 │  ├─ seo/                 JSON-LD structured data
 │  └─ ui/                  Reveal (scroll animation), icons, Eyebrow, SectionHeader

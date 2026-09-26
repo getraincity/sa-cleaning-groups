@@ -75,7 +75,6 @@ export function HomeServiceTypes() {
             delay={200}
             className="relative flex flex-col overflow-hidden rounded-[20px] bg-[linear-gradient(135deg,#e81c1c_0%,#de0a0a_45%,#a80000_100%)] p-7 text-white"
           >
-            <ClockIcon className="pointer-events-none absolute -right-8 -bottom-8 size-[150px] text-white/10" />
             <span className="relative flex size-12 items-center justify-center rounded-xl bg-white text-[24px] text-brand">
               <ClockIcon />
             </span>

@@ -27,7 +27,6 @@ export function CompanyHistory() {
     <section className="px-5 pt-[120px] max-sm:pt-[64px]">
       <div className="mx-auto grid max-w-[1440px] grid-cols-[5fr_7fr] items-start gap-16 max-lg:grid-cols-1 max-lg:gap-10">
         <Reveal className="relative overflow-hidden rounded-3xl bg-[#f7f5f4] p-10 max-sm:p-7 lg:sticky lg:top-10">
-          <div className="pointer-events-none absolute -top-24 -right-24 size-[280px] rounded-full bg-brand/10 blur-[80px]" />
           <p className="relative mb-0 font-heading text-[136px] leading-[120px] font-bold tracking-[-4px] text-brand max-sm:text-[104px] max-sm:leading-[96px]">
             9
             <span className="align-top text-[76px] leading-[90px] max-sm:text-[56px] max-sm:leading-[80px]">

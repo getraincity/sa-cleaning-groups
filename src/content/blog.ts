@@ -403,7 +403,7 @@ const allPosts: Post[] = [
     category: "Home Cleaning",
     date: "2026-08-20",
     image: kitchenIsland,
-    imageAlt: "A marble kitchen island after a post-renovation clean",
+    imageAlt: "A spotless kitchen, ready to move into after a renovation",
     body: [
       {
         type: "p",

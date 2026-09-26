@@ -137,7 +137,8 @@ export default async function PostPage({ params }: Props) {
               src={post.image}
               alt={post.imageAlt}
               fill
-              priority
+              loading="eager"
+              fetchPriority="high"
               sizes="(max-width: 1240px) 100vw, 1200px"
               className="object-cover"
             />
@@ -211,7 +212,7 @@ export default async function PostPage({ params }: Props) {
             <SectionHeader title="Keep Reading" description="More tips and guides from our team." />
             <Link
               href="/blog"
-              className="inline-flex shrink-0 items-center gap-1.5 font-text text-[15px] font-semibold text-brand no-underline hover:underline"
+              className="inline-flex shrink-0 items-center gap-1.5 py-2 font-text text-[15px] font-semibold text-brand no-underline hover:underline"
             >
               All articles
               <ArrowRightIcon className="size-4" />

@@ -122,7 +122,7 @@ export default function ContactPage() {
               minutes. We&apos;re here to help.
             </p>
 
-            <ul className="mt-9 mb-0 grid list-none gap-3 pl-0">
+            <ul className="mt-9 mb-0 grid list-none grid-cols-1 gap-3 pl-0">
               {channels.map(({ Icon, label, value, href }) => {
                 const content = (
                   <>
@@ -131,7 +131,7 @@ export default function ContactPage() {
                     </span>
                     <span className="min-w-0">
                       <span className="block font-text text-[13px] text-muted">{label}</span>
-                      <span className="block truncate font-heading text-[18px] leading-6 font-bold text-ink-soft">
+                      <span className="block font-heading text-[18px] leading-6 font-bold [overflow-wrap:anywhere] text-ink-soft max-sm:text-[16px]">
                         {value}
                       </span>
                     </span>

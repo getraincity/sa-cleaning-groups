@@ -89,8 +89,6 @@ export function SafetySection() {
         </div>
 
         <Reveal className="relative mt-12 overflow-hidden rounded-3xl bg-[linear-gradient(135deg,#e81c1c_0%,#de0a0a_45%,#a80000_100%)] px-12 py-12 text-white max-lg:px-10 max-sm:rounded-3xl max-sm:px-6 max-sm:py-10">
-          <ShieldCheckIcon className="pointer-events-none absolute -top-10 -right-10 size-[260px] text-white/[0.07] max-md:hidden" />
-
           <div className="relative max-w-[760px]">
             <p className="mb-3 font-text text-[12px] font-semibold tracking-[0.2em] text-white/75 uppercase">
               Certified &amp; accountable

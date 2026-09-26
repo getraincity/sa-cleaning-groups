@@ -21,25 +21,9 @@ const rows: { slug: LocationSlug; span: string }[][] = [
 function Water({ label }: { label: string }) {
   return (
     <div className="col-span-6 flex items-center gap-3 px-2 py-1.5 text-[#7b98a8]" aria-hidden>
-      <svg
-        viewBox="0 0 120 8"
-        className="h-2 flex-1"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth={1.5}
-      >
-        <path d="M0 4q7.5-4 15 0t15 0 15 0 15 0 15 0 15 0 15 0 15 0" />
-      </svg>
+      <span className="h-px flex-1 bg-[#b9ccd6]" />
       <span className="font-text text-[11px] tracking-[0.18em] uppercase italic">{label}</span>
-      <svg
-        viewBox="0 0 120 8"
-        className="h-2 flex-1"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth={1.5}
-      >
-        <path d="M0 4q7.5-4 15 0t15 0 15 0 15 0 15 0 15 0 15 0 15 0" />
-      </svg>
+      <span className="h-px flex-1 bg-[#b9ccd6]" />
     </div>
   );
 }

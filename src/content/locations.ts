@@ -6,7 +6,7 @@ import cleaningLivingRoom from "@/assets/images/cleaning-living-room.jpg";
 import cleaningWindowView from "@/assets/images/cleaning-window-view.jpg";
 import cleaningWindows from "@/assets/images/cleaning-windows.jpg";
 import kitchenCounter from "@/assets/images/kitchen-counter-01.jpg";
-import kitchenIsland from "@/assets/images/kitchen-island.jpg";
+import marbleIsland from "@/assets/images/kitchen-counter-02.jpg";
 import kitchenSink from "@/assets/images/kitchen-sink.jpg";
 import kitchenStove from "@/assets/images/kitchen-stove.jpg";
 import livingRoom from "@/assets/images/living-room.jpg";
@@ -300,8 +300,8 @@ export const locations: Location[] = [
     tip: {
       title: "Salt air, clear views",
       text: "Living by the ocean means salt and moisture build up on glass, railings and vehicles faster. Regular cleans and detailing keep that film from dulling your view and your paintwork.",
-      image: kitchenIsland,
-      alt: "A marble kitchen island after an S&A clean",
+      image: marbleIsland,
+      alt: "A polished marble kitchen island after an S&A clean",
     },
     services: {
       home: "Deep and recurring cleans for view homes of every size.",

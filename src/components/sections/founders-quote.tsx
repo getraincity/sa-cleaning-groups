@@ -9,10 +9,6 @@ const signature = Allura({ subsets: ["latin"], weight: "400" });
 export function FoundersQuote() {
   return (
     <section className="relative overflow-hidden bg-[#f7f5f4] px-5 py-[96px] max-md:py-[64px]">
-      {/* Oversized quote marks, just visible behind the text. */}
-      <QuoteIcon className="pointer-events-none absolute -top-12 -left-4 size-[240px] text-brand/[0.035] max-md:size-[180px]" />
-      <QuoteIcon className="pointer-events-none absolute -right-8 -bottom-12 size-[210px] rotate-180 text-brand/[0.035] max-md:hidden" />
-
       <Reveal className="relative mx-auto max-w-[900px]">
         <figure className="m-0 text-center">
           <div className="mx-auto flex size-14 items-center justify-center rounded-full bg-brand text-[22px] text-white shadow-[0_12px_30px_-8px_rgba(222,10,10,0.55)]">
