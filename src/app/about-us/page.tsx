@@ -1,10 +1,14 @@
 import Image from "next/image";
-import cleaningWindowView from "@/assets/images/cleaning-window-view.jpg";
-import cleaningWindows from "@/assets/images/cleaning-windows.jpg";
+import kitchenAppliances from "@/assets/images/kitchen-appliances.jpg";
+import kitchenCounter from "@/assets/images/kitchen-counter-01.jpg";
 import kitchenIsland from "@/assets/images/kitchen-island.jpg";
 import { AboutSplit } from "@/components/sections/about-split";
 import { BookingCta } from "@/components/sections/booking-cta";
+import { CompanyHistory } from "@/components/sections/company-history";
 import { PageHero } from "@/components/sections/page-hero";
+import { SafetySection } from "@/components/sections/safety-section";
+import { WhyChooseUs } from "@/components/sections/why-choose-us";
+import { WorkGallery } from "@/components/sections/work-gallery";
 import { pageMetadata } from "@/lib/metadata";
 
 export const metadata = pageMetadata({ title: "About Us", path: "/about-us" });
@@ -20,7 +24,7 @@ export default function AboutPage() {
       <PageHero
         image={kitchenIsland}
         tagline="We value your time as much as you do."
-        title="About US"
+        title="About Us"
         description={
           <>
             Spending too much time cleaning your home? Start getting your time back with <br />
@@ -35,6 +39,9 @@ export default function AboutPage() {
           <div className="mt-9 h-px min-h-px w-full bg-brand-line" />
         </div>
       </section>
+
+      <CompanyHistory />
+      <WhyChooseUs />
 
       <section className="px-5 pt-[140px] max-sm:pt-[60px]">
         <div className="mx-auto max-w-[1440px]">
@@ -54,8 +61,8 @@ export default function AboutPage() {
               </p>
             </div>
             <Image
-              src={cleaningWindows}
-              alt="Home cleaning"
+              src={kitchenAppliances}
+              alt="A spotless kitchen after an S&A clean"
               sizes="(max-width: 991px) 100vw, 50vw"
               className="rounded-[5px] max-lg:mt-5"
             />
@@ -67,8 +74,8 @@ export default function AboutPage() {
         <div className="mx-auto max-w-[1440px]">
           <div className="grid grid-cols-2 max-lg:grid-cols-1">
             <Image
-              src={cleaningWindowView}
-              alt="Hand Picked Professionals"
+              src={kitchenCounter}
+              alt="A polished kitchen counter"
               sizes="(max-width: 991px) 75vw, 37vw"
               className="max-w-3/4 rounded-[5px]"
             />
@@ -89,6 +96,9 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      <SafetySection />
+      <WorkGallery />
 
       <BookingCta />
     </>

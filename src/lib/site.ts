@@ -24,6 +24,16 @@ export const siteConfig = {
   googleSiteVerification: "SBpvTW9tCpxRUvQ9ATXCrtw3k1X38LAzxZjl5ocU6TE",
 } as const;
 
+/**
+ * Social profiles. Leave a value empty until the client confirms the account:
+ * links, icons and the social section's follow buttons only render for the
+ * profiles set here.
+ */
+export const socialLinks: { instagram: string; facebook: string } = {
+  instagram: "",
+  facebook: "",
+};
+
 /** Booking destinations. Car detailing is booked on a separate site. */
 export const bookingLinks = {
   homeCleaning: "/book-home-cleaning",

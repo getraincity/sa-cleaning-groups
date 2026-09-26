@@ -41,7 +41,7 @@ src/
 │  ├─ sections/            Page sections shared across pages (hero, pricing, gallery…)
 │  └─ ui/                  Reveal (scroll animation), icons
 ├─ content/pricing.ts      Plan prices and task lists — edit prices here
-├─ lib/site.ts             Phone, email, booking links, embed IDs, GA ID
+├─ lib/site.ts             Phone, email, social profiles, booking links, embed IDs, GA ID
 └─ assets/images/          Photos & icons (imported, optimised by next/image)
 public/images/backgrounds/ CSS-only section backgrounds
 legacy/                    Original Webflow export + asset library (reference only, not built)
@@ -50,7 +50,8 @@ legacy/                    Original Webflow export + asset library (reference on
 ### Styling conventions
 
 - Breakpoints mirror Webflow's desktop-first ones. Use `max-lg:` (≤991px, tablet),
-  `max-md:` (≤767px), `max-sm:` (≤479px).
+  `max-md:` (≤767px), `max-sm:` (≤479px). `max-xl:` (≤1199px) is only for the navbar, which
+  switches to the menu button there.
 - Brand colours and fonts are tokens in `globals.css` (`bg-brand`, `text-muted`, `font-heading`,
   `font-text`, …).
 - Use `text-[16px]` rather than `text-base`: Tailwind's named sizes also change line-height,
