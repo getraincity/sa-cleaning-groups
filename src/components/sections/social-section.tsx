@@ -5,7 +5,7 @@ import carExteriorBranded from "@/assets/images/car-exterior-branded.webp";
 import cleaningWindowView from "@/assets/images/cleaning-window-view.jpg";
 import kitchenCounter from "@/assets/images/kitchen-counter-02.jpg";
 import kitchenStove from "@/assets/images/kitchen-stove.jpg";
-import { Eyebrow } from "@/components/ui/eyebrow";
+import { SectionHeader, sectionSpacing } from "@/components/ui/section-header";
 import { CameraIcon, FacebookIcon, InstagramIcon } from "@/components/ui/icons";
 import { Reveal } from "@/components/ui/reveal";
 import { socialLinks } from "@/lib/site";
@@ -89,22 +89,23 @@ function PostTile({ post, href }: { post: Post; href?: string }) {
 
 export function SocialSection() {
   return (
-    <section className="px-5 pb-[120px] max-md:pb-[72px]">
+    <section className={cn("px-5", sectionSpacing.bottom)}>
       <div className="mx-auto max-w-[1440px]">
         <div className="flex items-end justify-between gap-10 max-lg:flex-col max-lg:items-start">
-          <div className="max-w-[640px]">
-            <Eyebrow icon={<CameraIcon />}>Social</Eyebrow>
-            <h2 className="my-0 font-heading text-[40px] leading-[46px] text-ink-soft max-md:text-[32px] max-md:leading-[38px]">
-              Follow Our Journey on Social
-            </h2>
-            <p className="mt-5 mb-0 font-text text-[16px] leading-8 text-muted">
-              See our latest home transformations, auto detailing projects, and behind-the-scenes
-              moments across Greater Vancouver.{" "}
-              <strong className="font-semibold text-ink-soft">
-                Tag us in your spotless spaces!
-              </strong>
-            </p>
-          </div>
+          <SectionHeader
+            className="max-w-[640px]"
+            eyebrow={{ icon: <CameraIcon />, label: "Social" }}
+            title="Follow Our Journey on Social"
+            description={
+              <>
+                See our latest home transformations, auto detailing projects, and behind-the-scenes
+                moments across Greater Vancouver.{" "}
+                <strong className="font-semibold text-ink-soft">
+                  Tag us in your spotless spaces!
+                </strong>
+              </>
+            }
+          />
 
           {profiles.length > 0 && (
             <div className="flex flex-wrap gap-3">
@@ -115,7 +116,7 @@ export function SocialSection() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className={cn(
-                    "inline-flex items-center gap-2 rounded-xl px-6 py-4 font-text text-[16px] font-medium no-underline transition-colors",
+                    "inline-flex items-center gap-2 rounded-xl px-6 py-[14px] font-text text-[16px] font-medium no-underline transition-colors",
                     index === 0
                       ? "bg-charcoal text-white hover:bg-ink"
                       : "border border-charcoal/25 text-charcoal hover:bg-charcoal hover:text-white",
@@ -129,7 +130,7 @@ export function SocialSection() {
           )}
         </div>
 
-        <Reveal className="mt-12 grid grid-cols-6 gap-4 max-lg:grid-cols-4 max-md:grid-cols-2 max-md:gap-3">
+        <Reveal className="mt-10 grid grid-cols-6 gap-3 max-lg:grid-cols-4 max-md:grid-cols-2 max-md:gap-3">
           {posts.map((post) => (
             <PostTile key={post.caption} post={post} href={profiles[0]?.href} />
           ))}

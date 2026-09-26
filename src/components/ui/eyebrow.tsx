@@ -15,7 +15,7 @@ type EyebrowProps = {
  */
 export function Eyebrow({ icon, children, tone = "light", className }: EyebrowProps) {
   return (
-    <div className={cn("mb-5 flex items-center gap-3", className)}>
+    <div className={cn("mb-4 flex items-center gap-3", className)}>
       <div
         className={cn(
           "flex size-9 min-w-9 items-center justify-center rounded-lg text-[20px]",

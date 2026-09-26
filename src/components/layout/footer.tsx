@@ -3,6 +3,7 @@ import Link from "next/link";
 import logoSquare from "@/assets/images/brand/logo-square.png";
 import { ContactDetails } from "@/components/sections/contact-details";
 import { FacebookIcon, InstagramIcon } from "@/components/ui/icons";
+import { locations } from "@/content/locations";
 import { bookingLinks, socialLinks } from "@/lib/site";
 
 type FooterLink = { label: string; href: string; external?: boolean };
@@ -22,8 +23,16 @@ const columns: { title: string; links: FooterLink[] }[] = [
       { label: "Home Cleaning Pricing", href: "/home-cleaning#book" },
       { label: "Car Detailing Pricing", href: "/car-detailing#book" },
       { label: "About us", href: "/about-us" },
+      { label: "Blog", href: "/blog" },
       { label: "Contact", href: "/contact-us" },
     ],
+  },
+  {
+    title: "Locations",
+    links: locations.map((location) => ({
+      label: location.name,
+      href: `/locations/${location.slug}`,
+    })),
   },
   {
     title: "Book now",
@@ -80,11 +89,11 @@ export function Footer() {
             <SocialIcons />
           </div>
 
-          <div className="grid grid-cols-[auto_auto_1fr] gap-x-[70px] gap-y-10 max-lg:grid-cols-[auto_auto] max-lg:gap-x-[60px] max-md:mt-10 max-md:grid-cols-1">
+          <div className="grid grid-cols-[auto_auto_auto_auto] gap-x-[56px] gap-y-10 max-xl:grid-cols-[auto_auto] max-lg:gap-x-[60px] max-md:mt-10 max-md:grid-cols-1">
             {columns.map((column) => (
               <div
                 key={column.title}
-                className="flex w-[130px] flex-col items-start justify-start max-md:w-full max-md:items-center"
+                className="flex w-[160px] flex-col items-start justify-start max-md:w-full max-md:items-center"
               >
                 <div className="mb-3 font-text text-[18px] leading-4 font-bold tracking-[1px] text-footer-title capitalize">
                   {column.title}

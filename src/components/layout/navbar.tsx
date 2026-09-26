@@ -5,13 +5,27 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useId, useRef, useState } from "react";
 import logo from "@/assets/images/brand/logo.png";
-import { BuildingIcon, CarIcon, ChevronDownIcon, HomeIcon, MenuIcon } from "@/components/ui/icons";
+import {
+  ArrowRightIcon,
+  BuildingIcon,
+  CarIcon,
+  ChevronDownIcon,
+  HomeIcon,
+  MapPinIcon,
+  MenuIcon,
+} from "@/components/ui/icons";
+import { locations } from "@/content/locations";
 import { bookingLinks } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 type NavLink = { label: string; href: string };
 
-const services = [
+type DropdownItem = NavLink & {
+  description: string;
+  Icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+};
+
+const services: DropdownItem[] = [
   {
     label: "Home Cleaning",
     href: "/home-cleaning",
@@ -32,16 +46,12 @@ const services = [
   },
 ];
 
-// The order the client asked for; Services sits between About and Blog.
-const linksBeforeServices: NavLink[] = [
-  { label: "Home", href: "/" },
-  { label: "About", href: "/about-us" },
-];
-const linksAfterServices: NavLink[] = [
-  { label: "Blog", href: "/blog" },
-  { label: "Locations", href: "/locations" },
-  { label: "Contact", href: "/contact-us" },
-];
+const areas: DropdownItem[] = locations.map((location) => ({
+  label: location.name,
+  href: `/locations/${location.slug}`,
+  description: location.neighbourhoods.slice(0, 2).join(", "),
+  Icon: MapPinIcon,
+}));
 
 function isActive(pathname: string, href: string) {
   return href === "/" ? pathname === "/" : pathname === href || pathname.startsWith(`${href}/`);
@@ -76,13 +86,24 @@ function useDismiss(
   }, [ref, open, onDismiss]);
 }
 
-function ServicesDropdown({ pathname, onNavigate }: { pathname: string; onNavigate: () => void }) {
+type NavDropdownProps = {
+  label: string;
+  items: DropdownItem[];
+  /** Optional "see all" link under the items, which also marks the menu active. */
+  overview?: NavLink;
+  pathname: string;
+  onNavigate: () => void;
+};
+
+function NavDropdown({ label, items, overview, pathname, onNavigate }: NavDropdownProps) {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
   const menuId = useId();
   useDismiss(ref, open, () => setOpen(false));
 
-  const active = services.some((service) => isActive(pathname, service.href));
+  const active =
+    items.some((item) => isActive(pathname, item.href)) ||
+    (overview !== undefined && isActive(pathname, overview.href));
   const close = () => {
     setOpen(false);
     onNavigate();
@@ -116,7 +137,7 @@ function ServicesDropdown({ pathname, onNavigate }: { pathname: string; onNaviga
         }}
         className={cn(navLinkClass, "cursor-pointer", active && "text-brand")}
       >
-        Services
+        {label}
         <ChevronDownIcon
           className={cn("size-3 transition-transform duration-200", open && "rotate-180")}
         />
@@ -129,7 +150,7 @@ function ServicesDropdown({ pathname, onNavigate }: { pathname: string; onNaviga
         className="absolute top-full left-1/2 w-[380px] -translate-x-1/2 pt-3 max-xl:static max-xl:mx-auto max-xl:w-full max-xl:max-w-[380px] max-xl:translate-x-0 max-xl:pt-2"
       >
         <ul className="mb-0 list-none rounded-2xl bg-white p-2 text-left shadow-[0_24px_48px_-16px_rgba(0,0,0,0.28)] ring-1 ring-black/5 max-xl:bg-[#f7f7f7] max-xl:shadow-none">
-          {services.map(({ label, href, description, Icon }) => (
+          {items.map(({ label, href, description, Icon }) => (
             <li key={href}>
               <Link
                 href={href}
@@ -151,6 +172,18 @@ function ServicesDropdown({ pathname, onNavigate }: { pathname: string; onNaviga
               </Link>
             </li>
           ))}
+          {overview && (
+            <li className="mt-1 border-t border-black/[0.06] pt-1">
+              <Link
+                href={overview.href}
+                onClick={close}
+                className="group flex items-center justify-between rounded-xl px-3 py-2.5 font-text text-[14px] font-semibold text-brand no-underline transition-colors hover:bg-[#f6f6f6] max-xl:hover:bg-white"
+              >
+                {overview.label}
+                <ArrowRightIcon className="size-4 transition-transform group-hover:translate-x-0.5" />
+              </Link>
+            </li>
+          )}
         </ul>
       </div>
     </div>
@@ -184,11 +217,28 @@ function MenuItems({
 
   return (
     <ul className={cn("mb-0 flex list-none items-center gap-1 pb-0 pl-0 font-text", className)}>
-      {linksBeforeServices.map(renderLink)}
+      {/* The order the client asked for. */}
+      {renderLink({ label: "Home", href: "/" })}
+      {renderLink({ label: "About", href: "/about-us" })}
       <li className="max-xl:w-full">
-        <ServicesDropdown pathname={pathname} onNavigate={onNavigate} />
+        <NavDropdown
+          label="Services"
+          items={services}
+          pathname={pathname}
+          onNavigate={onNavigate}
+        />
       </li>
-      {linksAfterServices.map(renderLink)}
+      {renderLink({ label: "Blog", href: "/blog" })}
+      <li className="max-xl:w-full">
+        <NavDropdown
+          label="Locations"
+          items={areas}
+          overview={{ label: "View all locations", href: "/locations" }}
+          pathname={pathname}
+          onNavigate={onNavigate}
+        />
+      </li>
+      {renderLink({ label: "Contact", href: "/contact-us" })}
     </ul>
   );
 }

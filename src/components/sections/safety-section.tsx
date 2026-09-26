@@ -1,4 +1,3 @@
-import { Eyebrow } from "@/components/ui/eyebrow";
 import {
   BadgeCheckIcon,
   CarIcon,
@@ -10,6 +9,7 @@ import {
   UserCheckIcon,
 } from "@/components/ui/icons";
 import { Reveal } from "@/components/ui/reveal";
+import { SectionHeader } from "@/components/ui/section-header";
 
 const practices = [
   {
@@ -60,69 +60,63 @@ const credentials = [
 /** Health and safety practices, then the company's licences and insurance. */
 export function SafetySection() {
   return (
-    <section className="px-5 pb-[140px] max-sm:pb-[72px]">
+    <section className="px-5 pb-[120px] max-sm:pb-[64px]">
       <div className="mx-auto max-w-[1440px]">
-        <div className="grid grid-cols-[5fr_7fr] items-center gap-20 max-lg:grid-cols-1 max-lg:gap-10">
-          <div>
-            <Eyebrow icon={<ShieldCheckIcon />}>Safety first</Eyebrow>
-            <h2 className="my-0 font-heading text-[40px] leading-[46px] text-ink-soft max-md:text-[32px] max-md:leading-[38px]">
-              Your Safety Comes First
-            </h2>
-            <p className="mt-5 mb-0 font-text text-[16px] leading-8 text-muted">
-              Your home, your family and your vehicle deserve a team that takes health and safety
-              seriously. Every visit follows the same careful routine, so you can relax knowing the
-              job is done cleanly, and safely.
-            </p>
-          </div>
+        <div className="grid grid-cols-[5fr_7fr] items-center gap-16 max-lg:grid-cols-1 max-lg:gap-10">
+          <SectionHeader
+            eyebrow={{ icon: <ShieldCheckIcon />, label: "Safety first" }}
+            title="Your Safety Comes First"
+            description="Your home, your family and your vehicle deserve a team that takes health and safety seriously. Every visit follows the same careful routine, so you can relax knowing the job is done cleanly, and safely."
+          />
 
-          <div className="grid grid-cols-2 gap-4 max-sm:grid-cols-1">
+          <div className="grid grid-cols-2 gap-3 max-sm:grid-cols-1">
             {practices.map(({ Icon, title, text }, index) => (
               <Reveal
                 key={title}
                 delay={index * 100}
-                className="rounded-[20px] border border-black/[0.07] bg-white p-7 shadow-[0_1px_2px_rgba(0,0,0,0.04)] transition-shadow duration-300 hover:shadow-[0_20px_40px_-20px_rgba(0,0,0,0.25)]"
+                className="rounded-[18px] border border-black/[0.07] bg-white p-6 shadow-[0_1px_2px_rgba(0,0,0,0.04)] transition-shadow duration-300 hover:shadow-[0_20px_40px_-20px_rgba(0,0,0,0.25)]"
               >
-                <div className="flex size-12 items-center justify-center rounded-xl bg-brand-tint text-[24px] text-brand">
+                <div className="flex size-11 items-center justify-center rounded-xl bg-brand-tint text-[22px] text-brand">
                   <Icon />
                 </div>
-                <h3 className="mt-5 mb-2 font-heading text-[20px] leading-[26px] text-ink-soft">
+                <h3 className="mt-4 mb-1.5 font-heading text-[18px] leading-6 text-ink-soft">
                   {title}
                 </h3>
-                <p className="mb-0 font-text text-[15px] leading-6 text-muted">{text}</p>
+                <p className="mb-0 font-text text-[14px] leading-[22px] text-muted">{text}</p>
               </Reveal>
             ))}
           </div>
         </div>
 
-        <Reveal className="relative mt-16 overflow-hidden rounded-[28px] bg-[linear-gradient(135deg,#e81c1c_0%,#de0a0a_45%,#a80000_100%)] px-14 py-14 text-white max-lg:px-10 max-sm:rounded-3xl max-sm:px-6 max-sm:py-10">
-          <ShieldCheckIcon className="pointer-events-none absolute -top-10 -right-10 size-[300px] text-white/[0.07] max-md:hidden" />
+        <Reveal className="relative mt-12 overflow-hidden rounded-3xl bg-[linear-gradient(135deg,#e81c1c_0%,#de0a0a_45%,#a80000_100%)] px-12 py-12 text-white max-lg:px-10 max-sm:rounded-3xl max-sm:px-6 max-sm:py-10">
+          <ShieldCheckIcon className="pointer-events-none absolute -top-10 -right-10 size-[260px] text-white/[0.07] max-md:hidden" />
 
           <div className="relative max-w-[760px]">
-            <p className="mb-3 font-text text-[13px] font-semibold tracking-[0.2em] text-white/75 uppercase">
+            <p className="mb-3 font-text text-[12px] font-semibold tracking-[0.2em] text-white/75 uppercase">
               Certified &amp; accountable
             </p>
-            <h2 className="my-0 font-heading text-[34px] leading-[42px] text-white max-md:text-[26px] max-md:leading-[34px]">
+            <h2 className="my-0 font-heading text-[30px] leading-[38px] text-white max-md:text-[24px] max-md:leading-[32px]">
               Fully Licensed, Insured &amp; Carry a Valid Garage Policy
             </h2>
-            <p className="mt-4 mb-0 font-text text-[16px] leading-7 text-white/85">
+            <p className="mt-3 mb-0 font-text text-[15px] leading-[26px] text-white/85">
               <strong className="font-semibold text-white">Security and safety matter:</strong> all
               of our staff are required to take a criminal and background check before employment.
             </p>
           </div>
 
-          <ul className="relative mt-12 mb-0 grid list-none grid-cols-4 gap-6 pl-0 max-lg:grid-cols-2 max-sm:grid-cols-1">
+          <ul className="relative mt-10 mb-0 grid list-none grid-cols-4 gap-4 pl-0 max-lg:grid-cols-2 max-sm:grid-cols-1">
             {credentials.map(({ Icon, title, text }) => (
               <li
                 key={title}
-                className="rounded-2xl bg-white/10 p-6 ring-1 ring-white/15 backdrop-blur-sm"
+                className="rounded-2xl bg-white/10 p-5 ring-1 ring-white/15 backdrop-blur-sm"
               >
-                <div className="flex size-12 items-center justify-center rounded-full bg-white text-[24px] text-brand">
+                <div className="flex size-11 items-center justify-center rounded-full bg-white text-[22px] text-brand">
                   <Icon />
                 </div>
-                <p className="mt-4 mb-1 font-heading text-[18px] leading-6 font-bold text-white">
+                <p className="mt-4 mb-1 font-heading text-[17px] leading-6 font-bold text-white">
                   {title}
                 </p>
-                <p className="mb-0 font-text text-[14px] leading-[22px] text-white/80">{text}</p>
+                <p className="mb-0 font-text text-[13px] leading-5 text-white/80">{text}</p>
               </li>
             ))}
           </ul>

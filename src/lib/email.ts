@@ -3,7 +3,9 @@ import "server-only";
 type ContactMessage = {
   name: string;
   email: string;
-  subject: string;
+  /** Optional; empty when the visitor left it blank. */
+  phone: string;
+  topic: string;
   message: string;
 };
 
@@ -37,11 +39,12 @@ export async function sendContactEmail(message: ContactMessage): Promise<boolean
       from,
       to: [to],
       reply_to: message.email,
-      subject: `Website enquiry: ${message.subject}`,
+      subject: `Website enquiry: ${message.topic} (${message.name})`,
       text: [
         `Name: ${message.name}`,
         `Email: ${message.email}`,
-        `Subject: ${message.subject}`,
+        `Phone: ${message.phone || "Not given"}`,
+        `Topic: ${message.topic}`,
         "",
         message.message,
       ].join("\n"),

@@ -5,7 +5,7 @@ import kitchenMicrowave from "@/assets/images/kitchen-microwave.jpg";
 import kitchenSink from "@/assets/images/kitchen-sink.jpg";
 import kitchenStove from "@/assets/images/kitchen-stove.jpg";
 import livingRoom from "@/assets/images/living-room.jpg";
-import { Eyebrow } from "@/components/ui/eyebrow";
+import { SectionHeader } from "@/components/ui/section-header";
 import { SparklesIcon } from "@/components/ui/icons";
 import { Reveal } from "@/components/ui/reveal";
 import { cn } from "@/lib/utils";
@@ -64,20 +64,16 @@ const photos: Photo[] = [
 /** A bento grid of recent jobs, homes and vehicles, with short captions. */
 export function WorkGallery() {
   return (
-    <section className="px-5 pb-[140px] max-sm:pb-[72px]">
+    <section className="px-5 pb-[120px] max-sm:pb-[64px]">
       <div className="mx-auto max-w-[1440px]">
-        <div className="mx-auto flex max-w-[720px] flex-col items-center text-center">
-          <Eyebrow icon={<SparklesIcon />}>Our work</Eyebrow>
-          <h2 className="my-0 font-heading text-[40px] leading-[46px] text-ink-soft max-md:text-[32px] max-md:leading-[38px]">
-            Spotless Results, Every Time
-          </h2>
-          <p className="mt-5 mb-0 font-text text-[16px] leading-8 text-muted">
-            A look at a few of the homes and vehicles our team has brought back to life across
-            Vancouver.
-          </p>
-        </div>
+        <SectionHeader
+          align="center"
+          eyebrow={{ icon: <SparklesIcon />, label: "Our work" }}
+          title="Spotless Results, Every Time"
+          description="A look at a few of the homes and vehicles our team has brought back to life across Vancouver."
+        />
 
-        <Reveal className="mt-12 grid auto-rows-[240px] grid-cols-4 gap-4 max-md:auto-rows-[170px] max-md:grid-cols-2 max-md:gap-3">
+        <Reveal className="mt-10 grid auto-rows-[210px] grid-cols-4 gap-3 max-md:auto-rows-[160px] max-md:grid-cols-2">
           {photos.map((photo) => (
             <figure
               key={photo.caption}

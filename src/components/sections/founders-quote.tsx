@@ -8,19 +8,19 @@ const signature = Allura({ subsets: ["latin"], weight: "400" });
 /** Pull quote from the co-founders on what the company stands for. */
 export function FoundersQuote() {
   return (
-    <section className="relative overflow-hidden bg-[#f7f5f4] px-5 py-[120px] max-md:py-[72px]">
+    <section className="relative overflow-hidden bg-[#f7f5f4] px-5 py-[96px] max-md:py-[64px]">
       {/* Oversized quote marks, just visible behind the text. */}
-      <QuoteIcon className="pointer-events-none absolute -top-16 -left-6 size-[300px] text-brand/[0.035] max-md:size-[220px]" />
-      <QuoteIcon className="pointer-events-none absolute -right-10 -bottom-16 size-[260px] rotate-180 text-brand/[0.035] max-md:hidden" />
+      <QuoteIcon className="pointer-events-none absolute -top-12 -left-4 size-[240px] text-brand/[0.035] max-md:size-[180px]" />
+      <QuoteIcon className="pointer-events-none absolute -right-8 -bottom-12 size-[210px] rotate-180 text-brand/[0.035] max-md:hidden" />
 
-      <Reveal className="relative mx-auto max-w-[1040px]">
+      <Reveal className="relative mx-auto max-w-[900px]">
         <figure className="m-0 text-center">
-          <div className="mx-auto flex size-16 items-center justify-center rounded-full bg-brand text-[26px] text-white shadow-[0_12px_30px_-8px_rgba(222,10,10,0.55)]">
+          <div className="mx-auto flex size-14 items-center justify-center rounded-full bg-brand text-[22px] text-white shadow-[0_12px_30px_-8px_rgba(222,10,10,0.55)]">
             <QuoteIcon />
           </div>
 
-          <blockquote className="mx-0 mt-10 mb-0">
-            <p className="mb-0 font-heading text-[34px] leading-[50px] font-normal text-ink-soft max-lg:text-[28px] max-lg:leading-[42px] max-sm:text-[22px] max-sm:leading-[34px]">
+          <blockquote className="mx-0 mt-8 mb-0">
+            <p className="mb-0 font-heading text-[28px] leading-[42px] font-normal text-ink-soft max-lg:text-[24px] max-lg:leading-9 max-sm:text-[20px] max-sm:leading-[30px]">
               At S&amp;A Cleaning Group, we believe that cleanliness isn&apos;t just about what you
               can see &mdash; it&apos;s about the precision in every corner. From hospital-grade
               eco-disinfectants to meticulous car detailing,{" "}
@@ -31,9 +31,9 @@ export function FoundersQuote() {
             </p>
           </blockquote>
 
-          <figcaption className="mt-10 flex flex-col items-center">
+          <figcaption className="mt-8 flex flex-col items-center">
             <span
-              className={`${signature.className} text-[52px] leading-[60px] text-ink-soft max-sm:text-[44px]`}
+              className={`${signature.className} text-[44px] leading-[52px] text-ink-soft max-sm:text-[38px]`}
             >
               Alex &amp; Shaida
             </span>

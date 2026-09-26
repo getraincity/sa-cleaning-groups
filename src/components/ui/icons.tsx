@@ -263,3 +263,264 @@ export function QuoteIcon(props: IconProps) {
     </svg>
   );
 }
+
+export function ChevronRightIcon(props: IconProps) {
+  return (
+    <LineIcon {...props}>
+      <path d="m9 18 6-6-6-6" />
+    </LineIcon>
+  );
+}
+
+export function PlusIcon(props: IconProps) {
+  return (
+    <LineIcon {...props}>
+      <path d="M5 12h14" />
+      <path d="M12 5v14" />
+    </LineIcon>
+  );
+}
+
+export function ClockIcon(props: IconProps) {
+  return (
+    <LineIcon {...props}>
+      <circle cx="12" cy="12" r="10" />
+      <path d="M12 6v6l4 2" />
+    </LineIcon>
+  );
+}
+
+export function CalendarIcon(props: IconProps) {
+  return (
+    <LineIcon {...props}>
+      <path d="M8 2v4" />
+      <path d="M16 2v4" />
+      <rect x="3" y="4" width="18" height="18" rx="2" />
+      <path d="M3 10h18" />
+    </LineIcon>
+  );
+}
+
+export function RepeatIcon(props: IconProps) {
+  return (
+    <LineIcon {...props}>
+      <path d="m17 2 4 4-4 4" />
+      <path d="M3 11v-1a4 4 0 0 1 4-4h14" />
+      <path d="m7 22-4-4 4-4" />
+      <path d="M21 13v1a4 4 0 0 1-4 4H3" />
+    </LineIcon>
+  );
+}
+
+export function BoxIcon(props: IconProps) {
+  return (
+    <LineIcon {...props}>
+      <path d="M11 21.7a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.7l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.7z" />
+      <path d="M12 22V12" />
+      <path d="m3.3 7 8.7 5 8.7-5" />
+      <path d="m7.5 4.3 9 5.2" />
+    </LineIcon>
+  );
+}
+
+export function HardHatIcon(props: IconProps) {
+  return (
+    <LineIcon {...props}>
+      <path d="M10 10V5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v5" />
+      <path d="M14 6a6 6 0 0 1 6 6v3" />
+      <path d="M4 15v-3a6 6 0 0 1 6-6" />
+      <rect x="2" y="15" width="20" height="4" rx="1" />
+    </LineIcon>
+  );
+}
+
+export function PartyIcon(props: IconProps) {
+  return (
+    <LineIcon {...props}>
+      <path d="M5.8 11.3 2 22l10.7-3.8" />
+      <path d="M4 3h.01M22 8h.01M15 2h.01M22 20h.01" />
+      <path d="m22 2-2.2.8a2.9 2.9 0 0 0-1.9 3.2c.1.6-.4 1.1-1 1.1h-.4c-.8 0-1.5.6-1.7 1.4L14.5 10" />
+      <path d="m22 13-.8-.3c-.9-.3-1.8.2-2.1 1.1-.2.7-.9 1.2-1.6 1.2H17" />
+      <path d="m11 2 .3.8c.3.9-.2 1.8-1.1 2.1-.7.2-1.2.9-1.2 1.6V7" />
+      <path d="M11 13c1.9 1.9 2.8 4.2 2 5-.8.8-3.1-.1-5-2-1.9-1.9-2.8-4.2-2-5 .8-.8 3.1.1 5 2Z" />
+    </LineIcon>
+  );
+}
+
+export function StoreIcon(props: IconProps) {
+  return (
+    <LineIcon {...props}>
+      <path d="m2 7 4.4-4.4A2 2 0 0 1 7.8 2h8.4a2 2 0 0 1 1.4.6L22 7" />
+      <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" />
+      <path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4" />
+      <path d="M2 7h20" />
+      <path d="M22 7v3a2 2 0 0 1-2 2 2.7 2.7 0 0 1-2-1 2.7 2.7 0 0 1-4 0 2.7 2.7 0 0 1-4 0 2.7 2.7 0 0 1-4 0 2.7 2.7 0 0 1-2 1 2 2 0 0 1-2-2V7" />
+    </LineIcon>
+  );
+}
+
+export function KeyIcon(props: IconProps) {
+  return (
+    <LineIcon {...props}>
+      <path d="M2.6 18.4A2 2 0 0 0 2 19.8V21a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h1a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h.2a2 2 0 0 0 1.4-.6l.8-.8a6.5 6.5 0 1 0-4-4z" />
+      <circle cx="16.5" cy="7.5" r="1" />
+    </LineIcon>
+  );
+}
+
+export function StethoscopeIcon(props: IconProps) {
+  return (
+    <LineIcon {...props}>
+      <path d="M11 2v2M5 2v2" />
+      <path d="M5 3H4a2 2 0 0 0-2 2v4a6 6 0 0 0 12 0V5a2 2 0 0 0-2-2h-1" />
+      <path d="M8 15a6 6 0 0 0 12 0v-3" />
+      <circle cx="20" cy="10" r="2" />
+    </LineIcon>
+  );
+}
+
+export function UtensilsIcon(props: IconProps) {
+  return (
+    <LineIcon {...props}>
+      <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2" />
+      <path d="M7 2v20" />
+      <path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7" />
+    </LineIcon>
+  );
+}
+
+export function DumbbellIcon(props: IconProps) {
+  return (
+    <LineIcon {...props}>
+      <path d="M14.4 14.4 9.6 9.6" />
+      <path d="M18.7 21.5a2 2 0 1 1-2.9-2.9l-1.7 1.8a2 2 0 1 1-2.9-2.9l6.4-6.4a2 2 0 1 1 2.9 2.9l-1.8 1.7a2 2 0 1 1 2.9 2.9z" />
+      <path d="m21.5 21.5-1.4-1.4M3.9 3.9 2.5 2.5" />
+      <path d="M6.4 12.8a2 2 0 1 1-2.9-2.9l1.8-1.7a2 2 0 1 1-2.9-2.9l2.9-2.8a2 2 0 1 1 2.8 2.8l1.7-1.7a2 2 0 1 1 2.9 2.8z" />
+    </LineIcon>
+  );
+}
+
+export function ClipboardCheckIcon(props: IconProps) {
+  return (
+    <LineIcon {...props}>
+      <rect x="8" y="2" width="8" height="4" rx="1" />
+      <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
+      <path d="m9 14 2 2 4-4" />
+    </LineIcon>
+  );
+}
+
+export function MailIcon(props: IconProps) {
+  return (
+    <LineIcon {...props}>
+      <rect x="2" y="4" width="20" height="16" rx="2" />
+      <path d="m22 7-9 5.7a2 2 0 0 1-2 0L2 7" />
+    </LineIcon>
+  );
+}
+
+export function MessageIcon(props: IconProps) {
+  return (
+    <LineIcon {...props}>
+      <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" />
+    </LineIcon>
+  );
+}
+
+export function NewspaperIcon(props: IconProps) {
+  return (
+    <LineIcon {...props}>
+      <path d="M15 18h-5M18 14h-8" />
+      <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9a2 2 0 0 1 2-2h2" />
+      <rect x="10" y="6" width="8" height="4" rx="1" />
+    </LineIcon>
+  );
+}
+
+export function LeafIcon(props: IconProps) {
+  return (
+    <LineIcon {...props}>
+      <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.5 19 2c1 2 2 4.2 2 8 0 5.5-4.8 10-10 10Z" />
+      <path d="M2 21c0-3 1.9-5.4 5.1-6C9.5 14.5 12 13 13 12" />
+    </LineIcon>
+  );
+}
+
+export function UsersIcon(props: IconProps) {
+  return (
+    <LineIcon {...props}>
+      <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+      <circle cx="9" cy="7" r="4" />
+      <path d="M22 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8" />
+    </LineIcon>
+  );
+}
+
+// Vehicles, for the "we detail more than cars" section.
+
+export function PickupIcon(props: IconProps) {
+  return (
+    <LineIcon {...props}>
+      <path d="M4.5 17H3a1 1 0 0 1-1-1v-3.5l2.3-4a1 1 0 0 1 .9-.5H11v5h10a1 1 0 0 1 1 1V16a1 1 0 0 1-1 1h-1.5" />
+      <path d="M4.3 12.5 5.7 10H9v2.5" />
+      <path d="M8.5 17h7" />
+      <circle cx="6.5" cy="17" r="2" />
+      <circle cx="17.5" cy="17" r="2" />
+    </LineIcon>
+  );
+}
+
+export function VanIcon(props: IconProps) {
+  return (
+    <LineIcon {...props}>
+      <path d="M4.5 17H3a1 1 0 0 1-1-1V7a2 2 0 0 1 2-2h11.5a1 1 0 0 1 .8.4L20 10h.5a1.5 1.5 0 0 1 1.5 1.5V16a1 1 0 0 1-1 1h-1.5" />
+      <path d="M15 5v5h5" />
+      <path d="M8.5 17h6" />
+      <circle cx="6.5" cy="17" r="2" />
+      <circle cx="17" cy="17" r="2" />
+    </LineIcon>
+  );
+}
+
+export function RvIcon(props: IconProps) {
+  return (
+    <LineIcon {...props}>
+      <path d="M4 17H3a1 1 0 0 1-1-1V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v3h1.5a1 1 0 0 1 .8.4l2.4 3.2a1 1 0 0 1 .3.6V16a1 1 0 0 1-1 1h-1" />
+      <path d="M8 17h8" />
+      <circle cx="6" cy="17" r="2" />
+      <circle cx="18" cy="17" r="2" />
+      <rect x="5" y="7" width="4" height="3" rx=".5" />
+      <path d="M12 7h3M12 10h3M18 9v4h4" />
+    </LineIcon>
+  );
+}
+
+export function BoatIcon(props: IconProps) {
+  return (
+    <LineIcon {...props}>
+      <path d="M22 18H2a4 4 0 0 0 4 4h12a4 4 0 0 0 4-4Z" />
+      <path d="M21 14 10 2 3 14h18Z" />
+      <path d="M10 2v16" />
+    </LineIcon>
+  );
+}
+
+const carShape = (
+  <>
+    <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2" />
+    <circle cx="7" cy="17" r="2" />
+    <path d="M9 17h6" />
+    <circle cx="17" cy="17" r="2" />
+  </>
+);
+
+export function FleetIcon(props: IconProps) {
+  return (
+    <LineIcon {...props}>
+      <g opacity=".5" transform="translate(6.5 -4.5) scale(.72)">
+        {carShape}
+      </g>
+      <g transform="translate(0 2.5)">{carShape}</g>
+    </LineIcon>
+  );
+}
