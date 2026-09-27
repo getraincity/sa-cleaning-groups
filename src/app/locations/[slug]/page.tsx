@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { AreaMap } from "@/components/locations/area-map";
 import { CtaBand } from "@/components/sections/cta-band";
 import { FaqSection } from "@/components/sections/faq-section";
+import { PhotoGrid } from "@/components/sections/photo-grid";
 import { JsonLd } from "@/components/seo/json-ld";
 import {
   ArrowRightIcon,
@@ -12,6 +13,7 @@ import {
   ChevronRightIcon,
   HomeIcon,
   MapPinIcon,
+  HeartIcon,
   ShieldCheckIcon,
   SparklesIcon,
 } from "@/components/ui/icons";
@@ -158,14 +160,18 @@ export default async function LocationPage({ params }: Props) {
             <Reveal className="relative mx-auto w-full max-w-[480px]">
               <div className="relative aspect-[4/5] overflow-hidden rounded-3xl shadow-[0_30px_60px_-30px_rgba(0,0,0,0.45)] max-lg:aspect-[4/3]">
                 <Image
-                  src={location.hero.image}
-                  alt={location.hero.alt}
+                  src={location.area.image}
+                  alt={location.area.alt}
                   fill
                   loading="eager"
                   fetchPriority="high"
                   sizes="(max-width: 991px) 100vw, 480px"
                   className="object-cover"
                 />
+                {/* Caption at the top, clear of the badges along the bottom and right. */}
+                <div className="absolute inset-x-0 top-0 bg-[linear-gradient(0deg,transparent,rgba(0,0,0,0.55))] px-5 pt-5 pr-40 pb-14 font-text text-[13px] leading-5 text-white/90 max-sm:pt-14 max-sm:pr-5">
+                  {location.area.caption}
+                </div>
               </div>
               <div className="absolute -bottom-5 -left-6 flex items-center gap-3 rounded-2xl bg-white px-4 py-3 shadow-[0_20px_40px_-16px_rgba(0,0,0,0.35)] max-sm:left-3">
                 <span className="flex size-10 items-center justify-center rounded-xl bg-brand-tint text-[20px] text-brand">
@@ -183,6 +189,13 @@ export default async function LocationPage({ params }: Props) {
           </div>
         </div>
       </section>
+
+      <PhotoGrid
+        eyebrow={{ icon: <MapPinIcon />, label: `Around ${location.short}` }}
+        title={`Life in ${location.name}`}
+        description={`Some of the places that make ${location.short} home for the people we clean for.`}
+        items={location.gallery}
+      />
 
       {/* Local know-how, then a local tip. */}
       <section className={cn("px-5", sectionSpacing.y)}>
@@ -276,6 +289,46 @@ export default async function LocationPage({ params }: Props) {
               </Link>
             ))}
           </div>
+        </div>
+      </section>
+
+      <PhotoGrid
+        className="bg-[#f7f5f4]"
+        eyebrow={{ icon: <HomeIcon />, label: "Where we clean" }}
+        title={`Homes & Workplaces in ${location.short}`}
+        description={`From condos to family homes and offices, these are the kinds of spaces our team looks after in ${location.name}.`}
+        items={location.portfolio}
+      />
+
+      {/* Community. */}
+      <section className={cn("px-5", sectionSpacing.y)}>
+        <div className="mx-auto grid max-w-[1240px] grid-cols-[5fr_7fr] items-start gap-14 max-lg:grid-cols-1 max-lg:gap-8">
+          <SectionHeader
+            eyebrow={{ icon: <HeartIcon />, label: "Community" }}
+            title={`Part of the ${location.short} Community`}
+            description={location.community.intro}
+          />
+          <ul className="mb-0 grid list-none gap-3 pl-0">
+            {location.community.spots.map((spot) => (
+              <li
+                key={spot.name}
+                className="flex gap-4 rounded-2xl p-5"
+                style={{ backgroundColor: location.tint }}
+              >
+                <span className="flex size-10 min-w-10 items-center justify-center rounded-xl bg-white text-[20px] text-brand">
+                  <MapPinIcon />
+                </span>
+                <span>
+                  <strong className="block font-heading text-[17px] leading-6 text-ink-soft">
+                    {spot.name}
+                  </strong>
+                  <span className="font-text text-[14px] leading-[22px] text-muted">
+                    {spot.text}
+                  </span>
+                </span>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 

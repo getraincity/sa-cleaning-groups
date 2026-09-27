@@ -1,8 +1,16 @@
 import Link from "next/link";
-import cleaningWindows from "@/assets/images/cleaning-windows.jpg";
+import deskDisinfecting from "@/assets/images/commercial/desk-disinfecting.jpg";
+import glassHallway from "@/assets/images/commercial/glass-hallway.jpg";
+import lobbyEntrance from "@/assets/images/commercial/lobby-wet-floor.jpg";
+import meetingRoom from "@/assets/images/commercial/meeting-room.jpg";
+import modernOffice from "@/assets/images/commercial/modern-office.jpg";
+import openOffice from "@/assets/images/commercial/open-office.jpg";
 import { CtaBand } from "@/components/sections/cta-band";
 import { FaqSection, type Faq } from "@/components/sections/faq-section";
+import { AreasStrip } from "@/components/locations/areas-strip";
 import { PageHero } from "@/components/sections/page-hero";
+import { PhotoFeatures, type PhotoFeatureRow } from "@/components/sections/photo-feature";
+import { PhotoGrid } from "@/components/sections/photo-grid";
 import {
   ArrowRightIcon,
   BuildingIcon,
@@ -157,6 +165,67 @@ const steps = [
   },
 ];
 
+// Photo-led rows: the three kinds of space most custodial work happens in.
+const spaceRows: PhotoFeatureRow[] = [
+  {
+    eyebrow: { icon: <BuildingIcon />, label: "Offices" },
+    title: "Workspaces Your Team Enjoys",
+    text: "A clean office is a more comfortable, more productive one. We keep desks, meeting rooms and shared kitchens fresh, so your team can focus on their work.",
+    points: [
+      "Desks, shelves and meeting tables dusted and wiped",
+      "Shared kitchens and break rooms cleaned",
+      "Glass partitions and doors kept smudge-free",
+      "Garbage, recycling and compost emptied",
+    ],
+    image: openOffice,
+    alt: "A bright, tidy open-plan office",
+  },
+  {
+    eyebrow: { icon: <KeyIcon />, label: "Lobbies & common areas" },
+    title: "First Impressions That Last",
+    text: "Entrances, lobbies and hallways are the first thing visitors and residents see. We keep them clean, safe and welcoming, every visit.",
+    points: [
+      "Entrance glass and doors cleaned",
+      "Hard floors swept and mopped, carpets vacuumed",
+      "Elevators, handrails and buttons wiped down",
+      "Wet-floor signage used whenever floors are drying",
+    ],
+    image: lobbyEntrance,
+    alt: "A commercial building entrance being cleaned",
+  },
+  {
+    eyebrow: { icon: <ShieldCheckIcon />, label: "High-touch surfaces" },
+    title: "Healthier Touchpoints",
+    text: "Handles, switches, phones and shared desks carry the most germs. We disinfect them with hospital-grade, eco-friendly products that are tough on germs, not on people.",
+    points: [
+      "Door handles and light switches disinfected",
+      "Shared phones, keyboards and desks wiped",
+      "Washrooms cleaned and disinfected",
+      "Soap and paper supplies refilled",
+    ],
+    image: deskDisinfecting,
+    alt: "Gloved hands disinfecting a desk",
+  },
+];
+
+const schedules = [
+  {
+    Icon: CalendarIcon,
+    title: "Daily",
+    text: "For busy offices, clinics and storefronts that need to look their best every day.",
+  },
+  {
+    Icon: ClipboardCheckIcon,
+    title: "Weekly or bi-weekly",
+    text: "For smaller offices and quieter spaces that need a regular, thorough clean.",
+  },
+  {
+    Icon: SparklesIcon,
+    title: "One-time",
+    text: "For move-ins, move-outs, events or a fresh start before a regular plan.",
+  },
+];
+
 const faqs: Faq[] = [
   {
     question: "What types of businesses do you clean?",
@@ -187,9 +256,9 @@ const faqs: Faq[] = [
 
 export default function CustodianServicesPage() {
   return (
-    <>
+    <div className="theme-custodian">
       <PageHero
-        image={cleaningWindows}
+        image={modernOffice}
         className="py-[200px] max-md:py-[100px]"
         tagline="Commercial & janitorial cleaning"
         title={
@@ -248,7 +317,7 @@ export default function CustodianServicesPage() {
           </div>
 
           <Reveal className="relative overflow-hidden rounded-3xl bg-[#1c1c1e] p-10 max-sm:p-7">
-            <div className="pointer-events-none absolute -top-24 -right-24 size-[320px] rounded-full bg-brand/25 blur-[110px]" />
+            <div className="pointer-events-none absolute -top-24 -right-24 size-[320px] rounded-full bg-brand/40 blur-[110px]" />
             <p className="relative mb-6 font-text text-[12px] font-semibold tracking-[0.2em] text-white/60 uppercase">
               Why businesses choose S&amp;A
             </p>
@@ -296,6 +365,45 @@ export default function CustodianServicesPage() {
                   {title}
                 </h3>
                 <p className="mb-0 font-text text-[14px] leading-[22px] text-muted">{text}</p>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <PhotoFeatures
+        rows={spaceRows}
+        header={{
+          eyebrow: { icon: <SparklesIcon />, label: "Where we work" },
+          title: "Care for Every Kind of Space",
+          description:
+            "Different spaces need different care. Here's how we look after the ones we clean most.",
+        }}
+      />
+
+      {/* Visit schedules. */}
+      <section className={cn("bg-brand-wash px-5", sectionSpacing.y)}>
+        <div className="mx-auto max-w-[1240px]">
+          <SectionHeader
+            align="center"
+            eyebrow={{ icon: <CalendarIcon />, label: "Scheduling" }}
+            title="A Schedule That Fits Your Business"
+            description="Visits are planned around your hours, so cleaning never gets in the way of your team or your customers."
+          />
+          <div className="mt-12 grid grid-cols-3 gap-5 max-lg:grid-cols-1">
+            {schedules.map(({ Icon, title, text }, index) => (
+              <Reveal
+                key={title}
+                delay={index * 100}
+                className="rounded-[20px] bg-white p-8 shadow-[0_1px_2px_rgba(0,0,0,0.04)]"
+              >
+                <span className="flex size-12 items-center justify-center rounded-xl bg-brand text-[24px] text-white">
+                  <Icon />
+                </span>
+                <h3 className="mt-5 mb-2 font-heading text-[22px] leading-7 text-ink-soft">
+                  {title}
+                </h3>
+                <p className="mb-0 font-text text-[15px] leading-6 text-muted">{text}</p>
               </Reveal>
             ))}
           </div>
@@ -366,6 +474,39 @@ export default function CustodianServicesPage() {
         </div>
       </section>
 
+      <PhotoGrid
+        eyebrow={{ icon: <StoreIcon />, label: "Spaces we care for" }}
+        title="Clean Spaces, Ready for Business"
+        items={[
+          {
+            image: meetingRoom,
+            alt: "A clean, modern meeting room",
+            title: "Meeting rooms",
+            text: "Tables, chairs and glass ready for the next meeting.",
+          },
+          {
+            image: glassHallway,
+            alt: "A glass-walled office hallway",
+            title: "Hallways & glass",
+            text: "Glass walls and doors kept clear and bright.",
+          },
+          {
+            image: modernOffice,
+            alt: "A modern office with workstations",
+            title: "Workstations",
+            text: "Desks and shared equipment dusted and wiped.",
+          },
+          {
+            image: lobbyEntrance,
+            alt: "A commercial building entrance",
+            title: "Entrances",
+            text: "Doors, mats and floors that welcome your visitors.",
+          },
+        ]}
+      />
+
+      <AreasStrip service="custodian services" />
+
       <FaqSection
         items={faqs}
         description="Everything you need to know about custodial cleaning with S&A."
@@ -378,6 +519,6 @@ export default function CustodianServicesPage() {
         primary={{ label: "Request a quote", href: quoteHref }}
         secondary={{ label: `Call ${siteConfig.phone}`, href: siteConfig.phoneHref }}
       />
-    </>
+    </div>
   );
 }

@@ -11,8 +11,10 @@ import {
   CarIcon,
   ChevronDownIcon,
   HomeIcon,
+  LeafIcon,
   MapPinIcon,
   MenuIcon,
+  UsersIcon,
 } from "@/components/ui/icons";
 import { locations } from "@/content/locations";
 import { bookingLinks } from "@/lib/site";
@@ -43,6 +45,21 @@ const services: DropdownItem[] = [
     href: "/custodian-services",
     description: "Offices and commercial spaces",
     Icon: BuildingIcon,
+  },
+];
+
+const about: DropdownItem[] = [
+  {
+    label: "About Us",
+    href: "/about-us",
+    description: "Our story, team and trusted partners",
+    Icon: UsersIcon,
+  },
+  {
+    label: "Products We Trust",
+    href: "/products-we-trust",
+    description: "The brands and tools we use",
+    Icon: LeafIcon,
   },
 ];
 
@@ -219,7 +236,9 @@ function MenuItems({
     <ul className={cn("mb-0 flex list-none items-center gap-1 pb-0 pl-0 font-text", className)}>
       {/* The order the client asked for. */}
       {renderLink({ label: "Home", href: "/" })}
-      {renderLink({ label: "About", href: "/about-us" })}
+      <li className="max-xl:w-full">
+        <NavDropdown label="About" items={about} pathname={pathname} onNavigate={onNavigate} />
+      </li>
       <li className="max-xl:w-full">
         <NavDropdown
           label="Services"

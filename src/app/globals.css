@@ -24,6 +24,9 @@
   --color-brand-tint: #de0a0a40;
   --color-brand-line: #f300004d;
   --color-brand-border: #ffc3cf80;
+  /* The dark end of accent gradients, and a pale wash for accent-tinted sections. */
+  --color-brand-deep: #a80000;
+  --color-brand-wash: #fff5f5;
 
   --color-ink: #1a1b1f;
   --color-ink-soft: #1f1f1f;
@@ -127,9 +130,39 @@
   background-repeat: no-repeat;
 }
 
-@utility bg-pricing {
-  background-color: var(--color-brand-alt);
-  background-image: url("/images/backgrounds/pricing.png");
-  background-position: 50% 0;
-  background-repeat: no-repeat;
+/*
+ * Service colour schemes. Each service page wraps its content in one of these,
+ * which re-points the brand accent (buttons, icons, pricing, highlights) for
+ * that page only. The navbar and footer sit outside the wrapper and keep the
+ * S&A red, so the site still reads as one brand.
+ *   Home cleaning:  fresh teal, clean and calm.
+ *   Car detailing:  cobalt blue, the automotive/showroom look.
+ *   Custodian:      slate navy, corporate and dependable.
+ */
+.theme-home {
+  --color-brand: #0f7c72;
+  --color-brand-alt: #0c6c63;
+  --color-brand-tint: #0f7c7224;
+  --color-brand-line: #0f7c724d;
+  --color-brand-border: #a7ddd680;
+  --color-brand-deep: #084b45;
+  --color-brand-wash: #eef8f6;
+}
+.theme-car {
+  --color-brand: #1f5bbf;
+  --color-brand-alt: #1a4fa8;
+  --color-brand-tint: #1f5bbf24;
+  --color-brand-line: #1f5bbf4d;
+  --color-brand-border: #b3c8ee80;
+  --color-brand-deep: #0f2f6b;
+  --color-brand-wash: #eff4fc;
+}
+.theme-custodian {
+  --color-brand: #2e4a6f;
+  --color-brand-alt: #263f60;
+  --color-brand-tint: #2e4a6f22;
+  --color-brand-line: #2e4a6f4d;
+  --color-brand-border: #b9c6d880;
+  --color-brand-deep: #16263d;
+  --color-brand-wash: #f0f3f7;
 }

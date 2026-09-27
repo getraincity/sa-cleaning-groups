@@ -3,6 +3,7 @@ import Link from "next/link";
 import groupIcon from "@/assets/images/icons/group.svg";
 import leafIcon from "@/assets/images/icons/leaf.svg";
 import petIcon from "@/assets/images/icons/pet.svg";
+import { TintedIcon } from "@/components/ui/tinted-icon";
 import { Reveal } from "@/components/ui/reveal";
 import { cn } from "@/lib/utils";
 
@@ -111,11 +112,7 @@ export function CareSection({ photos, booking, layout }: CareSectionProps) {
               <div className="absolute inset-0 bg-[#ffffff70]" />
               <div className="relative z-[2] flex flex-col items-center justify-start">
                 <div className="flex size-16 min-h-16 min-w-16 items-center justify-center rounded-full bg-[#ffffff7d]">
-                  <Image
-                    src={feature.icon}
-                    alt={feature.iconAlt}
-                    className="size-[26px] object-contain"
-                  />
+                  <TintedIcon src={feature.icon} label={feature.iconAlt} className="size-[26px]" />
                 </div>
                 <h4 className="text-center font-heading text-[18px]">{feature.title}</h4>
                 <p className="text-center font-text text-[14px]">{feature.text}</p>

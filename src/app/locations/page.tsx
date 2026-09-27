@@ -90,8 +90,8 @@ export default function LocationsPage() {
                     )}
                   >
                     <Image
-                      src={location.hero.image}
-                      alt={location.hero.alt}
+                      src={location.area.image}
+                      alt={location.area.alt}
                       fill
                       sizes="(max-width: 767px) 100vw, (max-width: 991px) 50vw, 50vw"
                       className="object-cover transition-transform duration-700 ease-out-quart group-hover:scale-105"

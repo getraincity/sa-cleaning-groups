@@ -73,7 +73,7 @@ export function HomeServiceTypes() {
           {/* Hourly cleaning carries a price, so it gets the featured card. */}
           <Reveal
             delay={200}
-            className="relative flex flex-col overflow-hidden rounded-[20px] bg-[linear-gradient(135deg,#e81c1c_0%,#de0a0a_45%,#a80000_100%)] p-7 text-white"
+            className="relative flex flex-col overflow-hidden rounded-[20px] bg-[linear-gradient(135deg,var(--color-brand)_0%,var(--color-brand-alt)_45%,var(--color-brand-deep)_100%)] p-7 text-white"
           >
             <span className="relative flex size-12 items-center justify-center rounded-xl bg-white text-[24px] text-brand">
               <ClockIcon />
