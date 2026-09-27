@@ -1,5 +1,36 @@
 import type { StaticImageData } from "next/image";
 import type { ComponentType, SVGProps } from "react";
+import downtownCoalHarbour from "@/assets/images/areas/downtown-coal-harbour.jpg";
+import downtownCondos from "@/assets/images/areas/downtown-condos.jpg";
+import downtownFalseCreek from "@/assets/images/areas/downtown-false-creek.jpg";
+import downtownSkyline from "@/assets/images/areas/downtown-skyline.jpg";
+import downtownTowers from "@/assets/images/areas/downtown-towers.jpg";
+import eastBlossomHouse from "@/assets/images/areas/east-blossom-house.jpg";
+import eastCharacterHouse from "@/assets/images/areas/east-character-house.jpg";
+import eastCityView from "@/assets/images/areas/east-city-view.jpg";
+import eastSecondNarrows from "@/assets/images/areas/east-second-narrows.jpg";
+import eastVanSign from "@/assets/images/areas/east-van-sign.jpg";
+import northCapilano from "@/assets/images/areas/north-capilano-bridge.jpg";
+import northDeepCove from "@/assets/images/areas/north-deep-cove.jpg";
+import northHouse from "@/assets/images/areas/north-house.jpg";
+import northLonsdaleQuay from "@/assets/images/areas/north-lonsdale-quay.jpg";
+import northLowerLonsdale from "@/assets/images/areas/north-lower-lonsdale.jpg";
+import northShoreView from "@/assets/images/areas/north-shore-view.jpg";
+import southCityView from "@/assets/images/areas/south-city-view.jpg";
+import southConservatory from "@/assets/images/areas/south-conservatory.jpg";
+import southFamilyHome from "@/assets/images/areas/south-family-home.jpg";
+import southPorchHome from "@/assets/images/areas/south-porch-home.jpg";
+import southQePark from "@/assets/images/areas/south-qe-park-view.jpg";
+import westAmbleside from "@/assets/images/areas/west-ambleside.jpg";
+import westBlossomStreet from "@/assets/images/areas/west-blossom-street.jpg";
+import westHillsideHomes from "@/assets/images/areas/west-hillside-homes.jpg";
+import westHorseshoeBay from "@/assets/images/areas/west-horseshoe-bay.jpg";
+import westHoweSound from "@/assets/images/areas/west-howe-sound-sunset.jpg";
+import westLighthouse from "@/assets/images/areas/west-lighthouse.jpg";
+import glassHallway from "@/assets/images/commercial/glass-hallway.jpg";
+import meetingRoom from "@/assets/images/commercial/meeting-room.jpg";
+import modernOffice from "@/assets/images/commercial/modern-office.jpg";
+import openOffice from "@/assets/images/commercial/open-office.jpg";
 import carBeforeAfterInterior from "@/assets/images/car-before-after-interior-01.webp";
 import carBeforeAfterSeats from "@/assets/images/car-before-after-seats.webp";
 import cleaningLivingRoom from "@/assets/images/cleaning-living-room.jpg";
@@ -33,6 +64,8 @@ export type LocationSlug =
 
 type Icon = ComponentType<SVGProps<SVGSVGElement>>;
 
+export type AreaPhoto = { image: StaticImageData; alt: string; title: string; text: string };
+
 export type Location = {
   slug: LocationSlug;
   name: string;
@@ -45,6 +78,14 @@ export type Location = {
   /** Soft background tint that gives each area page its own mood. */
   tint: string;
   hero: { image: StaticImageData; alt: string };
+  /** A recognisable photo of the area itself, used on its card and page. */
+  area: { image: StaticImageData; alt: string; caption: string };
+  /** More pictures of the area: landmarks and views. */
+  gallery: AreaPhoto[];
+  /** The kinds of homes and workplaces we clean here. */
+  portfolio: (AreaPhoto & { tag: "Residential" | "Commercial" })[];
+  /** Small community section: local places, described factually. */
+  community: { intro: string; spots: { name: string; text: string }[] };
   knowHow: { title: string; items: { Icon: Icon; title: string; text: string }[] };
   tip: { title: string; text: string; image: StaticImageData; alt: string };
   services: { home: string; car: string; custodian: string };
@@ -70,6 +111,72 @@ export const locations: Location[] = [
       "Chinatown",
     ],
     tint: "#f6f4f2",
+    area: {
+      image: downtownSkyline,
+      alt: "The Downtown Vancouver skyline with the North Shore mountains behind",
+      caption: "The downtown peninsula from across False Creek",
+    },
+    gallery: [
+      {
+        image: downtownCoalHarbour,
+        alt: "Coal Harbour towers and marina from above",
+        title: "Coal Harbour",
+        text: "Waterfront towers, the marina and the seawall.",
+      },
+      {
+        image: downtownFalseCreek,
+        alt: "High-rise condos along False Creek",
+        title: "False Creek & Yaletown",
+        text: "Glass towers and lofts along the water.",
+      },
+      {
+        image: eastCityView,
+        alt: "Downtown Vancouver towers in front of the mountains",
+        title: "The downtown core",
+        text: "Offices, condos and shops in the heart of the city.",
+      },
+    ],
+    portfolio: [
+      {
+        tag: "Residential",
+        image: downtownCondos,
+        alt: "Downtown condo towers",
+        title: "High-rise condos",
+        text: "Suites in concierge and strata buildings.",
+      },
+      {
+        tag: "Residential",
+        image: downtownTowers,
+        alt: "Residential towers near False Creek",
+        title: "Lofts & townhomes",
+        text: "Yaletown lofts and waterfront townhomes.",
+      },
+      {
+        tag: "Commercial",
+        image: meetingRoom,
+        alt: "A clean downtown meeting room",
+        title: "Office suites",
+        text: "Meeting rooms, reception areas and workspaces.",
+      },
+    ],
+    community: {
+      intro:
+        "Downtown is where the city comes together, and our team is proud to help keep it looking its best.",
+      spots: [
+        {
+          name: "Stanley Park",
+          text: "The city's great park and seawall, at the tip of the downtown peninsula.",
+        },
+        {
+          name: "Gastown",
+          text: "Cobblestone streets, heritage buildings and the famous steam clock.",
+        },
+        {
+          name: "Roundhouse Community Centre",
+          text: "Yaletown's community hub in a restored railway roundhouse.",
+        },
+      ],
+    },
     hero: {
       image: cleaningWindows,
       alt: "An S&A cleaner washing a window in a downtown apartment",
@@ -141,6 +248,72 @@ export const locations: Location[] = [
       "Seymour",
     ],
     tint: "#f1f5f2",
+    area: {
+      image: northLonsdaleQuay,
+      alt: "Lonsdale Quay on the North Vancouver waterfront",
+      caption: "Lonsdale Quay on the North Vancouver waterfront",
+    },
+    gallery: [
+      {
+        image: northDeepCove,
+        alt: "Boats in Deep Cove with forested mountains behind",
+        title: "Deep Cove",
+        text: "Kayaks, marinas and forested mountains.",
+      },
+      {
+        image: northCapilano,
+        alt: "A suspension bridge through tall rainforest trees",
+        title: "Canyons & rainforest",
+        text: "Suspension bridges and trails through the trees.",
+      },
+      {
+        image: northShoreView,
+        alt: "The city and mountains seen from the North Shore",
+        title: "North Shore views",
+        text: "City, harbour and mountain views from the slopes.",
+      },
+    ],
+    portfolio: [
+      {
+        tag: "Residential",
+        image: northLowerLonsdale,
+        alt: "Condo towers in Lower Lonsdale",
+        title: "Lonsdale condos",
+        text: "Waterfront and high-rise suites near the Quay.",
+      },
+      {
+        tag: "Residential",
+        image: northHouse,
+        alt: "A North Vancouver family home among trees",
+        title: "Family homes",
+        text: "Detached homes in Lynn Valley and Edgemont.",
+      },
+      {
+        tag: "Commercial",
+        image: openOffice,
+        alt: "A clean open-plan office",
+        title: "Offices & studios",
+        text: "Workspaces along Lonsdale and in the business parks.",
+      },
+    ],
+    community: {
+      intro:
+        "The North Shore is a close-knit place between the mountains and the sea, and we love working here.",
+      spots: [
+        {
+          name: "Lonsdale Quay Market",
+          text: "The public market and SeaBus terminal on the waterfront.",
+        },
+        {
+          name: "Lynn Canyon Park",
+          text: "Rainforest trails and a suspension bridge over the canyon.",
+        },
+        {
+          name: "Deep Cove",
+          text: "A seaside village known for kayaking and the Quarry Rock hike.",
+        },
+      ],
+    },
     hero: {
       image: cleaningLivingRoom,
       alt: "An S&A cleaner vacuuming a living room with forest and mountain views",
@@ -212,6 +385,63 @@ export const locations: Location[] = [
       "Kensington-Cedar Cottage",
     ],
     tint: "#f8f4ee",
+    area: {
+      image: eastVanSign,
+      alt: "The East Van cross sign lit up at dusk",
+      caption: "The East Van cross, a neighbourhood landmark",
+    },
+    gallery: [
+      {
+        image: eastSecondNarrows,
+        alt: "The Second Narrows bridge seen from the East Vancouver shoreline",
+        title: "New Brighton shoreline",
+        text: "Parks and views along Burrard Inlet.",
+      },
+      {
+        image: eastBlossomHouse,
+        alt: "A cherry tree in bloom in front of an East Vancouver house",
+        title: "Blossom-lined streets",
+        text: "Spring cherry blossoms on residential blocks.",
+      },
+    ],
+    portfolio: [
+      {
+        tag: "Residential",
+        image: eastCharacterHouse,
+        alt: "A character home among the trees",
+        title: "Character homes",
+        text: "Heritage houses, suites and laneway homes.",
+      },
+      {
+        tag: "Residential",
+        image: southPorchHome,
+        alt: "A classic Vancouver house with a porch",
+        title: "Family houses",
+        text: "Detached homes with basement and garden suites.",
+      },
+      {
+        tag: "Commercial",
+        image: modernOffice,
+        alt: "A clean modern workspace",
+        title: "Shops & studios",
+        text: "Storefronts, studios and small offices.",
+      },
+    ],
+    community: {
+      intro:
+        "East Van is creative, diverse and full of character, just like the homes we clean here.",
+      spots: [
+        {
+          name: "Commercial Drive",
+          text: "Cafés, restaurants and shops on one of the city's liveliest streets.",
+        },
+        {
+          name: "Trout Lake",
+          text: "A neighbourhood park and beach, home to a popular farmers market.",
+        },
+        { name: "Main Street", text: "Independent shops and restaurants in Mount Pleasant." },
+      ],
+    },
     hero: { image: livingRoom, alt: "A bright, freshly cleaned East Vancouver living space" },
     knowHow: {
       title: "Care for Character Homes",
@@ -273,6 +503,69 @@ export const locations: Location[] = [
       "Luxury home cleaning, window cleaning and boat and car detailing in West Vancouver: Ambleside, Dundarave, British Properties and Horseshoe Bay.",
     neighbourhoods: ["Ambleside", "Dundarave", "British Properties", "Caulfeild", "Horseshoe Bay"],
     tint: "#eef3f6",
+    area: {
+      image: westLighthouse,
+      alt: "The lighthouse at Point Atkinson in West Vancouver",
+      caption: "Point Atkinson Lighthouse in Lighthouse Park",
+    },
+    gallery: [
+      {
+        image: westAmbleside,
+        alt: "Ambleside waterfront with homes on the hillside behind",
+        title: "Ambleside & Dundarave",
+        text: "The seawalk, beaches and village shops.",
+      },
+      {
+        image: westHorseshoeBay,
+        alt: "Horseshoe Bay marina and village",
+        title: "Horseshoe Bay",
+        text: "A seaside village at the edge of Howe Sound.",
+      },
+      {
+        image: westHoweSound,
+        alt: "Sunset over Howe Sound through the trees",
+        title: "Howe Sound views",
+        text: "Ocean and island views from the shore.",
+      },
+    ],
+    portfolio: [
+      {
+        tag: "Residential",
+        image: westHillsideHomes,
+        alt: "Homes on a forested West Vancouver hillside",
+        title: "Hillside view homes",
+        text: "Large homes with lots of glass to keep clear.",
+      },
+      {
+        tag: "Residential",
+        image: westBlossomStreet,
+        alt: "A quiet residential street lined with blossoming trees",
+        title: "Quiet residential streets",
+        text: "Family homes in British Properties and Caulfeild.",
+      },
+      {
+        tag: "Commercial",
+        image: glassHallway,
+        alt: "A bright office hallway with glass walls",
+        title: "Offices & clinics",
+        text: "Professional offices and wellness spaces.",
+      },
+    ],
+    community: {
+      intro:
+        "West Vancouver's beaches, parks and village streets make it a special place to live and work.",
+      spots: [
+        {
+          name: "Lighthouse Park",
+          text: "Old-growth forest trails and the Point Atkinson Lighthouse.",
+        },
+        { name: "Dundarave Pier", text: "A local favourite for sunset walks by the water." },
+        {
+          name: "Ambleside Park",
+          text: "Beaches, fields and the start of the Centennial Seawalk.",
+        },
+      ],
+    },
     hero: {
       image: cleaningWindowView,
       alt: "An S&A cleaner polishing floor-to-ceiling glass overlooking the ocean",
@@ -337,6 +630,69 @@ export const locations: Location[] = [
       "House cleaning, post-construction cleaning and car detailing in South Vancouver: Marpole, Oakridge, Sunset, Victoria-Fraserview and Killarney.",
     neighbourhoods: ["Marpole", "Oakridge", "Sunset", "Victoria-Fraserview", "Killarney"],
     tint: "#f5f3f7",
+    area: {
+      image: southQePark,
+      alt: "Downtown Vancouver and the mountains seen from Queen Elizabeth Park",
+      caption: "The view from Queen Elizabeth Park",
+    },
+    gallery: [
+      {
+        image: southConservatory,
+        alt: "Tropical plants inside a domed conservatory",
+        title: "Bloedel Conservatory",
+        text: "The tropical garden under the dome at Queen Elizabeth Park.",
+      },
+      {
+        image: southCityView,
+        alt: "The city and North Shore mountains seen from the south",
+        title: "Views to the mountains",
+        text: "Leafy streets with the North Shore on the horizon.",
+      },
+      {
+        image: southPorchHome,
+        alt: "A classic Vancouver house with a porch",
+        title: "Classic Vancouver homes",
+        text: "Tree-lined blocks of family houses.",
+      },
+    ],
+    portfolio: [
+      {
+        tag: "Residential",
+        image: southFamilyHome,
+        alt: "A family home with a hedge and garden",
+        title: "Family homes",
+        text: "Detached homes in Kerrisdale, Oakridge and Marpole.",
+      },
+      {
+        tag: "Residential",
+        image: downtownCondos,
+        alt: "A modern condo building",
+        title: "New condos",
+        text: "New developments near the Canada Line.",
+      },
+      {
+        tag: "Commercial",
+        image: meetingRoom,
+        alt: "A clean meeting room",
+        title: "Offices & clinics",
+        text: "Professional offices and medical clinics.",
+      },
+    ],
+    community: {
+      intro:
+        "South Vancouver is full of families, gardens and local shops, and it's a pleasure to look after homes here.",
+      spots: [
+        {
+          name: "Queen Elizabeth Park",
+          text: "Gardens, city views and the Bloedel Conservatory at the city's highest point.",
+        },
+        {
+          name: "The Punjabi Market",
+          text: "Shops and restaurants along Main Street near 49th Avenue.",
+        },
+        { name: "Fraser River Park", text: "Trails and a boardwalk along the river in Marpole." },
+      ],
+    },
     hero: { image: kitchenSink, alt: "A spotless South Vancouver kitchen with garden views" },
     knowHow: {
       title: "Helping Busy Households",

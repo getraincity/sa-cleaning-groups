@@ -96,7 +96,7 @@ export const homeCleaningPlans: PricingPlan[] = [
       "Wipe exterior of appliances",
       "Wipe kitchen cabinets on the outside",
       "Wipe oven front and stove top",
-      "Clean inside over and fridge",
+      "Clean inside oven and fridge",
       "Clean inside microwave",
       "Clean the range hood",
       "## Bedrooms",

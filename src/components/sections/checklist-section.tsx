@@ -1,5 +1,6 @@
 import Image, { type StaticImageData } from "next/image";
 import checkIcon from "@/assets/images/icons/check.svg";
+import { TintedIcon } from "@/components/ui/tinted-icon";
 import { Reveal } from "@/components/ui/reveal";
 
 // Webflow staggered each checklist row slightly; these are its exact delays.
@@ -15,6 +16,8 @@ type ChecklistSectionProps = {
    * changes how the flex row sizes it on desktop. Kept to match the original.
    */
   wrapImage?: boolean;
+  /** Show a photo in an accent-coloured frame instead of the illustration file. */
+  framed?: boolean;
 };
 
 export function ChecklistSection({
@@ -23,8 +26,25 @@ export function ChecklistSection({
   image,
   imageAlt,
   wrapImage = false,
+  framed = false,
 }: ChecklistSectionProps) {
-  const illustration = (
+  const illustration = framed ? (
+    <div className="relative h-[450px] w-[360px] min-w-[360px] max-lg:mx-auto max-sm:h-[340px] max-sm:w-full max-sm:min-w-0">
+      <div
+        className="absolute -bottom-3 -left-3 h-full w-full rounded-[14px] bg-brand"
+        aria-hidden
+      />
+      <div className="relative h-full w-full overflow-hidden rounded-[14px] shadow-[0_20px_40px_-20px_rgba(0,0,0,0.4)]">
+        <Image
+          src={image}
+          alt={imageAlt}
+          fill
+          sizes="(max-width: 479px) 100vw, 360px"
+          className="object-cover"
+        />
+      </div>
+    </div>
+  ) : (
     <Image
       src={image}
       alt={imageAlt}
@@ -52,10 +72,10 @@ export function ChecklistSection({
                   className="mb-5 flex items-center justify-start gap-3"
                 >
                   <div className="flex size-[18px] min-h-[18px] min-w-[18px] items-center justify-center rounded-[4px] bg-brand-tint">
-                    <Image
+                    <TintedIcon
                       src={checkIcon}
-                      alt="checked icon"
-                      className="size-3 min-h-3 min-w-3 object-contain"
+                      label="checked icon"
+                      className="size-3 min-h-3 min-w-3"
                     />
                   </div>
                   <p className="mb-0 font-text text-[16px] text-ink-soft">{item}</p>

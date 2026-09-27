@@ -6,6 +6,7 @@ import { AboutSplit } from "@/components/sections/about-split";
 import { BookingCta } from "@/components/sections/booking-cta";
 import { CompanyHistory } from "@/components/sections/company-history";
 import { PageHero } from "@/components/sections/page-hero";
+import { TrustedPartners } from "@/components/sections/trusted-partners";
 import { SafetySection } from "@/components/sections/safety-section";
 import { WhyChooseUs } from "@/components/sections/why-choose-us";
 import { WorkGallery } from "@/components/sections/work-gallery";
@@ -98,6 +99,7 @@ export default function AboutPage() {
       </section>
 
       <SafetySection />
+      <TrustedPartners />
       <WorkGallery />
 
       <BookingCta />

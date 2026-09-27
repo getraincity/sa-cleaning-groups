@@ -34,6 +34,7 @@ src/
 │  ├─ car-detailing/       /car-detailing
 │  ├─ custodian-services/  /custodian-services
 │  ├─ locations/           /locations and /locations/[slug] (one page per area)
+│  ├─ products-we-trust/   /products-we-trust (under About in the nav)
 │  ├─ blog/                /blog and /blog/[slug]
 │  ├─ book-home-cleaning/  /book-home-cleaning  (Launch27 booking embed)
 │  ├─ contact-us/          /contact-us          (+ actions.ts: contact form server action)
@@ -42,7 +43,7 @@ src/
 ├─ components/
 │  ├─ layout/              Navbar, AnnouncementBar (home only), Footer
 │  ├─ sections/            Page sections shared across pages (hero, pricing, gallery…)
-│  ├─ locations/           Schematic map of the service areas
+│  ├─ locations/           Real (Google Maps) area map, service-area photo strip
 │  ├─ blog/                Post cards, filterable grid, article renderer
 │  ├─ seo/                 JSON-LD structured data
 │  └─ ui/                  Reveal (scroll animation), icons, Eyebrow, SectionHeader
@@ -64,6 +65,10 @@ legacy/                    Original Webflow export + asset library (reference on
   switches to the menu button there.
 - Brand colours and fonts are tokens in `globals.css` (`bg-brand`, `text-muted`, `font-heading`,
   `font-text`, …).
+- Each service page has its own accent colour: wrap the page in `theme-home` (teal),
+  `theme-car` (blue) or `theme-custodian` (navy). The wrapper re-points `brand` for that page
+  only, so every `bg-brand` / `text-brand` inside it follows. The navbar and footer keep the S&A
+  red. Red SVG icon files are drawn with `TintedIcon` so they follow the accent too.
 - Use `text-[16px]` rather than `text-base`: Tailwind's named sizes also change line-height,
   while the design inherits Webflow's 20px body line-height.
 

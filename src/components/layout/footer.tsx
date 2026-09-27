@@ -23,6 +23,7 @@ const columns: { title: string; links: FooterLink[] }[] = [
       { label: "Home Cleaning Pricing", href: "/home-cleaning#book" },
       { label: "Car Detailing Pricing", href: "/car-detailing#book" },
       { label: "About us", href: "/about-us" },
+      { label: "Products We Trust", href: "/products-we-trust" },
       { label: "Blog", href: "/blog" },
       { label: "Contact", href: "/contact-us" },
     ],

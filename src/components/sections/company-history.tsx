@@ -42,9 +42,15 @@ export function CompanyHistory() {
               A new name, the same care
             </p>
             <div className="flex flex-wrap items-center gap-3">
-              <span className="rounded-full border border-black/15 px-3.5 py-1.5 font-text text-[14px] text-muted line-through decoration-brand/60">
-                Akumal Executive Cleaning
-              </span>
+              {/* Our former name's logo, supplied by the client (feedback doc, 2026-09-27). */}
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/brand/akumal-executive-cleaning.jpg"
+                alt="Akumal Executive Cleaning Services, our former name"
+                width={1800}
+                height={410}
+                className="h-11 w-auto rounded-lg"
+              />
               <ArrowRightIcon className="size-5 text-brand" />
               <span className="rounded-full bg-brand px-3.5 py-1.5 font-text text-[14px] font-semibold text-white">
                 S&amp;A Cleaning Group
