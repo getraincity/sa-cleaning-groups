@@ -3,7 +3,7 @@ import carBeforeAfterInterior from "@/assets/images/car-before-after-interior-01
 import carBeforeAfterWheels from "@/assets/images/car-before-after-wheels.webp";
 import carExteriorBranded from "@/assets/images/car-exterior-branded.webp";
 import cleaningWindowView from "@/assets/images/cleaning-window-view.jpg";
-import kitchenCounter from "@/assets/images/kitchen-counter-02.jpg";
+import kitchenIsland from "@/assets/images/kitchen-island.jpg";
 import kitchenStove from "@/assets/images/kitchen-stove.jpg";
 import { SectionHeader, sectionSpacing } from "@/components/ui/section-header";
 import { CameraIcon, FacebookIcon, InstagramIcon } from "@/components/ui/icons";
@@ -40,7 +40,7 @@ const posts: Post[] = [
     tag: "Behind the scenes",
     large: true,
   },
-  { image: kitchenCounter, caption: "Kitchen deep clean", tag: "Home" },
+  { image: kitchenIsland, caption: "Kitchen deep clean", tag: "Home" },
   { image: carBeforeAfterWheels, caption: "Wheel and rim detailing", tag: "Auto" },
 ];
 
@@ -89,7 +89,7 @@ function PostTile({ post, href }: { post: Post; href?: string }) {
 
 export function SocialSection() {
   return (
-    <section className={cn("px-5", sectionSpacing.bottom)}>
+    <section className={cn("px-5", sectionSpacing.y)}>
       <div className="mx-auto max-w-[1440px]">
         <div className="flex items-end justify-between gap-10 max-lg:flex-col max-lg:items-start">
           <SectionHeader

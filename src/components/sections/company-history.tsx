@@ -24,7 +24,7 @@ const milestones = [
 /** "Our story": nine years in business, from Akumal Executive Cleaning to S&A. */
 export function CompanyHistory() {
   return (
-    <section className="px-5 pt-[120px] max-sm:pt-[64px]">
+    <section id="our-story" className="scroll-mt-6 px-5 pt-[120px] max-md:pt-[72px]">
       <div className="mx-auto grid max-w-[1440px] grid-cols-[5fr_7fr] items-start gap-16 max-lg:grid-cols-1 max-lg:gap-10">
         <Reveal className="relative overflow-hidden rounded-3xl bg-[#f7f5f4] p-10 max-sm:p-7 lg:sticky lg:top-10">
           <p className="relative mb-0 font-heading text-[136px] leading-[120px] font-bold tracking-[-4px] text-brand max-sm:text-[104px] max-sm:leading-[96px]">

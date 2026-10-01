@@ -1,9 +1,6 @@
-import { Allura } from "next/font/google";
 import { QuoteIcon } from "@/components/ui/icons";
 import { Reveal } from "@/components/ui/reveal";
-
-// Handwritten signature, echoing the script lettering in the logo.
-const signature = Allura({ subsets: ["latin"], weight: "400" });
+import { signature } from "@/lib/fonts";
 
 /** Pull quote from the co-founders on what the company stands for. */
 export function FoundersQuote() {

@@ -5,6 +5,17 @@ import { SectionHeader, sectionSpacing } from "@/components/ui/section-header";
 import { partners } from "@/content/partners";
 import { cn } from "@/lib/utils";
 
+/** "Bright Nest Cleaning" → "BN"; short acronyms ("CFIB") stay whole; "Rotary" → "R". */
+function initials(name: string) {
+  const words = name.split(" ").filter((word) => /^[A-Za-z0-9]/.test(word));
+  if (words.length > 1)
+    return words
+      .slice(0, 2)
+      .map((word) => word[0])
+      .join("");
+  return name.length <= 4 ? name : name[0];
+}
+
 /** Trusted Trades & Local Partners: logo cards, plus an invitation to partner with us. */
 export function TrustedPartners() {
   return (
@@ -16,32 +27,35 @@ export function TrustedPartners() {
           title="Trusted Trades & Local Partners"
           description="We work alongside trusted local businesses, so our clients can count on good people for every job around their home or workplace."
         />
-        <div
-          className={cn(
-            "mx-auto mt-12 grid gap-5 max-md:grid-cols-1",
-            partners.length + 1 >= 3
-              ? "grid-cols-3 max-lg:grid-cols-2"
-              : "max-w-[860px] grid-cols-2",
-          )}
-        >
+        <div className="mt-12 grid grid-cols-4 gap-5 max-lg:grid-cols-2 max-sm:grid-cols-1">
           {partners.map((partner, index) => {
             const card = (
               <>
                 <div
                   className={cn(
-                    "flex h-[150px] items-center justify-center rounded-2xl px-8",
-                    partner.logo.dark ? "bg-[#38393c]" : "bg-[#f7f5f4]",
+                    "flex h-[120px] items-center justify-center rounded-2xl px-6 max-sm:h-[96px]",
+                    partner.logo?.dark ? "bg-[#38393c]" : "bg-[#f7f5f4]",
                   )}
                 >
-                  {/* Partner marks are plain files: SVG or a small raster. */}
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={partner.logo.src}
-                    alt={`${partner.name} logo`}
-                    width={partner.logo.width}
-                    height={partner.logo.height}
-                    className="max-h-[80px] w-auto max-w-full object-contain"
-                  />
+                  {partner.logo ? (
+                    // Partner marks are plain files: SVG or a small raster.
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img
+                      src={partner.logo.src}
+                      alt={`${partner.name} logo`}
+                      width={partner.logo.width}
+                      height={partner.logo.height}
+                      className="max-h-[64px] w-auto max-w-full object-contain"
+                    />
+                  ) : (
+                    // Until the partner's logo arrives: its initials, set like a seal.
+                    <span
+                      aria-hidden
+                      className="flex size-16 items-center justify-center rounded-full bg-white font-heading text-[20px] font-bold tracking-[0.04em] text-ink-soft ring-1 ring-black/[0.08]"
+                    >
+                      {initials(partner.name)}
+                    </span>
+                  )}
                 </div>
                 <p className="mt-5 mb-1 font-text text-[12px] font-semibold tracking-[0.15em] text-brand uppercase">
                   {partner.trade}
@@ -49,9 +63,11 @@ export function TrustedPartners() {
                 <h3 className="mt-0 mb-2 font-heading text-[19px] leading-[26px] text-ink-soft">
                   {partner.name}
                 </h3>
-                <p className="mb-0 font-text text-[14px] leading-[22px] text-muted">
-                  {partner.blurb}
-                </p>
+                {partner.blurb && (
+                  <p className="mb-0 font-text text-[14px] leading-[22px] text-muted">
+                    {partner.blurb}
+                  </p>
+                )}
                 {partner.href && (
                   <span className="mt-auto inline-flex items-center gap-1.5 pt-5 font-text text-[14px] font-semibold text-brand">
                     Visit site
@@ -63,7 +79,7 @@ export function TrustedPartners() {
             const cardClass =
               "group flex h-full flex-col rounded-[20px] bg-white p-5 no-underline shadow-[0_1px_2px_rgba(0,0,0,0.05)] transition-shadow duration-300 hover:shadow-[0_20px_40px_-20px_rgba(0,0,0,0.25)]";
             return (
-              <Reveal key={partner.name} delay={index * 100}>
+              <Reveal key={partner.name} delay={(index % 4) * 100}>
                 {partner.href ? (
                   <a
                     href={partner.href}
@@ -80,7 +96,7 @@ export function TrustedPartners() {
             );
           })}
 
-          <Reveal delay={partners.length * 100}>
+          <Reveal delay={(partners.length % 4) * 100}>
             <Link
               href="/contact-us"
               className="group flex h-full flex-col justify-center rounded-[20px] border border-dashed border-black/15 p-8 no-underline transition-colors hover:border-brand"

@@ -131,6 +131,15 @@
 }
 
 /*
+ * One calm, consistent grade for photos that sit side by side, so phone shots
+ * from different jobs read as a set: slightly softer colour and contrast,
+ * a touch brighter.
+ */
+@utility photo-calm {
+  filter: saturate(0.86) contrast(0.95) brightness(1.04);
+}
+
+/*
  * Service colour schemes. Each service page wraps its content in one of these,
  * which re-points the brand accent (buttons, icons, pricing, highlights) for
  * that page only. The navbar and footer sit outside the wrapper and keep the
