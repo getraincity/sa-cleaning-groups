@@ -3,12 +3,14 @@ import { BookingCta } from "@/components/sections/booking-cta";
 import { CompanyHistory } from "@/components/sections/company-history";
 import { FounderIntro } from "@/components/sections/founder-intro";
 import { PageHero } from "@/components/sections/page-hero";
+import { ReviewsProof } from "@/components/sections/reviews-proof";
 import { ProductsEquipment } from "@/components/sections/products-equipment";
 import { SafetySection } from "@/components/sections/safety-section";
 import { TrustedPartners } from "@/components/sections/trusted-partners";
 import { WhyChooseUs } from "@/components/sections/why-choose-us";
 import { WorkGallery } from "@/components/sections/work-gallery";
 import { pageMetadata } from "@/lib/metadata";
+import { embeds } from "@/lib/site";
 
 export const metadata = pageMetadata({
   title: "About Us",
@@ -40,6 +42,7 @@ export default function AboutPage() {
       <SafetySection />
       <TrustedPartners />
       <WorkGallery />
+      <ReviewsProof widgetId={embeds.reviewsHome} withProof={false} />
 
       <BookingCta />
     </>

@@ -533,3 +533,116 @@ export function StarIcon(props: IconProps) {
     </svg>
   );
 }
+
+export function LuggageIcon(props: IconProps) {
+  return (
+    <LineIcon {...props}>
+      <path d="M6 20a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2" />
+      <path d="M8 18V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v14" />
+      <path d="M10 20h4" />
+      <circle cx="16" cy="20" r="2" />
+      <circle cx="8" cy="20" r="2" />
+    </LineIcon>
+  );
+}
+
+export function ArchiveIcon(props: IconProps) {
+  return (
+    <LineIcon {...props}>
+      <rect width="20" height="5" x="2" y="3" rx="1" />
+      <path d="M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8" />
+      <path d="M10 12h4" />
+    </LineIcon>
+  );
+}
+
+export function PaintRollerIcon(props: IconProps) {
+  return (
+    <LineIcon {...props}>
+      <rect width="16" height="6" x="2" y="2" rx="2" />
+      <path d="M10 16v-2a2 2 0 0 1 2-2h8a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2" />
+      <rect width="4" height="6" x="8" y="16" rx="1" />
+    </LineIcon>
+  );
+}
+
+export function RugIcon(props: IconProps) {
+  return (
+    <LineIcon {...props}>
+      <rect width="14" height="16" x="5" y="4" rx="1" />
+      <rect width="8" height="10" x="8" y="7" rx="0.5" />
+      <path d="M7 2v2M10 2v2M14 2v2M17 2v2M7 20v2M10 20v2M14 20v2M17 20v2" />
+    </LineIcon>
+  );
+}
+
+export function BalconyIcon(props: IconProps) {
+  return (
+    <LineIcon {...props}>
+      <path d="M8 13V7a4 4 0 0 1 8 0v6" />
+      <path d="M3 13h18M3 21h18M5 13v8M9.5 13v8M14.5 13v8M19 13v8" />
+    </LineIcon>
+  );
+}
+
+export function OvenIcon(props: IconProps) {
+  return (
+    <LineIcon {...props}>
+      <rect width="18" height="18" x="3" y="3" rx="2" />
+      <path d="M3 8h18" />
+      <rect width="10" height="6" x="7" y="11.5" rx="1" />
+      <path d="M7 5.5h.01M10 5.5h.01M17 5.5h-3" />
+    </LineIcon>
+  );
+}
+
+export function FridgeIcon(props: IconProps) {
+  return (
+    <LineIcon {...props}>
+      <path d="M5 6a4 4 0 0 1 4-4h6a4 4 0 0 1 4 4v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2Z" />
+      <path d="M5 10h14" />
+      <path d="M15 5v2M15 13v4" />
+    </LineIcon>
+  );
+}
+
+export function BrickWallIcon(props: IconProps) {
+  return (
+    <LineIcon {...props}>
+      <rect width="18" height="18" x="3" y="3" rx="2" />
+      <path d="M3 9h18M3 15h18M8 3v6M16 3v6M12 9v6M8 15v6M16 15v6" />
+    </LineIcon>
+  );
+}
+
+export function TilesIcon(props: IconProps) {
+  return (
+    <LineIcon {...props}>
+      <rect width="18" height="18" x="3" y="3" rx="2" />
+      <path d="M3 9h18M3 15h18M9 3v18M15 3v18" />
+    </LineIcon>
+  );
+}
+
+export function BusIcon(props: IconProps) {
+  return (
+    <LineIcon {...props}>
+      <path d="M8 6v6M15 6v6M2 12h19.6" />
+      <path d="M18 18h3s.5-1.7.8-2.8c.1-.4.2-.8.2-1.2 0-.4-.1-.8-.2-1.2l-1.4-5C20.1 6.8 19.1 6 18 6H4a2 2 0 0 0-2 2v10h3" />
+      <circle cx="7" cy="18" r="2" />
+      <path d="M9 18h5" />
+      <circle cx="16" cy="18" r="2" />
+    </LineIcon>
+  );
+}
+
+export function TrailerIcon(props: IconProps) {
+  return (
+    <LineIcon {...props}>
+      <path d="M6 17H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h13a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1h-6" />
+      <path d="M17 15h5" />
+      <path d="M6 9h7" />
+      <circle cx="8" cy="17" r="2" />
+    </LineIcon>
+  );
+}
