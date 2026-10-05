@@ -23,6 +23,11 @@ npm run dev                  # http://localhost:3000
 | `npm run lint`   | ESLint                                  |
 | `npm run format` | Prettier (also sorts Tailwind classes)  |
 
+QA scripts (Playwright, run against `npm run start` on port 3000) live in `scripts/qa/`:
+`sweep.mjs` checks every page in the sitemap at seven widths for overflow, clipped text, small
+tap targets and console errors; `sheet.mjs` and `element.mjs` take review screenshots;
+`photos.mjs` makes a contact sheet of every photo. See `docs/HANDOFF.md` for the full workflow.
+
 ## Project structure
 
 ```

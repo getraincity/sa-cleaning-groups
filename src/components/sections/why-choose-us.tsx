@@ -1,6 +1,6 @@
 import Image from "next/image";
 import carExteriorBranded from "@/assets/images/car-exterior-branded.webp";
-import cleaningWindowView from "@/assets/images/cleaning-window-view.jpg";
+import kitchenCounter from "@/assets/images/kitchen-counter-02.jpg";
 import cleaningWindows from "@/assets/images/cleaning-windows.jpg";
 import { SectionHeader, sectionSpacing } from "@/components/ui/section-header";
 import { HeartIcon } from "@/components/ui/icons";
@@ -15,8 +15,8 @@ const reasons = [
     text: "Our cleaners are fully trained, insured and background-checked, so you always know who's in your home. Friendly, reliable and proud of their work, they go the extra mile on every visit.",
   },
   {
-    image: cleaningWindowView,
-    alt: "An S&A cleaner polishing a floor-to-ceiling window",
+    image: kitchenCounter,
+    alt: "A spotless marble kitchen counter after an S&A clean",
     title: "Our Promise",
     text: "Quality, reliability and professionalism guide every job we take on. We aim to exceed expectations, not just meet them, and our 100% satisfaction guarantee means we're not done until you're happy.",
   },
@@ -31,7 +31,7 @@ const reasons = [
 /** Three photo cards on a dark band: the team, the promise, the vehicles. */
 export function WhyChooseUs() {
   return (
-    <section className={cn("mt-[120px] bg-[#1c1c1e] px-5 max-sm:mt-[64px]", sectionSpacing.y)}>
+    <section className={cn("mt-[96px] bg-[#1c1c1e] px-5 max-md:mt-[64px]", sectionSpacing.y)}>
       <div className="mx-auto max-w-[1440px]">
         <SectionHeader
           align="center"

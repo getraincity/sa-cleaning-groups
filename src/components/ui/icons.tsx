@@ -524,3 +524,12 @@ export function FleetIcon(props: IconProps) {
     </LineIcon>
   );
 }
+
+/** Solid five-point star, for ratings. */
+export function StarIcon(props: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" aria-hidden {...props}>
+      <path d="M11.5 2.3a.6.6 0 0 1 1 0l2.7 5.6 6.1.9a.6.6 0 0 1 .3 1l-4.4 4.3 1 6.1a.6.6 0 0 1-.8.6L12 18l-5.4 2.8a.6.6 0 0 1-.8-.6l1-6.1-4.4-4.3a.6.6 0 0 1 .3-1l6.1-.9z" />
+    </svg>
+  );
+}

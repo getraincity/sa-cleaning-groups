@@ -4,6 +4,11 @@
 // on the sample page the client sent (detailsbyladyt.ca/brands-&-trades).
 // Replace, add or remove entries to match the products S&A actually uses.
 
+import type { StaticImageData } from "next/image";
+import cleaningLivingRoom from "@/assets/images/cleaning-living-room.jpg";
+import lobbyCleaning from "@/assets/images/commercial/lobby-wet-floor.jpg";
+import foamWash from "@/assets/images/detailing/foam-wash.jpg";
+
 export type ProductBrand = {
   name: string;
   /** What we use it for. */
@@ -17,6 +22,8 @@ export type ProductCategory = {
   description: string;
   /** Which service the category belongs to, for its label and colour. */
   service: "home" | "car" | "all";
+  image: StaticImageData;
+  alt: string;
   brands: ProductBrand[];
 };
 
@@ -27,6 +34,8 @@ export const productCategories: ProductCategory[] = [
     description:
       "Natural, eco-friendly products that are tough on dirt and safe for families and pets.",
     service: "home",
+    image: cleaningLivingRoom,
+    alt: "An S&A cleaner vacuuming a bright living room",
     brands: [
       {
         name: "Nature Clean",
@@ -55,6 +64,8 @@ export const productCategories: ProductCategory[] = [
     description:
       "Detailing products that lift grime safely and leave paint and interiors looking new.",
     service: "car",
+    image: foamWash,
+    alt: "A detailer hand-washing a black car covered in foam",
     brands: [
       {
         name: "Chemical Guys",
@@ -73,6 +84,8 @@ export const productCategories: ProductCategory[] = [
     title: "Tools & Equipment",
     description: "The equipment behind a deeper, healthier clean in every home, car and workplace.",
     service: "all",
+    image: lobbyCleaning,
+    alt: "A custodian in a mask cleaning the glass doors of an office building",
     brands: [
       {
         name: "The Rag Company",

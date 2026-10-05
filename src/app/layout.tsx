@@ -38,7 +38,9 @@ export default function RootLayout({
       <body>
         <AnnouncementBar />
         <Navbar />
-        <main>{children}</main>
+        {/* Slide-in animations start off to one side; `overflow-x-clip` stops them
+            widening the page and, unlike `hidden`, keeps position: sticky working. */}
+        <main className="overflow-x-clip">{children}</main>
         <Footer />
       </body>
       {trackAnalytics && <GoogleAnalytics gaId={siteConfig.googleAnalyticsId} />}
