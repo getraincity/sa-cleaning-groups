@@ -1,9 +1,12 @@
 import Link from "next/link";
 import {
+  ArchiveIcon,
   ArrowRightIcon,
   BoxIcon,
   ClockIcon,
   HardHatIcon,
+  LuggageIcon,
+  PaintRollerIcon,
   PartyIcon,
   RepeatIcon,
   SparklesIcon,
@@ -39,6 +42,23 @@ const services = [
     title: "Event Cleaning",
     text: "Hosting? We'll get your home guest-ready before the party and put it back together afterwards, so you can simply enjoy the day.",
   },
+  {
+    Icon: LuggageIcon,
+    title: "Airbnb & Vacation Rentals",
+    text: "Reliable turnovers between guests for Airbnb and vacation rental hosts, so every stay starts in a spotless, welcoming home.",
+  },
+  {
+    Icon: ArchiveIcon,
+    title: "Organizing & Decluttering",
+    text: "Closets, cupboards and cluttered rooms sorted and organized, so everything has a place and your home feels lighter.",
+  },
+  {
+    Icon: PaintRollerIcon,
+    title: "Specialized Cleaning",
+    // Restoration wording follows the client's other company, RainCity
+    // (raincitypms.com): surfaces brought back to the colour they started at.
+    text: "Wall cleaning, and restoration cleaning that brings stained, weathered surfaces back to the colour they started at. Tell us what you need and we'll plan it with you.",
+  },
 ];
 
 /** The kinds of home cleaning on offer, with hourly cleaning as the featured card. */
@@ -70,10 +90,11 @@ export function HomeServiceTypes() {
             </Reveal>
           ))}
 
-          {/* Hourly cleaning carries a price, so it gets the featured card. */}
+          {/* Hourly cleaning carries a price, so it gets the featured card. It spans
+              the row at two columns, where it would otherwise sit alone. */}
           <Reveal
             delay={200}
-            className="relative flex flex-col overflow-hidden rounded-[20px] bg-[linear-gradient(135deg,var(--color-brand)_0%,var(--color-brand-alt)_45%,var(--color-brand-deep)_100%)] p-7 text-white"
+            className="relative flex flex-col overflow-hidden rounded-[20px] bg-[linear-gradient(135deg,var(--color-brand)_0%,var(--color-brand-alt)_45%,var(--color-brand-deep)_100%)] p-7 text-white max-lg:col-span-2 max-sm:col-span-1"
           >
             <span className="relative flex size-12 items-center justify-center rounded-xl bg-white text-[24px] text-brand">
               <ClockIcon />

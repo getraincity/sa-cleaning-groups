@@ -16,6 +16,15 @@ function initials(name: string) {
   return name.length <= 4 ? name : name[0];
 }
 
+// Logos are sized to the same area rather than the same height, so a wide
+// wordmark (CFIB) and a round seal (Rotary) carry the same visual weight.
+const LOGO_AREA = 9000;
+const LOGO_MAX_HEIGHT = 76;
+
+function logoHeight({ width, height }: { width: number; height: number }) {
+  return Math.min(LOGO_MAX_HEIGHT, Math.round(Math.sqrt((LOGO_AREA * height) / width)));
+}
+
 /** Trusted Trades & Local Partners: logo cards, plus an invitation to partner with us. */
 export function TrustedPartners() {
   return (
@@ -38,14 +47,16 @@ export function TrustedPartners() {
                   )}
                 >
                   {partner.logo ? (
-                    // Partner marks are plain files: SVG or a small raster.
+                    // Partner marks are plain files: SVG or a small raster. Multiply
+                    // drops the white ground some logos carry (Hello Gubby).
                     // eslint-disable-next-line @next/next/no-img-element
                     <img
                       src={partner.logo.src}
                       alt={`${partner.name} logo`}
                       width={partner.logo.width}
                       height={partner.logo.height}
-                      className="max-h-[64px] w-auto max-w-full object-contain"
+                      style={{ height: logoHeight(partner.logo) }}
+                      className="w-auto max-w-full object-contain mix-blend-multiply"
                     />
                   ) : (
                     // Until the partner's logo arrives: its initials, set like a seal.

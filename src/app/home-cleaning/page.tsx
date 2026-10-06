@@ -16,15 +16,14 @@ import { PhotoFeatures, type PhotoFeatureRow } from "@/components/sections/photo
 import { ProcessSteps } from "@/components/sections/process-steps";
 import { AreasStrip } from "@/components/locations/areas-strip";
 import { HomeIcon, SparklesIcon } from "@/components/ui/icons";
-import { ChecklistSection } from "@/components/sections/checklist-section";
 import { Gallery, type GalleryImage } from "@/components/sections/gallery";
 import { HomeServiceTypes } from "@/components/sections/home-service-types";
 import { PageHero } from "@/components/sections/page-hero";
 import { PricingSection } from "@/components/sections/pricing-section";
-import { ReviewsSection } from "@/components/sections/reviews-section";
+import { AddOnsSection } from "@/components/sections/add-ons-section";
 import { homeCleaningPlans } from "@/content/pricing";
 import { pageMetadata } from "@/lib/metadata";
-import { bookingLinks, embeds } from "@/lib/site";
+import { bookingLinks } from "@/lib/site";
 
 export const metadata = pageMetadata({ title: "Service", path: "/home-cleaning" });
 
@@ -152,21 +151,6 @@ export default function HomeCleaningPage() {
         }
       />
 
-      <ChecklistSection
-        title="Get your time back with every clean."
-        image={livingRoom}
-        framed
-        imageAlt="Get your time back with every clean"
-        wrapImage
-        items={[
-          "Our team is professional and experienced.",
-          "Quick and efficient cleaning service.",
-          "100% satisfaction guaranteed.",
-          "Eco-friendly, pet-friendly products.",
-          "Highly disciplined in the workplace.",
-        ]}
-      />
-
       <HomeServiceTypes />
 
       <PhotoFeatures
@@ -204,7 +188,7 @@ export default function HomeCleaningPage() {
         booking={{ href: bookingLinks.homeCleaning }}
       />
 
-      <ReviewsSection widgetId={embeds.reviewsHome} />
+      <AddOnsSection />
 
       <AreasStrip service="home cleaning" />
 

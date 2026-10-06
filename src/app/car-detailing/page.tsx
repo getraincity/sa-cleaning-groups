@@ -79,7 +79,7 @@ const detailSteps = [
   },
   {
     title: "Tell us about your vehicle",
-    text: "Car, SUV, truck, RV or boat: let us know its size and what it needs most.",
+    text: "Car, SUV, truck, bus, trailer, RV or boat: let us know its size and what it needs most.",
   },
   {
     title: "We get to work",
@@ -100,7 +100,7 @@ const carFaqs: Faq[] = [
   {
     question: "What size vehicles do you detail?",
     answer:
-      "Passenger cars, medium SUVs and pickup trucks, and large SUVs and minivans, as well as RVs, work vans, fleets and boats. Pricing depends on the size of the vehicle.",
+      "Passenger cars, medium SUVs and pickup trucks, and large SUVs and minivans, as well as buses, trailers, RVs, work vans, fleets and boats. Pricing depends on the size of the vehicle.",
   },
   {
     question: "Can you remove pet hair?",
