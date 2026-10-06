@@ -55,7 +55,9 @@ const services = [
   {
     Icon: PaintRollerIcon,
     title: "Specialized Cleaning",
-    text: "Wall cleaning, restoration cleaning and other jobs that need a specialist touch. Tell us what you need and we'll plan it with you.",
+    // Restoration wording follows the client's other company, RainCity
+    // (raincitypms.com): surfaces brought back to the colour they started at.
+    text: "Wall cleaning, and restoration cleaning that brings stained, weathered surfaces back to the colour they started at. Tell us what you need and we'll plan it with you.",
   },
 ];
 

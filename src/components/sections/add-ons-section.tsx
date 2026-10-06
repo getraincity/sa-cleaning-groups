@@ -24,7 +24,7 @@ const addOns: { icon: ReactNode; title: string; text: string }[] = [
   {
     icon: <BalconyIcon />,
     title: "Balcony cleaning",
-    text: "Floors, railings and glass washed by hand, so your outdoor space is ready to enjoy.",
+    text: "Floors, railings and glass washed by hand, with the water kept on your balcony so nothing drips onto the one below.",
   },
   {
     icon: <OvenIcon />,

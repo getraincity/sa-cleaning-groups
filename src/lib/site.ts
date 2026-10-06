@@ -30,7 +30,7 @@ export const siteConfig = {
  * profiles set here.
  */
 export const socialLinks: { instagram: string; facebook: string } = {
-  instagram: "",
+  instagram: "https://www.instagram.com/sacleaninggroup",
   facebook: "",
 };
 

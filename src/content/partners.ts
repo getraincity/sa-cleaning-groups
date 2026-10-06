@@ -4,10 +4,12 @@
 // what S&A does with or for them. Add a partner by adding an entry. Logos live
 // in public/partners/ (SVG, or a PNG/JPG at 1000px wide or more).
 //
-// TO CONFIRM WITH THE CLIENT (feedback doc, 2026-10-01): logos and website
-// links for Hello Gubby, Bright Nest Cleaning, Crystal Clear Cleans and CF1,
-// and which Rotary club. Until a logo arrives, the card shows the partner's
-// initials, and a partner without a confirmed link isn't clickable.
+// Logos, links and blurbs for Hello Gubby, Bright Nest Cleaning, Crystal Clear
+// Cleans, CF One and CFIB are the ones the RainCity site uses, at the client's
+// instruction (2026-10-06): copied from getraincity/raincity-website
+// public/partners/ with its blurbs. Rotary uses the general Rotary
+// International logo, as the client asked; public/partners/rotary.png is the
+// gold wheel lifted off the screenshot the client sent.
 
 export type Partner = {
   name: string;
@@ -28,15 +30,27 @@ export type Partner = {
 export const partners: Partner[] = [
   {
     name: "Hello Gubby",
-    trade: "Local partner",
+    trade: "Business support",
+    blurb:
+      "A Vancouver AI front desk for service businesses, answering calls and website chats and booking appointments.",
+    href: "https://www.hellogubby.ai/",
+    logo: { src: "/partners/hello-gubby.png", width: 436, height: 131 },
   },
   {
     name: "Bright Nest Cleaning",
     trade: "Cleaning",
+    blurb:
+      "Residential and commercial cleaning, from deep cleans to move-outs, across Greater Vancouver and the Tri-Cities.",
+    href: "https://brightnestcleaning.ca/",
+    logo: { src: "/partners/bright-nest-cleaning.webp", width: 308, height: 90 },
   },
   {
     name: "Crystal Clear Cleans",
     trade: "Cleaning",
+    blurb:
+      "Residential and commercial cleaning across Greater Vancouver, from Vancouver and Richmond out to Langley.",
+    href: "https://crystalclearcleans.ca/",
+    logo: { src: "/partners/crystal-clear-cleans-logo.png", width: 725, height: 927 },
   },
   {
     name: "RainCity Property Maintenance",
@@ -52,10 +66,15 @@ export const partners: Partner[] = [
     blurb:
       "A global network of neighbours, friends and leaders who volunteer in their communities.",
     href: "https://www.rotary.org",
+    logo: { src: "/partners/rotary.png", width: 380, height: 378 },
   },
   {
-    name: "CF1",
+    name: "CF One",
     trade: "Military community",
+    blurb:
+      "The Canadian Armed Forces community card, giving serving members, Veterans and their families access to programs and partner discounts.",
+    href: "https://cfmws.ca/about-us/cfone-registration",
+    logo: { src: "/partners/cfone.png", width: 964, height: 368 },
   },
   {
     name: "CFIB",
@@ -63,5 +82,6 @@ export const partners: Partner[] = [
     blurb:
       "The Canadian Federation of Independent Business, the voice of Canada's small businesses.",
     href: "https://www.cfib-fcei.ca",
+    logo: { src: "/partners/cfib.svg", width: 323, height: 110 },
   },
 ];

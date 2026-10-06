@@ -246,8 +246,7 @@ fuser -k 3000/tcp                               # stop the server afterwards
 - Partners section with RainCity.
 - Akumal logo in Our Story.
 
-**Round 3 (branch `claude/optimistic-pasteur-tz0so1`, commit `83053d3`)**
-Pushed; the PR was not yet opened or merged as of 2026-10-05.
+**Round 3 (PR #3, merged 2026-10-05)**
 
 _Home:_
 
@@ -268,21 +267,35 @@ _Products We Trust:_ photos and brand links.
 
 _Fix:_ slide-in overflow on phones.
 
-## 9. Waiting on the client (as of round 3)
+**Round 4 (PR #4, branch `claude/elegant-bell-ezj610`, open as of 2026-10-06)**
+
+- Home Cleaning: checklist section removed; Airbnb, organizing and specialized cleaning added;
+  Google Reviews replaced by an Add-Ons section.
+- About: Google Reviews moved here; partner logos and links (from the RainCity site, per the
+  client) and the general Rotary logo.
+- Car Detailing: vehicle types now include buses and trailers.
+- Instagram link added. "Restoration cleaning" is worded after the client's other company,
+  RainCity (raincitypms.com); its site's source is the `getraincity/raincity-website` repo.
+- Not done yet (photos): Home Cleaning gallery variety, everyday cars instead of luxury cars,
+  a photos-only section on Custodian, and new blog images. Stock photo hosts were blocked.
+
+## 9. Waiting on the client (as of round 4)
 
 - **Photos:**
   - Alex & Shaida, for the About founder intro (`src/components/sections/founder-intro.tsx`);
+    the client will send it later;
   - a cleaner in a bright condo, for the home hero;
-  - homier job photos.
-- **Partners:** logos and links for Hello Gubby, Bright Nest Cleaning, Crystal Clear Cleans and
-  CF1, plus what "CF1 military" means (CF One?) and which Rotary club. Data is in
-  `src/content/partners.ts`.
-- **Products We Trust:** the real brand list. `src/content/products.ts` is a placeholder modelled
-  on a sample page the client sent.
-- **Social:** Instagram and Facebook URLs, which go in `socialLinks` in `src/lib/site.ts`.
+  - buses, trailers and work vehicles; everyday cars; custodian jobs; home jobs that aren't
+    kitchens (round 4 photo items above).
+- **Add-ons:** whether to show prices.
+- **Products We Trust:** the real brand list (client will send later). `src/content/products.ts`
+  is a placeholder modelled on a sample page the client sent.
+- **Social:** the Facebook URL (`socialLinks` in `src/lib/site.ts`). Instagram is set.
 - **Reviews:** approval to show 4–6 real Google reviews in our own layout instead of the Elfsight
   widget, which the client finds messy.
+- **Locations:** which collabs go with each area.
 - **Copy review:**
   - the founder intro, Custodian page, blog posts (and their dates) and area pages;
+  - round 4's service, add-on and vehicle blurbs;
   - the doc lists a second set of areas; only the first set (Downtown, North, East, West and
     South Vancouver) was built.
