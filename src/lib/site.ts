@@ -48,3 +48,14 @@ export const embeds = {
   launch27Script: "https://akumalexecutivecleaning.launch27.com/jsbundle",
   launch27Widget: "https://akumalexecutivecleaning.launch27.com/?w_cleaning",
 } as const;
+
+/**
+ * The Hello Gubby chat widget (AI front desk for website chats), exactly as
+ * the client sent it on 2026-10-18. The key also verifies the site with
+ * Hello Gubby.
+ */
+export const chatWidget = {
+  src: "https://app.hellogubby.com/widget.js",
+  key: "wgt_8c070b23a0294a3e917acc84948c1f41",
+  color: "#18181b",
+} as const;
