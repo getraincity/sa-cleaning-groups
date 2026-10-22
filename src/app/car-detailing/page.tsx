@@ -1,8 +1,6 @@
 import beforeAfterInterior01 from "@/assets/images/car-before-after-interior-01.webp";
 import beforeAfterInterior02 from "@/assets/images/car-before-after-interior-02.webp";
-import beforeAfterSeats from "@/assets/images/car-before-after-seats.webp";
 import beforeAfterWheels from "@/assets/images/car-before-after-wheels.webp";
-import carExterior from "@/assets/images/car-exterior-branded.webp";
 import carInteriorDashboard from "@/assets/images/car-interior-dashboard.jpg";
 import carInteriorSeats from "@/assets/images/car-interior-seats.jpg";
 import detailingDashboard from "@/assets/images/detailing-dashboard.png";
@@ -27,6 +25,7 @@ import { ReviewsSection } from "@/components/sections/reviews-section";
 import { VehicleTypes } from "@/components/sections/vehicle-types";
 import { CarIcon, SparklesIcon } from "@/components/ui/icons";
 import { carDetailingPlans } from "@/content/pricing";
+import { stock } from "@/content/stock-photos";
 import { pageMetadata } from "@/lib/metadata";
 import { bookingLinks, embeds } from "@/lib/site";
 
@@ -35,11 +34,11 @@ export const metadata = pageMetadata({ title: "Car Detailing Services", path: "/
 const carBooking = { href: bookingLinks.carDetailing, external: true };
 
 const gallery: GalleryImage[] = [
-  { image: beforeAfterInterior01, alt: "before after car clean", span: 2 },
-  { image: beforeAfterInterior02, alt: "before after car clean", span: 2 },
-  { image: beforeAfterWheels, alt: "before after car clean", span: 2 },
-  { image: beforeAfterSeats, alt: "before after car clean", span: 2 },
-  { image: carExterior, alt: "Local eco-friendly green products", span: 4 },
+  { image: beforeAfterInterior01, alt: "Before and after an S&A interior detail", span: 2 },
+  { image: beforeAfterInterior02, alt: "Before and after an S&A interior detail", span: 2 },
+  { image: beforeAfterWheels, alt: "Before and after an S&A wheel clean", span: 2 },
+  { image: stock.carPolish, alt: stock.carPolish.alt, span: 2 },
+  { image: stock.carDriveWash, alt: stock.carDriveWash.alt, span: 4 },
 ];
 
 // Interior and exterior, one row each: what the two halves of a detail cover.
@@ -140,7 +139,7 @@ export default function CarDetailingPage() {
         title="Keep Your Car Clean Without The Hassle"
         image={carInteriorDashboard}
         framed
-        imageAlt="Keep your car clean before after"
+        imageAlt="A clean car dashboard and console after an S&A detail"
         items={[
           "Our team is professional and experienced.",
           "Quick and efficient cleaning service.",
@@ -166,9 +165,9 @@ export default function CarDetailingPage() {
         layout="car-detailing"
         booking={carBooking}
         photos={{
-          ecoFriendly: { image: carExterior, alt: "Local eco-friendly green products" },
+          ecoFriendly: { image: stock.carMittWash, alt: stock.carMittWash.alt },
           professionals: { image: detailingDashboard, alt: "Detailing a car dashboard" },
-          petFriendly: { image: carInteriorDashboard, alt: "Pet-friendly at car " },
+          petFriendly: { image: stock.carConsole, alt: stock.carConsole.alt },
         }}
       />
 

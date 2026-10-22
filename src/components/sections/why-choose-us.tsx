@@ -1,22 +1,21 @@
 import Image from "next/image";
 import carExteriorBranded from "@/assets/images/car-exterior-branded.webp";
-import kitchenCounter from "@/assets/images/kitchen-counter-02.jpg";
-import cleaningWindows from "@/assets/images/cleaning-windows.jpg";
 import { SectionHeader, sectionSpacing } from "@/components/ui/section-header";
 import { HeartIcon } from "@/components/ui/icons";
+import { stock } from "@/content/stock-photos";
 import { Reveal } from "@/components/ui/reveal";
 import { cn } from "@/lib/utils";
 
 const reasons = [
   {
-    image: cleaningWindows,
-    alt: "An S&A cleaner washing a large apartment window",
+    image: stock.aboutTeam,
+    alt: stock.aboutTeam.alt,
     title: "Our Team",
     text: "Our cleaners are fully trained, insured and background-checked, so you always know who's in your home. Friendly, reliable and proud of their work, they go the extra mile on every visit.",
   },
   {
-    image: kitchenCounter,
-    alt: "A spotless marble kitchen counter after an S&A clean",
+    image: stock.aboutPromise,
+    alt: stock.aboutPromise.alt,
     title: "Our Promise",
     text: "Quality, reliability and professionalism guide every job we take on. We aim to exceed expectations, not just meet them, and our 100% satisfaction guarantee means we're not done until you're happy.",
   },

@@ -1,14 +1,8 @@
-import livingRoomWide from "@/assets/images/cleaning-living-room.jpg";
-import cleaningWindowView from "@/assets/images/cleaning-window-view.jpg";
-import cleaningWindows from "@/assets/images/cleaning-windows.jpg";
 import kitchenAppliances from "@/assets/images/kitchen-appliances.jpg";
-import kitchenCounter01 from "@/assets/images/kitchen-counter-01.jpg";
-import kitchenCounter02 from "@/assets/images/kitchen-counter-02.jpg";
 import kitchenIsland from "@/assets/images/kitchen-island.jpg";
 import kitchenMicrowave from "@/assets/images/kitchen-microwave.jpg";
 import kitchenSink from "@/assets/images/kitchen-sink.jpg";
 import kitchenStove from "@/assets/images/kitchen-stove.jpg";
-import livingRoom from "@/assets/images/living-room.jpg";
 import { BookingCta } from "@/components/sections/booking-cta";
 import { CareSection } from "@/components/sections/care-section";
 import { FaqSection, type Faq } from "@/components/sections/faq-section";
@@ -22,21 +16,41 @@ import { PageHero } from "@/components/sections/page-hero";
 import { PricingSection } from "@/components/sections/pricing-section";
 import { AddOnsSection } from "@/components/sections/add-ons-section";
 import { homeCleaningPlans } from "@/content/pricing";
+import { stock } from "@/content/stock-photos";
 import { pageMetadata } from "@/lib/metadata";
 import { bookingLinks } from "@/lib/site";
 
 export const metadata = pageMetadata({ title: "Service", path: "/home-cleaning" });
 
+// Every photo here appears nowhere else on the site (client feedback: the
+// home-cleaning pictures were too similar to the rest of the site).
 const gallery: GalleryImage[] = [
-  { image: kitchenSink, alt: "Kitechen image", span: 2 },
-  { image: kitchenIsland, alt: "Pet friendly", span: 2 },
-  { image: kitchenStove, alt: "", span: 2 },
-  { image: kitchenAppliances, alt: "Local eco-friendly green products", span: 2 },
-  { image: livingRoomWide, alt: "", span: 4 },
-  { image: kitchenMicrowave, alt: "", span: 3, tabletSpan: 2 },
-  { image: kitchenCounter01, alt: "", span: 1, tabletSpan: 2 },
-  { image: kitchenCounter02, alt: "", span: 1, tabletSpan: 2 },
-  { image: livingRoom, alt: "", span: 1, tabletSpan: 2 },
+  {
+    image: kitchenSink,
+    alt: "A cleaned double sink and counter in an open-plan condo kitchen",
+    span: 2,
+  },
+  {
+    image: kitchenIsland,
+    alt: "A wiped-down kitchen island and white appliances in a condo",
+    span: 2,
+  },
+  { image: kitchenStove, alt: "A clean gas cooktop with polished grates", span: 2 },
+  {
+    image: kitchenAppliances,
+    alt: "A tidy galley kitchen with a clean stove, fridge and microwave",
+    span: 2,
+  },
+  { image: stock.homeDishwasher, alt: stock.homeDishwasher.alt, span: 4 },
+  {
+    image: kitchenMicrowave,
+    alt: "A clean stainless steel microwave beside the stove",
+    span: 3,
+    tabletSpan: 2,
+  },
+  { image: stock.homeMirror, alt: stock.homeMirror.alt, span: 1, tabletSpan: 2 },
+  { image: stock.homeBed, alt: stock.homeBed.alt, span: 1, tabletSpan: 2 },
+  { image: stock.homeCabinet, alt: stock.homeCabinet.alt, span: 1, tabletSpan: 2 },
 ];
 
 // Room by room: what a clean covers in the spaces people care about most.
@@ -51,8 +65,8 @@ const roomRows: PhotoFeatureRow[] = [
       "Appliance fronts, stove top and oven front cleaned",
       "Cabinet fronts wiped, inside and out on Diamond",
     ],
-    image: kitchenIsland,
-    alt: "A spotless kitchen island after a clean",
+    image: stock.homeKitchenSink,
+    alt: stock.homeKitchenSink.alt,
   },
   {
     eyebrow: { icon: <HomeIcon />, label: "Living spaces & bedrooms" },
@@ -64,8 +78,8 @@ const roomRows: PhotoFeatureRow[] = [
       "Beds made and rooms organized",
       "Mirrors and glass cleaned streak-free",
     ],
-    image: livingRoomWide,
-    alt: "A bright, freshly cleaned living room",
+    image: stock.homeLivingMop,
+    alt: stock.homeLivingMop.alt,
   },
   {
     eyebrow: { icon: <SparklesIcon />, label: "Glass & windows" },
@@ -77,8 +91,8 @@ const roomRows: PhotoFeatureRow[] = [
       "Windows cleaned inside on Diamond",
       "Bathrooms disinfected top to bottom on every plan",
     ],
-    image: cleaningWindowView,
-    alt: "An S&A cleaner cleaning a window with a view",
+    image: stock.homeWindow,
+    alt: stock.homeWindow.alt,
   },
 ];
 
@@ -133,7 +147,7 @@ export default function HomeCleaningPage() {
   return (
     <div className="theme-home">
       <PageHero
-        image={cleaningWindows}
+        image={stock.homeHero}
         className="overflow-hidden pt-[200px] max-md:pt-[200px]"
         tagline="We value your time as much as you do."
         title={
@@ -166,9 +180,9 @@ export default function HomeCleaningPage() {
         layout="home-cleaning"
         booking={{ href: bookingLinks.homeCleaning }}
         photos={{
-          ecoFriendly: { image: kitchenAppliances, alt: "Local eco-friendly green products" },
-          professionals: { image: cleaningWindowView, alt: "Hand Picked Professionals" },
-          petFriendly: { image: kitchenIsland, alt: "Pet friendly" },
+          ecoFriendly: { image: stock.homeEcoProducts, alt: stock.homeEcoProducts.alt },
+          professionals: { image: stock.homePro, alt: stock.homePro.alt },
+          petFriendly: { image: stock.homePets, alt: stock.homePets.alt },
         }}
       />
 

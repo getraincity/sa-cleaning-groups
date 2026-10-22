@@ -1,4 +1,3 @@
-import vancouverSkyline from "@/assets/images/areas/downtown-skyline.jpg";
 import { BookingCta } from "@/components/sections/booking-cta";
 import { CompanyHistory } from "@/components/sections/company-history";
 import { FounderIntro } from "@/components/sections/founder-intro";
@@ -9,6 +8,7 @@ import { SafetySection } from "@/components/sections/safety-section";
 import { TrustedPartners } from "@/components/sections/trusted-partners";
 import { WhyChooseUs } from "@/components/sections/why-choose-us";
 import { WorkGallery } from "@/components/sections/work-gallery";
+import { stock } from "@/content/stock-photos";
 import { pageMetadata } from "@/lib/metadata";
 import { embeds } from "@/lib/site";
 
@@ -23,7 +23,7 @@ export default function AboutPage() {
   return (
     <>
       <PageHero
-        image={vancouverSkyline}
+        image={stock.aboutHero}
         tagline="We value your time as much as you do."
         title="About Us"
         description={

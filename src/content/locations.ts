@@ -1,7 +1,6 @@
 import type { StaticImageData } from "next/image";
 import type { ComponentType, SVGProps } from "react";
 import downtownCoalHarbour from "@/assets/images/areas/downtown-coal-harbour.jpg";
-import downtownCondos from "@/assets/images/areas/downtown-condos.jpg";
 import downtownFalseCreek from "@/assets/images/areas/downtown-false-creek.jpg";
 import downtownSkyline from "@/assets/images/areas/downtown-skyline.jpg";
 import downtownTowers from "@/assets/images/areas/downtown-towers.jpg";
@@ -12,7 +11,6 @@ import eastSecondNarrows from "@/assets/images/areas/east-second-narrows.jpg";
 import eastVanSign from "@/assets/images/areas/east-van-sign.jpg";
 import northCapilano from "@/assets/images/areas/north-capilano-bridge.jpg";
 import northDeepCove from "@/assets/images/areas/north-deep-cove.jpg";
-import northHouse from "@/assets/images/areas/north-house.jpg";
 import northLonsdaleQuay from "@/assets/images/areas/north-lonsdale-quay.jpg";
 import northLowerLonsdale from "@/assets/images/areas/north-lower-lonsdale.jpg";
 import northShoreView from "@/assets/images/areas/north-shore-view.jpg";
@@ -22,25 +20,16 @@ import southFamilyHome from "@/assets/images/areas/south-family-home.jpg";
 import southPorchHome from "@/assets/images/areas/south-porch-home.jpg";
 import southQePark from "@/assets/images/areas/south-qe-park-view.jpg";
 import westAmbleside from "@/assets/images/areas/west-ambleside.jpg";
-import westBlossomStreet from "@/assets/images/areas/west-blossom-street.jpg";
 import westHillsideHomes from "@/assets/images/areas/west-hillside-homes.jpg";
 import westHorseshoeBay from "@/assets/images/areas/west-horseshoe-bay.jpg";
 import westHoweSound from "@/assets/images/areas/west-howe-sound-sunset.jpg";
 import westLighthouse from "@/assets/images/areas/west-lighthouse.jpg";
-import glassHallway from "@/assets/images/commercial/glass-hallway.jpg";
 import meetingRoom from "@/assets/images/commercial/meeting-room.jpg";
 import modernOffice from "@/assets/images/commercial/modern-office.jpg";
 import openOffice from "@/assets/images/commercial/open-office.jpg";
-import carBeforeAfterInterior from "@/assets/images/car-before-after-interior-01.webp";
-import carBeforeAfterSeats from "@/assets/images/car-before-after-seats.webp";
-import cleaningLivingRoom from "@/assets/images/cleaning-living-room.jpg";
-import cleaningWindowView from "@/assets/images/cleaning-window-view.jpg";
-import cleaningWindows from "@/assets/images/cleaning-windows.jpg";
 import kitchenCounter from "@/assets/images/kitchen-counter-01.jpg";
-import marbleIsland from "@/assets/images/kitchen-counter-02.jpg";
-import kitchenSink from "@/assets/images/kitchen-sink.jpg";
-import kitchenStove from "@/assets/images/kitchen-stove.jpg";
 import livingRoom from "@/assets/images/living-room.jpg";
+import { stock } from "@/content/stock-photos";
 import type { Faq } from "@/components/sections/faq-section";
 import {
   BoatIcon,
@@ -77,9 +66,11 @@ export type Location = {
   neighbourhoods: string[];
   /** Soft background tint that gives each area page its own mood. */
   tint: string;
-  hero: { image: StaticImageData; alt: string };
-  /** A recognisable photo of the area itself, used on its card and page. */
+  /** A recognisable photo of the area itself, shown on its page. */
   area: { image: StaticImageData; alt: string; caption: string };
+  /** A different photo of the area for its card on the hub and service pages,
+   *  so the card never repeats a photo on the page it links to. */
+  card: { image: StaticImageData; alt: string };
   /** More pictures of the area: landmarks and views. */
   gallery: AreaPhoto[];
   /** The kinds of homes and workplaces we clean here. */
@@ -116,6 +107,10 @@ export const locations: Location[] = [
       alt: "The Downtown Vancouver skyline with the North Shore mountains behind",
       caption: "The downtown peninsula from across False Creek",
     },
+    card: {
+      image: downtownTowers,
+      alt: "Residential towers near False Creek in Downtown Vancouver",
+    },
     gallery: [
       {
         image: downtownCoalHarbour,
@@ -139,15 +134,15 @@ export const locations: Location[] = [
     portfolio: [
       {
         tag: "Residential",
-        image: downtownCondos,
-        alt: "Downtown condo towers",
+        image: kitchenCounter,
+        alt: "A polished counter in a downtown condo kitchen",
         title: "High-rise condos",
         text: "Suites in concierge and strata buildings.",
       },
       {
         tag: "Residential",
-        image: downtownTowers,
-        alt: "Residential towers near False Creek",
+        image: stock.downtownLofts,
+        alt: stock.downtownLofts.alt,
         title: "Lofts & townhomes",
         text: "Yaletown lofts and waterfront townhomes.",
       },
@@ -177,10 +172,6 @@ export const locations: Location[] = [
         },
       ],
     },
-    hero: {
-      image: cleaningWindows,
-      alt: "An S&A cleaner washing a window in a downtown apartment",
-    },
     knowHow: {
       title: "Made for Downtown Living",
       items: [
@@ -204,8 +195,8 @@ export const locations: Location[] = [
     tip: {
       title: "Balcony season, city-style",
       text: "Downtown balconies collect city dust and soot fast. Our Diamond plan includes sweeping the balcony and dusting the railings, so your outdoor space is as fresh as your living room.",
-      image: kitchenCounter,
-      alt: "A polished counter in a downtown condo kitchen",
+      image: stock.downtownTip,
+      alt: stock.downtownTip.alt,
     },
     services: {
       home: "Recurring and deep cleans for condos, lofts and townhomes.",
@@ -253,6 +244,10 @@ export const locations: Location[] = [
       alt: "Lonsdale Quay on the North Vancouver waterfront",
       caption: "Lonsdale Quay on the North Vancouver waterfront",
     },
+    card: {
+      image: northLowerLonsdale,
+      alt: "Condo towers in Lower Lonsdale, North Vancouver",
+    },
     gallery: [
       {
         image: northDeepCove,
@@ -276,15 +271,15 @@ export const locations: Location[] = [
     portfolio: [
       {
         tag: "Residential",
-        image: northLowerLonsdale,
-        alt: "Condo towers in Lower Lonsdale",
+        image: stock.northCondos,
+        alt: stock.northCondos.alt,
         title: "Lonsdale condos",
         text: "Waterfront and high-rise suites near the Quay.",
       },
       {
         tag: "Residential",
-        image: northHouse,
-        alt: "A North Vancouver family home among trees",
+        image: livingRoom,
+        alt: "A tidy, freshly cleaned living room",
         title: "Family homes",
         text: "Detached homes in Lynn Valley and Edgemont.",
       },
@@ -314,10 +309,6 @@ export const locations: Location[] = [
         },
       ],
     },
-    hero: {
-      image: cleaningLivingRoom,
-      alt: "An S&A cleaner vacuuming a living room with forest and mountain views",
-    },
     knowHow: {
       title: "Built for North Shore Life",
       items: [
@@ -341,8 +332,8 @@ export const locations: Location[] = [
     tip: {
       title: "Rainy-season tip",
       text: "From October to April, North Shore floors see a lot more mud. Consider booking more frequent cleans through the wet months, then easing off in summer. We're happy to adjust your plan by season.",
-      image: carBeforeAfterInterior,
-      alt: "Muddy truck floor mats before and after an S&A interior detail",
+      image: stock.northTip,
+      alt: stock.northTip.alt,
     },
     services: {
       home: "Recurring, deep and move-in/out cleans from Lonsdale to Deep Cove.",
@@ -390,6 +381,10 @@ export const locations: Location[] = [
       alt: "The East Van cross sign lit up at dusk",
       caption: "The East Van cross, a neighbourhood landmark",
     },
+    card: {
+      image: eastCharacterHouse,
+      alt: "A character home among the trees in East Vancouver",
+    },
     gallery: [
       {
         image: eastSecondNarrows,
@@ -407,22 +402,22 @@ export const locations: Location[] = [
     portfolio: [
       {
         tag: "Residential",
-        image: eastCharacterHouse,
-        alt: "A character home among the trees",
+        image: stock.eastCharacter,
+        alt: stock.eastCharacter.alt,
         title: "Character homes",
         text: "Heritage houses, suites and laneway homes.",
       },
       {
         tag: "Residential",
-        image: southPorchHome,
-        alt: "A classic Vancouver house with a porch",
+        image: stock.eastFamily,
+        alt: stock.eastFamily.alt,
         title: "Family houses",
         text: "Detached homes with basement and garden suites.",
       },
       {
         tag: "Commercial",
-        image: modernOffice,
-        alt: "A clean modern workspace",
+        image: stock.eastShops,
+        alt: stock.eastShops.alt,
         title: "Shops & studios",
         text: "Storefronts, studios and small offices.",
       },
@@ -442,7 +437,6 @@ export const locations: Location[] = [
         { name: "Main Street", text: "Independent shops and restaurants in Mount Pleasant." },
       ],
     },
-    hero: { image: livingRoom, alt: "A bright, freshly cleaned East Vancouver living space" },
     knowHow: {
       title: "Care for Character Homes",
       items: [
@@ -466,8 +460,8 @@ export const locations: Location[] = [
     tip: {
       title: "Moving out of a rental?",
       text: "A move-out clean inside the oven, fridge, cabinets and closets makes the final walkthrough much smoother. Book it for after the movers leave, so every corner is empty and easy to reach.",
-      image: kitchenStove,
-      alt: "A gas range polished during an S&A deep clean",
+      image: stock.eastTip,
+      alt: stock.eastTip.alt,
     },
     services: {
       home: "Deep and recurring cleans for character homes, suites and apartments.",
@@ -508,6 +502,10 @@ export const locations: Location[] = [
       alt: "The lighthouse at Point Atkinson in West Vancouver",
       caption: "Point Atkinson Lighthouse in Lighthouse Park",
     },
+    card: {
+      image: westHillsideHomes,
+      alt: "Homes on a forested West Vancouver hillside",
+    },
     gallery: [
       {
         image: westAmbleside,
@@ -531,22 +529,22 @@ export const locations: Location[] = [
     portfolio: [
       {
         tag: "Residential",
-        image: westHillsideHomes,
-        alt: "Homes on a forested West Vancouver hillside",
+        image: stock.westHillside,
+        alt: stock.westHillside.alt,
         title: "Hillside view homes",
         text: "Large homes with lots of glass to keep clear.",
       },
       {
         tag: "Residential",
-        image: westBlossomStreet,
-        alt: "A quiet residential street lined with blossoming trees",
+        image: stock.westStreets,
+        alt: stock.westStreets.alt,
         title: "Quiet residential streets",
         text: "Family homes in British Properties and Caulfeild.",
       },
       {
         tag: "Commercial",
-        image: glassHallway,
-        alt: "A bright office hallway with glass walls",
+        image: stock.westClinics,
+        alt: stock.westClinics.alt,
         title: "Offices & clinics",
         text: "Professional offices and wellness spaces.",
       },
@@ -565,10 +563,6 @@ export const locations: Location[] = [
           text: "Beaches, fields and the start of the Centennial Seawalk.",
         },
       ],
-    },
-    hero: {
-      image: cleaningWindowView,
-      alt: "An S&A cleaner polishing floor-to-ceiling glass overlooking the ocean",
     },
     knowHow: {
       title: "Detail for View Homes",
@@ -593,8 +587,8 @@ export const locations: Location[] = [
     tip: {
       title: "Salt air, clear views",
       text: "Living by the ocean means salt and moisture build up on glass, railings and vehicles faster. Regular cleans and detailing keep that film from dulling your view and your paintwork.",
-      image: marbleIsland,
-      alt: "A polished marble kitchen island after an S&A clean",
+      image: stock.westTip,
+      alt: stock.westTip.alt,
     },
     services: {
       home: "Deep and recurring cleans for view homes of every size.",
@@ -635,6 +629,10 @@ export const locations: Location[] = [
       alt: "Downtown Vancouver and the mountains seen from Queen Elizabeth Park",
       caption: "The view from Queen Elizabeth Park",
     },
+    card: {
+      image: southFamilyHome,
+      alt: "A family home with a hedge and garden in South Vancouver",
+    },
     gallery: [
       {
         image: southConservatory,
@@ -658,22 +656,22 @@ export const locations: Location[] = [
     portfolio: [
       {
         tag: "Residential",
-        image: southFamilyHome,
-        alt: "A family home with a hedge and garden",
+        image: stock.southFamily,
+        alt: stock.southFamily.alt,
         title: "Family homes",
         text: "Detached homes in Kerrisdale, Oakridge and Marpole.",
       },
       {
         tag: "Residential",
-        image: downtownCondos,
-        alt: "A modern condo building",
+        image: stock.southCondos,
+        alt: stock.southCondos.alt,
         title: "New condos",
         text: "New developments near the Canada Line.",
       },
       {
         tag: "Commercial",
-        image: meetingRoom,
-        alt: "A clean meeting room",
+        image: modernOffice,
+        alt: "A clean, modern open-plan office",
         title: "Offices & clinics",
         text: "Professional offices and medical clinics.",
       },
@@ -693,7 +691,6 @@ export const locations: Location[] = [
         { name: "Fraser River Park", text: "Trails and a boardwalk along the river in Marpole." },
       ],
     },
-    hero: { image: kitchenSink, alt: "A spotless South Vancouver kitchen with garden views" },
     knowHow: {
       title: "Helping Busy Households",
       items: [
@@ -717,8 +714,8 @@ export const locations: Location[] = [
     tip: {
       title: "Getting the keys to a new build?",
       text: "New homes come with construction dust in vents, cupboards and window tracks. Book a post-construction clean before your furniture arrives: it's far easier to reach every corner in an empty home.",
-      image: carBeforeAfterSeats,
-      alt: "Car seats before and after an S&A interior detail",
+      image: stock.southTip,
+      alt: stock.southTip.alt,
     },
     services: {
       home: "Recurring, deep and post-construction cleans for homes and condos.",

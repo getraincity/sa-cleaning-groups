@@ -139,6 +139,12 @@ export function Footer() {
           >
             Privacy Policy
           </a>
+          <Link
+            href="/photo-credits"
+            className="flex items-center justify-start font-text text-[15px] leading-4 text-ink no-underline hover:text-ink/75"
+          >
+            Photo Credits
+          </Link>
         </div>
       </div>
     </footer>

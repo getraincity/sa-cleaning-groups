@@ -5,9 +5,7 @@
 // Replace, add or remove entries to match the products S&A actually uses.
 
 import type { StaticImageData } from "next/image";
-import cleaningLivingRoom from "@/assets/images/cleaning-living-room.jpg";
-import lobbyCleaning from "@/assets/images/commercial/lobby-wet-floor.jpg";
-import foamWash from "@/assets/images/detailing/foam-wash.jpg";
+import { stock } from "@/content/stock-photos";
 
 export type ProductBrand = {
   name: string;
@@ -34,8 +32,8 @@ export const productCategories: ProductCategory[] = [
     description:
       "Natural, eco-friendly products that are tough on dirt and safe for families and pets.",
     service: "home",
-    image: cleaningLivingRoom,
-    alt: "An S&A cleaner vacuuming a bright living room",
+    image: stock.productsHome,
+    alt: stock.productsHome.alt,
     brands: [
       {
         name: "Nature Clean",
@@ -64,8 +62,8 @@ export const productCategories: ProductCategory[] = [
     description:
       "Detailing products that lift grime safely and leave paint and interiors looking new.",
     service: "car",
-    image: foamWash,
-    alt: "A detailer hand-washing a black car covered in foam",
+    image: stock.productsCar,
+    alt: stock.productsCar.alt,
     brands: [
       {
         name: "Chemical Guys",
@@ -84,8 +82,8 @@ export const productCategories: ProductCategory[] = [
     title: "Tools & Equipment",
     description: "The equipment behind a deeper, healthier clean in every home, car and workplace.",
     service: "all",
-    image: lobbyCleaning,
-    alt: "A custodian in a mask cleaning the glass doors of an office building",
+    image: stock.productsTools,
+    alt: stock.productsTools.alt,
     brands: [
       {
         name: "The Rag Company",

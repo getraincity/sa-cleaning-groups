@@ -1,13 +1,8 @@
 import Image, { type StaticImageData } from "next/image";
-import carBeforeAfterInterior from "@/assets/images/car-before-after-interior-01.webp";
-import carBeforeAfterWheels from "@/assets/images/car-before-after-wheels.webp";
-import carExteriorBranded from "@/assets/images/car-exterior-branded.webp";
-import cleaningWindowView from "@/assets/images/cleaning-window-view.jpg";
-import kitchenIsland from "@/assets/images/kitchen-island.jpg";
-import kitchenStove from "@/assets/images/kitchen-stove.jpg";
 import { SectionHeader, sectionSpacing } from "@/components/ui/section-header";
 import { CameraIcon, FacebookIcon, InstagramIcon } from "@/components/ui/icons";
 import { Reveal } from "@/components/ui/reveal";
+import { stock } from "@/content/stock-photos";
 import { socialLinks } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
@@ -23,25 +18,16 @@ type Post = {
 // On tablets the same order interlocks into a 4-column checkerboard.
 const posts: Post[] = [
   {
-    image: carBeforeAfterInterior,
-    caption: "Interior detail, before and after",
+    image: stock.socialCarRinse,
+    caption: "Pre-rinse before a hand wash",
     tag: "Auto",
     large: true,
   },
-  { image: kitchenStove, caption: "Gas range, polished to a shine", tag: "Home" },
-  {
-    image: cleaningWindowView,
-    caption: "Floor-to-ceiling window cleaning",
-    tag: "Behind the scenes",
-  },
-  {
-    image: carExteriorBranded,
-    caption: "On the road with S&A Auto Detailing",
-    tag: "Behind the scenes",
-    large: true,
-  },
-  { image: kitchenIsland, caption: "Kitchen deep clean", tag: "Home" },
-  { image: carBeforeAfterWheels, caption: "Wheel and rim detailing", tag: "Auto" },
+  { image: stock.socialMopping, caption: "Floors mopped, room by room", tag: "Home" },
+  { image: stock.socialHomeWindow, caption: "Streak-free windows", tag: "Home" },
+  { image: stock.socialHandWash, caption: "A careful hand wash and dry", tag: "Auto", large: true },
+  { image: stock.socialKitchenCounter, caption: "Kitchen counters wiped down", tag: "Home" },
+  { image: stock.socialWheels, caption: "Wheel and rim detailing", tag: "Auto" },
 ];
 
 const profiles = [

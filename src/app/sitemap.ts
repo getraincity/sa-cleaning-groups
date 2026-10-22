@@ -16,6 +16,7 @@ const routes = [
   "/blog",
   ...posts.map((post) => `/blog/${post.slug}`),
   "/contact-us",
+  "/photo-credits",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
