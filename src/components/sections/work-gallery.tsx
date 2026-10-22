@@ -1,12 +1,8 @@
 import Image, { type StaticImageData } from "next/image";
-import kitchenAppliances from "@/assets/images/kitchen-appliances.jpg";
-import kitchenCandle from "@/assets/images/kitchen-counter-01.jpg";
-import kitchenMicrowave from "@/assets/images/kitchen-microwave.jpg";
-import kitchenSink from "@/assets/images/kitchen-sink.jpg";
-import livingRoom from "@/assets/images/living-room.jpg";
 import { SectionHeader, sectionSpacing } from "@/components/ui/section-header";
 import { SparklesIcon } from "@/components/ui/icons";
 import { Reveal } from "@/components/ui/reveal";
+import { stock } from "@/content/stock-photos";
 import { cn } from "@/lib/utils";
 
 type Photo = {
@@ -21,32 +17,32 @@ type Photo = {
 // About page has its own, homier set (client feedback, 2026-10-01).
 const photos: Photo[] = [
   {
-    image: livingRoom,
-    caption: "Living space, ready to relax",
+    image: stock.aboutUpholstery,
+    caption: "Sofas and upholstery vacuumed",
     className: "col-span-2 row-span-2",
     sizes: "(max-width: 767px) 100vw, 50vw",
   },
   {
-    image: kitchenCandle,
+    image: stock.aboutPillows,
     caption: "Little touches, done right",
     className: "row-span-2",
     sizes: "(max-width: 767px) 50vw, 25vw",
   },
   {
-    image: kitchenAppliances,
-    caption: "A fresh, bright kitchen",
+    image: stock.aboutDusting,
+    caption: "Dusted high and low",
     className: "row-span-2",
     sizes: "(max-width: 767px) 50vw, 25vw",
   },
   {
-    image: kitchenSink,
-    caption: "Counters and sinks that shine",
+    image: stock.aboutSideboard,
+    caption: "Wood wiped and polished",
     className: "col-span-2",
     sizes: "(max-width: 767px) 100vw, 50vw",
   },
   {
-    image: kitchenMicrowave,
-    caption: "Appliances inside and out",
+    image: stock.aboutRadiator,
+    caption: "Every surface, inside and out",
     className: "col-span-2",
     sizes: "(max-width: 767px) 100vw, 50vw",
   },

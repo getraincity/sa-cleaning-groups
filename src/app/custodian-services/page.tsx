@@ -1,12 +1,9 @@
 import Link from "next/link";
 import deskDisinfecting from "@/assets/images/commercial/desk-disinfecting.jpg";
-import glassHallway from "@/assets/images/commercial/glass-hallway.jpg";
 import lobbyEntrance from "@/assets/images/commercial/lobby-wet-floor.jpg";
-import meetingRoom from "@/assets/images/commercial/meeting-room.jpg";
-import modernOffice from "@/assets/images/commercial/modern-office.jpg";
-import openOffice from "@/assets/images/commercial/open-office.jpg";
 import { CtaBand } from "@/components/sections/cta-band";
 import { FaqSection, type Faq } from "@/components/sections/faq-section";
+import { Gallery, type GalleryImage } from "@/components/sections/gallery";
 import { AreasStrip } from "@/components/locations/areas-strip";
 import { PageHero } from "@/components/sections/page-hero";
 import { PhotoFeatures, type PhotoFeatureRow } from "@/components/sections/photo-feature";
@@ -29,6 +26,7 @@ import {
 } from "@/components/ui/icons";
 import { Reveal } from "@/components/ui/reveal";
 import { SectionHeader, sectionSpacing } from "@/components/ui/section-header";
+import { stock } from "@/content/stock-photos";
 import { pageMetadata } from "@/lib/metadata";
 import { siteConfig } from "@/lib/site";
 import { cn } from "@/lib/utils";
@@ -177,8 +175,8 @@ const spaceRows: PhotoFeatureRow[] = [
       "Glass partitions and doors kept smudge-free",
       "Garbage, recycling and compost emptied",
     ],
-    image: openOffice,
-    alt: "A bright, tidy open-plan office",
+    image: stock.custodianDesk,
+    alt: stock.custodianDesk.alt,
   },
   {
     eyebrow: { icon: <KeyIcon />, label: "Lobbies & common areas" },
@@ -226,6 +224,16 @@ const schedules = [
   },
 ];
 
+// Pictures only (client feedback): the custodian team at work, none of
+// which appear anywhere else on the site.
+const gallery: GalleryImage[] = [
+  { image: stock.custodianScrubber, alt: stock.custodianScrubber.alt, span: 2 },
+  { image: stock.custodianCart, alt: stock.custodianCart.alt, span: 2 },
+  { image: stock.custodianRailing, alt: stock.custodianRailing.alt, span: 2 },
+  { image: stock.custodianMachine, alt: stock.custodianMachine.alt, span: 4 },
+  { image: stock.custodianWindowSpray, alt: stock.custodianWindowSpray.alt, span: 2 },
+];
+
 const faqs: Faq[] = [
   {
     question: "What types of businesses do you clean?",
@@ -258,7 +266,7 @@ export default function CustodianServicesPage() {
   return (
     <div className="theme-custodian">
       <PageHero
-        image={modernOffice}
+        image={stock.custodianHero}
         className="py-[200px] max-md:py-[100px]"
         tagline="Commercial & janitorial cleaning"
         title={
@@ -479,31 +487,33 @@ export default function CustodianServicesPage() {
         title="Clean Spaces, Ready for Business"
         items={[
           {
-            image: meetingRoom,
-            alt: "A clean, modern meeting room",
+            image: stock.custodianGlass,
+            alt: stock.custodianGlass.alt,
             title: "Meeting rooms",
             text: "Tables, chairs and glass ready for the next meeting.",
           },
           {
-            image: glassHallway,
-            alt: "A glass-walled office hallway",
+            image: stock.custodianWindows,
+            alt: stock.custodianWindows.alt,
             title: "Hallways & glass",
             text: "Glass walls and doors kept clear and bright.",
           },
           {
-            image: modernOffice,
-            alt: "A modern office with workstations",
+            image: stock.custodianWorkstation,
+            alt: stock.custodianWorkstation.alt,
             title: "Workstations",
             text: "Desks and shared equipment dusted and wiped.",
           },
           {
-            image: lobbyEntrance,
-            alt: "A commercial building entrance",
+            image: stock.custodianFloors,
+            alt: stock.custodianFloors.alt,
             title: "Entrances",
             text: "Doors, mats and floors that welcome your visitors.",
           },
         ]}
       />
+
+      <Gallery images={gallery} />
 
       <AreasStrip service="custodian services" />
 

@@ -25,8 +25,8 @@ export function AreasStrip({ service, className }: { service: string; className?
                 className="group relative block aspect-[3/4] overflow-hidden rounded-[20px] no-underline max-sm:aspect-[16/10]"
               >
                 <Image
-                  src={location.area.image}
-                  alt={location.area.alt}
+                  src={location.card.image}
+                  alt={location.card.alt}
                   fill
                   sizes="(max-width: 479px) 100vw, (max-width: 991px) 33vw, 20vw"
                   className="object-cover transition-transform duration-700 ease-out-quart group-hover:scale-105"

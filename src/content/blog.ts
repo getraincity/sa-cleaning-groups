@@ -1,10 +1,5 @@
 import type { StaticImageData } from "next/image";
-import carBeforeAfterInterior from "@/assets/images/car-before-after-interior-01.webp";
-import carExteriorBranded from "@/assets/images/car-exterior-branded.webp";
-import cleaningWindows from "@/assets/images/cleaning-windows.jpg";
-import kitchenAppliances from "@/assets/images/kitchen-appliances.jpg";
-import kitchenIsland from "@/assets/images/kitchen-island.jpg";
-import kitchenStove from "@/assets/images/kitchen-stove.jpg";
+import { stock } from "@/content/stock-photos";
 
 export const blogCategories = ["Home Cleaning", "Car Detailing", "Commercial"] as const;
 export type BlogCategory = (typeof blogCategories)[number];
@@ -38,8 +33,8 @@ const allPosts: Post[] = [
       "A clean workplace makes a better first impression and a healthier place to work. Here's what should be cleaned, and how often, to keep your office in shape.",
     category: "Commercial",
     date: "2026-09-22",
-    image: cleaningWindows,
-    imageAlt: "An S&A cleaner washing a large office window",
+    image: stock.blogOffice,
+    imageAlt: stock.blogOffice.alt,
     body: [
       {
         type: "p",
@@ -121,8 +116,8 @@ const allPosts: Post[] = [
       "Putting your RV or boat away dirty is an open invitation to mould, stains and odours. A thorough clean now means an easy start next season.",
     category: "Car Detailing",
     date: "2026-09-18",
-    image: carExteriorBranded,
-    imageAlt: "The S&A Auto Detailing truck parked on a sunny day",
+    image: stock.blogBoat,
+    imageAlt: stock.blogBoat.alt,
     body: [
       {
         type: "p",
@@ -192,8 +187,8 @@ const allPosts: Post[] = [
       "Wet boots, dripping umbrellas and foggy windows: the rainy season is tough on car interiors. Here's how to keep yours dry, clean and smelling fresh.",
     category: "Car Detailing",
     date: "2026-09-12",
-    image: carBeforeAfterInterior,
-    imageAlt: "Muddy truck floor mats before and after an S&A interior detail",
+    image: stock.blogCarInterior,
+    imageAlt: stock.blogCarInterior.alt,
     body: [
       {
         type: "p",
@@ -250,8 +245,8 @@ const allPosts: Post[] = [
       "Not sure whether to book a deep clean or a regular one? Here's the difference, when each makes sense, and how our Silver, Gold and Diamond plans compare.",
     category: "Home Cleaning",
     date: "2026-09-05",
-    image: kitchenStove,
-    imageAlt: "A gas range polished during an S&A deep clean",
+    image: stock.blogDeepClean,
+    imageAlt: stock.blogDeepClean.alt,
     body: [
       {
         type: "p",
@@ -320,8 +315,8 @@ const allPosts: Post[] = [
       "Moving out? A thorough clean makes your final inspection smoother and helps protect your deposit. Here's everything to cover, room by room.",
     category: "Home Cleaning",
     date: "2026-08-28",
-    image: kitchenAppliances,
-    imageAlt: "A freshly cleaned apartment kitchen, ready for move-out",
+    image: stock.blogMoveOut,
+    imageAlt: stock.blogMoveOut.alt,
     body: [
       {
         type: "p",
@@ -402,8 +397,8 @@ const allPosts: Post[] = [
       "Renovation's done, but the dust isn't. Here's what a post-construction clean involves, why it's different from a regular clean, and when to book one.",
     category: "Home Cleaning",
     date: "2026-08-20",
-    image: kitchenIsland,
-    imageAlt: "A spotless kitchen, ready to move into after a renovation",
+    image: stock.blogConstruction,
+    imageAlt: stock.blogConstruction.alt,
     body: [
       {
         type: "p",

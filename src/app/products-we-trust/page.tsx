@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import disinfecting from "@/assets/images/commercial/desk-disinfecting.jpg";
 import { BookingCta } from "@/components/sections/booking-cta";
 import { PageHero } from "@/components/sections/page-hero";
 import {
@@ -14,6 +13,7 @@ import {
 } from "@/components/ui/icons";
 import { Reveal } from "@/components/ui/reveal";
 import { SectionHeader, sectionSpacing } from "@/components/ui/section-header";
+import { stock } from "@/content/stock-photos";
 import { productCategories, type ProductBrand, type ProductCategory } from "@/content/products";
 import { pageMetadata } from "@/lib/metadata";
 import { cn } from "@/lib/utils";
@@ -108,7 +108,7 @@ export default function ProductsWeTrustPage() {
   return (
     <>
       <PageHero
-        image={disinfecting}
+        image={stock.productsHero}
         tagline="Good results start with good products."
         title="Products We Trust"
         description="The brands and tools our team relies on in homes, cars and workplaces across Vancouver."
