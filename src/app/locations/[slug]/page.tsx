@@ -21,7 +21,7 @@ import { Reveal } from "@/components/ui/reveal";
 import { SectionHeader, sectionSpacing } from "@/components/ui/section-header";
 import { getLocation, locations } from "@/content/locations";
 import { pageMetadata } from "@/lib/metadata";
-import { bookingLinks, siteConfig } from "@/lib/site";
+import { bookingLinks, siteConfig, socialLinks } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -78,6 +78,7 @@ export default async function LocationPage({ params }: Props) {
           telephone: siteConfig.phone,
           email: siteConfig.email,
           areaServed: { "@type": "Place", name: `${location.name}, BC` },
+          sameAs: Object.values(socialLinks).filter(Boolean),
         }}
       />
 

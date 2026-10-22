@@ -279,7 +279,15 @@ _Fix:_ slide-in overflow on phones.
 - Not done yet (photos): Home Cleaning gallery variety, everyday cars instead of luxury cars,
   a photos-only section on Custodian, and new blog images. Stock photo hosts were blocked.
 
-## 9. Waiting on the client (as of round 4)
+**Round 5 (2026-10-22)**
+
+- The client added the Facebook page (https://www.facebook.com/sacleaninggroup) to the doc. It is
+  set in `socialLinks`, which shows the Facebook buttons in the footer, the home social section and
+  Contact, and both profiles are listed as `sameAs` in the area pages' LocalBusiness JSON-LD.
+- Photo notes from the doc (unique real photos per page) are handled on the branch
+  `claude/unique-real-photos`.
+
+## 9. Waiting on the client (as of round 5)
 
 - **Photos:**
   - Alex & Shaida, for the About founder intro (`src/components/sections/founder-intro.tsx`);
@@ -290,7 +298,6 @@ _Fix:_ slide-in overflow on phones.
 - **Add-ons:** whether to show prices.
 - **Products We Trust:** the real brand list (client will send later). `src/content/products.ts`
   is a placeholder modelled on a sample page the client sent.
-- **Social:** the Facebook URL (`socialLinks` in `src/lib/site.ts`). Instagram is set.
 - **Reviews:** approval to show 4–6 real Google reviews in our own layout instead of the Elfsight
   widget, which the client finds messy.
 - **Locations:** which collabs go with each area.

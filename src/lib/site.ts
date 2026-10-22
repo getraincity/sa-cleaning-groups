@@ -31,7 +31,7 @@ export const siteConfig = {
  */
 export const socialLinks: { instagram: string; facebook: string } = {
   instagram: "https://www.instagram.com/sacleaninggroup",
-  facebook: "",
+  facebook: "https://www.facebook.com/sacleaninggroup",
 };
 
 /** Booking destinations. Car detailing is booked on a separate site. */
