@@ -1,14 +1,19 @@
-const DEFAULT_SITE_URL = "https://www.sacleaninggroup.ca";
+// The primary production domain has no "www" (www redirects to it).
+const DEFAULT_SITE_URL = "https://sacleaninggroup.ca";
 
 /**
  * Reads NEXT_PUBLIC_SITE_URL, tolerating an empty value, a missing protocol
  * or a trailing slash, and falls back to the live domain if it is unusable.
+ * A "www." version of the live domain is normalised to the primary domain,
+ * so canonical URLs, the sitemap and structured data never point at www.
  */
 function resolveSiteUrl(value = process.env.NEXT_PUBLIC_SITE_URL?.trim()): string {
   if (!value) return DEFAULT_SITE_URL;
   const withProtocol = /^https?:\/\//i.test(value) ? value : `https://${value}`;
   try {
-    return new URL(withProtocol).origin;
+    const url = new URL(withProtocol);
+    if (url.hostname === `www.${new URL(DEFAULT_SITE_URL).hostname}`) return DEFAULT_SITE_URL;
+    return url.origin;
   } catch {
     return DEFAULT_SITE_URL;
   }

@@ -1,6 +1,6 @@
 # SEO, local SEO and AI search: audit and plan
 
-Audit date: 2026-10-30. Site: https://www.sacleaninggroup.ca (Next.js on Vercel).
+Audit date: 2026-10-30. Site: https://sacleaninggroup.ca (Next.js on Vercel).
 
 Goal: rank for home cleaning and commercial/custodian cleaning searches across Greater Vancouver,
 and be the business AI assistants (Google AI Overviews, ChatGPT, Perplexity, Gemini, Copilot)
@@ -109,12 +109,12 @@ name when asked for a cleaner in Vancouver.
 ### Technical (check after launch)
 
 9. **Search Console:**
-   - submit `https://www.sacleaninggroup.ca/sitemap.xml`;
+   - submit `https://sacleaninggroup.ca/sitemap.xml`;
    - request indexing for the URLs below;
    - check Pages → "Not indexed" weekly for the first month;
    - check the Enhancements reports (Breadcrumbs, FAQ, Review snippets);
    - check `site:sacleaninggroup.ca` for old Webflow URLs and redirect any that 404.
-10. **Domain:** `sacleaninggroup.ca` (no www) must 301 to `https://www.sacleaninggroup.ca`, the
+10. **Domain:** `www.sacleaninggroup.ca` must 301 to `https://sacleaninggroup.ca`, the
     canonical, in Vercel → Domains.
 11. **Bing Webmaster Tools:** import from Search Console. Bing feeds ChatGPT and Copilot search.
 12. **Validate the rich results** on a few pages with https://search.google.com/test/rich-results
@@ -124,23 +124,23 @@ name when asked for a cleaner in Vancouver.
 
 Highest value first:
 
-1. https://www.sacleaninggroup.ca/
-2. https://www.sacleaninggroup.ca/home-cleaning
-3. https://www.sacleaninggroup.ca/custodian-services
-4. https://www.sacleaninggroup.ca/locations
-5. https://www.sacleaninggroup.ca/locations/downtown-vancouver
-6. https://www.sacleaninggroup.ca/locations/north-vancouver
-7. https://www.sacleaninggroup.ca/locations/east-vancouver
-8. https://www.sacleaninggroup.ca/locations/west-vancouver
-9. https://www.sacleaninggroup.ca/locations/south-vancouver
-10. https://www.sacleaninggroup.ca/contact-us
-11. https://www.sacleaninggroup.ca/about-us
-12. https://www.sacleaninggroup.ca/products-we-trust
-13. https://www.sacleaninggroup.ca/blog
-14. https://www.sacleaninggroup.ca/blog/office-cleaning-checklist
-15. https://www.sacleaninggroup.ca/blog/deep-clean-vs-regular-clean
-16. https://www.sacleaninggroup.ca/blog/move-out-cleaning-checklist-vancouver
-17. https://www.sacleaninggroup.ca/blog/post-construction-cleaning-guide
+1. https://sacleaninggroup.ca/
+2. https://sacleaninggroup.ca/home-cleaning
+3. https://sacleaninggroup.ca/custodian-services
+4. https://sacleaninggroup.ca/locations
+5. https://sacleaninggroup.ca/locations/downtown-vancouver
+6. https://sacleaninggroup.ca/locations/north-vancouver
+7. https://sacleaninggroup.ca/locations/east-vancouver
+8. https://sacleaninggroup.ca/locations/west-vancouver
+9. https://sacleaninggroup.ca/locations/south-vancouver
+10. https://sacleaninggroup.ca/contact-us
+11. https://sacleaninggroup.ca/about-us
+12. https://sacleaninggroup.ca/products-we-trust
+13. https://sacleaninggroup.ca/blog
+14. https://sacleaninggroup.ca/blog/office-cleaning-checklist
+15. https://sacleaninggroup.ca/blog/deep-clean-vs-regular-clean
+16. https://sacleaninggroup.ca/blog/move-out-cleaning-checklist-vancouver
+17. https://sacleaninggroup.ca/blog/post-construction-cleaning-guide
 
 Not needed: `/photo-credits` (it's in the sitemap, low value), `/car-detailing` (kept quiet on
 purpose) and `/llms.txt`.

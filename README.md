@@ -1,6 +1,6 @@
 # SA Cleaning Group — website
 
-Marketing site for [sacleaninggroup.ca](https://www.sacleaninggroup.ca): home cleaning and
+Marketing site for [sacleaninggroup.ca](https://sacleaninggroup.ca): home cleaning and
 custodian services in Vancouver.
 
 Rebuilt from the original Webflow site in **Next.js 16 (App Router) · React 19 · TypeScript ·
@@ -103,9 +103,9 @@ The contact form (also used for bookings, see above) emails `info@sacleaninggrou
 
 1. Import the GitHub repo in Vercel. It detects Next.js, so no build settings are needed.
 2. Add `NEXT_PUBLIC_SITE_URL` (see `.env.example`).
-3. Add the domains `sacleaninggroup.ca` and `www.sacleaninggroup.ca`, then update DNS at the
-   registrar as Vercel instructs. (The domains still point at Webflow, which no longer serves the
+3. Add the domains `sacleaninggroup.ca` (primary) and `www.sacleaninggroup.ca` (redirects to the
+   primary), then update DNS at the registrar as Vercel instructs. (The domains still point at Webflow, which no longer serves the
    site.)
-4. Optionally add `akumalcleaning.com` and redirect it to `www.sacleaninggroup.ca` (old brand).
+4. Optionally add `akumalcleaning.com` and redirect it to `sacleaninggroup.ca` (old brand).
 
 Old `*.html` URLs from the temporary Netlify copy redirect to the clean paths (`next.config.ts`).
