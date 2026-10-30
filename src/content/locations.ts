@@ -32,13 +32,13 @@ import livingRoom from "@/assets/images/living-room.jpg";
 import { stock } from "@/content/stock-photos";
 import type { Faq } from "@/components/sections/faq-section";
 import {
-  BoatIcon,
   BuildingIcon,
-  CarIcon,
   ClockIcon,
   HardHatIcon,
   HomeIcon,
   KeyIcon,
+  LeafIcon,
+  RepeatIcon,
   SparklesIcon,
   StoreIcon,
   UsersIcon,
@@ -79,7 +79,7 @@ export type Location = {
   community: { intro: string; spots: { name: string; text: string }[] };
   knowHow: { title: string; items: { Icon: Icon; title: string; text: string }[] };
   tip: { title: string; text: string; image: StaticImageData; alt: string };
-  services: { home: string; car: string; custodian: string };
+  services: { home: string; custodian: string };
   faqs: Faq[];
 };
 
@@ -90,9 +90,9 @@ export const locations: Location[] = [
     short: "Downtown",
     tagline: "Condos, lofts and offices in the heart of the city",
     intro:
-      "From Yaletown lofts to Coal Harbour high-rises and Gastown storefronts, we keep downtown homes, cars and workplaces spotless, so you can spend more time enjoying the city and less time cleaning it.",
+      "From Yaletown lofts to Coal Harbour high-rises and Gastown storefronts, we keep downtown homes and workplaces spotless, so you can spend more time enjoying the city and less time cleaning it.",
     metaDescription:
-      "Condo cleaning, car detailing and office cleaning in Downtown Vancouver: Yaletown, Coal Harbour, the West End and Gastown. Licensed, insured and eco-friendly.",
+      "Condo cleaning and office cleaning in Downtown Vancouver: Yaletown, Coal Harbour, the West End and Gastown. Licensed, insured and eco-friendly.",
     neighbourhoods: [
       "Yaletown",
       "Coal Harbour",
@@ -200,7 +200,6 @@ export const locations: Location[] = [
     },
     services: {
       home: "Recurring and deep cleans for condos, lofts and townhomes.",
-      car: "Interior and exterior detailing for city cars and weekend getaway vehicles.",
       custodian: "Office suites, retail and strata common areas across the core.",
     },
     faqs: [
@@ -227,9 +226,9 @@ export const locations: Location[] = [
     short: "North Van",
     tagline: "Mountain views, rainy days and busy family homes",
     intro:
-      "Between the North Shore rain, trail-day mud and family life, homes and cars in North Vancouver work hard. From Lower Lonsdale condos to Lynn Valley family homes, we bring them back to spotless.",
+      "Between the North Shore rain, trail-day mud and family life, North Vancouver homes work hard. From Lower Lonsdale condos to Lynn Valley family homes, we bring them back to spotless.",
     metaDescription:
-      "House cleaning and car detailing in North Vancouver: Lonsdale, Lynn Valley, Deep Cove and Edgemont. Eco-friendly products, background-checked team.",
+      "House cleaning and office cleaning in North Vancouver: Lonsdale, Lynn Valley, Deep Cove and Edgemont. Eco-friendly products, background-checked team.",
     neighbourhoods: [
       "Lower Lonsdale",
       "Central Lonsdale",
@@ -318,9 +317,9 @@ export const locations: Location[] = [
           text: "Wet boots, muddy paws and dripping gear: we give floors, entryways and mudrooms the extra attention North Shore weather demands.",
         },
         {
-          Icon: CarIcon,
-          title: "Cars after the trailhead",
-          text: "After a day at Lynn Canyon or on the ski hill, our interior detailing lifts mud, sand and dog hair out of mats, seats and carpets.",
+          Icon: LeafIcon,
+          title: "Safe for the dog, too",
+          text: "Trail days usually include the family dog. We use eco-friendly, pet-friendly products that are tough on muddy paw prints and gentle on the pets who make them.",
         },
         {
           Icon: UsersIcon,
@@ -337,14 +336,13 @@ export const locations: Location[] = [
     },
     services: {
       home: "Recurring, deep and move-in/out cleans from Lonsdale to Deep Cove.",
-      car: "Interior detailing that tackles trail mud, sand and pet hair.",
       custodian: "Clean, welcoming offices and stores along Lonsdale and beyond.",
     },
     faqs: [
       {
-        question: "Can you get trail mud and dog hair out of my car?",
+        question: "Are your products safe for pets?",
         answer:
-          "That's exactly what our interior detailing is for. We vacuum and deep-clean mats, carpets and seats to lift out mud, sand and pet hair. See our car detailing packages for pricing.",
+          "Yes. We use eco-friendly, pet-friendly products, so your home is clean without harsh chemicals left behind for your dog or cat.",
       },
       {
         question: "How often should I book during the rainy season?",
@@ -366,7 +364,7 @@ export const locations: Location[] = [
     intro:
       "East Van is full of character, from heritage homes in Strathcona to laneway houses in Renfrew and the busy shops along Commercial Drive and Main Street. We clean them all with the care they deserve.",
     metaDescription:
-      "House cleaning, move-out cleaning and car detailing in East Vancouver: Commercial Drive, Mount Pleasant, Strathcona and Hastings-Sunrise.",
+      "House cleaning, move-out cleaning and office cleaning in East Vancouver: Commercial Drive, Mount Pleasant, Strathcona and Hastings-Sunrise.",
     neighbourhoods: [
       "Commercial Drive",
       "Mount Pleasant",
@@ -465,7 +463,6 @@ export const locations: Location[] = [
     },
     services: {
       home: "Deep and recurring cleans for character homes, suites and apartments.",
-      car: "Detailing for commuter cars, work vans and family vehicles.",
       custodian: "Cafés, studios and small businesses from the Drive to Main Street.",
     },
     faqs: [
@@ -494,7 +491,7 @@ export const locations: Location[] = [
     intro:
       "From Ambleside and Dundarave to the British Properties and Horseshoe Bay, West Vancouver homes are made for the view. We keep every surface, from marble counters to floor-to-ceiling glass, looking the way it should.",
     metaDescription:
-      "Luxury home cleaning, window cleaning and boat and car detailing in West Vancouver: Ambleside, Dundarave, British Properties and Horseshoe Bay.",
+      "Luxury home cleaning, window cleaning and office cleaning in West Vancouver: Ambleside, Dundarave, British Properties and Horseshoe Bay.",
     neighbourhoods: ["Ambleside", "Dundarave", "British Properties", "Caulfeild", "Horseshoe Bay"],
     tint: "#eef3f6",
     area: {
@@ -565,7 +562,7 @@ export const locations: Location[] = [
       ],
     },
     knowHow: {
-      title: "Detail for View Homes",
+      title: "Care for View Homes",
       items: [
         {
           Icon: SparklesIcon,
@@ -578,21 +575,20 @@ export const locations: Location[] = [
           text: "Marble, natural stone and high-end fixtures get the gentle, careful cleaning they need, with products chosen for the surface.",
         },
         {
-          Icon: BoatIcon,
-          title: "Boats, RVs and weekend toys",
-          text: "Our detailers go beyond cars, with boat, RV and truck detailing to keep your weekends looking as good as your home.",
+          Icon: ClockIcon,
+          title: "Room for larger homes",
+          text: "Book our team by the hour (from $130+, with a 3-hour minimum) and we'll focus on the rooms and finishes that matter most to you.",
         },
       ],
     },
     tip: {
       title: "Salt air, clear views",
-      text: "Living by the ocean means salt and moisture build up on glass, railings and vehicles faster. Regular cleans and detailing keep that film from dulling your view and your paintwork.",
+      text: "Living by the ocean means salt and moisture build up on glass and railings faster. Regular cleans keep that film from dulling your view.",
       image: stock.westTip,
       alt: stock.westTip.alt,
     },
     services: {
       home: "Deep and recurring cleans for view homes of every size.",
-      car: "Detailing for cars and SUVs, plus boats, RVs and trucks.",
       custodian: "Offices, clinics and shops in Ambleside, Dundarave and Park Royal.",
     },
     faqs: [
@@ -602,9 +598,9 @@ export const locations: Location[] = [
           "Yes. Interior window cleaning is included in our Diamond plan. On other plans, just ask about adding it to your clean.",
       },
       {
-        question: "Can you detail my boat?",
+        question: "Do you clean offices in West Vancouver?",
         answer:
-          "Yes, we detail boats as well as cars, trucks and RVs. Get in touch with a few details about your boat and we'll send you a quote.",
+          "Yes. Our custodian services cover offices, clinics and shops. Request a free quote and we'll build a plan around your hours.",
       },
       {
         question: "Do you clean larger homes?",
@@ -619,9 +615,9 @@ export const locations: Location[] = [
     short: "South Van",
     tagline: "Family homes, new condos and busy commutes",
     intro:
-      "From family homes in Sunset and Killarney to the new towers at Oakridge and Marine Gateway, South Vancouver is growing fast. We help households keep up, with cleaning and detailing that fits busy family life.",
+      "From family homes in Sunset and Killarney to the new towers at Oakridge and Marine Gateway, South Vancouver is growing fast. We help households keep up, with cleaning that fits busy family life.",
     metaDescription:
-      "House cleaning, post-construction cleaning and car detailing in South Vancouver: Marpole, Oakridge, Sunset, Victoria-Fraserview and Killarney.",
+      "House cleaning, post-construction cleaning and office cleaning in South Vancouver: Marpole, Oakridge, Sunset, Victoria-Fraserview and Killarney.",
     neighbourhoods: ["Marpole", "Oakridge", "Sunset", "Victoria-Fraserview", "Killarney"],
     tint: "#f5f3f7",
     area: {
@@ -705,9 +701,9 @@ export const locations: Location[] = [
           text: "Moving into a new condo or a freshly renovated home? Our post-construction and move-in cleans clear the dust so you can settle in.",
         },
         {
-          Icon: CarIcon,
-          title: "Commuter and family cars",
-          text: "From daily commuters to the family minivan, our interior and exterior detailing brings cars back to showroom fresh.",
+          Icon: RepeatIcon,
+          title: "A plan that fits your week",
+          text: "Choose our Silver, Gold or Diamond plan, or book by the hour, and we'll keep your home on track, week after week.",
         },
       ],
     },
@@ -719,7 +715,6 @@ export const locations: Location[] = [
     },
     services: {
       home: "Recurring, deep and post-construction cleans for homes and condos.",
-      car: "Detailing for commuter cars, SUVs and family minivans.",
       custodian: "Offices, clinics and shops along Cambie, Fraser and Victoria Drive.",
     },
     faqs: [
@@ -729,9 +724,9 @@ export const locations: Location[] = [
           "Yes. Our post-construction and move-in cleans remove construction dust from floors, cabinets, window tracks and fixtures, so your new home is ready to live in.",
       },
       {
-        question: "Can you detail a family minivan?",
+        question: "Do you clean offices and shops in South Vancouver?",
         answer:
-          "Of course. Our detailing packages are priced by vehicle size, including large SUVs and minivans. See the car detailing page for current prices.",
+          "Yes. Our custodian services cover offices, clinics and shops. Request a free quote and we'll build a plan around your hours.",
       },
       {
         question: "Do you offer recurring cleaning plans?",

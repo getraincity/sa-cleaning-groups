@@ -1,6 +1,5 @@
 import {
   BadgeCheckIcon,
-  CarIcon,
   GloveIcon,
   MaskIcon,
   ShieldCheckIcon,
@@ -47,11 +46,6 @@ const credentials = [
     text: "Insured on every job, for your peace of mind.",
   },
   {
-    Icon: CarIcon,
-    title: "Valid garage policy",
-    text: "Your vehicle is covered while it's in our care.",
-  },
-  {
     Icon: UserCheckIcon,
     title: "Background-checked",
     text: "Every team member completes a criminal and background check before employment.",
@@ -70,7 +64,7 @@ export function SafetySection() {
           align="center"
           eyebrow={{ icon: <ShieldCheckIcon />, label: "Safety first" }}
           title="Your Safety Comes First"
-          description="Your home, your family and your vehicle deserve a team that takes health and safety seriously. Every visit follows the same careful routine, so you can relax knowing the job is done cleanly, and safely."
+          description="Your home, your family and your workplace deserve a team that takes health and safety seriously. Every visit follows the same careful routine, so you can relax knowing the job is done cleanly, and safely."
         />
 
         <div className="mt-12 grid grid-cols-2 gap-6 max-lg:grid-cols-1">
@@ -102,7 +96,7 @@ export function SafetySection() {
               Certified &amp; accountable
             </p>
             <h3 className="my-0 font-heading text-[26px] leading-[34px] text-white max-sm:text-[22px] max-sm:leading-[30px]">
-              Fully Licensed, Insured &amp; Carry a Valid Garage Policy
+              Fully Licensed &amp; Insured
             </h3>
             <p className="mt-3 mb-0 font-text text-[15px] leading-[26px] text-white/70">
               <strong className="font-semibold text-white">Security and safety matter:</strong> all
@@ -111,7 +105,10 @@ export function SafetySection() {
 
             <ul className="mt-8 mb-0 grid list-none grid-cols-2 gap-x-6 gap-y-6 border-t border-white/10 pt-8 pl-0 max-sm:grid-cols-1">
               {credentials.map(({ Icon, title, text }) => (
-                <li key={title} className="flex gap-3">
+                <li
+                  key={title}
+                  className="flex gap-3 last:odd:col-span-2 max-sm:last:odd:col-span-1"
+                >
                   <span className="mt-0.5 flex size-9 min-w-9 items-center justify-center rounded-full bg-white/10 text-[18px] text-white">
                     <Icon />
                   </span>

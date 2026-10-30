@@ -13,7 +13,6 @@ const columns: { title: string; links: FooterLink[] }[] = [
     title: "Services",
     links: [
       { label: "Home Cleaning", href: "/home-cleaning" },
-      { label: "Car Detailing", href: "/car-detailing" },
       { label: "Custodian Services", href: "/custodian-services" },
     ],
   },
@@ -21,7 +20,6 @@ const columns: { title: string; links: FooterLink[] }[] = [
     title: "About us",
     links: [
       { label: "Home Cleaning Pricing", href: "/home-cleaning#book" },
-      { label: "Car Detailing Pricing", href: "/car-detailing#book" },
       { label: "About us", href: "/about-us" },
       { label: "Products We Trust", href: "/products-we-trust" },
       { label: "Blog", href: "/blog" },
@@ -39,8 +37,7 @@ const columns: { title: string; links: FooterLink[] }[] = [
     title: "Book now",
     links: [
       { label: "Home Cleaning", href: bookingLinks.homeCleaning },
-      { label: "Car Detailing", href: bookingLinks.carDetailing },
-      { label: "Custodian Services", href: "/contact-us" },
+      { label: "Custodian Services", href: "/contact-us?topic=custodian#message" },
     ],
   },
 ];
@@ -83,8 +80,8 @@ export function Footer() {
               <Image src={logoSquare} alt="SA Cleaning Group" width={140} />
             </Link>
             <p className="mt-5 font-text text-[16px] leading-6 text-body">
-              SA Cleaning Group offers home cleaning, car detailing and custodian services across
-              Greater Vancouver.
+              SA Cleaning Group offers home cleaning and custodian services across Greater
+              Vancouver.
             </p>
             <ContactDetails />
             <SocialIcons />

@@ -1,6 +1,3 @@
-import kitchenAppliances from "@/assets/images/kitchen-appliances.jpg";
-import kitchenIsland from "@/assets/images/kitchen-island.jpg";
-import kitchenMicrowave from "@/assets/images/kitchen-microwave.jpg";
 import kitchenSink from "@/assets/images/kitchen-sink.jpg";
 import kitchenStove from "@/assets/images/kitchen-stove.jpg";
 import { BookingCta } from "@/components/sections/booking-cta";
@@ -30,24 +27,11 @@ const gallery: GalleryImage[] = [
     alt: "A cleaned double sink and counter in an open-plan condo kitchen",
     span: 2,
   },
-  {
-    image: kitchenIsland,
-    alt: "A wiped-down kitchen island and white appliances in a condo",
-    span: 2,
-  },
+  { image: stock.homeBathtub, alt: stock.homeBathtub.alt, span: 2 },
   { image: kitchenStove, alt: "A clean gas cooktop with polished grates", span: 2 },
-  {
-    image: kitchenAppliances,
-    alt: "A tidy galley kitchen with a clean stove, fridge and microwave",
-    span: 2,
-  },
+  { image: stock.homeLivingRoom, alt: stock.homeLivingRoom.alt, span: 2 },
   { image: stock.homeDishwasher, alt: stock.homeDishwasher.alt, span: 4 },
-  {
-    image: kitchenMicrowave,
-    alt: "A clean stainless steel microwave beside the stove",
-    span: 3,
-    tabletSpan: 2,
-  },
+  { image: stock.homeDrawers, alt: stock.homeDrawers.alt, span: 3, tabletSpan: 2 },
   { image: stock.homeMirror, alt: stock.homeMirror.alt, span: 1, tabletSpan: 2 },
   { image: stock.homeBed, alt: stock.homeBed.alt, span: 1, tabletSpan: 2 },
   { image: stock.homeCabinet, alt: stock.homeCabinet.alt, span: 1, tabletSpan: 2 },
@@ -177,7 +161,6 @@ export default function HomeCleaningPage() {
       />
 
       <CareSection
-        layout="home-cleaning"
         booking={{ href: bookingLinks.homeCleaning }}
         photos={{
           ecoFriendly: { image: stock.homeEcoProducts, alt: stock.homeEcoProducts.alt },

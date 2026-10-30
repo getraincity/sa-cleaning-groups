@@ -1,5 +1,4 @@
 import Link from "next/link";
-import deskDisinfecting from "@/assets/images/commercial/desk-disinfecting.jpg";
 import lobbyEntrance from "@/assets/images/commercial/lobby-wet-floor.jpg";
 import { CtaBand } from "@/components/sections/cta-band";
 import { FaqSection, type Faq } from "@/components/sections/faq-section";
@@ -201,8 +200,8 @@ const spaceRows: PhotoFeatureRow[] = [
       "Washrooms cleaned and disinfected",
       "Soap and paper supplies refilled",
     ],
-    image: deskDisinfecting,
-    alt: "Gloved hands disinfecting a desk",
+    image: stock.custodianTouchpoints,
+    alt: stock.custodianTouchpoints.alt,
   },
 ];
 

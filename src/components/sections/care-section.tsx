@@ -5,7 +5,6 @@ import leafIcon from "@/assets/images/icons/leaf.svg";
 import petIcon from "@/assets/images/icons/pet.svg";
 import { TintedIcon } from "@/components/ui/tinted-icon";
 import { Reveal } from "@/components/ui/reveal";
-import { cn } from "@/lib/utils";
 
 type FeaturePhotos = {
   ecoFriendly: { image: StaticImageData; alt: string };
@@ -16,14 +15,9 @@ type FeaturePhotos = {
 type CareSectionProps = {
   photos: FeaturePhotos;
   booking: { href: string; external?: boolean };
-  /**
-   * The two service pages lay out the intro copy slightly differently:
-   * home cleaning uses a fixed-width block, car detailing a flex column.
-   */
-  layout: "home-cleaning" | "car-detailing";
 };
 
-export function CareSection({ photos, booking, layout }: CareSectionProps) {
+export function CareSection({ photos, booking }: CareSectionProps) {
   const features = [
     {
       ...photos.ecoFriendly,
@@ -60,13 +54,7 @@ export function CareSection({ photos, booking, layout }: CareSectionProps) {
             <br />
             and services
           </h2>
-          <div
-            className={cn(
-              layout === "home-cleaning"
-                ? "w-[650px] max-lg:w-full"
-                : "flex flex-col items-start justify-center gap-[7px]",
-            )}
-          >
+          <div className="w-[650px] max-lg:w-full">
             <h3 className="mt-0 font-text text-[30px]">From Vancouverites, for Vancouverites</h3>
             <p className="font-text text-[14px]">
               We know how busy life can get in the city. That’s why at S&amp;A cleaning,

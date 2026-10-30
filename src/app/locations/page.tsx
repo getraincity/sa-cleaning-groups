@@ -11,10 +11,10 @@ import { bookingLinks } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 export const metadata = pageMetadata({
-  title: "Locations: Cleaning & Detailing Across Greater Vancouver",
+  title: "Locations: Cleaning Across Greater Vancouver",
   path: "/locations",
   description:
-    "Home cleaning, car detailing and custodian services in Downtown, North, East, West and South Vancouver. Find your area and book online.",
+    "Home cleaning and custodian services in Downtown, North, East, West and South Vancouver. Find your area and book online.",
 });
 
 const neighbourhoodCount = locations.reduce((total, area) => total + area.neighbourhoods.length, 0);
@@ -22,7 +22,7 @@ const neighbourhoodCount = locations.reduce((total, area) => total + area.neighb
 const stats = [
   { value: String(locations.length), label: "Service areas" },
   { value: `${neighbourhoodCount}+`, label: "Neighbourhoods" },
-  { value: "3", label: "Services" },
+  { value: "2", label: "Services" },
 ];
 
 // Two wide cards on top, three below, on a 6-column grid.
@@ -44,9 +44,9 @@ export default function LocationsPage() {
               Proudly Serving <span className="text-brand">Greater Vancouver</span>
             </h1>
             <p className="mt-5 mb-0 max-w-[580px] font-text text-[17px] leading-[30px] text-muted max-sm:text-[16px] max-sm:leading-7">
-              From downtown condos to North Shore family homes, our team brings home cleaning, car
-              detailing and custodian services to neighbourhoods right across the city. Choose your
-              area to see how we work there.
+              From downtown condos to North Shore family homes, our team brings home cleaning and
+              custodian services to neighbourhoods right across the city. Choose your area to see
+              how we work there.
             </p>
             <dl className="mt-9 mb-0 flex flex-wrap gap-x-12 gap-y-4">
               {stats.map((stat) => (
@@ -155,9 +155,9 @@ export default function LocationsPage() {
       <CtaBand
         eyebrow="Book online"
         title="Ready When You Are"
-        text="Book your home cleaning online in minutes, or book a detail for your car, truck, RV or boat."
+        text="Book your home cleaning online in minutes, or request a quote for your office or building."
         primary={{ label: "Book home cleaning", href: bookingLinks.homeCleaning }}
-        secondary={{ label: "Book car detailing", href: bookingLinks.carDetailing }}
+        secondary={{ label: "Request a quote", href: "/contact-us?topic=custodian#message" }}
       />
     </>
   );

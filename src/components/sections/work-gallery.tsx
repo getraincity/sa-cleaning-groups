@@ -41,14 +41,14 @@ const photos: Photo[] = [
     sizes: "(max-width: 767px) 100vw, 50vw",
   },
   {
-    image: stock.aboutRadiator,
+    image: stock.aboutBath,
     caption: "Every surface, inside and out",
     className: "col-span-2",
     sizes: "(max-width: 767px) 100vw, 50vw",
   },
 ];
 
-/** A bento grid of recent jobs, homes and vehicles, with short captions. */
+/** A bento grid of recent home jobs, with short captions. */
 export function WorkGallery() {
   return (
     <section className={cn("px-5", sectionSpacing.y)}>

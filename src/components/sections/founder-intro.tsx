@@ -17,7 +17,7 @@ const points = [
   {
     Icon: UsersIcon,
     title: "Who we are",
-    text: "A Vancouver team looking after homes, vehicles and workplaces across the city. Trained, insured and background-checked, and proud of the work we do.",
+    text: "A Vancouver team looking after homes and workplaces across the city. Trained, insured and background-checked, and proud of the work we do.",
   },
   {
     Icon: HeartIcon,
@@ -60,7 +60,7 @@ export function FounderIntro() {
           <SectionHeader
             eyebrow={{ icon: <UsersIcon />, label: "Meet the founders" }}
             title="Hi, We're Alex & Shaida"
-            description="We're the co-founders of S&A Cleaning Group. What began as a small, detail-obsessed cleaning team has grown into a company trusted with homes, vehicles and workplaces across Greater Vancouver, and we still care about every job like it's our own home."
+            description="We're the co-founders of S&A Cleaning Group. What began as a small, detail-obsessed cleaning team has grown into a company trusted with homes and workplaces across Greater Vancouver, and we still care about every job like it's our own home."
           />
 
           <div className="mt-8 grid grid-cols-2 gap-6 max-sm:grid-cols-1">

@@ -1,7 +1,7 @@
 import type { StaticImageData } from "next/image";
 import { stock } from "@/content/stock-photos";
 
-export const blogCategories = ["Home Cleaning", "Car Detailing", "Commercial"] as const;
+export const blogCategories = ["Home Cleaning", "Commercial"] as const;
 export type BlogCategory = (typeof blogCategories)[number];
 
 /** A piece of an article. Headings (h2) also feed the table of contents. */
@@ -106,135 +106,6 @@ const allPosts: Post[] = [
       {
         type: "p",
         text: "S&A's custodian services cover offices, retail stores, strata common areas and more across Greater Vancouver. We'll build a checklist around your space and plan visits around your business hours.",
-      },
-    ],
-  },
-  {
-    slug: "rv-and-boat-detailing-end-of-season",
-    title: "End-of-Season RV and Boat Detailing: Clean Before You Store",
-    excerpt:
-      "Putting your RV or boat away dirty is an open invitation to mould, stains and odours. A thorough clean now means an easy start next season.",
-    category: "Car Detailing",
-    date: "2026-09-18",
-    image: stock.blogBoat,
-    imageAlt: stock.blogBoat.alt,
-    body: [
-      {
-        type: "p",
-        text: "As the camping and boating season winds down in BC, it's tempting to park the RV, cover the boat and forget about them until spring. But whatever you leave behind, from crumbs and damp towels to salt spray and road grime, has months to settle in.",
-      },
-      {
-        type: "p",
-        text: "In our damp coastal climate, that's a recipe for musty smells, mildew and stains that are much harder to remove later. A proper end-of-season clean is one of the easiest ways to protect your investment.",
-      },
-      { type: "h2", text: "Your RV or camper" },
-      {
-        type: "checklist",
-        title: "Inside",
-        items: [
-          "Remove all food, and wipe out cupboards, drawers and the fridge",
-          "Prop the fridge door open so it can air out",
-          "Vacuum and shampoo carpets and upholstery",
-          "Wash or remove bedding, cushions and curtains",
-          "Clean the bathroom and kitchen surfaces thoroughly",
-          "Wipe down windows, blinds and screens",
-        ],
-      },
-      {
-        type: "checklist",
-        title: "Outside",
-        items: [
-          "Wash off road grime, bugs and tree sap",
-          "Clean the awning and let it dry completely before rolling it up",
-          "Clean wheels and wheel wells",
-          "Do a visual check of seals and seams while everything is clean",
-        ],
-      },
-      {
-        type: "tip",
-        title: "Dry means safe",
-        text: "Never store anything damp. Towels, awnings, mats and cushions should be completely dry first, or you may come back to mildew in the spring.",
-      },
-      { type: "h2", text: "Your boat" },
-      {
-        type: "p",
-        text: "Salt water and sun are hard on boats. Before storage, give yours a thorough clean from deck to cabin.",
-      },
-      {
-        type: "list",
-        items: [
-          "Scrub the deck and rinse away salt residue",
-          "Clean and condition vinyl upholstery so it doesn't crack or mildew",
-          "Empty and air out the cabin, lockers and storage compartments",
-          "Wipe down all hard surfaces and windows inside the cabin",
-        ],
-      },
-      {
-        type: "p",
-        text: "Cleaning is just one part of winterizing. For engines, water systems and anything mechanical, follow your manufacturer's guidance or have a qualified technician take care of it.",
-      },
-      { type: "h2", text: "Let us do the heavy lifting" },
-      {
-        type: "p",
-        text: "S&A detailers work on much more than cars. We clean RVs, campers, trucks, work vehicles and boats inside and out, so they're ready to go the moment the season starts again. Get in touch for a quote.",
-      },
-    ],
-  },
-  {
-    slug: "car-interior-rainy-season",
-    title: "How to Keep Your Car Interior Fresh Through Vancouver's Rainy Season",
-    excerpt:
-      "Wet boots, dripping umbrellas and foggy windows: the rainy season is tough on car interiors. Here's how to keep yours dry, clean and smelling fresh.",
-    category: "Car Detailing",
-    date: "2026-09-12",
-    image: stock.blogCarInterior,
-    imageAlt: stock.blogCarInterior.alt,
-    body: [
-      {
-        type: "p",
-        text: "Anyone who's lived through a Vancouver winter knows the drill: rain for days, wet jackets, soggy shoes and windows that fog up the moment you get in. All that moisture ends up in your car's carpets and upholstery, and if it doesn't dry out, musty smells and mildew follow.",
-      },
-      {
-        type: "p",
-        text: "The good news is that a few simple habits make a big difference.",
-      },
-      { type: "h2", text: "Keep water out in the first place" },
-      {
-        type: "list",
-        items: [
-          "Switch to deep, all-weather rubber mats for the season. They trap water and mud so your carpet doesn't.",
-          "Keep a small bin or bag for wet umbrellas instead of dropping them on the floor.",
-          "Knock off mud and gravel before getting in, especially after a hike on the North Shore trails.",
-        ],
-      },
-      { type: "h2", text: "Help your car dry out" },
-      {
-        type: "list",
-        items: [
-          "Run your air conditioning with the defroster. A/C pulls moisture out of the air and clears foggy windows faster.",
-          "Take the mats out to drain and dry after particularly wet days.",
-          "Don't leave wet gym clothes, towels or jackets in the car overnight.",
-          "On dry days, open the doors for a few minutes to let fresh air through.",
-        ],
-      },
-      {
-        type: "tip",
-        title: "Check for hidden leaks",
-        text: "If your carpets stay damp no matter what, water may be getting in through a worn door seal or a blocked sunroof drain. It's worth having it checked before mould has a chance to take hold.",
-      },
-      { type: "h2", text: "Vacuum more often than you think" },
-      {
-        type: "p",
-        text: "Sand and grit act like sandpaper on carpets and seats, and they hold on to moisture. A quick vacuum every couple of weeks keeps them from grinding in and makes your next detail far easier.",
-      },
-      { type: "h2", text: "When it's time for a professional detail" },
-      {
-        type: "p",
-        text: "If there's a musty smell that won't go away, carpets that feel damp, or visible spots of mildew, masking it with an air freshener won't fix it. A professional interior detail deep-cleans carpets, mats and upholstery to lift out the dirt and moisture at the source.",
-      },
-      {
-        type: "p",
-        text: "S&A interior detailing is priced by vehicle size, from passenger cars to large SUVs and minivans. Book online or check our detailing page for current packages.",
       },
     ],
   },

@@ -1,7 +1,7 @@
 # SA Cleaning Group — website
 
-Marketing site for [sacleaninggroup.ca](https://www.sacleaninggroup.ca): home cleaning and car
-detailing in Vancouver.
+Marketing site for [sacleaninggroup.ca](https://www.sacleaninggroup.ca): home cleaning and
+custodian services in Vancouver.
 
 Rebuilt from the original Webflow site in **Next.js 16 (App Router) · React 19 · TypeScript ·
 Tailwind CSS v4**. The design is a 1:1 port: every page was checked element-by-element against the
@@ -36,7 +36,7 @@ src/
 │  ├─ page.tsx             /
 │  ├─ about-us/            /about-us
 │  ├─ home-cleaning/       /home-cleaning
-│  ├─ car-detailing/       /car-detailing
+│  ├─ car-detailing/       /car-detailing (history only: S&A no longer offers car detailing)
 │  ├─ custodian-services/  /custodian-services
 │  ├─ locations/           /locations and /locations/[slug] (one page per area)
 │  ├─ products-we-trust/   /products-we-trust (under About in the nav)
@@ -82,9 +82,8 @@ These were never part of Webflow and carry over unchanged:
 
 - **Google Reviews** widgets: Elfsight (IDs in `src/lib/site.ts`)
 - **Booking**: every "Book" button opens the contact form in booking mode
-  (`/contact-us?book=home-cleaning` or `?book=car-detailing`). Once the details are emailed, the
-  visitor continues to `brightnestcleaning.ca/booknow` (home cleaning) or
-  `saautodetailing.ca/book-now` (car detailing); see `bookingSites` in `src/lib/site.ts`. The old
+  (`/contact-us?book=home-cleaning`). Once the details are emailed, the visitor continues to
+  `brightnestcleaning.ca/booknow`; see `bookingSites` in `src/lib/site.ts`. The old
   Launch27 page `/book-home-cleaning` redirects to the form.
 - **Google Analytics 4**: `G-6KNKRNW2CL`, only loaded on the production deployment
 

@@ -16,7 +16,7 @@ export const metadata = pageMetadata({
   title: "About Us",
   path: "/about-us",
   description:
-    "Meet Alex & Shaida and the S&A Cleaning Group team: 9+ years of home cleaning, car detailing and custodian services across Greater Vancouver.",
+    "Meet Alex & Shaida and the S&A Cleaning Group team: 9+ years of home cleaning and custodian services across Greater Vancouver.",
 });
 
 export default function AboutPage() {

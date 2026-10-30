@@ -193,7 +193,7 @@ export function ContactForm({ defaultTopic, booking = false }: ContactFormProps)
             placeholder={
               isBooking
                 ? "Anything we should know before you book?"
-                : "Tell us a little about your home, vehicle or space, and when works for you."
+                : "Tell us a little about your home or workplace, and when works for you."
             }
             required={!isBooking}
           />

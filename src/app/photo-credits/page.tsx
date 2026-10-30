@@ -16,7 +16,6 @@ const pages: [prefix: string, page: string][] = [
   ["social", "Home"],
   ["about", "About us"],
   ["home", "Home Cleaning"],
-  ["car", "Car Detailing"],
   ["custodian", "Custodian Services"],
   ["products", "Products We Trust"],
   ["blog", "Blog"],
@@ -51,8 +50,8 @@ export default function PhotoCreditsPage() {
           </h1>
           <div className="mt-6 max-w-[760px] font-text text-[17px] leading-[30px] text-muted max-sm:text-[16px] max-sm:leading-7">
             <p className="m-0">
-              Photos of our own team, truck and finished jobs are S&amp;A Cleaning Group&apos;s. The
-              other photos on this site are by independent photographers on{" "}
+              Photos of our own team and finished jobs are S&amp;A Cleaning Group&apos;s. The other
+              photos on this site are by independent photographers on{" "}
               <a
                 href="https://unsplash.com"
                 target="_blank"
@@ -118,8 +117,8 @@ export default function PhotoCreditsPage() {
         </ul>
 
         <p className="mx-auto mt-14 mb-0 max-w-[1440px] font-text text-[15px] leading-6 text-muted">
-          The neighbourhood, office and detailing photos on our service and location pages are also
-          from Unsplash, under the same licence.
+          The neighbourhood and office photos on our service and location pages are also from
+          Unsplash, under the same licence.
         </p>
       </section>
     </>

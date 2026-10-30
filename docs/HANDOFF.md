@@ -7,8 +7,9 @@ so a new session (or a new account) carries on in exactly the same way.
 
 ## 1. The project and the people
 
-- **The site:** S&A Cleaning Group (sacleaninggroup.ca). It offers home cleaning, car detailing
-  ("S&A Auto Detailing") and custodian (commercial/janitorial) services across Greater Vancouver.
+- **The site:** S&A Cleaning Group (sacleaninggroup.ca). It offers home cleaning and custodian
+  (commercial/janitorial) services across Greater Vancouver. **It does not offer car detailing**
+  (2026-10-30): the previous company did. Never present car detailing as an S&A service.
   - The company used to be called **Akumal Executive Cleaning** and has been running for 9+ years.
   - The co-founders are **Alex & Shaida**.
   - Phone, email and booking links live in `src/lib/site.ts`.
@@ -297,6 +298,19 @@ _Fix:_ slide-in overflow on phones.
 - There is no Resend key, so the form emails through FormSubmit (no account or key; see README →
   Contact form). FormSubmit needs a one-time "Activate Form" click in the info@ inbox after the
   first live message. If the email fails, a booking still continues to the booking site.
+
+**No car detailing; unique photos (2026-10-30)**
+
+- The client bought the company; car detailing was the previous company's and S&A doesn't offer
+  it. It is gone from the menus, footer, booking, contact topics, Home, About, locations, blog (two
+  car posts removed and redirected to /blog), Products We Trust and the "garage policy" claims.
+  `/car-detailing` stays as a quiet history page (before/after photos from the previous company),
+  out of the sitemap and linked only from Our Story on About. The second header button is now
+  "Request a quote" (custodian).
+- Photo pass: one Unsplash photographer's shoot (silverkblack) had been used on 11 slots across
+  the site, beds were being made on four pages and Home Cleaning had five near-identical kitchen
+  shots. They were replaced so no photo, and almost no shoot, repeats between pages. The areas
+  strip on service pages no longer shows photos. Re-run the inventory before adding photos.
 
 ## 9. Waiting on the client (as of round 5)
 

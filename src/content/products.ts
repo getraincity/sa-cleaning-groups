@@ -19,7 +19,7 @@ export type ProductCategory = {
   title: string;
   description: string;
   /** Which service the category belongs to, for its label and colour. */
-  service: "home" | "car" | "all";
+  service: "home" | "all";
   image: StaticImageData;
   alt: string;
   brands: ProductBrand[];
@@ -57,30 +57,9 @@ export const productCategories: ProductCategory[] = [
     ],
   },
   {
-    id: "car",
-    title: "Car Detailing",
-    description:
-      "Detailing products that lift grime safely and leave paint and interiors looking new.",
-    service: "car",
-    image: stock.productsCar,
-    alt: stock.productsCar.alt,
-    brands: [
-      {
-        name: "Chemical Guys",
-        text: "Car wash soaps, interior cleaners and detailing chemicals.",
-        href: "https://www.chemicalguys.com",
-      },
-      {
-        name: "Meguiar's",
-        text: "Car care products for paint, wheels, tires and interiors.",
-        href: "https://www.meguiars.com",
-      },
-    ],
-  },
-  {
     id: "tools",
     title: "Tools & Equipment",
-    description: "The equipment behind a deeper, healthier clean in every home, car and workplace.",
+    description: "The equipment behind a deeper, healthier clean in every home and workplace.",
     service: "all",
     image: stock.productsTools,
     alt: stock.productsTools.alt,

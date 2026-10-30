@@ -4,7 +4,6 @@ import { BookingCta } from "@/components/sections/booking-cta";
 import { PageHero } from "@/components/sections/page-hero";
 import {
   ArrowRightIcon,
-  CarIcon,
   HeartIcon,
   HomeIcon,
   LeafIcon,
@@ -22,16 +21,15 @@ export const metadata = pageMetadata({
   title: "Products We Trust",
   path: "/products-we-trust",
   description:
-    "The eco-friendly cleaning products, detailing supplies and equipment S&A Cleaning Group uses in Vancouver homes, cars and workplaces.",
+    "The eco-friendly cleaning products and equipment S&A Cleaning Group uses in Vancouver homes and workplaces.",
 });
 
 // Each category takes the colour scheme of the service it belongs to.
 const themeFor: Record<ProductCategory["service"], string> = {
   home: "theme-home",
-  car: "theme-car",
   all: "theme-custodian",
 };
-const iconFor = { home: HomeIcon, car: CarIcon, all: SparklesIcon } as const;
+const iconFor = { home: HomeIcon, all: SparklesIcon } as const;
 
 const values = [
   {
@@ -111,7 +109,7 @@ export default function ProductsWeTrustPage() {
         image={stock.productsHero}
         tagline="Good results start with good products."
         title="Products We Trust"
-        description="The brands and tools our team relies on in homes, cars and workplaces across Vancouver."
+        description="The brands and tools our team relies on in homes and workplaces across Vancouver."
       />
 
       {/* Values. */}
@@ -121,7 +119,7 @@ export default function ProductsWeTrustPage() {
             align="center"
             eyebrow={{ icon: <LeafIcon />, label: "What we look for" }}
             title="Brands We Love"
-            description="Every product we bring into your home or vehicle is chosen with care: effective on dirt, gentle on people, pets and the planet."
+            description="Every product we bring into your home or workplace is chosen with care: effective on dirt, gentle on people, pets and the planet."
           />
           <div className="mt-12 grid grid-cols-3 gap-5 max-lg:grid-cols-1">
             {values.map(({ Icon, title, text }, index) => (

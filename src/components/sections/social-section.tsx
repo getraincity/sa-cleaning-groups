@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
 type Post = {
   image: StaticImageData;
   caption: string;
-  tag: "Home" | "Auto" | "Behind the scenes";
+  tag: "Home" | "Office" | "Behind the scenes";
   /** Large tiles span two columns and two rows on desktop. */
   large?: boolean;
 };
@@ -18,16 +18,16 @@ type Post = {
 // On tablets the same order interlocks into a 4-column checkerboard.
 const posts: Post[] = [
   {
-    image: stock.socialCarRinse,
-    caption: "Pre-rinse before a hand wash",
-    tag: "Auto",
+    image: stock.socialSupplies,
+    caption: "Supplies stocked and ready to go",
+    tag: "Behind the scenes",
     large: true,
   },
-  { image: stock.socialMopping, caption: "Floors mopped, room by room", tag: "Home" },
+  { image: stock.socialLaundry, caption: "Fresh laundry, ready to fold", tag: "Home" },
   { image: stock.socialHomeWindow, caption: "Streak-free windows", tag: "Home" },
-  { image: stock.socialHandWash, caption: "A careful hand wash and dry", tag: "Auto", large: true },
+  { image: stock.socialKidsRoom, caption: "Kids' rooms, beds made", tag: "Home", large: true },
   { image: stock.socialKitchenCounter, caption: "Kitchen counters wiped down", tag: "Home" },
-  { image: stock.socialWheels, caption: "Wheel and rim detailing", tag: "Auto" },
+  { image: stock.socialLobby, caption: "Lobby floors, polished", tag: "Office" },
 ];
 
 const profiles = [
@@ -84,8 +84,8 @@ export function SocialSection() {
             title="Follow Our Journey on Social"
             description={
               <>
-                See our latest home transformations, auto detailing projects, and behind-the-scenes
-                moments across Greater Vancouver.{" "}
+                See our latest home transformations, workplace cleans, and behind-the-scenes moments
+                across Greater Vancouver.{" "}
                 <strong className="font-semibold text-ink-soft">
                   Tag us in your spotless spaces!
                 </strong>

@@ -8,10 +8,10 @@ import { bookingLinks } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 export const metadata = pageMetadata({
-  title: "Blog: Cleaning & Detailing Tips",
+  title: "Blog: Cleaning Tips",
   path: "/blog",
   description:
-    "Cleaning checklists, car detailing advice and practical tips for Vancouver homes, vehicles and workplaces, from the S&A Cleaning Group team.",
+    "Cleaning checklists and practical tips for Vancouver homes and workplaces, from the S&A Cleaning Group team.",
 });
 
 export default function BlogPage() {
@@ -31,8 +31,8 @@ export default function BlogPage() {
             </h1>
           </div>
           <p className="mb-1 max-w-[440px] font-text text-[17px] leading-[30px] text-muted max-sm:text-[16px] max-sm:leading-7">
-            Practical cleaning checklists, car care advice and seasonal tips for Vancouver homes,
-            vehicles and workplaces, from our team to you.
+            Practical cleaning checklists and seasonal tips for Vancouver homes and workplaces, from
+            our team to you.
           </p>
         </div>
       </section>
@@ -46,9 +46,9 @@ export default function BlogPage() {
       <CtaBand
         eyebrow="Rather leave it to us?"
         title="Book a Professional Clean"
-        text="Book your home cleaning online in minutes, or book a detail for your car, truck, RV or boat."
+        text="Book your home cleaning online in minutes, or request a quote for your office or building."
         primary={{ label: "Book home cleaning", href: bookingLinks.homeCleaning }}
-        secondary={{ label: "Book car detailing", href: bookingLinks.carDetailing }}
+        secondary={{ label: "Request a quote", href: "/contact-us?topic=custodian#message" }}
       />
     </>
   );
