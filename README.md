@@ -41,7 +41,6 @@ src/
 │  ├─ locations/           /locations and /locations/[slug] (one page per area)
 │  ├─ products-we-trust/   /products-we-trust (under About in the nav)
 │  ├─ blog/                /blog and /blog/[slug]
-│  ├─ book-home-cleaning/  /book-home-cleaning  (Launch27 booking embed)
 │  ├─ contact-us/          /contact-us          (+ actions.ts: contact form server action)
 │  ├─ globals.css          Design tokens (@theme) + Webflow base typography
 │  ├─ sitemap.ts, robots.ts, icon.png, apple-icon.png
@@ -82,8 +81,11 @@ legacy/                    Original Webflow export + asset library (reference on
 These were never part of Webflow and carry over unchanged:
 
 - **Google Reviews** widgets: Elfsight (IDs in `src/lib/site.ts`)
-- **Home cleaning booking**: Launch27 (`akumalexecutivecleaning.launch27.com`)
-- **Car detailing booking**: external link to `saautodetailing.ca/book-now`
+- **Booking**: every "Book" button opens the contact form in booking mode
+  (`/contact-us?book=home-cleaning` or `?book=car-detailing`). Once the details are emailed, the
+  visitor continues to `brightnestcleaning.ca/booknow` (home cleaning) or
+  `saautodetailing.ca/book-now` (car detailing); see `bookingSites` in `src/lib/site.ts`. The old
+  Launch27 page `/book-home-cleaning` redirects to the form.
 - **Google Analytics 4**: `G-6KNKRNW2CL`, only loaded on the production deployment
 
 ## Contact form

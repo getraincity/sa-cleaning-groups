@@ -287,6 +287,16 @@ _Fix:_ slide-in overflow on phones.
 - Photo notes from the doc (unique real photos per page) are handled on the branch
   `claude/unique-real-photos`.
 
+**Booking flow (2026-10-30)**
+
+- The Launch27 booking page stopped working ("premium booking form feature is not available on
+  your current plan"). Per the client, every Book button now opens the contact form in booking
+  mode; sending it emails info@sacleaninggroup.ca, then the visitor goes on to
+  https://brightnestcleaning.ca/booknow (home cleaning) or saautodetailing.ca/book-now (car
+  detailing). `/book-home-cleaning` redirects to the form. This only works in production if
+  `RESEND_API_KEY` is set in Vercel; if the email fails, the form still offers a link to the
+  booking form.
+
 ## 9. Waiting on the client (as of round 5)
 
 - **Photos:**

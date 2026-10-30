@@ -39,7 +39,7 @@ const columns: { title: string; links: FooterLink[] }[] = [
     title: "Book now",
     links: [
       { label: "Home Cleaning", href: bookingLinks.homeCleaning },
-      { label: "Car Detailing", href: bookingLinks.carDetailing, external: true },
+      { label: "Car Detailing", href: bookingLinks.carDetailing },
       { label: "Custodian Services", href: "/contact-us" },
     ],
   },

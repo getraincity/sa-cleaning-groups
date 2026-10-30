@@ -48,7 +48,7 @@ export default function BlogPage() {
         title="Book a Professional Clean"
         text="Book your home cleaning online in minutes, or book a detail for your car, truck, RV or boat."
         primary={{ label: "Book home cleaning", href: bookingLinks.homeCleaning }}
-        secondary={{ label: "Book car detailing", href: bookingLinks.carDetailing, external: true }}
+        secondary={{ label: "Book car detailing", href: bookingLinks.carDetailing }}
       />
     </>
   );

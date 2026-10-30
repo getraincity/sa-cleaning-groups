@@ -7,6 +7,8 @@ type ContactMessage = {
   phone: string;
   topic: string;
   message: string;
+  /** Set when the visitor is booking: the site they were sent on to. */
+  bookingSite?: string;
 };
 
 /**
@@ -39,14 +41,17 @@ export async function sendContactEmail(message: ContactMessage): Promise<boolean
       from,
       to: [to],
       reply_to: message.email,
-      subject: `Website enquiry: ${message.topic} (${message.name})`,
+      subject: `${message.bookingSite ? "Booking request" : "Website enquiry"}: ${message.topic} (${message.name})`,
       text: [
         `Name: ${message.name}`,
         `Email: ${message.email}`,
         `Phone: ${message.phone || "Not given"}`,
         `Topic: ${message.topic}`,
+        ...(message.bookingSite
+          ? [`Booking: sent on to ${message.bookingSite} to finish booking`]
+          : []),
         "",
-        message.message,
+        message.message || "(No message)",
       ].join("\n"),
     }),
   });

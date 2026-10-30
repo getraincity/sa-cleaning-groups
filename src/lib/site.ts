@@ -34,19 +34,34 @@ export const socialLinks: { instagram: string; facebook: string } = {
   facebook: "https://www.facebook.com/sacleaninggroup",
 };
 
-/** Booking destinations. Car detailing is booked on a separate site. */
+/**
+ * Every "Book" button opens the contact form in booking mode (`?book=`).
+ * Sending it emails the details to the inbox, then takes the visitor on to
+ * that service's booking site (`bookingSites`).
+ */
 export const bookingLinks = {
-  homeCleaning: "/book-home-cleaning",
-  carDetailing: "https://saautodetailing.ca/book-now",
+  homeCleaning: "/contact-us?book=home-cleaning#message",
+  carDetailing: "/contact-us?book=car-detailing#message",
 } as const;
+
+/** Where a booking continues once the visitor's details are sent. */
+export const bookingSites = {
+  // The client asked for home cleaning bookings to go here (2026-10-30).
+  "home-cleaning": "https://brightnestcleaning.ca/booknow",
+  "car-detailing": "https://saautodetailing.ca/book-now",
+} as const;
+
+export type BookingService = keyof typeof bookingSites;
+
+export function isBookingService(value: unknown): value is BookingService {
+  return typeof value === "string" && Object.hasOwn(bookingSites, value);
+}
 
 /** Third-party embeds that survived the move off Webflow. */
 export const embeds = {
   elfsightScript: "https://static.elfsight.com/platform/platform.js",
   reviewsHome: "e6307328-c81d-462c-84fd-94a54414d220",
   reviewsCarDetailing: "df9a2181-f8dd-4b8a-b63b-c412995b04a9",
-  launch27Script: "https://akumalexecutivecleaning.launch27.com/jsbundle",
-  launch27Widget: "https://akumalexecutivecleaning.launch27.com/?w_cleaning",
 } as const;
 
 /**

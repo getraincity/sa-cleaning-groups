@@ -6,7 +6,6 @@ import { BASE, isRealError, launch } from "./browser.mjs";
 const widths = [360, 414, 768, 1024, 1280, 1440, 1920];
 const sitemap = await (await fetch(`${BASE}/sitemap.xml`)).text();
 const pages = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => new URL(m[1]).pathname);
-if (!pages.includes("/book-home-cleaning")) pages.push("/book-home-cleaning");
 
 const browser = await launch();
 const problems = [];

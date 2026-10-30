@@ -48,7 +48,7 @@ const nextStep: Record<BlogCategory, { text: string; action: CtaAction }> = {
   },
   "Car Detailing": {
     text: "Our detailers will bring it back to showroom fresh.",
-    action: { label: "Book car detailing", href: bookingLinks.carDetailing, external: true },
+    action: { label: "Book car detailing", href: bookingLinks.carDetailing },
   },
   Commercial: {
     text: "Get a custodial plan built around your space.",

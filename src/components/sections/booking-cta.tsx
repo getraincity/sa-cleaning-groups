@@ -20,14 +20,12 @@ export function BookingCta() {
         <Link href={bookingLinks.homeCleaning} className={`${buttonClass} bg-brand text-white`}>
           Book Home Cleaning
         </Link>
-        <a
+        <Link
           href={bookingLinks.carDetailing}
-          target="_blank"
-          rel="noopener noreferrer"
           className={`${buttonClass} ml-[22px] bg-white text-charcoal max-md:ml-0`}
         >
           Book Car Detailing
-        </a>
+        </Link>
       </div>
     </section>
   );
