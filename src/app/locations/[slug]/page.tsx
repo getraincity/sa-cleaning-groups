@@ -6,6 +6,7 @@ import { CtaBand } from "@/components/sections/cta-band";
 import { FaqSection } from "@/components/sections/faq-section";
 import { PhotoGrid } from "@/components/sections/photo-grid";
 import { JsonLd } from "@/components/seo/json-ld";
+import { breadcrumbJsonLd, serviceJsonLd } from "@/lib/schema";
 import {
   ArrowRightIcon,
   BuildingIcon,
@@ -20,7 +21,7 @@ import { Reveal } from "@/components/ui/reveal";
 import { SectionHeader, sectionSpacing } from "@/components/ui/section-header";
 import { getLocation, locations } from "@/content/locations";
 import { pageMetadata } from "@/lib/metadata";
-import { bookingLinks, siteConfig, socialLinks } from "@/lib/site";
+import { bookingLinks } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -68,16 +69,19 @@ export default async function LocationPage({ params }: Props) {
   return (
     <>
       <JsonLd
-        data={{
-          "@context": "https://schema.org",
-          "@type": "LocalBusiness",
-          name: siteConfig.name,
-          url: `${siteConfig.url}/locations/${location.slug}`,
-          telephone: siteConfig.phone,
-          email: siteConfig.email,
-          areaServed: { "@type": "Place", name: `${location.name}, BC` },
-          sameAs: Object.values(socialLinks).filter(Boolean),
-        }}
+        data={serviceJsonLd({
+          path: `/locations/${location.slug}`,
+          name: `Home & Office Cleaning in ${location.name}`,
+          serviceType: "House cleaning and commercial cleaning",
+          description: location.metaDescription,
+          area: `${location.name}, BC`,
+        })}
+      />
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: "Locations", path: "/locations" },
+          { name: location.name, path: `/locations/${location.slug}` },
+        ])}
       />
 
       {/* Hero: copy beside a photo of the team at work. */}

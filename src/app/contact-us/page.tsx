@@ -20,9 +20,11 @@ import { locations } from "@/content/locations";
 import { pageMetadata } from "@/lib/metadata";
 import { bookingLinks, siteConfig, socialLinks } from "@/lib/site";
 import { cn } from "@/lib/utils";
+import { JsonLd } from "@/components/seo/json-ld";
+import { breadcrumbJsonLd } from "@/lib/schema";
 
 export const metadata = pageMetadata({
-  title: "Contact Us",
+  title: "Contact Us & Free Cleaning Quotes",
   path: "/contact-us",
   description:
     "Get in touch with SA Cleaning Group for home cleaning, custodian services and gift cards across Greater Vancouver.",
@@ -101,6 +103,7 @@ const faqs: Faq[] = [
 export default function ContactPage() {
   return (
     <>
+      <JsonLd data={breadcrumbJsonLd([{ name: "Contact Us", path: "/contact-us" }])} />
       {/* Contact options beside the form, both above the fold. */}
       <section className="bg-[#f6f4f2] px-5 pt-16 pb-[96px] max-md:pt-10 max-md:pb-16">
         <div className="mx-auto grid max-w-[1440px] grid-cols-[5fr_7fr] items-start gap-14 max-lg:grid-cols-1 max-lg:gap-10">

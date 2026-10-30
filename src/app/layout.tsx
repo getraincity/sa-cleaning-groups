@@ -4,6 +4,9 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 import { AnnouncementBar } from "@/components/layout/announcement-bar";
 import { Footer } from "@/components/layout/footer";
 import { Navbar } from "@/components/layout/navbar";
+import { JsonLd } from "@/components/seo/json-ld";
+import { openGraphBase } from "@/lib/metadata";
+import { siteJsonLd } from "@/lib/schema";
 import { chatWidget, siteConfig } from "@/lib/site";
 import "./globals.css";
 
@@ -22,9 +25,19 @@ const montserrat = Montserrat({
 const trackAnalytics =
   process.env.NODE_ENV === "production" && process.env.VERCEL_ENV !== "preview";
 
+const defaultDescription =
+  "Home cleaning and custodian services across Greater Vancouver from S&A Cleaning Group, formerly Akumal Executive Cleaning. Licensed, insured and eco-friendly.";
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
-  title: siteConfig.name,
+  title: {
+    default: `${siteConfig.brandName} | Home & Custodian Cleaning in Vancouver`,
+    template: `%s | ${siteConfig.brandName}`,
+  },
+  description: defaultDescription,
+  applicationName: siteConfig.brandName,
+  openGraph: { ...openGraphBase, url: "/", description: defaultDescription },
+  twitter: { card: "summary_large_image", images: [siteConfig.ogImage] },
   verification: { google: siteConfig.googleSiteVerification },
 };
 
@@ -36,6 +49,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${beVietnamPro.variable} ${montserrat.variable}`}>
       <body>
+        <JsonLd data={siteJsonLd()} />
         <AnnouncementBar />
         <Navbar />
         {/* Slide-in animations start off to one side; `overflow-x-clip` stops them

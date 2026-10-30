@@ -16,10 +16,17 @@ function resolveSiteUrl(value = process.env.NEXT_PUBLIC_SITE_URL?.trim()): strin
 
 export const siteConfig = {
   name: "SA Cleaning Group",
+  /** The name as the business writes it, for titles and structured data. */
+  brandName: "S&A Cleaning Group",
+  /** Its former name, kept so searches for it still find the business. */
+  formerName: "Akumal Executive Cleaning",
   url: resolveSiteUrl(),
   email: "info@sacleaninggroup.ca",
   phone: "(778) 558-8715",
   phoneHref: "tel:(778)558-8715",
+  phoneE164: "+17785588715",
+  /** Default social share image (1200×630), in /public. */
+  ogImage: "/og-image.jpg",
   googleAnalyticsId: "G-6KNKRNW2CL",
   googleSiteVerification: "SBpvTW9tCpxRUvQ9ATXCrtw3k1X38LAzxZjl5ocU6TE",
 } as const;

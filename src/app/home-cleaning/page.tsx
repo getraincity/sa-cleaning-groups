@@ -16,8 +16,15 @@ import { homeCleaningPlans } from "@/content/pricing";
 import { stock } from "@/content/stock-photos";
 import { pageMetadata } from "@/lib/metadata";
 import { bookingLinks } from "@/lib/site";
+import { JsonLd } from "@/components/seo/json-ld";
+import { breadcrumbJsonLd, homeCleaningOffers, serviceJsonLd } from "@/lib/schema";
 
-export const metadata = pageMetadata({ title: "Service", path: "/home-cleaning" });
+export const metadata = pageMetadata({
+  title: "House Cleaning Services in Vancouver",
+  path: "/home-cleaning",
+  description:
+    "Recurring, deep, move-in/out, Airbnb and post-construction house cleaning in Vancouver. Plans from $150 a month, or hourly from $130 (3-hour minimum). Book online.",
+});
 
 // Every photo here appears nowhere else on the site (client feedback: the
 // home-cleaning pictures were too similar to the rest of the site).
@@ -101,6 +108,22 @@ const homeSteps = [
 
 const homeFaqs: Faq[] = [
   {
+    question: "How much does house cleaning cost in Vancouver?",
+    // Built from the pricing data, so it always matches the pricing cards.
+    answer: `Our recurring plans are ${homeCleaningPlans
+      .map((plan) => `${plan.name} at $${plan.price.amount} a month`)
+      .join(", ")
+      .replace(
+        /, (?=[^,]*$)/,
+        " and ",
+      )}. You can also book our team by the hour, from $130+ with a 3-hour minimum. Each plan's checklist is listed in the pricing section above.`,
+  },
+  {
+    question: "Which areas do you clean?",
+    answer:
+      "Homes across Greater Vancouver, including Downtown, North, East, West and South Vancouver. If you're nearby and not sure we cover your area, send us a message.",
+  },
+  {
     question: "Do I need to be home during the clean?",
     answer:
       "No. Many clients are at work while we clean. Let us know how you'd like to handle access when you book, and come home to a fresh space.",
@@ -130,6 +153,17 @@ const homeFaqs: Faq[] = [
 export default function HomeCleaningPage() {
   return (
     <div className="theme-home">
+      <JsonLd data={breadcrumbJsonLd([{ name: "Home Cleaning", path: "/home-cleaning" }])} />
+      <JsonLd
+        data={serviceJsonLd({
+          path: "/home-cleaning",
+          name: "Home Cleaning in Vancouver",
+          serviceType: "House cleaning",
+          description:
+            "Recurring, deep, move-in/move-out, Airbnb, post-construction, event and hourly home cleaning across Greater Vancouver, with eco-friendly, pet-friendly products.",
+          offers: homeCleaningOffers(),
+        })}
+      />
       <PageHero
         image={stock.homeHero}
         className="overflow-hidden pt-[200px] max-md:pt-[200px]"

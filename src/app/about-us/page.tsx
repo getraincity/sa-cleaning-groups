@@ -11,9 +11,11 @@ import { WorkGallery } from "@/components/sections/work-gallery";
 import { stock } from "@/content/stock-photos";
 import { pageMetadata } from "@/lib/metadata";
 import { embeds } from "@/lib/site";
+import { JsonLd } from "@/components/seo/json-ld";
+import { breadcrumbJsonLd } from "@/lib/schema";
 
 export const metadata = pageMetadata({
-  title: "About Us",
+  title: "About Us: Our Story & Team",
   path: "/about-us",
   description:
     "Meet Alex & Shaida and the S&A Cleaning Group team: 9+ years of home cleaning and custodian services across Greater Vancouver.",
@@ -22,6 +24,7 @@ export const metadata = pageMetadata({
 export default function AboutPage() {
   return (
     <>
+      <JsonLd data={breadcrumbJsonLd([{ name: "About Us", path: "/about-us" }])} />
       <PageHero
         image={stock.aboutHero}
         tagline="We value your time as much as you do."

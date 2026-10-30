@@ -16,6 +16,8 @@ import { stock } from "@/content/stock-photos";
 import { productCategories, type ProductBrand, type ProductCategory } from "@/content/products";
 import { pageMetadata } from "@/lib/metadata";
 import { cn } from "@/lib/utils";
+import { JsonLd } from "@/components/seo/json-ld";
+import { breadcrumbJsonLd } from "@/lib/schema";
 
 export const metadata = pageMetadata({
   title: "Products We Trust",
@@ -105,6 +107,12 @@ function BrandCard({ brand }: { brand: ProductBrand }) {
 export default function ProductsWeTrustPage() {
   return (
     <>
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: "About Us", path: "/about-us" },
+          { name: "Products We Trust", path: "/products-we-trust" },
+        ])}
+      />
       <PageHero
         image={stock.productsHero}
         tagline="Good results start with good products."
