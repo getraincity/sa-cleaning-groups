@@ -9,7 +9,6 @@ import { JsonLd } from "@/components/seo/json-ld";
 import {
   ArrowRightIcon,
   BuildingIcon,
-  CarIcon,
   ChevronRightIcon,
   HomeIcon,
   MapPinIcon,
@@ -37,7 +36,7 @@ export async function generateMetadata({ params }: Props) {
   const location = getLocation((await params).slug);
   if (!location) return {};
   return pageMetadata({
-    title: `House Cleaning & Car Detailing in ${location.name}`,
+    title: `House & Office Cleaning in ${location.name}`,
     path: `/locations/${location.slug}`,
     description: location.metaDescription,
   });
@@ -58,7 +57,6 @@ export default async function LocationPage({ params }: Props) {
       href: "/home-cleaning",
       text: location.services.home,
     },
-    { Icon: CarIcon, title: "Car Detailing", href: "/car-detailing", text: location.services.car },
     {
       Icon: BuildingIcon,
       title: "Custodian Services",
@@ -120,8 +118,7 @@ export default async function LocationPage({ params }: Props) {
                 {location.tagline}
               </span>
               <h1 className="mt-6 mb-0 font-heading text-[46px] leading-[54px] text-ink-soft max-lg:text-[40px] max-lg:leading-[48px] max-sm:text-[32px] max-sm:leading-[40px]">
-                Home Cleaning &amp; Car Detailing in{" "}
-                <span className="text-brand">{location.name}</span>
+                Home &amp; Office Cleaning in <span className="text-brand">{location.name}</span>
               </h1>
               <p className="mt-5 mb-0 max-w-[620px] font-text text-[17px] leading-[30px] text-muted max-sm:text-[16px] max-sm:leading-7">
                 {location.intro}
@@ -134,10 +131,10 @@ export default async function LocationPage({ params }: Props) {
                   Book home cleaning
                 </Link>
                 <Link
-                  href={bookingLinks.carDetailing}
+                  href={"/contact-us?topic=custodian#message"}
                   className={cn(buttonClass, "bg-charcoal text-white hover:bg-ink")}
                 >
-                  Book car detailing
+                  Request a quote
                 </Link>
               </div>
 
@@ -267,7 +264,7 @@ export default async function LocationPage({ params }: Props) {
             eyebrow={{ icon: <MapPinIcon />, label: location.name }}
             title={`Our Services in ${location.short}`}
           />
-          <div className="mt-12 grid grid-cols-3 gap-4 max-lg:grid-cols-1">
+          <div className="mx-auto mt-12 grid max-w-[960px] grid-cols-2 gap-4 max-md:grid-cols-1">
             {services.map(({ Icon, title, href, text }) => (
               <Link
                 key={title}
@@ -380,9 +377,9 @@ export default async function LocationPage({ params }: Props) {
       <CtaBand
         eyebrow={location.name}
         title={`Ready for a Spotless ${location.short} Home?`}
-        text="Book your home cleaning online in minutes, or book a detail for your car, truck, RV or boat."
+        text="Book your home cleaning online in minutes, or request a quote for your office or building."
         primary={{ label: "Book home cleaning", href: bookingLinks.homeCleaning }}
-        secondary={{ label: "Book car detailing", href: bookingLinks.carDetailing }}
+        secondary={{ label: "Request a quote", href: "/contact-us?topic=custodian#message" }}
       />
     </>
   );

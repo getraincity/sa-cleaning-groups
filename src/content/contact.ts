@@ -1,7 +1,6 @@
 /** What a contact-form message is about. `?topic=<value>` preselects one. */
 export const contactTopics = [
   { value: "home-cleaning", label: "Home cleaning" },
-  { value: "car-detailing", label: "Car detailing" },
   { value: "custodian", label: "Custodian services" },
   { value: "gift-card", label: "Gift card" },
   { value: "other", label: "Something else" },

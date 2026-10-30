@@ -46,10 +46,6 @@ const nextStep: Record<BlogCategory, { text: string; action: CtaAction }> = {
     text: "Let our team take care of it. Book online in minutes.",
     action: { label: "Book home cleaning", href: bookingLinks.homeCleaning },
   },
-  "Car Detailing": {
-    text: "Our detailers will bring it back to showroom fresh.",
-    action: { label: "Book car detailing", href: bookingLinks.carDetailing },
-  },
   Commercial: {
     text: "Get a custodial plan built around your space.",
     action: { label: "Request a quote", href: "/contact-us?topic=custodian" },

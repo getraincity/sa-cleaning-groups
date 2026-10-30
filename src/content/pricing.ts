@@ -124,36 +124,3 @@ export const homeCleaningPlans: PricingPlan[] = [
     ],
   },
 ];
-
-export const carDetailingPlans: PricingPlan[] = [
-  {
-    name: "Interior Cleaning",
-    price: { type: "range", from: 130, to: 250, plainCurrency: true },
-    boldFeatures: true,
-    features: [
-      "Passenger Car - $130",
-      "Medium SUV and Pick-Up Trucks - $180",
-      "Large SUV and Minivan - $250",
-    ],
-  },
-  {
-    name: "Exterior Cleaning",
-    price: { type: "range", from: 95, to: 120 },
-    boldFeatures: true,
-    features: [
-      "Passenger Car - $95",
-      "Medium SUV and Pick-Up Trucks - $110",
-      "Large SUV and Minivan - $120",
-    ],
-  },
-  {
-    name: "Interior & Exterior - Complete Detail",
-    price: { type: "range", from: 250, to: 425 },
-    boldFeatures: true,
-    features: [
-      "Passenger Car - $250",
-      "Medium SUV and Pick-Up Trucks - $350",
-      "Large SUV and Minivan - $425",
-    ],
-  },
-];

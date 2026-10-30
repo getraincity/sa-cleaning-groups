@@ -1,5 +1,4 @@
 import Image from "next/image";
-import carExteriorBranded from "@/assets/images/car-exterior-branded.webp";
 import { SectionHeader, sectionSpacing } from "@/components/ui/section-header";
 import { HeartIcon } from "@/components/ui/icons";
 import { stock } from "@/content/stock-photos";
@@ -20,14 +19,14 @@ const reasons = [
     text: "Quality, reliability and professionalism guide every job we take on. We aim to exceed expectations, not just meet them, and our 100% satisfaction guarantee means we're not done until you're happy.",
   },
   {
-    image: carExteriorBranded,
-    alt: "The S&A Auto Detailing truck",
-    title: "Vehicle Detailing",
-    text: "Pet hair, kids' snacks, coffee spilled across the console, or the mould our wet West Coast climate loves: we've seen it all, and cleaned it all. Your vehicle comes back looking its best.",
+    image: stock.aboutWorkplace,
+    alt: stock.aboutWorkplace.alt,
+    title: "Homes & Workplaces",
+    text: "From condos and family homes to offices, retail spaces and stratas, the same trained team and the same standards look after every space we clean.",
   },
 ];
 
-/** Three photo cards on a dark band: the team, the promise, the vehicles. */
+/** Three photo cards on a dark band: the team, the promise, the spaces we clean. */
 export function WhyChooseUs() {
   return (
     <section className={cn("mt-[96px] bg-[#1c1c1e] px-5 max-md:mt-[64px]", sectionSpacing.y)}>
@@ -37,7 +36,7 @@ export function WhyChooseUs() {
           tone="dark"
           eyebrow={{ icon: <HeartIcon />, label: "Why S&A" }}
           title="Why Vancouver Chooses S&A"
-          description="Real people, real standards and real results, for your home, your vehicle and your business."
+          description="Real people, real standards and real results, for your home and your business."
         />
 
         <div className="mt-12 grid grid-cols-3 gap-6 max-lg:grid-cols-2 max-md:grid-cols-1 max-md:gap-10">

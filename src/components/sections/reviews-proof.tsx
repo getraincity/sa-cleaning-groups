@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 
 const proof: { icon: ReactNode; value: string; label: string }[] = [
   { icon: <HistoryIcon />, value: "9+ years", label: "Keeping Vancouver clean" },
-  { icon: <ShieldCheckIcon />, value: "Licensed & insured", label: "With a valid garage policy" },
+  { icon: <ShieldCheckIcon />, value: "Licensed & insured", label: "On every job" },
   { icon: <UserCheckIcon />, value: "Background-checked", label: "Every member of our team" },
   {
     icon: <StarIcon />,
@@ -35,7 +35,7 @@ export function ReviewsProof({ widgetId, withProof = true }: ReviewsProofProps) 
           align="center"
           eyebrow={{ icon: <StarIcon />, label: "Reviews" }}
           title="Building Trust and Satisfaction"
-          description="Real reviews from Vancouver homeowners, drivers and businesses who trust S&A with their spaces."
+          description="Real reviews from Vancouver homeowners and businesses who trust S&A with their spaces."
         />
 
         {withProof && (

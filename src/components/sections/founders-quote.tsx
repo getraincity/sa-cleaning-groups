@@ -16,7 +16,7 @@ export function FoundersQuote() {
             <p className="mb-0 font-heading text-[28px] leading-[42px] font-normal text-ink-soft max-lg:text-[24px] max-lg:leading-9 max-sm:text-[20px] max-sm:leading-[30px]">
               At S&amp;A Cleaning Group, we believe that cleanliness isn&apos;t just about what you
               can see &mdash; it&apos;s about the precision in every corner. From hospital-grade
-              eco-disinfectants to meticulous car detailing,{" "}
+              eco-disinfectants to the finishing touches in every room,{" "}
               <strong className="bg-[linear-gradient(transparent_62%,rgba(222,10,10,0.16)_62%)] font-bold text-brand">
                 details are our specialty
               </strong>

@@ -1,229 +1,130 @@
+import Image from "next/image";
+import Link from "next/link";
 import beforeAfterInterior01 from "@/assets/images/car-before-after-interior-01.webp";
 import beforeAfterInterior02 from "@/assets/images/car-before-after-interior-02.webp";
 import beforeAfterWheels from "@/assets/images/car-before-after-wheels.webp";
-import carInteriorDashboard from "@/assets/images/car-interior-dashboard.jpg";
-import carInteriorSeats from "@/assets/images/car-interior-seats.jpg";
-import detailingDashboard from "@/assets/images/detailing-dashboard.png";
-import detailFoamWash from "@/assets/images/detailing/foam-wash.jpg";
-import detailInteriorLeather from "@/assets/images/detailing/interior-leather.jpg";
-import detailInteriorWipe from "@/assets/images/detailing/interior-wipe.jpg";
-import detailMachinePolish from "@/assets/images/detailing/machine-polish.jpg";
-import detailTireBrush from "@/assets/images/detailing/tire-brush.jpg";
-import detailWheelFoam from "@/assets/images/detailing/wheel-foam.jpg";
-import { BookingCta } from "@/components/sections/booking-cta";
-import { CareSection } from "@/components/sections/care-section";
-import { ChecklistSection } from "@/components/sections/checklist-section";
-import { FaqSection, type Faq } from "@/components/sections/faq-section";
-import { Gallery, type GalleryImage } from "@/components/sections/gallery";
-import { PhotoFeatures, type PhotoFeatureRow } from "@/components/sections/photo-feature";
-import { PhotoGrid } from "@/components/sections/photo-grid";
-import { ProcessSteps } from "@/components/sections/process-steps";
-import { AreasStrip } from "@/components/locations/areas-strip";
-import { PageHero } from "@/components/sections/page-hero";
-import { PricingSection } from "@/components/sections/pricing-section";
-import { ReviewsSection } from "@/components/sections/reviews-section";
-import { VehicleTypes } from "@/components/sections/vehicle-types";
-import { CarIcon, SparklesIcon } from "@/components/ui/icons";
-import { carDetailingPlans } from "@/content/pricing";
-import { stock } from "@/content/stock-photos";
+import { ArrowRightIcon, BuildingIcon, HistoryIcon, HomeIcon } from "@/components/ui/icons";
+import { SectionHeader, sectionSpacing } from "@/components/ui/section-header";
 import { pageMetadata } from "@/lib/metadata";
-import { bookingLinks, embeds } from "@/lib/site";
+import { cn } from "@/lib/utils";
 
-export const metadata = pageMetadata({ title: "Car Detailing Services", path: "/car-detailing" });
+// Kept as a record only: S&A Cleaning Group doesn't offer car detailing. The
+// previous company did, so the page stays (linked from Our Story on About)
+// but is left out of the menus, the footer and the sitemap.
+// TO CONFIRM: the client's wording for who did car detailing.
+export const metadata = pageMetadata({
+  title: "Car Detailing: Our History",
+  path: "/car-detailing",
+  description:
+    "Car detailing was offered by the previous company. S&A Cleaning Group doesn't offer car detailing; we focus on home cleaning and custodian services across Greater Vancouver.",
+});
 
-const carBooking = { href: bookingLinks.carDetailing };
-
-const gallery: GalleryImage[] = [
-  { image: beforeAfterInterior01, alt: "Before and after an S&A interior detail", span: 2 },
-  { image: beforeAfterInterior02, alt: "Before and after an S&A interior detail", span: 2 },
-  { image: beforeAfterWheels, alt: "Before and after an S&A wheel clean", span: 2 },
-  { image: stock.carPolish, alt: stock.carPolish.alt, span: 2 },
-  { image: stock.carDriveWash, alt: stock.carDriveWash.alt, span: 4 },
-];
-
-// Interior and exterior, one row each: what the two halves of a detail cover.
-const detailRows: PhotoFeatureRow[] = [
+const archive = [
   {
-    eyebrow: { icon: <CarIcon />, label: "Interior detailing" },
-    title: "A Cabin That Feels New Again",
-    text: "Crumbs, coffee spills, pet hair and road grit work their way into every seam. We take the inside of your vehicle back to clean, seat by seat and panel by panel.",
-    points: [
-      "Thorough vacuum of seats, carpets, mats and trunk",
-      "Dashboard, console, cup holders and door panels wiped down",
-      "Seats and upholstery cleaned for your vehicle's materials",
-      "Interior glass and mirrors left streak-free",
-    ],
-    image: detailInteriorLeather,
-    alt: "A clean leather car interior after detailing",
+    image: beforeAfterInterior01,
+    alt: "Before and after: a muddy truck floor and driver's seat, cleaned",
   },
   {
-    eyebrow: { icon: <SparklesIcon />, label: "Exterior detailing" },
-    title: "A Finish That Turns Heads",
-    text: "Vancouver rain, road spray and tree sap leave their mark on paint and wheels. Our exterior detail lifts the grime safely and brings back the shine.",
-    points: [
-      "Foam pre-wash to loosen dirt before it touches the paint",
-      "Careful hand wash and dry",
-      "Wheels, tires and wheel wells cleaned",
-      "Exterior glass and mirrors polished clear",
-    ],
-    image: detailFoamWash,
-    alt: "A car covered in foam during a hand wash",
+    image: beforeAfterInterior02,
+    alt: "Before and after: a car's back seat and carpets, cleaned",
+  },
+  {
+    image: beforeAfterWheels,
+    alt: "Before and after: a dirty truck wheel and tire, cleaned",
   },
 ];
 
-const detailSteps = [
+const today = [
   {
-    title: "Book online",
-    text: "Pick your service and a time that suits you in just a few clicks.",
+    Icon: HomeIcon,
+    title: "Home Cleaning",
+    text: "Recurring, deep and move-in/out cleans for homes and condos.",
+    href: "/home-cleaning",
   },
   {
-    title: "Tell us about your vehicle",
-    text: "Car, SUV, truck, bus, trailer, RV or boat: let us know its size and what it needs most.",
-  },
-  {
-    title: "We get to work",
-    text: "Our detailers take care of every surface, inside and out, with eco-friendly products.",
-  },
-  {
-    title: "Enjoy the drive",
-    text: "Get your time back and a vehicle you're proud to drive again.",
+    Icon: BuildingIcon,
+    title: "Custodian Services",
+    text: "Cleaning for offices and commercial spaces.",
+    href: "/custodian-services",
   },
 ];
 
-const carFaqs: Faq[] = [
-  {
-    question: "How long does a detail take?",
-    answer:
-      "It depends on the size of your vehicle, its condition and the service you choose. We'll give you a time estimate when you book.",
-  },
-  {
-    question: "What size vehicles do you detail?",
-    answer:
-      "Passenger cars, medium SUVs and pickup trucks, and large SUVs and minivans, as well as buses, trailers, RVs, work vans, fleets and boats. Pricing depends on the size of the vehicle.",
-  },
-  {
-    question: "Can you remove pet hair?",
-    answer:
-      "Yes, pet hair is part of an interior detail. If there's a lot of it, let us know when you book so we can plan the time it needs.",
-  },
-  {
-    question: "Are your products safe for kids and pets?",
-    answer:
-      "We use eco-friendly, pet-friendly products that are tough on dirt without leaving harsh chemicals behind in your vehicle.",
-  },
-  {
-    question: "Do you detail fleets or work vehicles?",
-    answer:
-      "Yes. Get a quote for your vehicle or fleet and we'll put together a plan and a clear price.",
-  },
-];
-
-export default function CarDetailingPage() {
+export default function CarDetailingHistoryPage() {
   return (
-    <div className="theme-car">
-      <PageHero
-        image={carInteriorSeats}
-        alignImageTopLeft
-        className="py-[220px]"
-        tagline="We value your time as much as you do."
-        title="Car Detailing Services in Vancouver"
-        description={
-          <>
-            Spending too much time cleaning your car? Get your time back with <br />
-            S&amp;A Detailing! Book your service today in just seconds!
-          </>
-        }
-      />
+    <>
+      <section className="bg-[#f6f4f2] px-5 pt-16 pb-14 max-md:pt-10">
+        <div className="mx-auto max-w-[820px]">
+          <span className="inline-flex items-center gap-2 rounded-full bg-white py-1.5 pr-4 pl-1.5 font-text text-[14px] text-ink-soft shadow-[0_1px_2px_rgba(0,0,0,0.06)]">
+            <span className="flex size-6 items-center justify-center rounded-full bg-brand text-white">
+              <HistoryIcon className="size-3.5" />
+            </span>
+            Our history
+          </span>
+          <h1 className="mt-6 mb-0 font-heading text-[40px] leading-[48px] text-ink-soft max-sm:text-[32px] max-sm:leading-[40px]">
+            Car Detailing
+          </h1>
+          <p className="mt-5 mb-0 font-text text-[17px] leading-[30px] text-muted max-sm:text-[16px] max-sm:leading-7">
+            Car detailing was offered by the previous company. S&amp;A Cleaning Group doesn&apos;t
+            offer car detailing: today we focus on home cleaning and custodian services across
+            Greater Vancouver. We&apos;ve kept a few photos from those years here as part of our
+            story.
+          </p>
+        </div>
+      </section>
 
-      <ChecklistSection
-        title="Keep Your Car Clean Without The Hassle"
-        image={carInteriorDashboard}
-        framed
-        imageAlt="A clean car dashboard and console after an S&A detail"
-        items={[
-          "Our team is professional and experienced.",
-          "Quick and efficient cleaning service.",
-          "100% satisfaction guaranteed.",
-          "Eco-friendly, pet-friendly products.",
-          "Highly disciplined in the workplace.",
-        ]}
-      />
+      <section className={cn("px-5", sectionSpacing.top)}>
+        <div className="mx-auto max-w-[1240px]">
+          <SectionHeader
+            eyebrow={{ icon: <HistoryIcon />, label: "From the archive" }}
+            title="Past Car Detailing Work"
+            description="Before-and-after photos from the previous company's car detailing."
+          />
+          <ul className="mt-10 mb-0 grid list-none grid-cols-3 gap-4 pl-0 max-md:grid-cols-1">
+            {archive.map(({ image, alt }) => (
+              <li key={image.src}>
+                <Image
+                  src={image}
+                  alt={alt}
+                  sizes="(max-width: 767px) 100vw, 400px"
+                  className="aspect-square h-auto w-full rounded-2xl object-cover"
+                />
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
 
-      <PhotoFeatures
-        rows={detailRows}
-        header={{
-          eyebrow: { icon: <SparklesIcon />, label: "What's included" },
-          title: "Inside and Out, Every Detail",
-          description:
-            "Choose an interior detail, an exterior detail, or both together for a complete refresh.",
-        }}
-      />
-
-      <VehicleTypes />
-
-      <CareSection
-        layout="car-detailing"
-        booking={carBooking}
-        photos={{
-          ecoFriendly: { image: stock.carMittWash, alt: stock.carMittWash.alt },
-          professionals: { image: detailingDashboard, alt: "Detailing a car dashboard" },
-          petFriendly: { image: stock.carConsole, alt: stock.carConsole.alt },
-        }}
-      />
-
-      <Gallery images={gallery} />
-
-      <ProcessSteps title="Booking a Detail Is Easy" steps={detailSteps} />
-
-      <PricingSection
-        title="Custom Car Detailing Plans to Fit Your Lifestyle"
-        plans={carDetailingPlans}
-        booking={carBooking}
-      />
-
-      <PhotoGrid
-        className="bg-brand-wash"
-        eyebrow={{ icon: <CarIcon />, label: "Car care in Vancouver" }}
-        title="Built for West Coast Weather"
-        description="Rain, road spray and winter grime are hard on a vehicle. A regular detail keeps them from settling in."
-        items={[
-          {
-            image: detailWheelFoam,
-            alt: "Wheels being scrubbed with foam",
-            title: "Wheels and tires",
-            text: "Brake dust and road grime cleaned from wheels, tires and wheel wells.",
-          },
-          {
-            image: detailTireBrush,
-            alt: "A detailer brushing a tire",
-            title: "Rainy-season mud",
-            text: "Trail days and wet commutes leave mud behind. We clean it out before it stains.",
-          },
-          {
-            image: detailInteriorWipe,
-            alt: "A detailer wiping down a steering wheel",
-            title: "High-touch surfaces",
-            text: "Steering wheel, shifter, handles and buttons wiped down and refreshed.",
-          },
-          {
-            image: detailMachinePolish,
-            alt: "Polishing a car's paint",
-            title: "Paint that shines",
-            text: "A careful wash and dry that brings back your vehicle's shine.",
-          },
-        ]}
-      />
-
-      <AreasStrip service="car detailing" />
-
-      <ReviewsSection widgetId={embeds.reviewsCarDetailing} withHeading={false} />
-
-      <FaqSection
-        items={carFaqs}
-        description="Everything you need to know about detailing with S&A."
-      />
-
-      <BookingCta />
-    </div>
+      <section className={cn("px-5", sectionSpacing.y)}>
+        <div className="mx-auto max-w-[1240px]">
+          <SectionHeader
+            align="center"
+            eyebrow={{ icon: <ArrowRightIcon />, label: "What we do today" }}
+            title="Our Services"
+          />
+          <div className="mx-auto mt-10 grid max-w-[960px] grid-cols-2 gap-4 max-md:grid-cols-1">
+            {today.map(({ Icon, title, text, href }) => (
+              <Link
+                key={title}
+                href={href}
+                className="group flex items-center gap-5 rounded-[20px] border border-black/[0.08] p-6 no-underline transition-shadow duration-300 hover:shadow-[0_20px_40px_-20px_rgba(0,0,0,0.25)]"
+              >
+                <span className="flex size-14 min-w-14 items-center justify-center rounded-2xl bg-brand text-[26px] text-white">
+                  <Icon />
+                </span>
+                <span>
+                  <span className="block font-heading text-[18px] leading-6 font-bold text-ink-soft">
+                    {title}
+                  </span>
+                  <span className="mt-1 block font-text text-[14px] leading-[22px] text-muted">
+                    {text}
+                  </span>
+                </span>
+                <ArrowRightIcon className="ml-auto size-5 min-w-5 text-brand transition-transform group-hover:translate-x-1" />
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+    </>
   );
 }

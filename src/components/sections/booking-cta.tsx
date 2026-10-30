@@ -14,17 +14,17 @@ export function BookingCta() {
           Book Your Cleaning Online
         </h2>
         <p className="w-[500px] font-text text-[16px] leading-6 font-normal text-white max-md:w-full">
-          Book your cleaning directly online in minutes! Click below to book your home cleaning or
-          car detailing service and if you have any questions, contact us today!
+          Book your cleaning directly online in minutes! Click below to book your home cleaning, or
+          request a quote for your workplace. If you have any questions, contact us today!
         </p>
         <Link href={bookingLinks.homeCleaning} className={`${buttonClass} bg-brand text-white`}>
           Book Home Cleaning
         </Link>
         <Link
-          href={bookingLinks.carDetailing}
+          href="/contact-us?topic=custodian#message"
           className={`${buttonClass} ml-[22px] bg-white text-charcoal max-md:ml-0`}
         >
-          Book Car Detailing
+          Request a Quote
         </Link>
       </div>
     </section>

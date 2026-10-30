@@ -8,7 +8,6 @@ import logo from "@/assets/images/brand/logo.png";
 import {
   ArrowRightIcon,
   BuildingIcon,
-  CarIcon,
   ChevronDownIcon,
   HomeIcon,
   LeafIcon,
@@ -33,12 +32,6 @@ const services: DropdownItem[] = [
     href: "/home-cleaning",
     description: "Recurring, deep and move-in/out cleans",
     Icon: HomeIcon,
-  },
-  {
-    label: "Car Detailing",
-    href: "/car-detailing",
-    description: "Interior and exterior auto detailing",
-    Icon: CarIcon,
   },
   {
     label: "Custodian Services",
@@ -275,11 +268,11 @@ function BookingButtons({ onNavigate, className }: { onNavigate: () => void; cla
         Book home cleaning
       </Link>
       <Link
-        href={bookingLinks.carDetailing}
+        href="/contact-us?topic=custodian#message"
         onClick={onNavigate}
         className={cn(buttonClass, "bg-charcoal")}
       >
-        Book car detailing
+        Request a quote
       </Link>
     </div>
   );

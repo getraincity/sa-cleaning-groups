@@ -8,7 +8,6 @@ const routes = [
   "/about-us",
   "/products-we-trust",
   "/home-cleaning",
-  "/car-detailing",
   "/custodian-services",
   "/locations",
   ...locations.map((location) => `/locations/${location.slug}`),

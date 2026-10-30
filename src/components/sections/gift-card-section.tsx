@@ -19,7 +19,7 @@ const occasions = [
 const steps = [
   {
     title: "Tell us who it's for",
-    text: "Get in touch and choose a home cleaning or car detailing package.",
+    text: "Get in touch and choose a home cleaning package.",
   },
   {
     title: "We prepare the gift card",
@@ -121,7 +121,7 @@ export function GiftCardSection() {
         <div className="relative grid grid-cols-2 items-center gap-14 max-lg:grid-cols-1 max-lg:gap-10">
           <Reveal className="group relative mx-auto h-[340px] w-full max-w-[480px] max-sm:h-[250px] max-sm:max-w-[320px]">
             <GiftCard
-              service="Car Detailing"
+              service="Deep Cleaning"
               tone="ivory"
               className="top-4 left-0 -rotate-[9deg] group-hover:-translate-x-3 group-hover:-rotate-[13deg] max-sm:top-2"
             />
@@ -144,7 +144,7 @@ export function GiftCardSection() {
             </h2>
             <p className="mt-4 mb-0 max-w-[500px] font-text text-[17px] leading-[30px] text-[#5b5650] max-md:text-[16px] max-md:leading-7">
               Looking for the ultimate practical gift? Treat your friends, family, or colleagues to
-              a professional home cleaning or car detailing package.
+              a professional home cleaning package.
             </p>
 
             <p className="mt-7 mb-3 font-text text-[12px] font-semibold tracking-[0.2em] text-[#9b7b45] uppercase">

@@ -1,9 +1,17 @@
+import Link from "next/link";
 import { SectionHeader } from "@/components/ui/section-header";
 import { ArrowRightIcon, HistoryIcon, SparklesIcon } from "@/components/ui/icons";
 import { Reveal } from "@/components/ui/reveal";
 import { cn } from "@/lib/utils";
 
-const milestones = [
+type Milestone = {
+  label: string;
+  title: string;
+  text: string;
+  link?: { label: string; href: string };
+};
+
+const milestones: Milestone[] = [
   {
     label: "Where it started",
     title: "Akumal Executive Cleaning",
@@ -13,11 +21,13 @@ const milestones = [
     label: "Growing with our clients",
     title: "More services, same standards",
     text: "As word spread, our clients asked for more. We expanded into professional auto detailing and commercial custodian services, without ever compromising on the care that built our name.",
+    // The only link to the car detailing page: S&A no longer offers it.
+    link: { label: "Car detailing: our history", href: "/car-detailing" },
   },
   {
     label: "Today",
     title: "S&A Cleaning Group",
-    text: "Now S&A Cleaning Group, we bring over nine years of experience to homes, vehicles and businesses across Greater Vancouver, and we're just getting started.",
+    text: "Now S&A Cleaning Group, we bring over nine years of experience to homes and businesses across Greater Vancouver, and we're just getting started.",
   },
 ];
 
@@ -91,6 +101,15 @@ export function CompanyHistory() {
                     <p className="mb-0 font-text text-[15px] leading-[26px] text-muted">
                       {milestone.text}
                     </p>
+                    {milestone.link && (
+                      <Link
+                        href={milestone.link.href}
+                        className="mt-1 inline-flex min-h-8 items-center gap-1.5 font-text text-[14px] font-semibold text-brand no-underline hover:underline"
+                      >
+                        {milestone.link.label}
+                        <ArrowRightIcon className="size-4" />
+                      </Link>
+                    )}
                   </li>
                 );
               })}

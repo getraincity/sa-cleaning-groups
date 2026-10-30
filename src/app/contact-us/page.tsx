@@ -6,8 +6,8 @@ import { FaqSection, type Faq } from "@/components/sections/faq-section";
 import {
   ArrowRightIcon,
   BuildingIcon,
-  CarIcon,
   FacebookIcon,
+  GiftIcon,
   HomeIcon,
   InstagramIcon,
   MailIcon,
@@ -25,7 +25,7 @@ export const metadata = pageMetadata({
   title: "Contact Us",
   path: "/contact-us",
   description:
-    "Get in touch with SA Cleaning Group for home cleaning, car detailing, custodian services and gift cards across Greater Vancouver.",
+    "Get in touch with SA Cleaning Group for home cleaning, custodian services and gift cards across Greater Vancouver.",
 });
 
 const channels = [
@@ -62,16 +62,16 @@ const shortcuts = [
     href: bookingLinks.homeCleaning,
   },
   {
-    Icon: CarIcon,
-    title: "Book car detailing",
-    text: "Share your details, then pick a package on our detailing site.",
-    href: bookingLinks.carDetailing,
-  },
-  {
     Icon: BuildingIcon,
     title: "Request a custodial quote",
     text: "Tell us about your workplace or building.",
     href: "/contact-us?topic=custodian#message",
+  },
+  {
+    Icon: GiftIcon,
+    title: "Get a gift card",
+    text: "Give someone a professional home cleaning.",
+    href: "/contact-us?topic=gift-card#message",
   },
 ];
 
@@ -89,12 +89,12 @@ const faqs: Faq[] = [
   {
     question: "Do you offer gift cards?",
     answer:
-      "Yes. Choose \"Gift card\" in the form above, tell us who it's for, and we'll help you pick a home cleaning or car detailing package.",
+      "Yes. Choose \"Gift card\" in the form above, tell us who it's for, and we'll help you pick a home cleaning package.",
   },
   {
     question: "Are you licensed and insured?",
     answer:
-      "Yes. We're fully licensed, insured and carry a valid garage policy, and every member of our team completes a criminal and background check before employment.",
+      "Yes. We're fully licensed and insured, and every member of our team completes a criminal and background check before employment.",
   },
 ];
 

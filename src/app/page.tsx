@@ -1,6 +1,5 @@
 import Image, { type StaticImageData } from "next/image";
 import Link from "next/link";
-import carBeforeAfterSeats from "@/assets/images/car-before-after-seats.webp";
 import cleaningWindows from "@/assets/images/cleaning-windows.jpg";
 import officeHallway from "@/assets/images/commercial/glass-hallway.jpg";
 import kitchenCounter from "@/assets/images/kitchen-counter-02.jpg";
@@ -12,11 +11,10 @@ import { PageHero } from "@/components/sections/page-hero";
 import { ProcessSteps } from "@/components/sections/process-steps";
 import { ReviewsProof } from "@/components/sections/reviews-proof";
 import { SocialSection } from "@/components/sections/social-section";
-import { ArrowRightIcon, BuildingIcon, CarIcon, HomeIcon, MapPinIcon } from "@/components/ui/icons";
+import { ArrowRightIcon, BuildingIcon, HomeIcon, MapPinIcon } from "@/components/ui/icons";
 import { Reveal } from "@/components/ui/reveal";
 import { pageMetadata } from "@/lib/metadata";
 import { embeds } from "@/lib/site";
-import { cn } from "@/lib/utils";
 
 export const metadata = pageMetadata({ title: "SA Cleaning Group", path: "/" });
 
@@ -28,14 +26,12 @@ type Service = {
   Icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
   image: StaticImageData;
   alt: string;
-  /** Before/after collages have a white frame baked in; zoom past it. */
-  framed?: boolean;
   text: string;
   href: string;
 };
 
-// The client's photo direction: a home detail, a car interior before/after
-// and a tidy office or strata common area.
+// The client's photo direction: a home detail and a tidy office or strata
+// common area.
 const services: Service[] = [
   {
     title: "Home Cleaning",
@@ -46,17 +42,6 @@ const services: Service[] = [
     alt: "A polished marble kitchen counter after an S&A home clean",
     text: "We offer quick, efficient home cleaning services throughout Vancouver, designed to give you more time for the things you enjoy. With a professional team and eco-friendly products, we ensure a spotless home while prioritizing your convenience and the environment.",
     href: "/home-cleaning",
-  },
-  {
-    title: "Car Detailing",
-    theme: "theme-car",
-    label: "Cars, trucks & RVs",
-    Icon: CarIcon,
-    image: carBeforeAfterSeats,
-    alt: "Car seats and floor mats before and after an S&A interior detail",
-    framed: true,
-    text: "We offer professional car detailing services in Vancouver, providing quick, efficient, and eco-friendly solutions. Our experienced team ensures your car looks its best, with customizable detailing packages to fit your needs.",
-    href: "/car-detailing",
   },
   {
     title: "Custodian Services",
@@ -73,7 +58,7 @@ const services: Service[] = [
 const steps = [
   {
     title: "Choose your service",
-    text: "Home cleaning, car detailing or custodian services: tell us what needs a refresh.",
+    text: "Home cleaning or custodian services: tell us what needs a refresh.",
   },
   {
     title: "Book in minutes",
@@ -115,8 +100,8 @@ export default function HomePage() {
         description={
           <>
             Spending too much time cleaning? Start getting your time back with S&amp;A Cleaning
-            <br className="max-lg:hidden" /> Group, trusted for home cleaning, car detailing and
-            custodian services across Vancouver.
+            <br className="max-lg:hidden" /> Group, trusted for home cleaning and custodian services
+            across Vancouver.
           </>
         }
       />
@@ -129,39 +114,24 @@ export default function HomePage() {
             Our Cleaning Services
           </h2>
           <p className="mx-auto mt-4 mb-0 max-w-[760px] text-center font-text text-[18px] leading-7 text-[#4a4a4a] max-md:text-[16px] max-md:leading-[26px]">
-            From homes and vehicles to offices and commercial spaces, one trusted team keeps
-            Vancouver spotless. Book your service today, in seconds.
+            From homes and condos to offices and commercial spaces, one trusted team keeps Vancouver
+            spotless. Book your service today, in seconds.
           </p>
 
-          <div className="mt-12 grid grid-cols-3 gap-5 max-lg:grid-cols-2 max-md:grid-cols-1">
+          <div className="mx-auto mt-12 grid max-w-[1100px] grid-cols-2 gap-5 max-md:grid-cols-1">
             {services.map((service, index) => (
-              <Reveal
-                key={service.title}
-                delay={index * 100}
-                className={cn(service.theme, "max-lg:last:col-span-2 max-md:last:col-span-1")}
-              >
+              <Reveal key={service.title} delay={index * 100} className={service.theme}>
                 <Link
                   href={service.href}
                   className="group flex h-full flex-col overflow-hidden rounded-3xl bg-white no-underline shadow-[0_1px_2px_rgba(0,0,0,0.05)] ring-1 ring-black/[0.06] transition-shadow duration-300 hover:shadow-[0_24px_48px_-24px_rgba(0,0,0,0.3)]"
                 >
-                  <div
-                    className={cn(
-                      "relative aspect-[4/3] overflow-hidden max-lg:aspect-[16/10] max-md:aspect-[4/3]",
-                      // The last card spans both tablet columns; keep its photo from towering.
-                      index === services.length - 1 && "max-lg:aspect-[21/9]",
-                    )}
-                  >
+                  <div className="relative aspect-[16/10] overflow-hidden max-md:aspect-[4/3]">
                     <Image
                       src={service.image}
                       alt={service.alt}
                       fill
-                      sizes="(max-width: 767px) 100vw, (max-width: 991px) 50vw, 33vw"
-                      className={cn(
-                        "object-cover photo-calm transition-transform duration-700 ease-out-quart",
-                        service.framed
-                          ? "scale-[1.08] group-hover:scale-[1.12]"
-                          : "group-hover:scale-105",
-                      )}
+                      sizes="(max-width: 767px) 100vw, 550px"
+                      className="object-cover photo-calm transition-transform duration-700 ease-out-quart group-hover:scale-105"
                     />
                     <span className="absolute top-4 left-4 inline-flex items-center gap-2 rounded-full bg-white/95 py-1.5 pr-3.5 pl-1.5 font-text text-[13px] leading-5 font-semibold text-ink-soft shadow-[0_2px_8px_rgba(0,0,0,0.12)]">
                       <span className="flex size-6 items-center justify-center rounded-full bg-brand text-[14px] text-white">

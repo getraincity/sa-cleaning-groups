@@ -3,9 +3,7 @@ import type { ReactNode } from "react";
 import { Reveal } from "@/components/ui/reveal";
 import { cn } from "@/lib/utils";
 
-export type PlanPrice =
-  | { type: "monthly"; amount: number }
-  | { type: "range"; from: number; to: number; plainCurrency?: boolean };
+export type PlanPrice = { type: "monthly"; amount: number };
 
 export type PricingPlan = {
   name: string;
@@ -14,8 +12,6 @@ export type PricingPlan = {
   price: PlanPrice;
   /** Feature rows. Lines starting with "## " render as a group heading. */
   features: string[];
-  /** Render every feature row in bold (the car detailing cards do this). */
-  boldFeatures?: boolean;
 };
 
 type PricingSectionProps = {
@@ -25,23 +21,11 @@ type PricingSectionProps = {
 };
 
 function Price({ price }: { price: PlanPrice }) {
-  if (price.type === "monthly") {
-    return (
-      <>
-        <span className="text-[16px]">$ </span>
-        <strong>{`${price.amount}/`}</strong>
-        <span className="text-[16px]"> Month</span>
-      </>
-    );
-  }
   return (
     <>
-      <span className="text-[16px]">{price.plainCurrency ? "$ " : <strong>$ </strong>}</span>
-      <strong>{`${price.from}-`}</strong>
-      <span className="text-[16px]">
-        <strong>$</strong>
-      </span>
-      <strong>{price.to}</strong>
+      <span className="text-[16px]">$ </span>
+      <strong>{`${price.amount}/`}</strong>
+      <span className="text-[16px]"> Month</span>
     </>
   );
 }
@@ -85,7 +69,7 @@ function PlanCard({
           ) : (
             <li key={index} className="flex gap-2.5">
               <span className="mt-[7px] size-2 min-w-2 rounded-full bg-brand" aria-hidden />
-              <p className="mb-0">{plan.boldFeatures ? <strong>{feature}</strong> : feature}</p>
+              <p className="mb-0">{feature}</p>
             </li>
           ),
         )}

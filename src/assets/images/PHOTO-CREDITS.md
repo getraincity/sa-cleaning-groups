@@ -1,11 +1,11 @@
 # Stock photo sources
 
-Most of the working photos (people cleaning homes, cars and workplaces) are not in this folder:
+Most of the working photos (people cleaning homes and workplaces, and finished rooms) are not in this folder:
 they are served from Unsplash's CDN and listed, with photographer and photo ID, in
 `src/content/stock-photos.ts`. The site's Photo Credits page (`/photo-credits`) is built from that
 list. Each of those photos is used in exactly one place on the site.
 
-The photos in `areas/`, `commercial/` and `detailing/` are from [Unsplash](https://unsplash.com)
+The photos in `areas/` and `commercial/` are from [Unsplash](https://unsplash.com)
 and used under the [Unsplash License](https://unsplash.com/license) (free for commercial use, no
 attribution required). They were resized to 1400px and recompressed. The Unsplash photo IDs are
 listed so each one can be traced back to its source.
@@ -38,13 +38,6 @@ listed so each one can be traced back to its source.
 | areas/south-porch-home.jpg       | photo-1714368694128-f88a12e08634 |
 | commercial/meeting-room.jpg      | photo-1497366811353-6870744d04b2 |
 | commercial/open-office.jpg       | photo-1577412647305-991150c7d163 |
-| commercial/desk-disinfecting.jpg | photo-1627905646269-7f034dcc5738 |
 | commercial/lobby-wet-floor.jpg   | photo-1615003382357-4cb74b16a7ab |
 | commercial/glass-hallway.jpg     | photo-1497366754035-f200968a6e72 |
 | commercial/modern-office.jpg     | photo-1706074793638-da28b90ea8ae |
-| detailing/foam-wash.jpg          | photo-1607860108855-64acf2078ed9 |
-| detailing/interior-leather.jpg   | photo-1605437241278-c1806d14a4d9 |
-| detailing/tire-brush.jpg         | photo-1708805282683-50a060eba80f |
-| detailing/machine-polish.jpg     | photo-1620584898989-d39f7f9ed1b7 |
-| detailing/interior-wipe.jpg      | photo-1732357624591-f2137085659b |
-| detailing/wheel-foam.jpg         | photo-1565689876697-e467b6c54da2 |

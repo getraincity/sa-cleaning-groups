@@ -41,14 +41,12 @@ export const socialLinks: { instagram: string; facebook: string } = {
  */
 export const bookingLinks = {
   homeCleaning: "/contact-us?book=home-cleaning#message",
-  carDetailing: "/contact-us?book=car-detailing#message",
 } as const;
 
 /** Where a booking continues once the visitor's details are sent. */
 export const bookingSites = {
   // The client asked for home cleaning bookings to go here (2026-10-30).
   "home-cleaning": "https://brightnestcleaning.ca/booknow",
-  "car-detailing": "https://saautodetailing.ca/book-now",
 } as const;
 
 export type BookingService = keyof typeof bookingSites;
@@ -61,7 +59,6 @@ export function isBookingService(value: unknown): value is BookingService {
 export const embeds = {
   elfsightScript: "https://static.elfsight.com/platform/platform.js",
   reviewsHome: "e6307328-c81d-462c-84fd-94a54414d220",
-  reviewsCarDetailing: "df9a2181-f8dd-4b8a-b63b-c412995b04a9",
 } as const;
 
 /**
