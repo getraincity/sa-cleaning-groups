@@ -31,7 +31,7 @@ import { bookingLinks, embeds } from "@/lib/site";
 
 export const metadata = pageMetadata({ title: "Car Detailing Services", path: "/car-detailing" });
 
-const carBooking = { href: bookingLinks.carDetailing, external: true };
+const carBooking = { href: bookingLinks.carDetailing };
 
 const gallery: GalleryImage[] = [
   { image: beforeAfterInterior01, alt: "Before and after an S&A interior detail", span: 2 },

@@ -58,23 +58,20 @@ const shortcuts = [
   {
     Icon: HomeIcon,
     title: "Book home cleaning",
-    text: "Pick your plan and time online in minutes.",
+    text: "Share your details, then finish on our booking form.",
     href: bookingLinks.homeCleaning,
-    external: false,
   },
   {
     Icon: CarIcon,
     title: "Book car detailing",
-    text: "Choose a package on our detailing booking site.",
+    text: "Share your details, then pick a package on our detailing site.",
     href: bookingLinks.carDetailing,
-    external: true,
   },
   {
     Icon: BuildingIcon,
     title: "Request a custodial quote",
     text: "Tell us about your workplace or building.",
     href: "/contact-us?topic=custodian#message",
-    external: false,
   },
 ];
 
@@ -82,7 +79,7 @@ const faqs: Faq[] = [
   {
     question: "How do I book a cleaning?",
     answer:
-      "The quickest way is online: booking a home cleaning takes just a few minutes, and car detailing is booked through our detailing site. You can also call us or send a message using the form on this page.",
+      "Use any Book button on our site: share your name and contact details, and we'll take you straight to our online booking form to finish. You can also call us or send a message using the form on this page.",
   },
   {
     question: "Which areas do you serve?",
@@ -179,13 +176,8 @@ export default function ContactPage() {
             id="message"
             className="scroll-mt-8 rounded-3xl bg-white p-10 shadow-[0_30px_60px_-30px_rgba(0,0,0,0.25)] max-sm:p-6"
           >
-            <h2 className="mt-0 mb-2 font-heading text-[26px] leading-8 text-ink-soft">
-              Send us a message
-            </h2>
-            <p className="mb-7 font-text text-[15px] leading-6 text-muted">
-              Share a few details and we&apos;ll get back to you as soon as possible.
-            </p>
-            {/* The topic comes from the URL, which static pages only know in the browser. */}
+            {/* The topic and booking mode come from the URL, which static
+                pages only know in the browser. */}
             <Suspense fallback={<ContactForm />}>
               <ContactFormFromUrl />
             </Suspense>
@@ -203,41 +195,26 @@ export default function ContactPage() {
             description="Most bookings take just a few minutes. Pick where you'd like to start."
           />
           <div className="mt-10 grid grid-cols-3 gap-4 max-lg:grid-cols-1">
-            {shortcuts.map(({ Icon, title, text, href, external }) => {
-              const className =
-                "group flex items-center gap-5 rounded-[20px] border border-black/[0.08] p-6 no-underline transition-shadow duration-300 hover:shadow-[0_20px_40px_-20px_rgba(0,0,0,0.25)]";
-              const content = (
-                <>
-                  <span className="flex size-14 min-w-14 items-center justify-center rounded-2xl bg-brand text-[26px] text-white">
-                    <Icon />
+            {shortcuts.map(({ Icon, title, text, href }) => (
+              <Link
+                key={title}
+                href={href}
+                className="group flex items-center gap-5 rounded-[20px] border border-black/[0.08] p-6 no-underline transition-shadow duration-300 hover:shadow-[0_20px_40px_-20px_rgba(0,0,0,0.25)]"
+              >
+                <span className="flex size-14 min-w-14 items-center justify-center rounded-2xl bg-brand text-[26px] text-white">
+                  <Icon />
+                </span>
+                <span>
+                  <span className="block font-heading text-[18px] leading-6 font-bold text-ink-soft">
+                    {title}
                   </span>
-                  <span>
-                    <span className="block font-heading text-[18px] leading-6 font-bold text-ink-soft">
-                      {title}
-                    </span>
-                    <span className="mt-1 block font-text text-[14px] leading-[22px] text-muted">
-                      {text}
-                    </span>
+                  <span className="mt-1 block font-text text-[14px] leading-[22px] text-muted">
+                    {text}
                   </span>
-                  <ArrowRightIcon className="ml-auto size-5 min-w-5 text-brand transition-transform group-hover:translate-x-1" />
-                </>
-              );
-              return external ? (
-                <a
-                  key={title}
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={className}
-                >
-                  {content}
-                </a>
-              ) : (
-                <Link key={title} href={href} className={className}>
-                  {content}
-                </Link>
-              );
-            })}
+                </span>
+                <ArrowRightIcon className="ml-auto size-5 min-w-5 text-brand transition-transform group-hover:translate-x-1" />
+              </Link>
+            ))}
           </div>
         </div>
       </section>

@@ -10,7 +10,6 @@ const routes = [
   "/home-cleaning",
   "/car-detailing",
   "/custodian-services",
-  "/book-home-cleaning",
   "/locations",
   ...locations.map((location) => `/locations/${location.slug}`),
   "/blog",

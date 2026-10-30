@@ -10,6 +10,12 @@ const nextConfig: NextConfig = {
       // The temporary Netlify copy linked pages as /about-us.html etc.
       { source: "/index.html", destination: "/", permanent: true },
       { source: "/:page.html", destination: "/:page", permanent: true },
+      // The old Launch27 booking page; bookings now start at the contact form.
+      {
+        source: "/book-home-cleaning",
+        destination: "/contact-us?book=home-cleaning#message",
+        permanent: false,
+      },
     ];
   },
 };

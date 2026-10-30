@@ -274,14 +274,13 @@ function BookingButtons({ onNavigate, className }: { onNavigate: () => void; cla
       >
         Book home cleaning
       </Link>
-      <a
+      <Link
         href={bookingLinks.carDetailing}
-        target="_blank"
-        rel="noopener noreferrer"
+        onClick={onNavigate}
         className={cn(buttonClass, "bg-charcoal")}
       >
         Book car detailing
-      </a>
+      </Link>
     </div>
   );
 }

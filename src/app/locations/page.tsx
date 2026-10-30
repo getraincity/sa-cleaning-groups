@@ -157,7 +157,7 @@ export default function LocationsPage() {
         title="Ready When You Are"
         text="Book your home cleaning online in minutes, or book a detail for your car, truck, RV or boat."
         primary={{ label: "Book home cleaning", href: bookingLinks.homeCleaning }}
-        secondary={{ label: "Book car detailing", href: bookingLinks.carDetailing, external: true }}
+        secondary={{ label: "Book car detailing", href: bookingLinks.carDetailing }}
       />
     </>
   );

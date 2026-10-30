@@ -133,14 +133,12 @@ export default async function LocationPage({ params }: Props) {
                 >
                   Book home cleaning
                 </Link>
-                <a
+                <Link
                   href={bookingLinks.carDetailing}
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className={cn(buttonClass, "bg-charcoal text-white hover:bg-ink")}
                 >
                   Book car detailing
-                </a>
+                </Link>
               </div>
 
               <p className="mt-9 mb-3 font-text text-[12px] font-semibold tracking-[0.2em] text-muted uppercase">
@@ -384,7 +382,7 @@ export default async function LocationPage({ params }: Props) {
         title={`Ready for a Spotless ${location.short} Home?`}
         text="Book your home cleaning online in minutes, or book a detail for your car, truck, RV or boat."
         primary={{ label: "Book home cleaning", href: bookingLinks.homeCleaning }}
-        secondary={{ label: "Book car detailing", href: bookingLinks.carDetailing, external: true }}
+        secondary={{ label: "Book car detailing", href: bookingLinks.carDetailing }}
       />
     </>
   );

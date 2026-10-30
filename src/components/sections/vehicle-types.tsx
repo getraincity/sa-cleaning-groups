@@ -107,14 +107,12 @@ export function VehicleTypes() {
             Get a quote for your vehicle
             <ArrowRightIcon className="size-[18px] transition-transform group-hover/cta:translate-x-1" />
           </Link>
-          <a
+          <Link
             href={bookingLinks.carDetailing}
-            target="_blank"
-            rel="noopener noreferrer"
             className="inline-flex items-center justify-center rounded-xl bg-white px-6 py-[14px] font-text text-[16px] font-medium text-charcoal no-underline transition-colors hover:bg-white/90"
           >
             Book car detailing
-          </a>
+          </Link>
         </div>
       </div>
     </section>
