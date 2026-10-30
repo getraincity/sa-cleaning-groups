@@ -2,7 +2,7 @@
 
 import { useSearchParams } from "next/navigation";
 import { useActionState, useEffect, useId, useState } from "react";
-import { submitContactForm, type ContactFormState } from "@/app/contact-us/actions";
+import { submitContactForm, type ContactFormState } from "@/lib/contact-submit";
 import { ArrowRightIcon, CheckIcon, PhoneIcon } from "@/components/ui/icons";
 import { contactTopics, topicLabel } from "@/content/contact";
 import { isBookingService, siteConfig } from "@/lib/site";
@@ -37,15 +37,20 @@ export function ContactForm({ defaultTopic, booking = false }: ContactFormProps)
   // a plain message again.
   const isBooking = booking && isBookingService(topic);
 
-  // After a booking is sent, continue to the booking site.
-  const next = state.status === "success" ? state.next : undefined;
+  // After a booking is sent, continue to the booking site. If the email
+  // couldn't be sent, continue anyway, after the notice, so the customer can
+  // still book.
+  const { status, next } = state;
   useEffect(() => {
     if (!next) return;
-    const timer = setTimeout(() => window.location.assign(next), 1500);
+    const timer = setTimeout(
+      () => window.location.assign(next),
+      status === "success" ? 1500 : 4000,
+    );
     return () => clearTimeout(timer);
-  }, [next]);
+  }, [status, next]);
 
-  if (next) {
+  if (status === "success" && next) {
     return (
       <div role="status" className="flex flex-col items-center py-10 text-center">
         <span className="flex size-16 items-center justify-center rounded-full bg-brand-tint text-[30px] text-brand">
@@ -65,7 +70,7 @@ export function ContactForm({ defaultTopic, booking = false }: ContactFormProps)
     );
   }
 
-  if (state.status === "success") {
+  if (status === "success") {
     return (
       <div role="status" className="flex flex-col items-center py-10 text-center">
         <span className="flex size-16 items-center justify-center rounded-full bg-brand-tint text-[30px] text-brand">
@@ -133,6 +138,7 @@ export function ContactForm({ defaultTopic, booking = false }: ContactFormProps)
             <input
               id={`${id}-name`}
               name="name"
+              defaultValue={state.values?.name}
               className={inputClass}
               maxLength={256}
               placeholder="Your name"
@@ -147,6 +153,7 @@ export function ContactForm({ defaultTopic, booking = false }: ContactFormProps)
             <input
               id={`${id}-email`}
               name="email"
+              defaultValue={state.values?.email}
               type="email"
               className={inputClass}
               maxLength={256}
@@ -164,6 +171,7 @@ export function ContactForm({ defaultTopic, booking = false }: ContactFormProps)
           <input
             id={`${id}-phone`}
             name="phone"
+            defaultValue={state.values?.phone}
             type="tel"
             className={inputClass}
             maxLength={64}
@@ -179,6 +187,7 @@ export function ContactForm({ defaultTopic, booking = false }: ContactFormProps)
           <textarea
             id={`${id}-message`}
             name="message"
+            defaultValue={state.values?.message}
             className={cn(inputClass, "h-auto min-h-[140px] resize-y py-3")}
             maxLength={5000}
             placeholder={
@@ -190,30 +199,30 @@ export function ContactForm({ defaultTopic, booking = false }: ContactFormProps)
           />
         </div>
 
-        {state.status === "error" && (
+        {status === "error" && (
           <div
             role="alert"
             className="flex items-start gap-3 rounded-xl bg-[#fff1f1] px-4 py-3 font-text text-[14px] leading-[22px] text-[#a40808]"
           >
             <PhoneIcon className="mt-0.5 size-4 min-w-4" />
-            <span>
-              Sorry, your message couldn&apos;t be sent. Please check your details and try again, or
-              call us on{" "}
-              <a href={siteConfig.phoneHref} className="font-semibold text-[#a40808]">
-                {siteConfig.phone}
-              </a>
-              .
-              {state.next && (
-                <>
-                  {" "}
-                  You can also{" "}
-                  <a href={state.next} className="font-semibold text-[#a40808]">
-                    continue to the booking form
-                  </a>
-                  .
-                </>
-              )}
-            </span>
+            {next ? (
+              <span>
+                Sorry, we couldn&apos;t send your details. Taking you to the{" "}
+                <a href={next} className="font-semibold text-[#a40808]">
+                  booking form
+                </a>{" "}
+                so you can still book…
+              </span>
+            ) : (
+              <span>
+                Sorry, your message couldn&apos;t be sent. Please check your details and try again,
+                or call us on{" "}
+                <a href={siteConfig.phoneHref} className="font-semibold text-[#a40808]">
+                  {siteConfig.phone}
+                </a>
+                .
+              </span>
+            )}
           </div>
         )}
 

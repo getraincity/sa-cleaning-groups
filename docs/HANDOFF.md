@@ -293,9 +293,10 @@ _Fix:_ slide-in overflow on phones.
   your current plan"). Per the client, every Book button now opens the contact form in booking
   mode; sending it emails info@sacleaninggroup.ca, then the visitor goes on to
   https://brightnestcleaning.ca/booknow (home cleaning) or saautodetailing.ca/book-now (car
-  detailing). `/book-home-cleaning` redirects to the form. This only works in production if
-  `RESEND_API_KEY` is set in Vercel; if the email fails, the form still offers a link to the
-  booking form.
+  detailing). `/book-home-cleaning` redirects to the form.
+- There is no Resend key, so the form emails through FormSubmit (no account or key; see README →
+  Contact form). FormSubmit needs a one-time "Activate Form" click in the info@ inbox after the
+  first live message. If the email fails, a booking still continues to the booking site.
 
 ## 9. Waiting on the client (as of round 5)
 

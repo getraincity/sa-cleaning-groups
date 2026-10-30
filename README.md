@@ -90,22 +90,20 @@ These were never part of Webflow and carry over unchanged:
 
 ## Contact form
 
-Submissions are handled by a server action (`src/app/contact-us/actions.ts`) and emailed through
-[Resend](https://resend.com). Set these in Vercel → Settings → Environment Variables:
+The contact form (also used for bookings, see above) emails `info@sacleaninggroup.ca` through
+[FormSubmit](https://formsubmit.co), straight from the visitor's browser
+(`src/lib/contact-submit.ts`). It needs no account, API key or environment variables.
 
-| Variable            | Purpose                                                          |
-| ------------------- | ---------------------------------------------------------------- |
-| `RESEND_API_KEY`    | Resend API key                                                   |
-| `CONTACT_FORM_TO`   | Inbox that receives messages (default `info@sacleaninggroup.ca`) |
-| `CONTACT_FORM_FROM` | Sender on a Resend-verified domain                               |
-
-Without `RESEND_API_KEY`, submissions are logged to the terminal in development and the form shows
-its error message in production.
+- **One-time activation:** the first message sent from a website makes FormSubmit email the inbox an
+  "Activate Form" link. Messages are only delivered once someone clicks it, so send a test message
+  from the live site after launch and click the link.
+- In development (`next dev`) messages are logged to the browser console instead of emailed.
+- If a booking's email can't be sent, the visitor is still taken on to the booking site.
 
 ## Deployment (Vercel)
 
 1. Import the GitHub repo in Vercel. It detects Next.js, so no build settings are needed.
-2. Add the environment variables above.
+2. Add `NEXT_PUBLIC_SITE_URL` (see `.env.example`).
 3. Add the domains `sacleaninggroup.ca` and `www.sacleaninggroup.ca`, then update DNS at the
    registrar as Vercel instructs. (The domains still point at Webflow, which no longer serves the
    site.)
