@@ -16,7 +16,7 @@ export const metadata = pageMetadata({
   title: "Car Detailing: Our History",
   path: "/car-detailing",
   description:
-    "Car detailing was offered by the previous company. S&A Cleaning Group doesn't offer car detailing; we focus on home cleaning and custodian services across Greater Vancouver.",
+    "Car detailing was offered by the previous company. S&A Cleaning Group doesn't offer it: we focus on home cleaning and custodian services in Vancouver.",
 });
 
 const archive = [

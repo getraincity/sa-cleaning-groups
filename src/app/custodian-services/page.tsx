@@ -29,10 +29,14 @@ import { stock } from "@/content/stock-photos";
 import { pageMetadata } from "@/lib/metadata";
 import { siteConfig } from "@/lib/site";
 import { cn } from "@/lib/utils";
+import { JsonLd } from "@/components/seo/json-ld";
+import { breadcrumbJsonLd, serviceJsonLd } from "@/lib/schema";
 
 export const metadata = pageMetadata({
-  title: "Custodian & Commercial Cleaning Services in Vancouver",
+  title: "Commercial & Custodian Cleaning in Vancouver",
   path: "/custodian-services",
+  description:
+    "Office, retail, strata and commercial cleaning across Greater Vancouver, scheduled around your hours by a licensed, insured, background-checked team. Free quotes.",
 });
 
 const quoteHref = "/contact-us?topic=custodian";
@@ -264,6 +268,18 @@ const faqs: Faq[] = [
 export default function CustodianServicesPage() {
   return (
     <div className="theme-custodian">
+      <JsonLd
+        data={breadcrumbJsonLd([{ name: "Custodian Services", path: "/custodian-services" }])}
+      />
+      <JsonLd
+        data={serviceJsonLd({
+          path: "/custodian-services",
+          name: "Custodian & Commercial Cleaning in Vancouver",
+          serviceType: "Commercial cleaning",
+          description:
+            "Custodial and janitorial cleaning for offices, retail stores, strata common areas, clinics and other commercial spaces across Greater Vancouver, quoted for each space.",
+        })}
+      />
       <PageHero
         image={stock.custodianHero}
         className="py-[200px] max-md:py-[100px]"

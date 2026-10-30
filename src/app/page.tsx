@@ -16,7 +16,13 @@ import { Reveal } from "@/components/ui/reveal";
 import { pageMetadata } from "@/lib/metadata";
 import { embeds } from "@/lib/site";
 
-export const metadata = pageMetadata({ title: "SA Cleaning Group", path: "/" });
+export const metadata = pageMetadata({
+  title: "S&A Cleaning Group | House Cleaning & Custodian Services in Vancouver",
+  absoluteTitle: true,
+  path: "/",
+  description:
+    "Home cleaning and custodian services across Greater Vancouver from S&A Cleaning Group, formerly Akumal Executive Cleaning. Licensed, insured, eco-friendly.",
+});
 
 type Service = {
   title: string;

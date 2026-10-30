@@ -6,9 +6,11 @@ import { posts } from "@/content/blog";
 import { pageMetadata } from "@/lib/metadata";
 import { bookingLinks } from "@/lib/site";
 import { cn } from "@/lib/utils";
+import { JsonLd } from "@/components/seo/json-ld";
+import { breadcrumbJsonLd } from "@/lib/schema";
 
 export const metadata = pageMetadata({
-  title: "Blog: Cleaning Tips",
+  title: "Cleaning Tips & Guides for Vancouver",
   path: "/blog",
   description:
     "Cleaning checklists and practical tips for Vancouver homes and workplaces, from the S&A Cleaning Group team.",
@@ -17,6 +19,7 @@ export const metadata = pageMetadata({
 export default function BlogPage() {
   return (
     <>
+      <JsonLd data={breadcrumbJsonLd([{ name: "Blog", path: "/blog" }])} />
       <section className="bg-[#f6f4f2] px-5 pt-16 pb-14 max-md:pt-10 max-md:pb-10">
         <div className="mx-auto flex max-w-[1440px] items-end justify-between gap-10 max-lg:flex-col max-lg:items-start">
           <div className="max-w-[720px]">

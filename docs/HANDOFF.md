@@ -312,6 +312,13 @@ _Fix:_ slide-in overflow on phones.
   shots. They were replaced so no photo, and almost no shoot, repeats between pages. The areas
   strip on service pages no longer shows photos. Re-run the inventory before adding photos.
 
+**SEO (2026-10-30)**
+
+- Audit, fixes and plan are in `docs/SEO.md`: title template, descriptions, share image,
+  sitewide LocalBusiness/WebSite schema (`src/lib/schema.ts`), Service and breadcrumb schema,
+  `/llms.txt`, sitemap dates, the Search Console file in `public/`, and a 404 page. New pages need
+  `pageMetadata()`, a breadcrumb `JsonLd`, a sitemap entry and a line in `src/app/llms.txt/route.ts`.
+
 ## 9. Waiting on the client (as of round 5)
 
 - **Photos:**

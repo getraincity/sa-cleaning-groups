@@ -6,6 +6,8 @@ import { ArticleBody } from "@/components/blog/article-body";
 import { PostCard, PostMeta } from "@/components/blog/post-card";
 import { CtaBand, type CtaAction } from "@/components/sections/cta-band";
 import { JsonLd } from "@/components/seo/json-ld";
+import { openGraphBase } from "@/lib/metadata";
+import { absoluteUrl, breadcrumbJsonLd, businessId } from "@/lib/schema";
 import { ArrowRightIcon, ChevronRightIcon } from "@/components/ui/icons";
 import { SectionHeader, sectionSpacing } from "@/components/ui/section-header";
 import { getPost, headingId, posts, type BlogCategory } from "@/content/blog";
@@ -25,10 +27,12 @@ export async function generateMetadata({ params }: Props) {
   if (!post) return {};
   const path = `/blog/${post.slug}`;
   return {
-    title: post.title,
+    // Post titles are long enough on their own; no " | S&A Cleaning Group".
+    title: { absolute: post.title },
     description: post.excerpt,
     alternates: { canonical: path },
     openGraph: {
+      ...openGraphBase,
       type: "article",
       title: post.title,
       description: post.excerpt,
@@ -73,11 +77,19 @@ export default async function PostPage({ params }: Props) {
           headline: post.title,
           description: post.excerpt,
           datePublished: post.date,
-          image: `${siteConfig.url}${post.image.src}`,
-          author: { "@type": "Organization", name: siteConfig.name },
-          publisher: { "@type": "Organization", name: siteConfig.name },
-          mainEntityOfPage: `${siteConfig.url}/blog/${post.slug}`,
+          dateModified: post.date,
+          inLanguage: "en-CA",
+          image: absoluteUrl(post.image.src),
+          author: { "@id": businessId },
+          publisher: { "@id": businessId },
+          mainEntityOfPage: absoluteUrl(`/blog/${post.slug}`),
         }}
+      />
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: "Blog", path: "/blog" },
+          { name: post.title, path: `/blog/${post.slug}` },
+        ])}
       />
 
       <article>

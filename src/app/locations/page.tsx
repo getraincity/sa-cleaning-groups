@@ -9,6 +9,8 @@ import { locations } from "@/content/locations";
 import { pageMetadata } from "@/lib/metadata";
 import { bookingLinks } from "@/lib/site";
 import { cn } from "@/lib/utils";
+import { JsonLd } from "@/components/seo/json-ld";
+import { breadcrumbJsonLd } from "@/lib/schema";
 
 export const metadata = pageMetadata({
   title: "Locations: Cleaning Across Greater Vancouver",
@@ -31,6 +33,7 @@ const cardSpans = ["col-span-3", "col-span-3", "col-span-2", "col-span-2", "col-
 export default function LocationsPage() {
   return (
     <>
+      <JsonLd data={breadcrumbJsonLd([{ name: "Locations", path: "/locations" }])} />
       <section className={cn("bg-[#f6f4f2] px-5", sectionSpacing.y)}>
         <div className="mx-auto grid max-w-[1440px] grid-cols-[6fr_5fr] items-center gap-16 max-lg:grid-cols-1 max-lg:gap-10">
           <div>

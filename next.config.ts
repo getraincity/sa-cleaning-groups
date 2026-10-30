@@ -9,7 +9,12 @@ const nextConfig: NextConfig = {
     return [
       // The temporary Netlify copy linked pages as /about-us.html etc.
       { source: "/index.html", destination: "/", permanent: true },
-      { source: "/:page.html", destination: "/:page", permanent: true },
+      // Not Google's Search Console verification file, which must stay at its .html URL.
+      {
+        source: "/:page((?!google)[^/]+).html",
+        destination: "/:page",
+        permanent: true,
+      },
       // Car-care posts, removed when car detailing left S&A's services.
       ...["rv-and-boat-detailing-end-of-season", "car-interior-rainy-season"].map((slug) => ({
         source: `/blog/${slug}`,
