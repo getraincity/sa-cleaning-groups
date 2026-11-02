@@ -23,11 +23,11 @@ const posts: Post[] = [
     tag: "Behind the scenes",
     large: true,
   },
-  { image: stock.socialLaundry, caption: "Fresh laundry, ready to fold", tag: "Home" },
-  { image: stock.socialHomeWindow, caption: "Streak-free windows", tag: "Home" },
+  { image: stock.socialKitchen, caption: "Kitchens, top to bottom", tag: "Home" },
+  { image: stock.socialBathroom, caption: "Bathrooms, bright and fresh", tag: "Home" },
   { image: stock.socialKidsRoom, caption: "Kids' rooms, beds made", tag: "Home", large: true },
   { image: stock.socialKitchenCounter, caption: "Kitchen counters wiped down", tag: "Home" },
-  { image: stock.socialLobby, caption: "Lobby floors, polished", tag: "Office" },
+  { image: stock.socialEntrance, caption: "Building entrances, mopped", tag: "Office" },
 ];
 
 const profiles = [

@@ -29,9 +29,9 @@ const photos: Photo[] = [
     sizes: "(max-width: 767px) 100vw, 50vw",
   },
   {
-    image: stock.aboutPillows,
-    caption: "Little touches, done right",
-    alt: stock.aboutPillows.alt,
+    image: stock.aboutEntry,
+    caption: "Entryways swept and tidy",
+    alt: stock.aboutEntry.alt,
     className: "row-span-2",
     sizes: "(max-width: 767px) 50vw, 25vw",
   },

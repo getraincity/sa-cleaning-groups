@@ -39,8 +39,8 @@ const gallery: GalleryImage[] = [
   { image: stock.homeLivingRoom, alt: stock.homeLivingRoom.alt, span: 2 },
   { image: stock.homeDishwasher, alt: stock.homeDishwasher.alt, span: 4 },
   { image: stock.homeDrawers, alt: stock.homeDrawers.alt, span: 3, tabletSpan: 2 },
-  { image: stock.homeMirror, alt: stock.homeMirror.alt, span: 1, tabletSpan: 2 },
-  { image: stock.homeBed, alt: stock.homeBed.alt, span: 1, tabletSpan: 2 },
+  { image: stock.homeShowerHandle, alt: stock.homeShowerHandle.alt, span: 1, tabletSpan: 2 },
+  { image: stock.homeDoorFrame, alt: stock.homeDoorFrame.alt, span: 1, tabletSpan: 2 },
   { image: stock.homeCabinet, alt: stock.homeCabinet.alt, span: 1, tabletSpan: 2 },
 ];
 
@@ -69,8 +69,8 @@ const roomRows: PhotoFeatureRow[] = [
       "Beds made and rooms organized",
       "Mirrors and glass cleaned streak-free",
     ],
-    image: stock.homeLivingMop,
-    alt: stock.homeLivingMop.alt,
+    image: stock.homeCurtains,
+    alt: stock.homeCurtains.alt,
   },
   {
     eyebrow: { icon: <SparklesIcon />, label: "Glass & windows" },
@@ -82,8 +82,8 @@ const roomRows: PhotoFeatureRow[] = [
       "Windows cleaned inside on Diamond",
       "Bathrooms disinfected top to bottom on every plan",
     ],
-    image: stock.homeWindow,
-    alt: stock.homeWindow.alt,
+    image: stock.homeWindowSill,
+    alt: stock.homeWindowSill.alt,
   },
 ];
 

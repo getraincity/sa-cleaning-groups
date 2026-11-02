@@ -238,6 +238,7 @@ export default async function LocationPage({ params }: Props) {
                 fill
                 sizes="(max-width: 767px) 100vw, 40vw"
                 className="object-cover"
+                style={{ objectPosition: location.tip.position }}
               />
             </div>
             <div
