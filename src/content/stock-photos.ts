@@ -140,15 +140,6 @@ export const stock = {
     username: "everdrop",
     alt: "A spray bottle and a microfibre cloth held up in two hands",
   }),
-  aboutUpholstery: unsplash({
-    id: "5TXz228u4eo",
-    photo: "photo-1686178827149-6d55c72d81df",
-    width: 2400,
-    height: 1600,
-    photographer: "Giorgio Trovato",
-    username: "giorgiotrovato",
-    alt: "A cleaner in gloves vacuuming a grey upholstered ottoman",
-  }),
   aboutPillows: unsplash({
     id: "5-S_JpT7NGQ",
     photo: "photo-1573014196346-87ac0314faf5",
@@ -175,15 +166,6 @@ export const stock = {
     photographer: "Barney Goodman",
     username: "bgoodpic",
     alt: "A woman wiping a wooden sideboard with a striped cloth beside a houseplant",
-  }),
-  aboutBath: unsplash({
-    id: "dNjW6UWwLHA",
-    photo: "photo-1623111771732-6eadcf47b60b",
-    width: 2400,
-    height: 1600,
-    photographer: "Erik Mclean",
-    username: "introspectivedsgn",
-    alt: "A clawfoot tub and wood floors in a bright bathroom",
   }),
   homeHero: unsplash({
     id: "u8knk6Hl8JA",
@@ -463,15 +445,6 @@ export const stock = {
     photographer: "PuroClean of Fort Worth",
     username: "purocleanoffortworth",
     alt: "A gloved hand scrubbing a soapy surface with a brush",
-  }),
-  blogMoveOut: unsplash({
-    id: "jjrXvzbqC5E",
-    photo: "photo-1581578949510-fa7315c4c350",
-    width: 1600,
-    height: 2400,
-    photographer: "CDC",
-    username: "cdc",
-    alt: "A person mopping the floor of an empty hallway",
   }),
   blogConstruction: unsplash({
     id: "7PiboaUAB_0",

@@ -1,4 +1,5 @@
 import type { StaticImageData } from "next/image";
+import kitchenAppliances from "@/assets/images/kitchen-appliances.jpg";
 import { stock } from "@/content/stock-photos";
 
 export const blogCategories = ["Home Cleaning", "Commercial"] as const;
@@ -186,8 +187,9 @@ const allPosts: Post[] = [
       "Moving out? A thorough clean makes your final inspection smoother and helps protect your deposit. Here's everything to cover, room by room.",
     category: "Home Cleaning",
     date: "2026-08-28",
-    image: stock.blogMoveOut,
-    imageAlt: stock.blogMoveOut.alt,
+    // The client's own photo of an emptied condo kitchen after a clean.
+    image: kitchenAppliances,
+    imageAlt: "An empty condo kitchen after a move-out clean, with white appliances and cabinets",
     body: [
       {
         type: "p",

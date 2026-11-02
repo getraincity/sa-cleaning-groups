@@ -2,47 +2,57 @@ import Image, { type StaticImageData } from "next/image";
 import { SectionHeader, sectionSpacing } from "@/components/ui/section-header";
 import { SparklesIcon } from "@/components/ui/icons";
 import { Reveal } from "@/components/ui/reveal";
+import kitchenIsland from "@/assets/images/kitchen-island.jpg";
+import kitchenMicrowave from "@/assets/images/kitchen-microwave.jpg";
 import { stock } from "@/content/stock-photos";
 import { cn } from "@/lib/utils";
 
 type Photo = {
   image: StaticImageData;
   caption: string;
+  alt: string;
   /** Grid placement on the 4-column desktop and 2-column mobile layouts. */
   className: string;
   sizes: string;
 };
 
 // Homes only, and none of the photos the home page already shows, so the
-// About page has its own, homier set (client feedback, 2026-10-01).
+// About page has its own, homier set (client feedback, 2026-10-01). The two
+// kitchen photos are the client's own job photos; that condo appears nowhere
+// else on this page.
 const photos: Photo[] = [
   {
-    image: stock.aboutUpholstery,
-    caption: "Sofas and upholstery vacuumed",
+    image: kitchenIsland,
+    caption: "A condo kitchen, ready to enjoy",
+    alt: "A freshly cleaned condo kitchen with white appliances, a dark island and tiled floor",
     className: "col-span-2 row-span-2",
     sizes: "(max-width: 767px) 100vw, 50vw",
   },
   {
     image: stock.aboutPillows,
     caption: "Little touches, done right",
+    alt: stock.aboutPillows.alt,
     className: "row-span-2",
     sizes: "(max-width: 767px) 50vw, 25vw",
   },
   {
     image: stock.aboutDusting,
     caption: "Dusted high and low",
+    alt: stock.aboutDusting.alt,
     className: "row-span-2",
     sizes: "(max-width: 767px) 50vw, 25vw",
   },
   {
-    image: stock.aboutSideboard,
-    caption: "Wood wiped and polished",
+    image: kitchenMicrowave,
+    caption: "Appliances and counters wiped down",
+    alt: "A clean stainless microwave on the counter beside a white electric stove",
     className: "col-span-2",
     sizes: "(max-width: 767px) 100vw, 50vw",
   },
   {
-    image: stock.aboutBath,
-    caption: "Every surface, inside and out",
+    image: stock.aboutSideboard,
+    caption: "Wood wiped and polished",
+    alt: stock.aboutSideboard.alt,
     className: "col-span-2",
     sizes: "(max-width: 767px) 100vw, 50vw",
   },
@@ -71,7 +81,7 @@ export function WorkGallery() {
             >
               <Image
                 src={photo.image}
-                alt={photo.caption}
+                alt={photo.alt}
                 fill
                 sizes={photo.sizes}
                 className="object-cover photo-calm transition-transform duration-700 ease-out-quart group-hover:scale-105"
