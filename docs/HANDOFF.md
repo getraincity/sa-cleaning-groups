@@ -84,6 +84,15 @@ Don't burn time retrying. Google Fonts and npm work. An **Unsplash connector** m
 earlier stock photos came from Unsplash and are listed in `src/assets/images/PHOTO-CREDITS.md`.
 Keep that file updated when you add stock photos.
 
+- Most stock photos are served from `images.unsplash.com` (`src/content/stock-photos.ts`). If that
+  host is blocked, ask the user to add it under the environment's Allowed domains; never pick
+  photos you can't look at.
+- Locally, start the server with `NODE_USE_ENV_PROXY=1 NODE_EXTRA_CA_CERTS=/root/.ccr/ca-bundle.crt`
+  or every Unsplash photo renders blank (Next's image optimizer fetches from the Node process,
+  which ignores the proxy otherwise).
+- Large Unsplash search results are saved to a file; read them with a script, then build contact
+  sheets of the thumbnails and look at them before choosing.
+
 ### 4.2 Processes and tools
 
 - **Stopping the dev server:** `pkill -f "next dev"` kills your own shell. Use
@@ -193,8 +202,9 @@ The user forwards this to the client as-is:
 ```bash
 npx tsc --noEmit && npx eslint src --quiet && npx prettier --check src
 npx next build
-npx next start -p 3000 &                        # then:
+NODE_USE_ENV_PROXY=1 NODE_EXTRA_CA_CERTS=/root/.ccr/ca-bundle.crt npx next start -p 3000 &
 node scripts/qa/sweep.mjs                       # must print "no problems"
+node scripts/qa/inventory.mjs                   # must end "No photo appears on more than one page."
 node scripts/qa/sheet.mjs /about-us 1440 <scratchpad>/about-desktop
 node scripts/qa/sheet.mjs /about-us 390  <scratchpad>/about-mobile
 node scripts/qa/element.mjs / 1440 "section:has(h2:text('Give the Gift'))" <scratchpad>/gift.png
@@ -210,6 +220,8 @@ fuser -k 3000/tcp                               # stop the server afterwards
 - **`sheet.mjs`** cuts a full-page screenshot into side-by-side strips. Open each sheet with Read
   and actually look, at 1440, about 820 and 390 widths, for every page you changed.
 - **`element.mjs`** takes a full-resolution close-up of one section.
+- **`inventory.mjs`** lists the photos on every page and flags any photo used on more than one page
+  (Photo Credits and a post's own blog cards are expected and ignored).
 - **`prettier --check`** warns about `src/assets/images/PHOTO-CREDITS.md`. That warning predates
   round 3 and you can ignore it.
 
@@ -319,12 +331,26 @@ _Fix:_ slide-in overflow on phones.
   `/llms.txt`, sitemap dates, the Search Console file in `public/`, and a 404 page. New pages need
   `pageMetadata()`, a breadcrumb `JsonLd`, a sitemap entry and a line in `src/app/llms.txt/route.ts`.
 
+**Real-looking photos (2026-11-02, PR #12)**
+
+- The client: keep all of our own photos, and "for pic i notice many stock pics. If u can take some
+  from other companies mayb in America that would be good". Photos are **not** copied from other
+  companies' websites (copyright, and it would pass their staff and jobs off as S&A's).
+- All 11 of the client's own job photos are on the site, each once: three were brought back (About
+  "Our work" gallery, move-out blog post).
+- 21 posed or pandemic-looking stock photos were replaced with documentary-style ones: real North
+  American homes (Clay Banks, Boston, CDC's real-home series), real janitors and porters (Burbank,
+  New York), real offices and washrooms. No models, hazmat suits or gloved-hand close-ups.
+- Avoid photos showing another company's logo, phone number or a recognisable landmark.
+
 ## 9. Waiting on the client (as of round 5)
 
 - **Photos:**
   - Alex & Shaida, for the About founder intro (`src/components/sections/founder-intro.tsx`);
     the client will send it later;
-  - a cleaner in a bright condo, for the home hero;
+  - a cleaner in a bright condo, for the home hero. The old Webflow site has exactly this
+    (`legacy/asset-library/66e19b5fd546081a57b50bcc_Group 162769.png`, an S&A-shirt cleaner by a
+    yellow chair) but only ~300px wide; the full-size original was requested;
   - buses, trailers and work vehicles; everyday cars; custodian jobs; home jobs that aren't
     kitchens (round 4 photo items above).
 - **Add-ons:** whether to show prices.

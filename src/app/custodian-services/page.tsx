@@ -178,8 +178,8 @@ const spaceRows: PhotoFeatureRow[] = [
       "Glass partitions and doors kept smudge-free",
       "Garbage, recycling and compost emptied",
     ],
-    image: stock.custodianDesk,
-    alt: stock.custodianDesk.alt,
+    image: stock.custodianOffice,
+    alt: stock.custodianOffice.alt,
   },
   {
     eyebrow: { icon: <KeyIcon />, label: "Lobbies & common areas" },
@@ -204,8 +204,8 @@ const spaceRows: PhotoFeatureRow[] = [
       "Washrooms cleaned and disinfected",
       "Soap and paper supplies refilled",
     ],
-    image: stock.custodianTouchpoints,
-    alt: stock.custodianTouchpoints.alt,
+    image: stock.custodianRestroom,
+    alt: stock.custodianRestroom.alt,
   },
 ];
 
@@ -232,9 +232,9 @@ const schedules = [
 const gallery: GalleryImage[] = [
   { image: stock.custodianScrubber, alt: stock.custodianScrubber.alt, span: 2 },
   { image: stock.custodianCart, alt: stock.custodianCart.alt, span: 2 },
-  { image: stock.custodianRailing, alt: stock.custodianRailing.alt, span: 2 },
-  { image: stock.custodianMachine, alt: stock.custodianMachine.alt, span: 4 },
-  { image: stock.custodianWindowSpray, alt: stock.custodianWindowSpray.alt, span: 2 },
+  { image: stock.custodianSteps, alt: stock.custodianSteps.alt, span: 2 },
+  { image: stock.custodianHallway, alt: stock.custodianHallway.alt, span: 4 },
+  { image: stock.custodianLadder, alt: stock.custodianLadder.alt, span: 2 },
 ];
 
 const faqs: Faq[] = [
@@ -502,8 +502,8 @@ export default function CustodianServicesPage() {
         title="Clean Spaces, Ready for Business"
         items={[
           {
-            image: stock.custodianGlass,
-            alt: stock.custodianGlass.alt,
+            image: stock.custodianMeetingRoom,
+            alt: stock.custodianMeetingRoom.alt,
             title: "Meeting rooms",
             text: "Tables, chairs and glass ready for the next meeting.",
           },
@@ -514,8 +514,8 @@ export default function CustodianServicesPage() {
             text: "Glass walls and doors kept clear and bright.",
           },
           {
-            image: stock.custodianWorkstation,
-            alt: stock.custodianWorkstation.alt,
+            image: stock.custodianDesks,
+            alt: stock.custodianDesks.alt,
             title: "Workstations",
             text: "Desks and shared equipment dusted and wiped.",
           },

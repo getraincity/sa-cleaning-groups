@@ -78,7 +78,14 @@ export type Location = {
   /** Small community section: local places, described factually. */
   community: { intro: string; spots: { name: string; text: string }[] };
   knowHow: { title: string; items: { Icon: Icon; title: string; text: string }[] };
-  tip: { title: string; text: string; image: StaticImageData; alt: string };
+  tip: {
+    title: string;
+    text: string;
+    image: StaticImageData;
+    alt: string;
+    /** CSS object-position, for portrait photos shown in the wide tip frame. */
+    position?: string;
+  };
   services: { home: string; custodian: string };
   faqs: Faq[];
 };
@@ -197,6 +204,7 @@ export const locations: Location[] = [
       text: "Downtown balconies collect city dust and soot fast. Our Diamond plan includes sweeping the balcony and dusting the railings, so your outdoor space is as fresh as your living room.",
       image: stock.downtownTip,
       alt: stock.downtownTip.alt,
+      position: "50% 20%",
     },
     services: {
       home: "Recurring and deep cleans for condos, lofts and townhomes.",
