@@ -343,6 +343,19 @@ _Fix:_ slide-in overflow on phones.
   New York), real offices and washrooms. No models, hazmat suits or gloved-hand close-ups.
 - Avoid photos showing another company's logo, phone number or a recognisable landmark.
 
+**Cleaners at work (2026-11-03)**
+
+- The user clarified the client's point: stock is fine if it looks like a real cleaning company at
+  work. Empty rooms and posed models read as stock. 26 slots now show cleaners working.
+- Pexels is now allowed in the environment (`images.pexels.com`; search pages and the API are not).
+  Find photos with WebSearch (`allowed_domains: ["pexels.com"]`), then look at thumbnails by ID:
+  `https://images.pexels.com/photos/<id>/pexels-photo-<id>.jpeg?auto=compress&cs=tinysrgb&w=240`.
+  Neighbouring IDs are usually the same shoot.
+- `pexels()` in `src/content/stock-photos.ts` adds them; Photo Credits links each photo's page.
+- Shoots used: Tima Miroshnichenko's red-overalls crew (Home social, About van shots, Custodian),
+  Liliana Drew's housekeepers (Home Cleaning, one Custodian card), RDNE (About gallery),
+  Kaboompics (Products We Trust). The connected Unsplash account has no Unsplash+.
+
 ## 9. Waiting on the client (as of round 5)
 
 - **Photos:**

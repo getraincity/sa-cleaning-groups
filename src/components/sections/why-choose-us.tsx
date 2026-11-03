@@ -13,8 +13,8 @@ const reasons = [
     text: "Our cleaners are fully trained, insured and background-checked, so you always know who's in your home. Friendly, reliable and proud of their work, they go the extra mile on every visit.",
   },
   {
-    image: stock.aboutPromise,
-    alt: stock.aboutPromise.alt,
+    image: stock.aboutCrew,
+    alt: stock.aboutCrew.alt,
     title: "Our Promise",
     text: "Quality, reliability and professionalism guide every job we take on. We aim to exceed expectations, not just meet them, and our 100% satisfaction guarantee means we're not done until you're happy.",
   },

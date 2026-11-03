@@ -26,10 +26,23 @@ const pages: [prefix: string, page: string][] = [
   ["south", "South Vancouver"],
 ];
 
-const credits = Object.entries(stock).map(([key, photo]) => ({
-  ...photo,
-  page: pages.find(([prefix]) => key.startsWith(prefix))?.[1] ?? "",
-}));
+const credits = Object.entries(stock).map(([key, photo]) => {
+  const { credit } = photo;
+  return {
+    ...photo,
+    page: pages.find(([prefix]) => key.startsWith(prefix))?.[1] ?? "",
+    site: credit.source === "unsplash" ? "Unsplash" : "Pexels",
+    photoUrl:
+      credit.source === "unsplash"
+        ? `https://unsplash.com/photos/${credit.id}`
+        : `https://www.pexels.com/photo/${credit.id}/`,
+    // Pexels photo pages name and link the photographer.
+    photographerUrl:
+      credit.source === "unsplash"
+        ? `https://unsplash.com/@${credit.username}`
+        : `https://www.pexels.com/photo/${credit.id}/`,
+  };
+});
 
 const linkClass =
   "inline-block py-[2px] text-brand underline underline-offset-2 hover:text-brand-alt";
@@ -60,7 +73,16 @@ export default function PhotoCreditsPage() {
               >
                 Unsplash
               </a>{" "}
-              and are used under the{" "}
+              and{" "}
+              <a
+                href="https://www.pexels.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={linkClass}
+              >
+                Pexels
+              </a>
+              , used under the{" "}
               <a
                 href="https://unsplash.com/license"
                 target="_blank"
@@ -68,6 +90,15 @@ export default function PhotoCreditsPage() {
                 className={linkClass}
               >
                 Unsplash License
+              </a>{" "}
+              and the{" "}
+              <a
+                href="https://www.pexels.com/license/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={linkClass}
+              >
+                Pexels License
               </a>
               . They show the kind of work we do, not S&amp;A staff or clients.
             </p>
@@ -83,13 +114,8 @@ export default function PhotoCreditsPage() {
       <section className={cn("px-5 pt-14", sectionSpacing.bottom)}>
         <ul className="m-0 mx-auto grid max-w-[1440px] list-none grid-cols-4 gap-x-6 gap-y-10 p-0 max-lg:grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-1">
           {credits.map((photo) => (
-            <li key={photo.credit.id}>
-              <a
-                href={`https://unsplash.com/photos/${photo.credit.id}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block"
-              >
+            <li key={photo.photoUrl}>
+              <a href={photo.photoUrl} target="_blank" rel="noopener noreferrer" className="block">
                 <Image
                   src={photo}
                   alt={photo.alt}
@@ -100,14 +126,14 @@ export default function PhotoCreditsPage() {
               <p className="mt-3 mb-0 font-text text-[15px] leading-6 text-ink-soft">
                 Photo by{" "}
                 <a
-                  href={`https://unsplash.com/@${photo.credit.username}`}
+                  href={photo.photographerUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className={cn(linkClass, "py-1")}
                 >
                   {photo.credit.photographer}
                 </a>{" "}
-                on Unsplash
+                on {photo.site}
               </p>
               <p className="mt-1 mb-0 font-text text-[14px] leading-[22px] text-muted">
                 Used on: {photo.page}

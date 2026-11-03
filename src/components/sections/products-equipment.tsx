@@ -24,8 +24,8 @@ const cards: Card[] = [
   },
   {
     title: "Cleaning Equipment",
-    image: stock.aboutEquipment,
-    alt: stock.aboutEquipment.alt,
+    image: stock.aboutVan,
+    alt: stock.aboutVan.alt,
     text: "Top-quality tools paired with careful technique, including premium microfibre cloths that trap dirt, dust and bacteria instead of spreading them. The result is a deeper, healthier clean for your home or business.",
     points: ["Premium microfibre", "Well-kept tools", "Homes & offices"],
   },

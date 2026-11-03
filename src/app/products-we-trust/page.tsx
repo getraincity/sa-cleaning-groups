@@ -114,7 +114,7 @@ export default function ProductsWeTrustPage() {
         ])}
       />
       <PageHero
-        image={stock.productsHero}
+        image={stock.productsSink}
         tagline="Good results start with good products."
         title="Products We Trust"
         description="The brands and tools our team relies on in homes and workplaces across Vancouver."

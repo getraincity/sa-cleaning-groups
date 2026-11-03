@@ -32,8 +32,8 @@ export const productCategories: ProductCategory[] = [
     description:
       "Natural, eco-friendly products that are tough on dirt and safe for families and pets.",
     service: "home",
-    image: stock.productsHome,
-    alt: stock.productsHome.alt,
+    image: stock.productsSpray,
+    alt: stock.productsSpray.alt,
     brands: [
       {
         name: "Nature Clean",

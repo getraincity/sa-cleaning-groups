@@ -18,14 +18,14 @@ type Post = {
 // On tablets the same order interlocks into a 4-column checkerboard.
 const posts: Post[] = [
   {
-    image: stock.socialSupplies,
-    caption: "Supplies stocked and ready to go",
+    image: stock.socialCrew,
+    caption: "Kitted out and ready to start",
     tag: "Behind the scenes",
     large: true,
   },
-  { image: stock.socialKitchen, caption: "Kitchens, top to bottom", tag: "Home" },
-  { image: stock.socialBathroom, caption: "Bathrooms, bright and fresh", tag: "Home" },
-  { image: stock.socialKidsRoom, caption: "Kids' rooms, beds made", tag: "Home", large: true },
+  { image: stock.socialTable, caption: "Tables wiped down", tag: "Home" },
+  { image: stock.socialWindow, caption: "Streak-free windows", tag: "Home" },
+  { image: stock.socialVacuum, caption: "Living rooms, vacuumed", tag: "Home", large: true },
   { image: stock.socialKitchenCounter, caption: "Kitchen counters wiped down", tag: "Home" },
   { image: stock.socialEntrance, caption: "Building entrances, mopped", tag: "Office" },
 ];
