@@ -178,8 +178,8 @@ const spaceRows: PhotoFeatureRow[] = [
       "Glass partitions and doors kept smudge-free",
       "Garbage, recycling and compost emptied",
     ],
-    image: stock.custodianOffice,
-    alt: stock.custodianOffice.alt,
+    image: stock.custodianTeam,
+    alt: stock.custodianTeam.alt,
   },
   {
     eyebrow: { icon: <KeyIcon />, label: "Lobbies & common areas" },
@@ -204,8 +204,8 @@ const spaceRows: PhotoFeatureRow[] = [
       "Washrooms cleaned and disinfected",
       "Soap and paper supplies refilled",
     ],
-    image: stock.custodianRestroom,
-    alt: stock.custodianRestroom.alt,
+    image: stock.custodianGlassWall,
+    alt: stock.custodianGlassWall.alt,
   },
 ];
 
@@ -502,8 +502,8 @@ export default function CustodianServicesPage() {
         title="Clean Spaces, Ready for Business"
         items={[
           {
-            image: stock.custodianMeetingRoom,
-            alt: stock.custodianMeetingRoom.alt,
+            image: stock.custodianVacuum,
+            alt: stock.custodianVacuum.alt,
             title: "Meeting rooms",
             text: "Tables, chairs and glass ready for the next meeting.",
           },
@@ -514,14 +514,14 @@ export default function CustodianServicesPage() {
             text: "Glass walls and doors kept clear and bright.",
           },
           {
-            image: stock.custodianDesks,
-            alt: stock.custodianDesks.alt,
+            image: stock.custodianDusting,
+            alt: stock.custodianDusting.alt,
             title: "Workstations",
             text: "Desks and shared equipment dusted and wiped.",
           },
           {
-            image: stock.custodianFloors,
-            alt: stock.custodianFloors.alt,
+            image: stock.custodianEntrance,
+            alt: stock.custodianEntrance.alt,
             title: "Entrances",
             text: "Doors, mats and floors that welcome your visitors.",
           },

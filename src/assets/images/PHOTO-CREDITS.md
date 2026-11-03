@@ -1,7 +1,8 @@
 # Stock photo sources
 
 Most of the working photos (people cleaning homes and workplaces, and finished rooms) are not in this folder:
-they are served from Unsplash's CDN and listed, with photographer and photo ID, in
+they are served from Unsplash's and Pexels' CDNs (Pexels License: free for commercial use) and listed, with
+photographer and photo ID, in
 `src/content/stock-photos.ts`. The site's Photo Credits page (`/photo-credits`) is built from that
 list. Each of those photos is used in exactly one place on the site.
 

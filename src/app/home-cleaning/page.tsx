@@ -34,14 +34,14 @@ const gallery: GalleryImage[] = [
     alt: "A cleaned double sink and counter in an open-plan condo kitchen",
     span: 2,
   },
-  { image: stock.homeBathtub, alt: stock.homeBathtub.alt, span: 2 },
+  { image: stock.homeOven, alt: stock.homeOven.alt, span: 2 },
   { image: kitchenStove, alt: "A clean gas cooktop with polished grates", span: 2 },
-  { image: stock.homeLivingRoom, alt: stock.homeLivingRoom.alt, span: 2 },
+  { image: stock.homeUnloading, alt: stock.homeUnloading.alt, span: 2 },
   { image: stock.homeDishwasher, alt: stock.homeDishwasher.alt, span: 4 },
   { image: stock.homeDrawers, alt: stock.homeDrawers.alt, span: 3, tabletSpan: 2 },
   { image: stock.homeShowerHandle, alt: stock.homeShowerHandle.alt, span: 1, tabletSpan: 2 },
   { image: stock.homeDoorFrame, alt: stock.homeDoorFrame.alt, span: 1, tabletSpan: 2 },
-  { image: stock.homeCabinet, alt: stock.homeCabinet.alt, span: 1, tabletSpan: 2 },
+  { image: stock.homeTable, alt: stock.homeTable.alt, span: 1, tabletSpan: 2 },
 ];
 
 // Room by room: what a clean covers in the spaces people care about most.
@@ -69,8 +69,8 @@ const roomRows: PhotoFeatureRow[] = [
       "Beds made and rooms organized",
       "Mirrors and glass cleaned streak-free",
     ],
-    image: stock.homeCurtains,
-    alt: stock.homeCurtains.alt,
+    image: stock.homeBedroom,
+    alt: stock.homeBedroom.alt,
   },
   {
     eyebrow: { icon: <SparklesIcon />, label: "Glass & windows" },
@@ -82,8 +82,8 @@ const roomRows: PhotoFeatureRow[] = [
       "Windows cleaned inside on Diamond",
       "Bathrooms disinfected top to bottom on every plan",
     ],
-    image: stock.homeWindowSill,
-    alt: stock.homeWindowSill.alt,
+    image: stock.homeWindowSpray,
+    alt: stock.homeWindowSpray.alt,
   },
 ];
 
@@ -197,7 +197,7 @@ export default function HomeCleaningPage() {
       <CareSection
         booking={{ href: bookingLinks.homeCleaning }}
         photos={{
-          ecoFriendly: { image: stock.homeEcoProducts, alt: stock.homeEcoProducts.alt },
+          ecoFriendly: { image: stock.homeStove, alt: stock.homeStove.alt },
           professionals: { image: stock.homePro, alt: stock.homePro.alt },
           petFriendly: { image: stock.homePets, alt: stock.homePets.alt },
         }}

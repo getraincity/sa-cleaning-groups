@@ -1,15 +1,23 @@
 import type { StaticImageData } from "next/image";
 
 /**
- * Stock photos from Unsplash (https://unsplash.com/license: free for commercial use).
- * Each one is used in exactly one place on the site, so no photo repeats from page
- * to page. They are served from Unsplash's CDN through next/image (see
- * `images.remotePatterns` in next.config.ts), and every one is credited on the
- * Photo Credits page, which reads this list.
+ * Stock photos from Unsplash (https://unsplash.com/license) and Pexels
+ * (https://www.pexels.com/license/), both free for commercial use. Each one is used
+ * in exactly one place on the site, so no photo repeats from page to page. They are
+ * served from each site's CDN through next/image (see `images.remotePatterns` in
+ * next.config.ts), and every one is credited on the Photo Credits page, which reads
+ * this list.
+ *
+ * Prefer photos of cleaners at work (client feedback, 2026-11-03: the site should feel
+ * like a real cleaning company, not stock rooms). The Pexels shoots by Liliana Drew and
+ * Tima Miroshnichenko show uniformed crews working in real homes; each shoot is kept to
+ * its own page or two.
  */
 export type StockPhoto = StaticImageData & {
   alt: string;
-  credit: { id: string; photographer: string; username: string };
+  credit:
+    | { source: "unsplash"; id: string; photographer: string; username: string }
+    | { source: "pexels"; id: number; photographer: string };
 };
 
 function unsplash(photo: {
@@ -27,46 +35,60 @@ function unsplash(photo: {
     width: photo.width,
     height: photo.height,
     alt: photo.alt,
-    credit: { id: photo.id, photographer: photo.photographer, username: photo.username },
+    credit: {
+      source: "unsplash",
+      id: photo.id,
+      photographer: photo.photographer,
+      username: photo.username,
+    },
+  };
+}
+
+function pexels(photo: {
+  id: number;
+  width: number;
+  height: number;
+  photographer: string;
+  alt: string;
+}): StockPhoto {
+  const longSide = Math.max(photo.width, photo.height);
+  return {
+    src: `https://images.pexels.com/photos/${photo.id}/pexels-photo-${photo.id}.jpeg?auto=compress&cs=tinysrgb&${photo.width === longSide ? "w" : "h"}=${longSide}`,
+    width: photo.width,
+    height: photo.height,
+    alt: photo.alt,
+    credit: { source: "pexels", id: photo.id, photographer: photo.photographer },
   };
 }
 
 export const stock = {
-  socialSupplies: unsplash({
-    id: "XxAy813D66I",
-    photo: "photo-1626379481874-3dc5678fa8ca",
+  socialCrew: pexels({
+    id: 6195125,
     width: 2400,
-    height: 1600,
-    photographer: "Giorgio Trovato",
-    username: "giorgiotrovato",
-    alt: "Spray bottles lined up in white cleaning caddies",
+    height: 1568,
+    photographer: "Tima Miroshnichenko",
+    alt: "A cleaning crew in red overalls with vacuums and a mop in a bright living room",
   }),
-  socialKitchen: unsplash({
-    id: "NCEDlg536CM",
-    photo: "photo-1762545352529-1e624dad0548",
-    width: 2400,
-    height: 1600,
-    photographer: "Clay Banks",
-    username: "claybanks",
-    alt: "A clean open-plan kitchen and dining area with a long wooden table",
-  }),
-  socialBathroom: unsplash({
-    id: "VWEkgT2EmqI",
-    photo: "photo-1787258517267-9669f62303a1",
-    width: 1597,
+  socialTable: pexels({
+    id: 6195109,
+    width: 1600,
     height: 2400,
-    photographer: "Andrea Davis",
-    username: "andreaedavis",
-    alt: "A tidy bathroom with a wooden vanity, a white sink and a rounded mirror",
+    photographer: "Tima Miroshnichenko",
+    alt: "A cleaner in red overalls wiping down a wooden table",
   }),
-  socialKidsRoom: unsplash({
-    id: "lz9W775oDyI",
-    photo: "photo-1603072387986-d6136328c664",
+  socialWindow: pexels({
+    id: 6195281,
+    width: 1600,
+    height: 2400,
+    photographer: "Tima Miroshnichenko",
+    alt: "A cleaner in red overalls wiping a window, a bucket in her other hand",
+  }),
+  socialVacuum: pexels({
+    id: 6195273,
     width: 2400,
-    height: 1573,
-    photographer: "Blake Woolwine",
-    username: "summitangel",
-    alt: "A bright kids' room with two freshly made beds",
+    height: 1600,
+    photographer: "Tima Miroshnichenko",
+    alt: "A cleaner in red overalls vacuuming a living room floor",
   }),
   socialKitchenCounter: unsplash({
     id: "auF6A1jz8Ac",
@@ -86,14 +108,12 @@ export const stock = {
     username: "raymondokoro",
     alt: "A cleaner pulling a mop bucket along the glass front of an office building",
   }),
-  aboutHero: unsplash({
-    id: "FhsFUo-Wfc0",
-    photo: "photo-1646980241033-cd7abda2ee88",
+  aboutHero: pexels({
+    id: 6196677,
     width: 2400,
     height: 1600,
-    photographer: "Josue Michel",
-    username: "josuemichelphotography",
-    alt: "A cleaner carrying a caddy of supplies and a broom up the stairs of a bright home",
+    photographer: "Tima Miroshnichenko",
+    alt: "A cleaning crew in red uniforms walking up to a house with their equipment",
   }),
   aboutTeam: unsplash({
     id: "MwW-zrkYSIU",
@@ -104,14 +124,12 @@ export const stock = {
     username: "verneho",
     alt: "A cleaner mopping the floor of a bright, modern lobby",
   }),
-  aboutPromise: unsplash({
-    id: "aObxGPf7J1o",
-    photo: "photo-1704040686510-b747ff423ebb",
+  aboutCrew: pexels({
+    id: 6196238,
     width: 2400,
     height: 1600,
-    photographer: "Ariel Domenden",
-    username: "hypvisual",
-    alt: "A tidy living room with a sectional sofa and tall windows",
+    photographer: "Tima Miroshnichenko",
+    alt: "A cleaning crew in red uniforms beside their van with vacuums, a ladder and buckets",
   }),
   aboutWorkplace: unsplash({
     id: "BuDD1HGco-4",
@@ -131,32 +149,26 @@ export const stock = {
     username: "uniqueton",
     alt: "A gloved hand spraying and wiping a surface clean",
   }),
-  aboutEquipment: unsplash({
-    id: "F4FxJsceghg",
-    photo: "photo-1648735257013-2fb9604b15c6",
+  aboutVan: pexels({
+    id: 6196228,
     width: 2400,
     height: 1600,
-    photographer: "everdrop GmbH",
-    username: "everdrop",
-    alt: "A spray bottle and a microfibre cloth held up in two hands",
+    photographer: "Tima Miroshnichenko",
+    alt: "The open back of a cleaning van packed with vacuums, buckets and tools",
   }),
-  aboutEntry: unsplash({
-    id: "ka3Gq_CYz-0",
-    photo: "photo-1757419095875-d50e9d48b574",
+  aboutSweeping: pexels({
+    id: 5591859,
     width: 1600,
     height: 2400,
-    photographer: "Clay Banks",
-    username: "claybanks",
-    alt: "A tidy entryway with a wooden bench, cushions and two framed prints",
+    photographer: "RDNE Stock project",
+    alt: "A woman sweeping crumbs from a kitchen floor",
   }),
-  aboutDusting: unsplash({
-    id: "WnuDJlnuOhU",
-    photo: "photo-1713110824336-f78c320dcf8e",
+  aboutVacuuming: pexels({
+    id: 5591895,
     width: 1600,
     height: 2400,
-    photographer: "Katie Pearse",
-    username: "glistenacademy",
-    alt: "A person in white gloves dusting a chair",
+    photographer: "RDNE Stock project",
+    alt: "A woman vacuuming a kitchen floor with a stick vacuum",
   }),
   aboutSideboard: unsplash({
     id: "xUfaKfbtbmg",
@@ -167,59 +179,47 @@ export const stock = {
     username: "bgoodpic",
     alt: "A woman wiping a wooden sideboard with a striped cloth beside a houseplant",
   }),
-  homeHero: unsplash({
-    id: "7pvC_d2iXSE",
-    photo: "photo-1721932423849-e9033192b190",
+  homeHero: pexels({
+    id: 9462740,
     width: 2400,
     height: 1600,
-    photographer: "Clay Banks",
-    username: "claybanks",
-    alt: "A bright, tidy living room with big windows, a sofa and a rug",
+    photographer: "Liliana Drew",
+    alt: "Two housekeepers in uniform making a bed in a bright bedroom",
   }),
-  homeKitchenSink: unsplash({
-    id: "Je6tljZPtGM",
-    photo: "photo-1736433622548-4adbbc1c2cf2",
-    width: 2400,
-    height: 1600,
-    photographer: "Laura Ohlman",
-    username: "ohlmanphotography",
-    alt: "A cleaner scrubbing a kitchen sink with a cloth",
-  }),
-  homeCurtains: unsplash({
-    id: "dubwHLcJMUg",
-    photo: "photo-1787396094192-67a1ad0e443c",
-    width: 2400,
-    height: 1351,
-    photographer: "ANNIE HATUANH",
-    username: "anniehatuanh",
-    alt: "A woman tidying the curtains in a sunlit living room with a yellow sofa",
-  }),
-  homeWindowSill: unsplash({
-    id: "pIn6MMEoK-c",
-    photo: "photo-1581578731565-fcdb660a4639",
-    width: 2400,
-    height: 1600,
-    photographer: "CDC",
-    username: "cdc",
-    alt: "A hand wiping a white window sill with a yellow sponge",
-  }),
-  homeEcoProducts: unsplash({
-    id: "uooMllXe6gE",
-    photo: "photo-1528740561666-dc2479dc08ab",
+  homeKitchenSink: pexels({
+    id: 9462309,
     width: 1600,
     height: 2400,
-    photographer: "Daiga Ellaby",
-    username: "daiga_ellaby",
-    alt: "Amber glass spray bottles and a natural brush on a counter",
+    photographer: "Liliana Drew",
+    alt: "A housekeeper in an apron and rubber gloves washing up at a kitchen sink",
   }),
-  homePro: unsplash({
-    id: "5TXz228u4eo",
-    photo: "photo-1686178827149-6d55c72d81df",
+  homeBedroom: pexels({
+    id: 9462745,
     width: 2400,
     height: 1600,
-    photographer: "Giorgio Trovato",
-    username: "giorgiotrovato",
-    alt: "A cleaner in black gloves vacuuming a grey upholstered ottoman",
+    photographer: "Liliana Drew",
+    alt: "Two housekeepers in uniform changing the pillowcases on a bed",
+  }),
+  homeWindowSpray: pexels({
+    id: 9462734,
+    width: 1600,
+    height: 2400,
+    photographer: "Liliana Drew",
+    alt: "A cleaner spraying glass cleaner onto a window",
+  }),
+  homeStove: pexels({
+    id: 9462746,
+    width: 1600,
+    height: 2400,
+    photographer: "Liliana Drew",
+    alt: "A housekeeper in rubber gloves spraying and wiping a white stove",
+  }),
+  homePro: pexels({
+    id: 9462760,
+    width: 1600,
+    height: 2400,
+    photographer: "Liliana Drew",
+    alt: "Two cleaners in navy uniforms carrying their supplies up a staircase",
   }),
   homePets: unsplash({
     id: "ry_lpIhaUfo",
@@ -257,23 +257,19 @@ export const stock = {
     username: "cdc",
     alt: "A man wiping down a door frame in a family home while a child plays on the rug",
   }),
-  homeCabinet: unsplash({
-    id: "-j0GoCOH5iw",
-    photo: "photo-1722923358625-e108539d4c4d",
-    width: 2400,
-    height: 1920,
-    photographer: "Raymond Petrik",
-    username: "raymondpetrik",
-    alt: "A woman dusting a wooden cabinet in a cosy, patterned room",
+  homeTable: pexels({
+    id: 9462732,
+    width: 1600,
+    height: 2400,
+    photographer: "Liliana Drew",
+    alt: "A cleaner in a uniform and black gloves wiping a wooden table",
   }),
-  homeBathtub: unsplash({
-    id: "w8FEsHwwL10",
-    photo: "photo-1717497043540-d45bf85e5d38",
-    width: 2400,
-    height: 1600,
-    photographer: "Vije Vijendranath",
-    username: "vijev",
-    alt: "A spotless freestanding bathtub beside a tiled wall and plants",
+  homeOven: pexels({
+    id: 9462307,
+    width: 1600,
+    height: 2400,
+    photographer: "Liliana Drew",
+    alt: "A housekeeper in rubber gloves spraying and wiping an oven door",
   }),
   homeDrawers: unsplash({
     id: "4-S_jLHLiRs",
@@ -284,41 +280,33 @@ export const stock = {
     username: "minimizethenorganize",
     alt: "A woman organizing cutlery in a kitchen drawer",
   }),
-  homeLivingRoom: unsplash({
-    id: "p3B_7FmepAc",
-    photo: "photo-1628624997995-0f1fd6f29dce",
+  homeUnloading: pexels({
+    id: 9462762,
+    width: 1600,
+    height: 2400,
+    photographer: "Liliana Drew",
+    alt: "Two cleaners unloading supplies from the back of a car",
+  }),
+  custodianHero: pexels({
+    id: 6197108,
     width: 2400,
     height: 1600,
-    photographer: "Zac Gudakov",
-    username: "zacgudakov",
-    alt: "A living room with a stone fireplace, built-in shelves and dark wood floors",
+    photographer: "Tima Miroshnichenko",
+    alt: "A custodial crew in red overalls mopping, wiping glass and cleaning high surfaces in a bright open-plan space",
   }),
-  custodianHero: unsplash({
-    id: "PkFdlMAl85Q",
-    photo: "photo-1779345169505-be7319f62b97",
+  custodianTeam: pexels({
+    id: 6196693,
     width: 2400,
     height: 1600,
-    photographer: "Christian R",
-    username: "hazelikespollo",
-    alt: "A mop bucket and wet-floor sign in a freshly mopped lobby by glass doors",
+    photographer: "Tima Miroshnichenko",
+    alt: "A custodial crew mopping, vacuuming and dusting around a long table",
   }),
-  custodianOffice: unsplash({
-    id: "eSAbwPq00rw",
-    photo: "photo-1770816307800-72ba937620fe",
-    width: 2400,
-    height: 1600,
-    photographer: "Tim Schmidbauer",
-    username: "timschmidbauer",
-    alt: "A clean open-plan office with long tables, chairs and pendant lights",
-  }),
-  custodianMeetingRoom: unsplash({
-    id: "1RT4txDDAbM",
-    photo: "photo-1571624436279-b272aff752b5",
-    width: 2400,
-    height: 1597,
-    photographer: "S O C I A L . C U T",
-    username: "socialcut",
-    alt: "A tidy meeting room with a wooden table and tan leather chairs",
+  custodianVacuum: pexels({
+    id: 6196692,
+    width: 1600,
+    height: 2400,
+    photographer: "Tima Miroshnichenko",
+    alt: "A custodian vacuuming under a table while a co-worker cleans a high shelf",
   }),
   custodianWindows: unsplash({
     id: "DegtJzVkJUI",
@@ -329,23 +317,21 @@ export const stock = {
     username: "chiuchuuu",
     alt: "A window cleaner washing an office building's windows with a pole",
   }),
-  custodianDesks: unsplash({
-    id: "HYYHvBsZOfU",
-    photo: "photo-1700809887584-0798672b1d48",
-    width: 2400,
-    height: 1827,
-    photographer: "Declan Sun",
-    username: "declansun",
-    alt: "Clean desks and chairs in a bright open office",
+  custodianDusting: pexels({
+    id: 9462748,
+    width: 1600,
+    height: 2400,
+    photographer: "Liliana Drew",
+    alt: "A cleaner dusting a screen with a hand duster",
   }),
-  custodianFloors: unsplash({
-    id: "0FTI9ceTUOc",
-    photo: "photo-1669101602108-fa5ba89507ee",
+  custodianEntrance: unsplash({
+    id: "PkFdlMAl85Q",
+    photo: "photo-1779345169505-be7319f62b97",
     width: 2400,
     height: 1600,
-    photographer: "Toon Lambrechts",
-    username: "mycellhub",
-    alt: "A custodian mopping a white hallway floor",
+    photographer: "Christian R",
+    username: "hazelikespollo",
+    alt: "A mop bucket and wet-floor sign in a freshly mopped lobby by glass doors",
   }),
   custodianScrubber: unsplash({
     id: "INDGbj_ojG4",
@@ -392,32 +378,26 @@ export const stock = {
     username: "jontyson",
     alt: "A building porter on a ladder cleaning a window set into a stone wall",
   }),
-  custodianRestroom: unsplash({
-    id: "Kk9ZMyIDovI",
-    photo: "photo-1779626349298-bc804fc4c3c9",
+  custodianGlassWall: pexels({
+    id: 6197121,
     width: 2400,
-    height: 1350,
-    photographer: "Aryasatya Rafa Prayitno",
-    username: "911mind",
-    alt: "A clean public restroom with a row of sinks, mirrors and frosted glass stalls",
+    height: 1600,
+    photographer: "Tima Miroshnichenko",
+    alt: "A custodian wiping a glass wall while a co-worker mops behind her",
   }),
-  productsHero: unsplash({
-    id: "n5qirFAe6rQ",
-    photo: "photo-1583907659441-addbe699e921",
+  productsSink: pexels({
+    id: 4239113,
     width: 2400,
-    height: 1800,
-    photographer: "Precious Plastic Melbourne",
-    username: "preciousplasticmelbourne",
-    alt: "A spray bottle of lemon cleaner on a counter beside fresh lemons",
+    height: 1600,
+    photographer: "Kaboompics",
+    alt: "A gloved hand cleaning a bathroom sink beside bottles of cleaner",
   }),
-  productsHome: unsplash({
-    id: "TFOmKsaufKw",
-    photo: "photo-1581270275474-79e75f32c486",
+  productsSpray: pexels({
+    id: 4239130,
     width: 2400,
-    height: 1776,
-    photographer: "Kelly Sikkema",
-    username: "kellysikkema",
-    alt: "A hand wiping a counter with a paper towel",
+    height: 1600,
+    photographer: "Kaboompics",
+    alt: "A gloved hand spraying cleaner onto a brass tap",
   }),
   productsTools: unsplash({
     id: "rHH4ytFvsw4",

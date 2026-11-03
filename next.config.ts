@@ -2,8 +2,11 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
-    // Stock photos are served from Unsplash's CDN (see src/content/stock-photos.ts).
-    remotePatterns: [{ protocol: "https", hostname: "images.unsplash.com", pathname: "/photo-*" }],
+    // Stock photos are served from Unsplash's and Pexels' CDNs (see src/content/stock-photos.ts).
+    remotePatterns: [
+      { protocol: "https", hostname: "images.unsplash.com", pathname: "/photo-*" },
+      { protocol: "https", hostname: "images.pexels.com", pathname: "/photos/**" },
+    ],
   },
   async redirects() {
     return [
