@@ -87,6 +87,8 @@ export type Location = {
     position?: string;
   };
   services: { home: string; custodian: string };
+  /** Existing blog posts worth reading for this area (linked from its page). */
+  guides: { label: string; href: string }[];
   faqs: Faq[];
 };
 
@@ -99,7 +101,7 @@ export const locations: Location[] = [
     intro:
       "From Yaletown lofts to Coal Harbour high-rises and Gastown storefronts, we keep downtown homes and workplaces spotless, so you can spend more time enjoying the city and less time cleaning it.",
     metaDescription:
-      "Condo cleaning and office cleaning in Downtown Vancouver: Yaletown, Coal Harbour, the West End and Gastown. Licensed, insured and eco-friendly.",
+      "Home and commercial cleaning in Downtown Vancouver: Yaletown, Coal Harbour, Gastown. Licensed and insured. Plans from $150 a month, hourly from $130.",
     neighbourhoods: [
       "Yaletown",
       "Coal Harbour",
@@ -210,6 +212,13 @@ export const locations: Location[] = [
       home: "Recurring and deep cleans for condos, lofts and townhomes.",
       custodian: "Office suites, retail and strata common areas across the core.",
     },
+    guides: [
+      {
+        label: "Office cleaning checklist: daily, weekly and monthly",
+        href: "/blog/office-cleaning-checklist",
+      },
+      { label: "Deep clean vs regular clean", href: "/blog/deep-clean-vs-regular-clean" },
+    ],
     faqs: [
       {
         question: "Can you clean my condo while I'm at work?",
@@ -226,6 +235,32 @@ export const locations: Location[] = [
         answer:
           "Yes. Our custodian services cover offices, retail stores and strata common areas throughout Downtown Vancouver. Request a free quote to get started.",
       },
+      {
+        question: "Which downtown neighbourhoods do you clean in?",
+        answer:
+          "Yaletown, Coal Harbour, the West End, Gastown, False Creek North and Chinatown, covering condos, lofts, townhomes, offices and shops. If your building is nearby and you're not sure it's covered, send us a message and we'll let you know.",
+      },
+      {
+        question: "Can you clean my condo after I move out?",
+        answer:
+          "Yes. Our move-out cleaning is made for empty condos, lofts and apartments. Many strata buildings ask residents to reserve the elevator for a move, so check your building's rules and tell us your move time. We'll plan the clean for when the unit is empty.",
+        links: [{ label: "Move-out cleaning", href: "/move-out-cleaning" }],
+      },
+      {
+        question: "How often can you clean a downtown office?",
+        answer:
+          "Daily, weekly, bi-weekly or one-time, planned around your business hours. We agree what's cleaned and when, then write it into your checklist so every visit follows the same plan.",
+        links: [
+          { label: "Office cleaning", href: "/office-cleaning" },
+          { label: "Office cleaning checklist", href: "/blog/office-cleaning-checklist" },
+        ],
+      },
+      {
+        question: "Do you clean the common areas of downtown strata buildings?",
+        answer:
+          "Yes. Lobbies, hallways, elevators, amenity rooms and gyms are part of our custodian services. Tell us about the building, how often you'd like visits and what you'd like included, and we'll quote the property.",
+        links: [{ label: "Strata cleaning", href: "/strata-cleaning" }],
+      },
     ],
   },
   {
@@ -236,7 +271,7 @@ export const locations: Location[] = [
     intro:
       "Between the North Shore rain, trail-day mud and family life, North Vancouver homes work hard. From Lower Lonsdale condos to Lynn Valley family homes, we bring them back to spotless.",
     metaDescription:
-      "House cleaning and office cleaning in North Vancouver: Lonsdale, Lynn Valley, Deep Cove and Edgemont. Eco-friendly products, background-checked team.",
+      "Home and commercial cleaning in North Vancouver: Lonsdale, Lynn Valley, Deep Cove. Licensed and insured. Plans from $150 a month, hourly from $130.",
     neighbourhoods: [
       "Lower Lonsdale",
       "Central Lonsdale",
@@ -346,6 +381,7 @@ export const locations: Location[] = [
       home: "Recurring, deep and move-in/out cleans from Lonsdale to Deep Cove.",
       custodian: "Clean, welcoming offices and stores along Lonsdale and beyond.",
     },
+    guides: [{ label: "Deep clean vs regular clean", href: "/blog/deep-clean-vs-regular-clean" }],
     faqs: [
       {
         question: "Are your products safe for pets?",
@@ -362,6 +398,31 @@ export const locations: Location[] = [
         answer:
           "Yes. We clean homes of every size, from Lower Lonsdale condos to multi-level family homes. For larger homes, hourly cleaning or a custom quote is often the best fit.",
       },
+      {
+        question: "Do you serve both the City and the District of North Vancouver?",
+        answer:
+          "Yes. We clean in Lower and Central Lonsdale as well as Lynn Valley, Deep Cove, Edgemont Village and Seymour. If you're on the North Shore and not sure we cover your street, send us a message and we'll let you know.",
+      },
+      {
+        question: "Do you give mudrooms and entryways extra attention?",
+        answer:
+          "Yes. Wet boots, muddy paws and dripping gear mean floors and entryways need more care on the North Shore. Tell us which areas matter most and we'll focus there, using eco-friendly, pet-friendly products.",
+      },
+      {
+        question: "Is a deep clean worth booking after a muddy winter?",
+        answer:
+          "It's a good reset. A deep clean reaches the baseboards, corners and detail that a regular clean doesn't, so it suits a home that's had a wet, muddy season. Our guide explains how a deep clean differs from a regular one.",
+        links: [
+          { label: "Deep cleaning", href: "/deep-cleaning" },
+          { label: "Deep clean vs regular clean", href: "/blog/deep-clean-vs-regular-clean" },
+        ],
+      },
+      {
+        question: "Do you clean offices and studios along Lonsdale?",
+        answer:
+          "Yes. Our custodian team cleans offices, studios and stores on a daily, weekly or one-time schedule that fits your hours. Request a quote and tell us about your space.",
+        links: [{ label: "Office cleaning", href: "/office-cleaning" }],
+      },
     ],
   },
   {
@@ -372,7 +433,7 @@ export const locations: Location[] = [
     intro:
       "East Van is full of character, from heritage homes in Strathcona to laneway houses in Renfrew and the busy shops along Commercial Drive and Main Street. We clean them all with the care they deserve.",
     metaDescription:
-      "House cleaning, move-out cleaning and office cleaning in East Vancouver: Commercial Drive, Mount Pleasant, Strathcona and Hastings-Sunrise.",
+      "Home and commercial cleaning in East Vancouver: Commercial Drive, Strathcona, Mount Pleasant. Licensed, insured. Plans from $150 a month, hourly from $130.",
     neighbourhoods: [
       "Commercial Drive",
       "Mount Pleasant",
@@ -473,6 +534,12 @@ export const locations: Location[] = [
       home: "Deep and recurring cleans for character homes, suites and apartments.",
       custodian: "Cafés, studios and small businesses from the Drive to Main Street.",
     },
+    guides: [
+      {
+        label: "Move-out cleaning checklist for Vancouver",
+        href: "/blog/move-out-cleaning-checklist-vancouver",
+      },
+    ],
     faqs: [
       {
         question: "Do you do move-out cleans for rental suites?",
@@ -489,6 +556,31 @@ export const locations: Location[] = [
         answer:
           "Yes. Our custodian services cover cafés, studios, offices and retail spaces. Request a free quote and we'll build a plan around your hours.",
       },
+      {
+        question: "Do you clean laneway houses and basement suites?",
+        answer:
+          "Yes. Suites and laneway homes are common across East Van, and we clean them with the same checklists as any home. Recurring plans keep them fresh, and move-in and move-out cleans help when tenants change.",
+      },
+      {
+        question: "Which East Van neighbourhoods do you cover?",
+        answer:
+          "Commercial Drive, Mount Pleasant, Strathcona, Hastings-Sunrise, Renfrew-Collingwood and Kensington-Cedar Cottage. If your street is nearby and you're not sure it's covered, send us a message and we'll let you know.",
+      },
+      {
+        question: "Can you clean a rental between tenants?",
+        answer:
+          "Yes. A move-out clean, including inside cabinets, closets and appliances, helps landlords and tenants hand over the keys with confidence. Our checklist shows what a move-out clean covers, so you can compare it with your tenancy's requirements.",
+        links: [
+          { label: "Move-out cleaning", href: "/move-out-cleaning" },
+          { label: "Move-out checklist", href: "/blog/move-out-cleaning-checklist-vancouver" },
+        ],
+      },
+      {
+        question: "What does it cost to clean a character home in East Van?",
+        answer:
+          "Recurring plans start at $150 a month, and hourly cleaning starts at $130+ with a 3-hour minimum. Older homes with detailed trim often suit hourly cleaning or a custom quote, so tell us about the home when you book.",
+        links: [{ label: "See plans and pricing", href: "/home-cleaning#book" }],
+      },
     ],
   },
   {
@@ -499,7 +591,7 @@ export const locations: Location[] = [
     intro:
       "From Ambleside and Dundarave to the British Properties and Horseshoe Bay, West Vancouver homes are made for the view. We keep every surface, from marble counters to floor-to-ceiling glass, looking the way it should.",
     metaDescription:
-      "Luxury home cleaning, window cleaning and office cleaning in West Vancouver: Ambleside, Dundarave, British Properties and Horseshoe Bay.",
+      "Home and commercial cleaning in West Vancouver: Ambleside, Dundarave, British Properties. Licensed, insured. Plans from $150 a month, hourly from $130.",
     neighbourhoods: ["Ambleside", "Dundarave", "British Properties", "Caulfeild", "Horseshoe Bay"],
     tint: "#eef3f6",
     area: {
@@ -599,6 +691,7 @@ export const locations: Location[] = [
       home: "Deep and recurring cleans for view homes of every size.",
       custodian: "Offices, clinics and shops in Ambleside, Dundarave and Park Royal.",
     },
+    guides: [{ label: "Deep clean vs regular clean", href: "/blog/deep-clean-vs-regular-clean" }],
     faqs: [
       {
         question: "Do you clean interior windows?",
@@ -615,6 +708,22 @@ export const locations: Location[] = [
         answer:
           "Absolutely. For larger homes we'll recommend a plan or an hourly booking (from $130+, with a 3-hour minimum) based on your home and what you'd like done.",
       },
+      {
+        question: "Do you serve Horseshoe Bay and the British Properties?",
+        answer:
+          "Yes. We clean in Ambleside, Dundarave, the British Properties, Caulfeild and Horseshoe Bay. For hillside homes, tell us about parking and access when you book so we can plan the visit around it.",
+      },
+      {
+        question: "Can you clean marble and natural stone surfaces?",
+        answer:
+          "We use products chosen for the surface and work gently on marble, natural stone and high-end fixtures. Tell us about the finishes in your home when you book and we'll plan around them.",
+      },
+      {
+        question: "Can you do a deep clean for a larger West Vancouver home?",
+        answer:
+          "Yes. For larger homes, book by the hour (from $130+, with a 3-hour minimum) and tell us the rooms and finishes that matter most, or ask for a custom quote. A deep clean reaches the detail a regular clean doesn't.",
+        links: [{ label: "Deep cleaning", href: "/deep-cleaning" }],
+      },
     ],
   },
   {
@@ -625,7 +734,7 @@ export const locations: Location[] = [
     intro:
       "From family homes in Sunset and Killarney to the new towers at Oakridge and Marine Gateway, South Vancouver is growing fast. We help households keep up, with cleaning that fits busy family life.",
     metaDescription:
-      "House cleaning, post-construction cleaning and office cleaning in South Vancouver: Marpole, Oakridge, Sunset, Victoria-Fraserview and Killarney.",
+      "Home and commercial cleaning in South Vancouver: Marpole, Oakridge, Killarney. Licensed and insured. Plans from $150 a month, hourly from $130.",
     neighbourhoods: ["Marpole", "Oakridge", "Sunset", "Victoria-Fraserview", "Killarney"],
     tint: "#f5f3f7",
     area: {
@@ -725,6 +834,9 @@ export const locations: Location[] = [
       home: "Recurring, deep and post-construction cleans for homes and condos.",
       custodian: "Offices, clinics and shops along Cambie, Fraser and Victoria Drive.",
     },
+    guides: [
+      { label: "Post-construction cleaning guide", href: "/blog/post-construction-cleaning-guide" },
+    ],
     faqs: [
       {
         question: "Do you clean new condos before move-in?",
@@ -740,6 +852,28 @@ export const locations: Location[] = [
         question: "Do you offer recurring cleaning plans?",
         answer:
           "Yes. Choose from our Silver, Gold and Diamond plans, or book hourly cleaning from $130+ with a 3-hour minimum.",
+      },
+      {
+        question: "Which South Vancouver neighbourhoods do you cover?",
+        answer:
+          "Marpole, Oakridge, Sunset, Victoria-Fraserview and Killarney, including homes and condos near the Canada Line. If your street is nearby and you're not sure it's covered, send us a message and we'll let you know.",
+      },
+      {
+        question: "Do you clean large or multi-generational households?",
+        answer:
+          "Yes. Large families create a lot of cleaning, so recurring plans keep kitchens, bathrooms and living spaces under control visit after visit. For bigger homes, hourly cleaning or a custom quote often fits best.",
+      },
+      {
+        question: "What does a post-construction clean cover?",
+        answer:
+          "It clears fine construction dust and residue from floors, cabinets, window tracks and fixtures so a new or renovated space is ready to live in. Our guide explains the process in more detail.",
+        links: [
+          { label: "Post-construction cleaning", href: "/post-construction-cleaning" },
+          {
+            label: "Post-construction cleaning guide",
+            href: "/blog/post-construction-cleaning-guide",
+          },
+        ],
       },
     ],
   },

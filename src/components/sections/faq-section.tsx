@@ -5,7 +5,12 @@ import { MessageIcon, PlusIcon } from "@/components/ui/icons";
 import { SectionHeader, sectionSpacing } from "@/components/ui/section-header";
 import { cn } from "@/lib/utils";
 
-export type Faq = { question: string; answer: string };
+export type Faq = {
+  question: string;
+  answer: string;
+  /** Optional related pages, shown under the answer (not part of the FAQ schema). */
+  links?: { label: string; href: string }[];
+};
 
 type FaqSectionProps = {
   items: Faq[];
@@ -64,9 +69,28 @@ export function FaqSection({
                   <PlusIcon />
                 </span>
               </summary>
-              <p className="mb-0 px-6 pb-6 font-text text-[15px] leading-[26px] text-muted">
+              <p
+                className={cn(
+                  "mb-0 px-6 font-text text-[15px] leading-[26px] text-muted",
+                  item.links?.length ? "pb-2" : "pb-6",
+                )}
+              >
                 {item.answer}
               </p>
+              {item.links && item.links.length > 0 && (
+                <ul className="mt-0 mb-0 flex list-none flex-wrap gap-x-5 gap-y-1 px-6 pb-5">
+                  {item.links.map((link) => (
+                    <li key={link.href}>
+                      <Link
+                        href={link.href}
+                        className="inline-flex min-h-8 items-center font-text text-[14px] font-semibold text-brand no-underline hover:underline"
+                      >
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              )}
             </details>
           ))}
         </div>
