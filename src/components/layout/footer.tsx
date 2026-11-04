@@ -13,7 +13,13 @@ const columns: { title: string; links: FooterLink[] }[] = [
     title: "Services",
     links: [
       { label: "Home Cleaning", href: "/home-cleaning" },
+      { label: "Deep Cleaning", href: "/deep-cleaning" },
+      { label: "Move-Out Cleaning", href: "/move-out-cleaning" },
+      { label: "Airbnb Cleaning", href: "/airbnb-cleaning" },
+      { label: "Post-Construction Cleaning", href: "/post-construction-cleaning" },
       { label: "Custodian Services", href: "/custodian-services" },
+      { label: "Office Cleaning", href: "/office-cleaning" },
+      { label: "Strata Cleaning", href: "/strata-cleaning" },
     ],
   },
   {

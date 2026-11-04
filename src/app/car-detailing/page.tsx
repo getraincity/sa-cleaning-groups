@@ -12,12 +12,16 @@ import { cn } from "@/lib/utils";
 // previous company did, so the page stays (linked from Our Story on About)
 // but is left out of the menus, the footer and the sitemap.
 // TO CONFIRM: the client's wording for who did car detailing.
-export const metadata = pageMetadata({
-  title: "Car Detailing: Our History",
-  path: "/car-detailing",
-  description:
-    "Car detailing was offered by the previous company. S&A Cleaning Group doesn't offer it: we focus on home cleaning and custodian services in Vancouver.",
-});
+export const metadata = {
+  ...pageMetadata({
+    title: "Car Detailing: Our History",
+    path: "/car-detailing",
+    description:
+      "Car detailing was offered by the previous company. S&A Cleaning Group doesn't offer it: we focus on home cleaning and custodian services in Vancouver.",
+  }),
+  // Not an S&A service: keep it out of search results (it stays reachable from Our Story).
+  robots: { index: false, follow: true },
+};
 
 const archive = [
   {
