@@ -122,25 +122,39 @@ name when asked for a cleaner in Vancouver.
 
 ## 5. URLs to request indexing (Search Console → URL Inspection)
 
-Highest value first:
+Updated 2026-11-04 after the growth round (`docs/SEO-PLAN.md`). Highest value first:
 
-1. https://sacleaninggroup.ca/
+1. https://sacleaninggroup.ca
 2. https://sacleaninggroup.ca/home-cleaning
-3. https://sacleaninggroup.ca/custodian-services
-4. https://sacleaninggroup.ca/locations
-5. https://sacleaninggroup.ca/locations/downtown-vancouver
-6. https://sacleaninggroup.ca/locations/north-vancouver
-7. https://sacleaninggroup.ca/locations/east-vancouver
-8. https://sacleaninggroup.ca/locations/west-vancouver
-9. https://sacleaninggroup.ca/locations/south-vancouver
-10. https://sacleaninggroup.ca/contact-us
-11. https://sacleaninggroup.ca/about-us
-12. https://sacleaninggroup.ca/products-we-trust
-13. https://sacleaninggroup.ca/blog
-14. https://sacleaninggroup.ca/blog/office-cleaning-checklist
-15. https://sacleaninggroup.ca/blog/deep-clean-vs-regular-clean
-16. https://sacleaninggroup.ca/blog/move-out-cleaning-checklist-vancouver
-17. https://sacleaninggroup.ca/blog/post-construction-cleaning-guide
+3. https://sacleaninggroup.ca/deep-cleaning
+4. https://sacleaninggroup.ca/move-out-cleaning
+5. https://sacleaninggroup.ca/airbnb-cleaning
+6. https://sacleaninggroup.ca/post-construction-cleaning
+7. https://sacleaninggroup.ca/custodian-services
+8. https://sacleaninggroup.ca/office-cleaning
+9. https://sacleaninggroup.ca/strata-cleaning
+10. https://sacleaninggroup.ca/locations
+11. https://sacleaninggroup.ca/locations/downtown-vancouver
+12. https://sacleaninggroup.ca/locations/north-vancouver
+13. https://sacleaninggroup.ca/locations/east-vancouver
+14. https://sacleaninggroup.ca/locations/west-vancouver
+15. https://sacleaninggroup.ca/locations/south-vancouver
+16. https://sacleaninggroup.ca/contact-us
+17. https://sacleaninggroup.ca/about-us
+18. https://sacleaninggroup.ca/products-we-trust
+19. https://sacleaninggroup.ca/blog
+20. https://sacleaninggroup.ca/blog/house-cleaning-cost-vancouver
+21. https://sacleaninggroup.ca/blog/move-out-cleaning-damage-deposit-bc
+22. https://sacleaninggroup.ca/blog/strata-cleaning-contract-bc
+23. https://sacleaninggroup.ca/blog/airbnb-turnover-cleaning-checklist-vancouver
+24. https://sacleaninggroup.ca/blog/deep-cleaning-cost-vancouver
+25. https://sacleaninggroup.ca/blog/prevent-mould-damp-vancouver-winter
+26. https://sacleaninggroup.ca/blog/how-to-choose-a-cleaning-company-vancouver
+27. https://sacleaninggroup.ca/blog/commercial-cleaning-cost-vancouver
+28. https://sacleaninggroup.ca/blog/office-cleaning-checklist
+29. https://sacleaninggroup.ca/blog/deep-clean-vs-regular-clean
+30. https://sacleaninggroup.ca/blog/move-out-cleaning-checklist-vancouver
+31. https://sacleaninggroup.ca/blog/post-construction-cleaning-guide
 
-Not needed: `/photo-credits` (it's in the sitemap, low value), `/car-detailing` (kept quiet on
-purpose) and `/llms.txt`.
+Not needed: `/photo-credits`, `/car-detailing` (noindex on purpose), `/llms.txt`, `/llms-full.txt`.
+Also run `node scripts/indexnow.mjs --submit` after deploy for Bing (see `docs/seo/technical-notes.md`).

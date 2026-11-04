@@ -308,7 +308,11 @@ export const servicePages: Record<ServiceSlug, ServicePageData> = {
       note: "Prefer regular visits afterwards? Silver, Gold and Diamond plans are on the Home Cleaning page.",
     },
     relatedPaths: ["/home-cleaning", "/move-out-cleaning", "/post-construction-cleaning"],
-    relatedPosts: ["deep-clean-vs-regular-clean"],
+    relatedPosts: [
+      "deep-clean-vs-regular-clean",
+      "deep-cleaning-cost-vancouver",
+      "house-cleaning-cost-vancouver",
+    ],
     faqs: [
       {
         question: "How much does deep cleaning cost in Vancouver?",
@@ -512,7 +516,7 @@ export const servicePages: Record<ServiceSlug, ServicePageData> = {
       note: "A thorough clean helps you leave the home in good order. It can't guarantee what your landlord decides about your deposit.",
     },
     relatedPaths: ["/deep-cleaning", "/home-cleaning", "/post-construction-cleaning"],
-    relatedPosts: ["move-out-cleaning-checklist-vancouver"],
+    relatedPosts: ["move-out-cleaning-checklist-vancouver", "move-out-cleaning-damage-deposit-bc"],
     faqs: [
       {
         question: "How much does move-out cleaning cost in Vancouver?",
@@ -720,7 +724,7 @@ export const servicePages: Record<ServiceSlug, ServicePageData> = {
       note: "Hosting several units or a regular calendar? Send us your schedule and we'll plan it with you.",
     },
     relatedPaths: ["/home-cleaning", "/deep-cleaning", "/move-out-cleaning"],
-    relatedPosts: [],
+    relatedPosts: ["airbnb-turnover-cleaning-checklist-vancouver", "house-cleaning-cost-vancouver"],
     faqs: [
       {
         question: "How much does Airbnb cleaning cost in Vancouver?",
@@ -1127,7 +1131,11 @@ export const servicePages: Record<ServiceSlug, ServicePageData> = {
       note: "We don't publish a flat office cleaning rate, because it would be wrong for most spaces.",
     },
     relatedPaths: ["/custodian-services", "/strata-cleaning", "/post-construction-cleaning"],
-    relatedPosts: ["office-cleaning-checklist"],
+    relatedPosts: [
+      "office-cleaning-checklist",
+      "commercial-cleaning-cost-vancouver",
+      "how-to-choose-a-cleaning-company-vancouver",
+    ],
     faqs: [
       {
         question: "How much does office cleaning cost in Vancouver?",
@@ -1332,7 +1340,11 @@ export const servicePages: Record<ServiceSlug, ServicePageData> = {
       note: "We can put the quote in a form your strata council can review.",
     },
     relatedPaths: ["/custodian-services", "/office-cleaning", "/post-construction-cleaning"],
-    relatedPosts: ["office-cleaning-checklist"],
+    relatedPosts: [
+      "office-cleaning-checklist",
+      "strata-cleaning-contract-bc",
+      "commercial-cleaning-cost-vancouver",
+    ],
     faqs: [
       {
         question: "What areas do you clean in a strata building?",
