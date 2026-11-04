@@ -1,5 +1,6 @@
 import Link from "next/link";
 import lobbyEntrance from "@/assets/images/commercial/lobby-wet-floor.jpg";
+import { AnswerBlocks } from "@/components/sections/answer-blocks";
 import { CtaBand } from "@/components/sections/cta-band";
 import { FaqSection, type Faq } from "@/components/sections/faq-section";
 import { Gallery, type GalleryImage } from "@/components/sections/gallery";
@@ -25,6 +26,7 @@ import {
 } from "@/components/ui/icons";
 import { Reveal } from "@/components/ui/reveal";
 import { SectionHeader, sectionSpacing } from "@/components/ui/section-header";
+import { custodianAnswers } from "@/content/answers";
 import { stock } from "@/content/stock-photos";
 import { pageMetadata } from "@/lib/metadata";
 import { siteConfig } from "@/lib/site";
@@ -33,10 +35,10 @@ import { JsonLd } from "@/components/seo/json-ld";
 import { breadcrumbJsonLd, serviceJsonLd } from "@/lib/schema";
 
 export const metadata = pageMetadata({
-  title: "Commercial & Custodian Cleaning in Vancouver",
+  title: "Commercial Cleaning & Janitorial Services Vancouver",
   path: "/custodian-services",
   description:
-    "Office, retail, strata and commercial cleaning across Greater Vancouver, scheduled around your hours by a licensed, insured, background-checked team. Free quotes.",
+    "Licensed, insured commercial cleaning and custodian services across Greater Vancouver: offices, buildings and facilities. Request a quote.",
 });
 
 const quoteHref = "/contact-us?topic=custodian";
@@ -71,11 +73,18 @@ const reasons = [
   },
 ];
 
-const spaces = [
+const spaces: {
+  Icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  title: string;
+  text: string;
+  /** The space's own page, where there is one. */
+  link?: { label: string; href: string };
+}[] = [
   {
     Icon: BuildingIcon,
     title: "Offices & co-working",
     text: "Desks, meeting rooms, reception and shared kitchens kept fresh for your team and visitors.",
+    link: { label: "Office cleaning in Vancouver", href: "/office-cleaning" },
   },
   {
     Icon: StoreIcon,
@@ -86,6 +95,7 @@ const spaces = [
     Icon: KeyIcon,
     title: "Strata common areas",
     text: "Lobbies, hallways, elevators, amenity rooms and gyms that residents are proud of.",
+    link: { label: "Strata cleaning in Vancouver", href: "/strata-cleaning" },
   },
   {
     Icon: StethoscopeIcon,
@@ -263,6 +273,39 @@ const faqs: Faq[] = [
     answer:
       "Every space is different, so we quote after learning about yours: its size, how often you'd like us to visit and what you'd like included. Quotes are free and there's no obligation.",
   },
+  {
+    question: "Do you clean offices on a daily or weekly schedule?",
+    answer:
+      "Yes. Visits can be daily, weekly or bi-weekly, and we plan them around your business hours. We agree what's cleaned and when, and write it into your checklist so every visit follows the same plan.",
+    links: [
+      { label: "Office cleaning in Vancouver", href: "/office-cleaning" },
+      { label: "Office cleaning checklist", href: "/blog/office-cleaning-checklist" },
+    ],
+  },
+  {
+    question: "Do you clean strata buildings and condo common areas?",
+    answer:
+      "Yes. We clean strata common areas such as lobbies, hallways, elevators, amenity rooms and gyms. Tell us about the building, how often you'd like visits and what you'd like included, and we'll quote the property.",
+    links: [{ label: "Strata cleaning in Vancouver", href: "/strata-cleaning" }],
+  },
+  {
+    question: "Can you do a one-time commercial clean?",
+    answer:
+      "Yes. One-time visits suit move-ins, move-outs, events or a fresh start before a regular plan. If your space has just been renovated, our post-construction cleaning clears fine dust and residue before you open or move in.",
+    links: [{ label: "Post-construction cleaning", href: "/post-construction-cleaning" }],
+  },
+  {
+    question: "How do I get a quote for my office or building?",
+    answer:
+      "Use the quote form or call us. Share the type and size of your space, how often you'd like cleaning and any building requirements. We'll take a look at the space and send a clear quote, with no obligation.",
+    links: [{ label: "Request a quote", href: "/contact-us?topic=custodian#message" }],
+  },
+  {
+    question: "Which parts of Greater Vancouver do you serve for commercial cleaning?",
+    answer:
+      "Downtown, North, East, West and South Vancouver, BC, including offices, retail stores, clinics and strata buildings. If your address is nearby and you're not sure we cover it, send us a message and we'll let you know.",
+    links: [{ label: "See all service areas", href: "/locations" }],
+  },
 ];
 
 export default function CustodianServicesPage() {
@@ -286,9 +329,9 @@ export default function CustodianServicesPage() {
         tagline="Commercial & janitorial cleaning"
         title={
           <>
-            Custodian Services
+            Commercial Cleaning &amp; Custodian
             <br />
-            in Vancouver
+            Services in Vancouver, BC
           </>
         }
         description={
@@ -306,7 +349,7 @@ export default function CustodianServicesPage() {
             <SectionHeader
               eyebrow={{ icon: <BuildingIcon />, label: "Custodian services" }}
               title="A Cleaner Workplace, Without the Hassle"
-              description="Your workplace says a lot about your business. Our custodian team keeps offices, stores and shared spaces spotless, healthy and ready for the day ahead, with the same attention to detail that built our name in homes across Vancouver."
+              description="Your workplace says a lot about your business. Our custodian team provides commercial cleaning and janitorial services for offices, stores and shared spaces across Greater Vancouver, BC, keeping them spotless, healthy and ready for the day ahead, with the same attention to detail that built our name in homes."
             />
             <ul className="mt-7 mb-0 grid list-none gap-3 pl-0">
               {highlights.map((highlight) => (
@@ -375,7 +418,7 @@ export default function CustodianServicesPage() {
             description="From a single office floor to a busy strata building, we tailor every visit to the way your space is used."
           />
           <div className="mt-12 grid grid-cols-3 gap-4 max-lg:grid-cols-2 max-sm:grid-cols-1">
-            {spaces.map(({ Icon, title, text }, index) => (
+            {spaces.map(({ Icon, title, text, link }, index) => (
               <Reveal
                 key={title}
                 delay={(index % 3) * 100}
@@ -388,11 +431,26 @@ export default function CustodianServicesPage() {
                   {title}
                 </h3>
                 <p className="mb-0 font-text text-[14px] leading-[22px] text-muted">{text}</p>
+                {link && (
+                  <Link
+                    href={link.href}
+                    className="mt-3 inline-flex min-h-8 items-center gap-1.5 font-text text-[14px] font-semibold text-brand no-underline hover:underline"
+                  >
+                    {link.label}
+                    <ArrowRightIcon className="size-4" />
+                  </Link>
+                )}
               </Reveal>
             ))}
           </div>
         </div>
       </section>
+
+      <AnswerBlocks
+        items={custodianAnswers}
+        title="Commercial Cleaning in Vancouver: Quick Answers"
+        description="How custodian services work, what they include and how quotes are worked out."
+      />
 
       <PhotoFeatures
         rows={spaceRows}

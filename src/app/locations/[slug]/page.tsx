@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { AreaMap } from "@/components/locations/area-map";
+import { AnswerBlocks } from "@/components/sections/answer-blocks";
 import { CtaBand } from "@/components/sections/cta-band";
 import { FaqSection } from "@/components/sections/faq-section";
 import { PhotoGrid } from "@/components/sections/photo-grid";
@@ -19,6 +20,7 @@ import {
 } from "@/components/ui/icons";
 import { Reveal } from "@/components/ui/reveal";
 import { SectionHeader, sectionSpacing } from "@/components/ui/section-header";
+import { areaAnswers } from "@/content/answers";
 import { getLocation, locations } from "@/content/locations";
 import { pageMetadata } from "@/lib/metadata";
 import { bookingLinks } from "@/lib/site";
@@ -37,11 +39,21 @@ export async function generateMetadata({ params }: Props) {
   const location = getLocation((await params).slug);
   if (!location) return {};
   return pageMetadata({
-    title: `House & Office Cleaning in ${location.name}`,
+    title: `House & Office Cleaning in ${location.name}, BC`,
     path: `/locations/${location.slug}`,
     description: location.metaDescription,
   });
 }
+
+// The specific service pages, linked from every area page.
+const relatedServices = [
+  { label: "Deep cleaning", href: "/deep-cleaning" },
+  { label: "Move-out cleaning", href: "/move-out-cleaning" },
+  { label: "Airbnb cleaning", href: "/airbnb-cleaning" },
+  { label: "Post-construction cleaning", href: "/post-construction-cleaning" },
+  { label: "Office cleaning", href: "/office-cleaning" },
+  { label: "Strata cleaning", href: "/strata-cleaning" },
+];
 
 const buttonClass =
   "inline-flex items-center justify-center gap-2 rounded-xl px-6 py-[14px] font-text text-[16px] font-medium no-underline transition-colors max-sm:w-full";
@@ -122,7 +134,8 @@ export default async function LocationPage({ params }: Props) {
                 {location.tagline}
               </span>
               <h1 className="mt-6 mb-0 font-heading text-[46px] leading-[54px] text-ink-soft max-lg:text-[40px] max-lg:leading-[48px] max-sm:text-[32px] max-sm:leading-[40px]">
-                Home &amp; Office Cleaning in <span className="text-brand">{location.name}</span>
+                Home &amp; Office Cleaning in{" "}
+                <span className="text-brand">{location.name}, BC</span>
               </h1>
               <p className="mt-5 mb-0 max-w-[620px] font-text text-[17px] leading-[30px] text-muted max-sm:text-[16px] max-sm:leading-7">
                 {location.intro}
@@ -190,7 +203,14 @@ export default async function LocationPage({ params }: Props) {
         </div>
       </section>
 
+      <AnswerBlocks
+        items={areaAnswers[location.slug]}
+        title={`Cleaning in ${location.name}: Quick Answers`}
+        description={`What ${location.short} clients ask first, answered in a few lines.`}
+      />
+
       <PhotoGrid
+        className="bg-[#f7f5f4]"
         eyebrow={{ icon: <MapPinIcon />, label: `Around ${location.short}` }}
         title={`Life in ${location.name}`}
         description={`Some of the places that make ${location.short} home for the people we clean for.`}
@@ -370,6 +390,48 @@ export default async function LocationPage({ params }: Props) {
             </Link>
           </div>
           <AreaMap active={location.slug} />
+        </div>
+      </section>
+
+      {/* Related services and reading, as plain links. */}
+      <section className={cn("px-5", sectionSpacing.top)}>
+        <div className="mx-auto grid max-w-[1240px] grid-cols-2 gap-10 max-md:grid-cols-1 max-md:gap-8">
+          <div>
+            <h2 className="mt-0 mb-4 font-heading text-[24px] leading-8 text-ink-soft max-md:text-[22px]">
+              More Cleaning Services in {location.name}
+            </h2>
+            <ul className="mb-0 grid list-none gap-1 pl-0">
+              {relatedServices.map((service) => (
+                <li key={service.href}>
+                  <Link
+                    href={service.href}
+                    className="group inline-flex min-h-10 items-center gap-2 font-text text-[15px] font-semibold text-brand no-underline hover:underline"
+                  >
+                    {service.label} in {location.name}
+                    <ArrowRightIcon className="size-4 transition-transform group-hover:translate-x-1" />
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h2 className="mt-0 mb-4 font-heading text-[24px] leading-8 text-ink-soft max-md:text-[22px]">
+              Helpful Guides for {location.short}
+            </h2>
+            <ul className="mb-0 grid list-none gap-1 pl-0">
+              {location.guides.map((guide) => (
+                <li key={guide.href}>
+                  <Link
+                    href={guide.href}
+                    className="group inline-flex min-h-10 items-center gap-2 font-text text-[15px] font-semibold text-brand no-underline hover:underline"
+                  >
+                    {guide.label}
+                    <ArrowRightIcon className="size-4 transition-transform group-hover:translate-x-1" />
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </section>
 
