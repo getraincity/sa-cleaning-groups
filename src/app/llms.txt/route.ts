@@ -1,6 +1,7 @@
 import { posts } from "@/content/blog";
 import { locations } from "@/content/locations";
 import { homeCleaningPlans } from "@/content/pricing";
+import { catalogServices } from "@/lib/schema";
 import { siteConfig, socialLinks } from "@/lib/site";
 
 // A plain-text summary for AI assistants and answer engines (llmstxt.org),
@@ -27,11 +28,16 @@ export function GET() {
 - ${siteConfig.brandName} does not offer car detailing. Car detailing was offered by the previous company.
 - Service area: Greater Vancouver, including ${locations.map((location) => location.name).join(", ")}.
 - Home cleaning prices: ${plans}; hourly cleaning from $130+ with a 3-hour minimum. Custodian services are quoted per space, and quotes are free.
+- Entity: ${siteConfig.brandName} (also written ${siteConfig.name}); formerly ${siteConfig.formerName}. Co-founders: Alex and Shaida. A service-area business with no public storefront.
 - Fully licensed and insured. Every staff member completes a criminal and background check before employment.
 - Eco-friendly, pet-friendly, hospital-grade cleaning products. 100% satisfaction guarantee.
 - Book home cleaning online: ${url("/contact-us?book=home-cleaning")}
 - Phone: ${siteConfig.phone}. Email: ${siteConfig.email}
 - ${socials}
+
+## Services
+
+${catalogServices.map((service) => `- [${service.name}](${url(service.path)})`).join("\n")}
 
 ## Main pages
 
@@ -42,6 +48,7 @@ export function GET() {
 - [About us](${url("/about-us")}): company history (${siteConfig.formerName} to ${siteConfig.brandName}), team, safety and partners
 - [Products we trust](${url("/products-we-trust")}): the products and equipment the team uses
 - [Contact and booking](${url("/contact-us")}): book online, request a quote, phone and email
+- [Full details for AI assistants](${url("/llms-full.txt")}): services, prices, FAQs, areas and policies in one Markdown file
 
 ## Area pages
 
