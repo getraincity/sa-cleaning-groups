@@ -1,17 +1,26 @@
 import type { StaticImageData } from "next/image";
 import kitchenAppliances from "@/assets/images/kitchen-appliances.jpg";
+import { guidePosts } from "@/content/blog-guides";
 import { stock } from "@/content/stock-photos";
 
 export const blogCategories = ["Home Cleaning", "Commercial"] as const;
 export type BlogCategory = (typeof blogCategories)[number];
 
-/** A piece of an article. Headings (h2) also feed the table of contents. */
+/**
+ * A piece of an article. Headings (h2) also feed the table of contents. Text in
+ * paragraphs, lists, checklists, tips and table cells can link with `[link text](/path)`:
+ * paths starting with "/" use next/link, https:// links open in a new tab.
+ */
 export type Block =
   | { type: "p"; text: string }
   | { type: "h2"; text: string }
   | { type: "list"; items: string[] }
   | { type: "checklist"; title: string; items: string[] }
-  | { type: "tip"; title: string; text: string };
+  | { type: "tip"; title: string; text: string }
+  /** A small comparison table. Every row has one cell per column. */
+  | { type: "table"; caption: string; columns: string[]; rows: string[][] }
+  /** Official sources to read for the facts quoted above. External links. */
+  | { type: "sources"; title: string; items: { label: string; href: string }[] };
 
 export type Post = {
   slug: string;
@@ -317,7 +326,7 @@ const allPosts: Post[] = [
   },
 ];
 
-export const posts = allPosts;
+export const posts: Post[] = [...guidePosts, ...allPosts];
 
 export function getPost(slug: string) {
   return posts.find((post) => post.slug === slug);
@@ -337,9 +346,14 @@ export function readingMinutes(post: Post) {
           return block.items;
         case "checklist":
           return [block.title, ...block.items];
+        case "table":
+          return [block.caption, ...block.columns, ...block.rows.flat()];
+        case "sources":
+          return [];
       }
     })
     .join(" ")
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1")
     .split(/\s+/).length;
   return Math.max(1, Math.ceil(words / 220));
 }
