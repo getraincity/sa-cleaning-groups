@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { posts } from "@/content/blog";
 import { locations } from "@/content/locations";
+import { servicePageList } from "@/content/services";
 import { siteConfig } from "@/lib/site";
 
 // Updated whenever the site is rebuilt; blog posts use their own dates.
@@ -10,6 +11,7 @@ const pages: { path: string; priority: number }[] = [
   { path: "", priority: 1 },
   { path: "/home-cleaning", priority: 0.9 },
   { path: "/custodian-services", priority: 0.9 },
+  ...servicePageList.map((page) => ({ path: page.path, priority: 0.85 })),
   { path: "/contact-us", priority: 0.8 },
   { path: "/about-us", priority: 0.7 },
   { path: "/locations", priority: 0.8 },

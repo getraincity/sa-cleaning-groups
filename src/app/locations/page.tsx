@@ -1,10 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import { AreaMap } from "@/components/locations/area-map";
+import { AnswerBlocks } from "@/components/sections/answer-blocks";
 import { CtaBand } from "@/components/sections/cta-band";
 import { ArrowRightIcon, MapPinIcon, MessageIcon } from "@/components/ui/icons";
 import { Reveal } from "@/components/ui/reveal";
 import { SectionHeader, sectionSpacing } from "@/components/ui/section-header";
+import { locationsHubAnswers } from "@/content/answers";
 import { locations } from "@/content/locations";
 import { pageMetadata } from "@/lib/metadata";
 import { bookingLinks } from "@/lib/site";
@@ -13,10 +15,10 @@ import { JsonLd } from "@/components/seo/json-ld";
 import { breadcrumbJsonLd } from "@/lib/schema";
 
 export const metadata = pageMetadata({
-  title: "Locations: Cleaning Across Greater Vancouver",
+  title: "Cleaning Services in Greater Vancouver, BC",
   path: "/locations",
   description:
-    "Home cleaning and custodian services in Downtown, North, East, West and South Vancouver. Find your area and book online.",
+    "Home cleaning and custodian services in Downtown, North, East, West and South Vancouver, BC. Licensed, insured, background-checked staff. Get a quote.",
 });
 
 const neighbourhoodCount = locations.reduce((total, area) => total + area.neighbourhoods.length, 0);
@@ -47,9 +49,9 @@ export default function LocationsPage() {
               Proudly Serving <span className="text-brand">Greater Vancouver</span>
             </h1>
             <p className="mt-5 mb-0 max-w-[580px] font-text text-[17px] leading-[30px] text-muted max-sm:text-[16px] max-sm:leading-7">
-              From downtown condos to North Shore family homes, our team brings home cleaning and
-              custodian services to neighbourhoods right across the city. Choose your area to see
-              how we work there.
+              S&amp;A Cleaning Group brings home cleaning and custodian services to neighbourhoods
+              right across Greater Vancouver, BC, from downtown condos to North Shore family homes.
+              Choose your area to see how we work there.
             </p>
             <dl className="mt-9 mb-0 flex flex-wrap gap-x-12 gap-y-4">
               {stats.map((stat) => (
@@ -154,6 +156,12 @@ export default function LocationsPage() {
           </div>
         </div>
       </section>
+
+      <AnswerBlocks
+        items={locationsHubAnswers}
+        title="Our Service Areas: Quick Answers"
+        description="Where we work in Greater Vancouver, BC, and what we offer there."
+      />
 
       <CtaBand
         eyebrow="Book online"

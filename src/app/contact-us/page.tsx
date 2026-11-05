@@ -24,10 +24,10 @@ import { JsonLd } from "@/components/seo/json-ld";
 import { breadcrumbJsonLd } from "@/lib/schema";
 
 export const metadata = pageMetadata({
-  title: "Contact Us & Free Cleaning Quotes",
+  title: "Get a Cleaning Quote in Vancouver, BC",
   path: "/contact-us",
   description:
-    "Get in touch with SA Cleaning Group for home cleaning, custodian services and gift cards across Greater Vancouver.",
+    "Contact S&A Cleaning Group by phone, email or form to book home cleaning or request a commercial cleaning quote anywhere in Greater Vancouver, BC.",
 });
 
 const channels = [
@@ -46,7 +46,7 @@ const channels = [
   {
     Icon: MapPinIcon,
     label: "Service area",
-    value: "Greater Vancouver",
+    value: "Greater Vancouver, BC",
     href: "/locations",
   },
 ];
@@ -86,7 +86,25 @@ const faqs: Faq[] = [
   {
     question: "Which areas do you serve?",
     answer:
-      "Downtown, North, East, West and South Vancouver. If you're nearby and not sure whether we cover your area, send us a message and we'll let you know.",
+      "Downtown, North, East, West and South Vancouver, across Greater Vancouver, BC. If you're nearby and not sure whether we cover your area, send us a message and we'll let you know.",
+    links: [{ label: "See all service areas", href: "/locations" }],
+  },
+  {
+    question: "How do I get a quote for an office or building?",
+    answer:
+      "Choose \"Custodian services\" in the form above, or use the quote button, and tell us about your space: its size, how often you'd like cleaning and what you'd like included. We'll send a clear quote based on that.",
+    links: [{ label: "Request a custodial quote", href: "/contact-us?topic=custodian#message" }],
+  },
+  {
+    question: "What should I include in my message?",
+    answer:
+      "Tell us what kind of space it is (home, condo, office or building), roughly where it is, the service you're after and when you'd like it. The more we know, the faster we can point you to the right plan or quote.",
+  },
+  {
+    question: "Is S&A Cleaning Group the same company as Akumal Executive Cleaning?",
+    answer:
+      "Yes. Akumal Executive Cleaning is our former name. We've operated for more than nine years and now work as S&A Cleaning Group.",
+    links: [{ label: "Read our story", href: "/about-us#our-story" }],
   },
   {
     question: "Do you offer gift cards?",
@@ -115,11 +133,11 @@ export default function ContactPage() {
               Contact us
             </span>
             <h1 className="mt-6 mb-0 font-heading text-[46px] leading-[54px] text-ink-soft max-lg:text-[40px] max-lg:leading-[48px] max-sm:text-[32px] max-sm:leading-[40px]">
-              Let&apos;s Make Your Space <span className="text-brand">Spotless</span>
+              Contact S&amp;A Cleaning Group in <span className="text-brand">Vancouver, BC</span>
             </h1>
             <p className="mt-5 mb-0 max-w-[480px] font-text text-[17px] leading-[30px] text-muted max-sm:text-[16px] max-sm:leading-7">
               Questions, quotes or gift cards: send us a message, give us a call, or book online in
-              minutes. We&apos;re here to help.
+              minutes. We serve homes and businesses across Greater Vancouver, BC.
             </p>
 
             <ul className="mt-9 mb-0 grid list-none grid-cols-1 gap-3 pl-0">
@@ -155,6 +173,12 @@ export default function ContactPage() {
                 );
               })}
             </ul>
+
+            {/* Name, former name and service area exactly as everywhere else on the site. */}
+            <p className="mt-6 mb-0 font-text text-[14px] leading-6 text-muted">
+              <strong className="font-semibold text-ink-soft">{siteConfig.brandName}</strong>,
+              formerly {siteConfig.formerName}. Licensed and insured, serving Greater Vancouver, BC.
+            </p>
 
             {socials.length > 0 && (
               <div className="mt-6 flex items-center gap-3">
@@ -229,7 +253,7 @@ export default function ContactPage() {
             <SectionHeader
               eyebrow={{ icon: <MapPinIcon />, label: "Where we work" }}
               title="Serving Homes and Businesses Across Greater Vancouver"
-              description="Our team travels to you, from downtown condos to North Shore family homes."
+              description="Our team travels to you, from downtown condos to North Shore family homes, across Greater Vancouver, BC. If your address is nearby and you're not sure we cover it, send us a message and we'll let you know."
             />
             <ul className="mt-7 mb-0 flex list-none flex-wrap gap-2 pl-0">
               {locations.map((location) => (

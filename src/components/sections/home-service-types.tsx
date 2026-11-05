@@ -16,11 +16,22 @@ import { SectionHeader, sectionSpacing } from "@/components/ui/section-header";
 import { bookingLinks } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
-const services = [
+type ServiceType = {
+  Icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  title: string;
+  text: string;
+  /** The service's own page, for services that have one. */
+  href?: string;
+  linkLabel?: string;
+};
+
+const services: ServiceType[] = [
   {
     Icon: SparklesIcon,
     title: "Deep Cleaning",
-    text: "A top-to-bottom clean for homes that need extra attention: baseboards, inside appliances and cabinets, and every corner a regular clean doesn't reach.",
+    text: "A top-to-bottom reset for homes that need extra attention, beyond what a regular clean reaches.",
+    href: "/deep-cleaning",
+    linkLabel: "Deep cleaning in Vancouver",
   },
   {
     Icon: RepeatIcon,
@@ -30,12 +41,16 @@ const services = [
   {
     Icon: BoxIcon,
     title: "Move-In / Move-Out",
-    text: "Hand over the keys with confidence, or start fresh in your new place. A thorough empty-home clean, inside cabinets, closets and appliances.",
+    text: "An empty-home clean to hand over the keys with confidence, or to start fresh in your new place.",
+    href: "/move-out-cleaning",
+    linkLabel: "Move-out cleaning in Vancouver",
   },
   {
     Icon: HardHatIcon,
     title: "Post-Construction",
-    text: "Renovation dust gets everywhere. We clear fine dust, debris and residue so your newly finished space is ready to live in.",
+    text: "Renovation dust gets everywhere. We clear fine dust and residue so your finished space is ready to live in.",
+    href: "/post-construction-cleaning",
+    linkLabel: "Post-construction cleaning",
   },
   {
     Icon: PartyIcon,
@@ -45,7 +60,9 @@ const services = [
   {
     Icon: LuggageIcon,
     title: "Airbnb & Vacation Rentals",
-    text: "Reliable turnovers between guests for Airbnb and vacation rental hosts, so every stay starts in a spotless, welcoming home.",
+    text: "Reliable turnovers between guests for Airbnb and vacation rental hosts.",
+    href: "/airbnb-cleaning",
+    linkLabel: "Airbnb cleaning in Vancouver",
   },
   {
     Icon: ArchiveIcon,
@@ -74,7 +91,7 @@ export function HomeServiceTypes() {
         />
 
         <div className="mt-12 grid grid-cols-3 gap-4 max-lg:grid-cols-2 max-sm:grid-cols-1">
-          {services.map(({ Icon, title, text }, index) => (
+          {services.map(({ Icon, title, text, href, linkLabel }, index) => (
             <Reveal
               key={title}
               delay={(index % 3) * 100}
@@ -87,6 +104,15 @@ export function HomeServiceTypes() {
                 {title}
               </h3>
               <p className="mb-0 font-text text-[14px] leading-[22px] text-muted">{text}</p>
+              {href && (
+                <Link
+                  href={href}
+                  className="mt-auto inline-flex min-h-8 items-center gap-1.5 pt-4 font-text text-[14px] font-semibold text-brand no-underline hover:underline"
+                >
+                  {linkLabel}
+                  <ArrowRightIcon className="size-4" />
+                </Link>
+              )}
             </Reveal>
           ))}
 

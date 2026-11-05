@@ -42,3 +42,6 @@ listed so each one can be traced back to its source.
 | commercial/lobby-wet-floor.jpg   | photo-1615003382357-4cb74b16a7ab |
 | commercial/glass-hallway.jpg     | photo-1497366754035-f200968a6e72 |
 | commercial/modern-office.jpg     | photo-1706074793638-da28b90ea8ae |
+
+Blog guides (Oct-Nov 2026): the eight photos for the new guide posts are Pexels photos listed in
+`src/content/stock-photos.ts` (keys starting `blog`), each used on its own post only.

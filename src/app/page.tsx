@@ -4,6 +4,7 @@ import cleaningWindows from "@/assets/images/cleaning-windows.jpg";
 import officeHallway from "@/assets/images/commercial/glass-hallway.jpg";
 import kitchenCounter from "@/assets/images/kitchen-counter-02.jpg";
 import { AboutSplit } from "@/components/sections/about-split";
+import { AnswerBlocks } from "@/components/sections/answer-blocks";
 import { BookingCta } from "@/components/sections/booking-cta";
 import { FoundersQuote } from "@/components/sections/founders-quote";
 import { GiftCardSection } from "@/components/sections/gift-card-section";
@@ -14,14 +15,14 @@ import { SocialSection } from "@/components/sections/social-section";
 import { ArrowRightIcon, BuildingIcon, HomeIcon, MapPinIcon } from "@/components/ui/icons";
 import { Reveal } from "@/components/ui/reveal";
 import { pageMetadata } from "@/lib/metadata";
+import { homeAnswers } from "@/content/answers";
 import { embeds } from "@/lib/site";
 
 export const metadata = pageMetadata({
-  title: "S&A Cleaning Group | House Cleaning & Custodian Services in Vancouver",
-  absoluteTitle: true,
+  title: "Home & Commercial Cleaning Services in Vancouver",
   path: "/",
   description:
-    "Home cleaning and custodian services across Greater Vancouver from S&A Cleaning Group, formerly Akumal Executive Cleaning. Licensed, insured, eco-friendly.",
+    "S&A Cleaning Group (formerly Akumal Executive Cleaning) offers licensed, insured home and commercial cleaning across Greater Vancouver. Get a quote.",
 });
 
 type Service = {
@@ -59,6 +60,16 @@ const services: Service[] = [
     text: "We keep offices, retail spaces, stratas and commercial buildings across Vancouver spotless with reliable custodial and janitorial cleaning. Our trained, background-checked team works around your schedule.",
     href: "/custodian-services",
   },
+];
+
+// The more specific service pages, linked from the home page so they are easy to find.
+const moreServices = [
+  { label: "Deep cleaning", href: "/deep-cleaning" },
+  { label: "Move-out cleaning", href: "/move-out-cleaning" },
+  { label: "Airbnb cleaning", href: "/airbnb-cleaning" },
+  { label: "Post-construction cleaning", href: "/post-construction-cleaning" },
+  { label: "Office cleaning", href: "/office-cleaning" },
+  { label: "Strata cleaning", href: "/strata-cleaning" },
 ];
 
 const steps = [
@@ -107,7 +118,7 @@ export default function HomePage() {
           <>
             Spending too much time cleaning? Start getting your time back with S&amp;A Cleaning
             <br className="max-lg:hidden" /> Group, trusted for home cleaning and custodian services
-            across Vancouver.
+            across Vancouver, BC.
           </>
         }
       />
@@ -162,6 +173,25 @@ export default function HomePage() {
               </Reveal>
             ))}
           </div>
+
+          <nav
+            aria-label="More cleaning services"
+            className="mx-auto mt-10 max-w-[1100px] text-center"
+          >
+            <p className="mb-3 font-text text-[15px] text-muted">Looking for something specific?</p>
+            <ul className="mb-0 flex list-none flex-wrap justify-center gap-2 pl-0">
+              {moreServices.map((item) => (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    className="inline-flex min-h-10 items-center rounded-full border border-black/10 bg-white px-4 py-2 font-text text-[14px] text-ink-soft no-underline transition-colors hover:border-brand hover:text-brand"
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
         </div>
       </section>
 
@@ -170,6 +200,13 @@ export default function HomePage() {
         description="Booking a cleaning with S&A takes just a few minutes. Here's what to expect."
         eyebrow="Simple from start to finish"
         steps={steps}
+      />
+
+      <AnswerBlocks
+        items={homeAnswers}
+        title="Quick Answers About S&A Cleaning Group"
+        description="Straight answers about who we are, what we clean and where we work in Greater Vancouver, BC."
+        className="bg-[#f7f5f4]"
       />
 
       <ReviewsProof widgetId={embeds.reviewsHome} />

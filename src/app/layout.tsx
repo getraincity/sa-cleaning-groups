@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Be_Vietnam_Pro, Montserrat } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { AnnouncementBar } from "@/components/layout/announcement-bar";
@@ -28,6 +28,13 @@ const trackAnalytics =
 const defaultDescription =
   "Home cleaning and custodian services across Greater Vancouver from S&A Cleaning Group, formerly Akumal Executive Cleaning. Licensed, insured and eco-friendly.";
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  // The brand red, for the mobile browser's address bar.
+  themeColor: "#de0a0a",
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
@@ -36,6 +43,12 @@ export const metadata: Metadata = {
   },
   description: defaultDescription,
   applicationName: siteConfig.brandName,
+  // Single-language site (en-CA), so no `alternates.languages` / hreflang.
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 },
+  },
   openGraph: { ...openGraphBase, url: "/", description: defaultDescription },
   twitter: { card: "summary_large_image", images: [siteConfig.ogImage] },
   verification: { google: siteConfig.googleSiteVerification },

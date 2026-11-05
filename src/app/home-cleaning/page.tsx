@@ -1,5 +1,6 @@
 import kitchenSink from "@/assets/images/kitchen-sink.jpg";
 import kitchenStove from "@/assets/images/kitchen-stove.jpg";
+import { AnswerBlocks } from "@/components/sections/answer-blocks";
 import { BookingCta } from "@/components/sections/booking-cta";
 import { CareSection } from "@/components/sections/care-section";
 import { FaqSection, type Faq } from "@/components/sections/faq-section";
@@ -12,6 +13,7 @@ import { HomeServiceTypes } from "@/components/sections/home-service-types";
 import { PageHero } from "@/components/sections/page-hero";
 import { PricingSection } from "@/components/sections/pricing-section";
 import { AddOnsSection } from "@/components/sections/add-ons-section";
+import { homeCleaningAnswers } from "@/content/answers";
 import { homeCleaningPlans } from "@/content/pricing";
 import { stock } from "@/content/stock-photos";
 import { pageMetadata } from "@/lib/metadata";
@@ -20,10 +22,10 @@ import { JsonLd } from "@/components/seo/json-ld";
 import { breadcrumbJsonLd, homeCleaningOffers, serviceJsonLd } from "@/lib/schema";
 
 export const metadata = pageMetadata({
-  title: "House Cleaning Services in Vancouver",
+  title: "House Cleaning Services in Vancouver, BC",
   path: "/home-cleaning",
   description:
-    "Recurring, deep, move-in/out, Airbnb and post-construction house cleaning in Vancouver. Plans from $150 a month, or hourly from $130 (3-hour minimum). Book online.",
+    "Recurring and one-time house cleaning in Vancouver. Plans from $150 a month or hourly from $130 (3-hour minimum). Licensed, insured. Book online.",
 });
 
 // Every photo here appears nowhere else on the site (client feedback: the
@@ -121,7 +123,32 @@ const homeFaqs: Faq[] = [
   {
     question: "Which areas do you clean?",
     answer:
-      "Homes across Greater Vancouver, including Downtown, North, East, West and South Vancouver. If you're nearby and not sure we cover your area, send us a message.",
+      "Homes across Greater Vancouver, BC, including Downtown, North, East, West and South Vancouver. If you're nearby and not sure we cover your area, send us a message.",
+    links: [{ label: "See all service areas", href: "/locations" }],
+  },
+  {
+    question: "Do you clean condos and apartments?",
+    answer:
+      "Yes. We clean condos, lofts, townhomes and family houses. Downtown Vancouver has its own page covering Yaletown, Coal Harbour, the West End and Gastown, including how we handle building and suite access.",
+    links: [
+      { label: "House cleaning in Downtown Vancouver", href: "/locations/downtown-vancouver" },
+    ],
+  },
+  {
+    question: "Do you offer deep cleaning, move-out cleaning and Airbnb cleaning?",
+    answer:
+      "Yes. Each has its own page with the details: deep cleaning for a top-to-bottom reset, move-out and move-in cleaning for empty homes, Airbnb cleaning for turnovers between guests, and post-construction cleaning after a renovation or new build.",
+    links: [
+      { label: "Deep cleaning", href: "/deep-cleaning" },
+      { label: "Move-out cleaning", href: "/move-out-cleaning" },
+      { label: "Airbnb cleaning", href: "/airbnb-cleaning" },
+      { label: "Post-construction cleaning", href: "/post-construction-cleaning" },
+    ],
+  },
+  {
+    question: "Can I book hourly instead of a monthly plan?",
+    answer:
+      "Yes. Hourly cleaning starts at $130+ with a 3-hour minimum, and you tell the team where to focus. It suits one-off jobs, larger homes and anything outside a plan's checklist. Recurring plans suit routine upkeep.",
   },
   {
     question: "Do I need to be home during the clean?",
@@ -134,9 +161,15 @@ const homeFaqs: Faq[] = [
       "Yes. Our team arrives with professional equipment and our local, eco-friendly products. If you'd like us to use a product of your own, just let us know.",
   },
   {
+    question: "Do you clean inside the oven and fridge?",
+    answer:
+      "Yes, on our Diamond plan, which includes the inside of the oven, fridge and microwave and the range hood. Silver and Gold wipe the oven front and stove top. If you're on another plan and want the inside done, ask and we'll let you know what we can add.",
+  },
+  {
     question: "Is your team insured and background-checked?",
     answer:
       "Yes. S&A Cleaning Group is fully licensed and insured, and every member of our team completes a criminal and background check before employment.",
+    links: [{ label: "About S&A Cleaning Group", href: "/about-us" }],
   },
   {
     question: "Are your products safe for pets and children?",
@@ -147,6 +180,12 @@ const homeFaqs: Faq[] = [
     question: "What is the difference between Silver, Gold and Diamond?",
     answer:
       "Each plan builds on the one before it. Gold adds details like baseboards, light switches and doors, and Diamond adds the inside of cabinets, windows (inside), the fridge and oven, and your balcony. See the full lists in the pricing section.",
+  },
+  {
+    question: "How do I book a house cleaning?",
+    answer:
+      "Use any Book button on our site. Share your name and contact details and we'll take you straight to our online booking form to finish. You can also call or email us if you'd rather talk it through first.",
+    links: [{ label: "Contact S&A Cleaning Group", href: "/contact-us" }],
   },
 ];
 
@@ -160,7 +199,7 @@ export default function HomeCleaningPage() {
           name: "Home Cleaning in Vancouver",
           serviceType: "House cleaning",
           description:
-            "Recurring, deep, move-in/move-out, Airbnb, post-construction, event and hourly home cleaning across Greater Vancouver, with eco-friendly, pet-friendly products.",
+            "Recurring, hourly and one-time home cleaning across Greater Vancouver, BC, with eco-friendly, pet-friendly products.",
           offers: homeCleaningOffers(),
         })}
       />
@@ -172,15 +211,22 @@ export default function HomeCleaningPage() {
           <>
             Professional Home Cleaning
             <br />
-            Services in Vancouver
+            Services in Vancouver, BC
           </>
         }
         description={
           <>
-            Spending too much time cleaning your home? Start getting your time back with <br />
+            Looking for a trusted house cleaning or maid service in Vancouver? Start getting your
+            time back with <br />
             S&amp;A Cleaning Group! Book your service today, in seconds.
           </>
         }
+      />
+
+      <AnswerBlocks
+        items={homeCleaningAnswers}
+        title="House Cleaning in Vancouver: Quick Answers"
+        description="Prices, plans and what to expect, in plain terms."
       />
 
       <HomeServiceTypes />
