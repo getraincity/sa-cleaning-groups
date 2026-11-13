@@ -70,6 +70,7 @@ export default function AboutPage() {
       <JsonLd data={breadcrumbJsonLd([{ name: "About Us", path: "/about-us" }])} />
       <PageHero
         image={stock.aboutHero}
+        imageClassName="object-[center_25%]"
         tagline="We value your time as much as you do."
         title="About S&A Cleaning Group"
         description={

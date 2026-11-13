@@ -562,8 +562,8 @@ export default function CustodianServicesPage() {
           {
             image: stock.custodianVacuum,
             alt: stock.custodianVacuum.alt,
-            title: "Meeting rooms",
-            text: "Tables, chairs and glass ready for the next meeting.",
+            title: "Open offices",
+            text: "Desks, chairs and floors ready for the next working day.",
           },
           {
             image: stock.custodianWindows,

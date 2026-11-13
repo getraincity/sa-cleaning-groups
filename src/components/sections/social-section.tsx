@@ -2,32 +2,36 @@ import Image, { type StaticImageData } from "next/image";
 import { SectionHeader, sectionSpacing } from "@/components/ui/section-header";
 import { CameraIcon, FacebookIcon, InstagramIcon } from "@/components/ui/icons";
 import { Reveal } from "@/components/ui/reveal";
-import { stock } from "@/content/stock-photos";
+import kitchenCounter from "@/assets/images/kitchen-counter-01.jpg";
+import kitchenIsland from "@/assets/images/kitchen-island.jpg";
+import kitchenMicrowave from "@/assets/images/kitchen-microwave.jpg";
+import kitchenSink from "@/assets/images/kitchen-sink.jpg";
+import kitchenStove from "@/assets/images/kitchen-stove.jpg";
+import livingRoom from "@/assets/images/living-room.jpg";
 import { socialLinks } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 type Post = {
   image: StaticImageData;
   caption: string;
-  tag: "Home" | "Office" | "Behind the scenes";
+  tag: "Home";
   /** Large tiles span two columns and two rows on desktop. */
   large?: boolean;
 };
 
+// Only S&A's own job photos go here (client feedback, 2026-11-13: "the pics here
+// has to be pictures from our Instagram"). Instagram can't be read from the build,
+// so these are the client's own photos already in the repo.
+// TO REPLACE: swap in the newest Instagram posts when the client sends the files.
 // Two large tiles bracket four small ones: 6 columns by 2 rows on desktop.
 // On tablets the same order interlocks into a 4-column checkerboard.
 const posts: Post[] = [
-  {
-    image: stock.socialCrew,
-    caption: "Kitted out and ready to start",
-    tag: "Behind the scenes",
-    large: true,
-  },
-  { image: stock.socialTable, caption: "Tables wiped down", tag: "Home" },
-  { image: stock.socialWindow, caption: "Streak-free windows", tag: "Home" },
-  { image: stock.socialVacuum, caption: "Living rooms, vacuumed", tag: "Home", large: true },
-  { image: stock.socialKitchenCounter, caption: "Kitchen counters wiped down", tag: "Home" },
-  { image: stock.socialEntrance, caption: "Building entrances, mopped", tag: "Office" },
+  { image: kitchenIsland, caption: "A condo kitchen, ready to enjoy", tag: "Home", large: true },
+  { image: kitchenMicrowave, caption: "Appliances wiped down", tag: "Home" },
+  { image: kitchenSink, caption: "Sinks and counters, spotless", tag: "Home" },
+  { image: livingRoom, caption: "Living rooms, fresh and tidy", tag: "Home", large: true },
+  { image: kitchenStove, caption: "Cooktops degreased", tag: "Home" },
+  { image: kitchenCounter, caption: "Counters polished", tag: "Home" },
 ];
 
 const profiles = [
@@ -84,8 +88,8 @@ export function SocialSection() {
             title="Follow Our Journey on Social"
             description={
               <>
-                See our latest home transformations, workplace cleans, and behind-the-scenes moments
-                across Greater Vancouver.{" "}
+                See our latest home transformations and behind-the-scenes moments across Greater
+                Vancouver.{" "}
                 <strong className="font-semibold text-ink-soft">
                   Tag us in your spotless spaces!
                 </strong>
