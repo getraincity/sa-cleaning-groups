@@ -45,3 +45,15 @@ listed so each one can be traced back to its source.
 
 Blog guides (Oct-Nov 2026): the eight photos for the new guide posts are Pexels photos listed in
 `src/content/stock-photos.ts` (keys starting `blog`), each used on its own post only.
+
+Product pictures (Nov 2026): the photos in `products/` show the products named on the Products We
+Trust page, as the client asked ("pictures of the product"). Each is the maker's own product
+picture, resized to 800px, and each card links to the brand's site where one is known.
+
+| File                                     | Source                                                        |
+| ---------------------------------------- | ------------------------------------------------------------- |
+| products/nature-clean-multi-surface.jpg  | natureclean.ca (Multi-Surface Spray Cleaner, Lemon Verbena)   |
+| products/mrs-meyers-multi-surface.jpg    | mrsmeyers.com (Lavender Multi-Surface Everyday Cleaner)       |
+| products/bona-hardwood-floor-cleaner.jpg | bona.com (Hardwood Floor Cleaner article photo, cropped)      |
+| products/rag-company-microfibre.jpg      | theragcompany.com (Wrinkle Glass Towel)                       |
+| products/allens-cleaning-vinegar.jpg     | The sample page the client sent (detailsbyladyt.ca)           |

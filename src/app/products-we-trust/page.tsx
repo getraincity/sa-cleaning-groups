@@ -69,13 +69,26 @@ function hostname(href: string) {
 function BrandCard({ brand }: { brand: ProductBrand }) {
   const body = (
     <>
-      <div className="flex items-center gap-4">
-        <span
-          aria-hidden
-          className="flex size-12 min-w-12 items-center justify-center rounded-full bg-white font-heading text-[16px] font-bold text-brand ring-1 ring-brand/25"
-        >
-          {initials(brand.name)}
+      {brand.image && (
+        <span className="relative mb-5 block aspect-[4/3] overflow-hidden rounded-[14px] bg-white ring-1 ring-black/[0.06]">
+          <Image
+            src={brand.image}
+            alt={brand.imageAlt ?? brand.name}
+            fill
+            sizes="(max-width: 767px) 100vw, (max-width: 991px) 50vw, 25vw"
+            className={brand.imageFit === "cover" ? "object-cover" : "object-contain p-3"}
+          />
         </span>
+      )}
+      <div className="flex items-center gap-4">
+        {!brand.image && (
+          <span
+            aria-hidden
+            className="flex size-12 min-w-12 items-center justify-center rounded-full bg-white font-heading text-[16px] font-bold text-brand ring-1 ring-brand/25"
+          >
+            {initials(brand.name)}
+          </span>
+        )}
         <h3 className="my-0 font-heading text-[18px] leading-6 text-ink-soft">{brand.name}</h3>
       </div>
       <p className="mt-4 mb-0 font-text text-[14px] leading-[22px] text-muted">{brand.text}</p>
@@ -201,7 +214,7 @@ export default function ProductsWeTrustPage() {
                 />
                 <ul className="mt-8 mb-0 grid list-none grid-cols-2 gap-4 pl-0 max-sm:grid-cols-1">
                   {category.brands.map((brand, i) => (
-                    <li key={brand.name}>
+                    <li key={brand.name} className="sm:[&:last-child:nth-child(odd)]:col-span-2">
                       <Reveal delay={(i % 2) * 90} className="h-full">
                         <BrandCard brand={brand} />
                       </Reveal>

@@ -48,7 +48,7 @@ export function WhyChooseUs() {
                   alt={reason.alt}
                   fill
                   sizes="(max-width: 767px) 100vw, (max-width: 991px) 50vw, 33vw"
-                  className="object-cover transition-transform duration-700 ease-out-quart group-hover:scale-105"
+                  className="object-cover object-top transition-transform duration-700 ease-out-quart group-hover:scale-105"
                 />
                 <span className="absolute top-4 left-4 flex size-10 items-center justify-center rounded-full bg-brand font-heading text-[14px] font-bold text-white">
                   0{index + 1}

@@ -27,8 +27,6 @@ import westLighthouse from "@/assets/images/areas/west-lighthouse.jpg";
 import meetingRoom from "@/assets/images/commercial/meeting-room.jpg";
 import modernOffice from "@/assets/images/commercial/modern-office.jpg";
 import openOffice from "@/assets/images/commercial/open-office.jpg";
-import kitchenCounter from "@/assets/images/kitchen-counter-01.jpg";
-import livingRoom from "@/assets/images/living-room.jpg";
 import { stock } from "@/content/stock-photos";
 import type { Faq } from "@/components/sections/faq-section";
 import {
@@ -143,8 +141,8 @@ export const locations: Location[] = [
     portfolio: [
       {
         tag: "Residential",
-        image: kitchenCounter,
-        alt: "A polished counter in a downtown condo kitchen",
+        image: stock.locationsMop,
+        alt: stock.locationsMop.alt,
         title: "High-rise condos",
         text: "Suites in concierge and strata buildings.",
       },
@@ -320,8 +318,8 @@ export const locations: Location[] = [
       },
       {
         tag: "Residential",
-        image: livingRoom,
-        alt: "A tidy, freshly cleaned living room",
+        image: stock.locationsFloor,
+        alt: stock.locationsFloor.alt,
         title: "Family homes",
         text: "Detached homes in Lynn Valley and Edgemont.",
       },

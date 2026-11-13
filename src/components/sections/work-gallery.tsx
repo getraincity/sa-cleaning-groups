@@ -2,8 +2,6 @@ import Image, { type StaticImageData } from "next/image";
 import { SectionHeader, sectionSpacing } from "@/components/ui/section-header";
 import { SparklesIcon } from "@/components/ui/icons";
 import { Reveal } from "@/components/ui/reveal";
-import kitchenIsland from "@/assets/images/kitchen-island.jpg";
-import kitchenMicrowave from "@/assets/images/kitchen-microwave.jpg";
 import { stock } from "@/content/stock-photos";
 import { cn } from "@/lib/utils";
 
@@ -16,42 +14,40 @@ type Photo = {
   sizes: string;
 };
 
-// Homes only, and none of the photos the home page already shows, so the
-// About page has its own, homier set (client feedback, 2026-10-01). The two
-// kitchen photos are the client's own job photos; that condo appears nowhere
-// else on this page.
+// Homes only, and none of the photos the home page already shows. Everyone
+// pictured wears black, as S&A's own team does (client feedback, 2026-11-13).
 const photos: Photo[] = [
   {
-    image: kitchenIsland,
-    caption: "A condo kitchen, ready to enjoy",
-    alt: "A freshly cleaned condo kitchen with white appliances, a dark island and tiled floor",
+    image: stock.gallerySofa,
+    caption: "Living rooms, put back in order",
+    alt: stock.gallerySofa.alt,
     className: "col-span-2 row-span-2",
     sizes: "(max-width: 767px) 100vw, 50vw",
   },
   {
     image: stock.aboutSweeping,
-    caption: "Kitchen floors swept",
+    caption: "Floors mopped",
     alt: stock.aboutSweeping.alt,
     className: "row-span-2",
     sizes: "(max-width: 767px) 50vw, 25vw",
   },
   {
     image: stock.aboutVacuuming,
-    caption: "Floors vacuumed, room by room",
+    caption: "Shelves dusted",
     alt: stock.aboutVacuuming.alt,
     className: "row-span-2",
     sizes: "(max-width: 767px) 50vw, 25vw",
   },
   {
-    image: kitchenMicrowave,
-    caption: "Appliances and counters wiped down",
-    alt: "A clean stainless microwave on the counter beside a white electric stove",
+    image: stock.galleryMirror,
+    caption: "Mirrors polished",
+    alt: stock.galleryMirror.alt,
     className: "col-span-2",
     sizes: "(max-width: 767px) 100vw, 50vw",
   },
   {
     image: stock.aboutSideboard,
-    caption: "Wood wiped and polished",
+    caption: "Cabinets wiped down",
     alt: stock.aboutSideboard.alt,
     className: "col-span-2",
     sizes: "(max-width: 767px) 100vw, 50vw",

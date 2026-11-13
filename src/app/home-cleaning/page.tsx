@@ -1,5 +1,3 @@
-import kitchenSink from "@/assets/images/kitchen-sink.jpg";
-import kitchenStove from "@/assets/images/kitchen-stove.jpg";
 import { AnswerBlocks } from "@/components/sections/answer-blocks";
 import { BookingCta } from "@/components/sections/booking-cta";
 import { CareSection } from "@/components/sections/care-section";
@@ -31,13 +29,9 @@ export const metadata = pageMetadata({
 // Every photo here appears nowhere else on the site (client feedback: the
 // home-cleaning pictures were too similar to the rest of the site).
 const gallery: GalleryImage[] = [
-  {
-    image: kitchenSink,
-    alt: "A cleaned double sink and counter in an open-plan condo kitchen",
-    span: 2,
-  },
+  { image: stock.homeMicrowave, alt: stock.homeMicrowave.alt, span: 2 },
   { image: stock.homeOven, alt: stock.homeOven.alt, span: 2 },
-  { image: kitchenStove, alt: "A clean gas cooktop with polished grates", span: 2 },
+  { image: stock.homeCooktop, alt: stock.homeCooktop.alt, span: 2 },
   { image: stock.homeUnloading, alt: stock.homeUnloading.alt, span: 2 },
   { image: stock.homeDishwasher, alt: stock.homeDishwasher.alt, span: 4 },
   { image: stock.homeDrawers, alt: stock.homeDrawers.alt, span: 3, tabletSpan: 2 },
