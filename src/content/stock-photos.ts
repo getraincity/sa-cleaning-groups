@@ -20,6 +20,14 @@ export type StockPhoto = StaticImageData & {
     | { source: "pexels"; id: number; photographer: string };
 };
 
+/**
+ * Images are served as-is (no Next image optimizer, see next.config.ts), so ask the CDN for a
+ * web-sized copy: the long side capped at 1920px instead of the full-size original.
+ */
+const MAX_LONG_SIDE = 1920;
+const sizeParam = ({ width, height }: { width: number; height: number }) =>
+  width >= height ? `w=${Math.min(width, MAX_LONG_SIDE)}` : `h=${Math.min(height, MAX_LONG_SIDE)}`;
+
 function unsplash(photo: {
   id: string;
   photo: string;
@@ -29,9 +37,8 @@ function unsplash(photo: {
   username: string;
   alt: string;
 }): StockPhoto {
-  const longSide = Math.max(photo.width, photo.height);
   return {
-    src: `https://images.unsplash.com/${photo.photo}?ixlib=rb-4.1.0&fm=jpg&q=80&${photo.width === longSide ? "w" : "h"}=${longSide}`,
+    src: `https://images.unsplash.com/${photo.photo}?ixlib=rb-4.1.0&fm=jpg&q=80&${sizeParam(photo)}`,
     width: photo.width,
     height: photo.height,
     alt: photo.alt,
@@ -51,9 +58,8 @@ function pexels(photo: {
   photographer: string;
   alt: string;
 }): StockPhoto {
-  const longSide = Math.max(photo.width, photo.height);
   return {
-    src: `https://images.pexels.com/photos/${photo.id}/pexels-photo-${photo.id}.jpeg?auto=compress&cs=tinysrgb&${photo.width === longSide ? "w" : "h"}=${longSide}`,
+    src: `https://images.pexels.com/photos/${photo.id}/pexels-photo-${photo.id}.jpeg?auto=compress&cs=tinysrgb&${sizeParam(photo)}`,
     width: photo.width,
     height: photo.height,
     alt: photo.alt,
