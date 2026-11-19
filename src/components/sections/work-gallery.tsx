@@ -2,7 +2,7 @@ import Image, { type StaticImageData } from "next/image";
 import { SectionHeader, sectionSpacing } from "@/components/ui/section-header";
 import { SparklesIcon } from "@/components/ui/icons";
 import { Reveal } from "@/components/ui/reveal";
-import { stock } from "@/content/stock-photos";
+import { jobs } from "@/content/job-photos";
 import { cn } from "@/lib/utils";
 
 type Photo = {
@@ -18,37 +18,37 @@ type Photo = {
 // pictured wears black, as S&A's own team does (client feedback, 2026-11-13).
 const photos: Photo[] = [
   {
-    image: stock.gallerySofa,
+    image: jobs.gallerySofa,
     caption: "Living rooms, put back in order",
-    alt: stock.gallerySofa.alt,
+    alt: jobs.gallerySofa.alt,
     className: "col-span-2 row-span-2",
     sizes: "(max-width: 767px) 100vw, 50vw",
   },
   {
-    image: stock.aboutSweeping,
+    image: jobs.aboutSweeping,
     caption: "Floors mopped",
-    alt: stock.aboutSweeping.alt,
+    alt: jobs.aboutSweeping.alt,
     className: "row-span-2",
     sizes: "(max-width: 767px) 50vw, 25vw",
   },
   {
-    image: stock.aboutVacuuming,
+    image: jobs.aboutVacuuming,
     caption: "Shelves dusted",
-    alt: stock.aboutVacuuming.alt,
+    alt: jobs.aboutVacuuming.alt,
     className: "row-span-2",
     sizes: "(max-width: 767px) 50vw, 25vw",
   },
   {
-    image: stock.galleryMirror,
+    image: jobs.galleryMirror,
     caption: "Mirrors polished",
-    alt: stock.galleryMirror.alt,
+    alt: jobs.galleryMirror.alt,
     className: "col-span-2",
     sizes: "(max-width: 767px) 100vw, 50vw",
   },
   {
-    image: stock.aboutSideboard,
+    image: jobs.aboutSideboard,
     caption: "Cabinets wiped down",
-    alt: stock.aboutSideboard.alt,
+    alt: jobs.aboutSideboard.alt,
     className: "col-span-2",
     sizes: "(max-width: 767px) 100vw, 50vw",
   },

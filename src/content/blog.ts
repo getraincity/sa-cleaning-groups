@@ -1,6 +1,7 @@
 import type { StaticImageData } from "next/image";
 import kitchenAppliances from "@/assets/images/kitchen-appliances.jpg";
 import { guidePosts } from "@/content/blog-guides";
+import { jobs } from "@/content/job-photos";
 import { stock } from "@/content/stock-photos";
 
 export const blogCategories = ["Home Cleaning", "Commercial"] as const;
@@ -126,8 +127,8 @@ const allPosts: Post[] = [
       "Not sure whether to book a deep clean or a regular one? Here's the difference, when each makes sense, and how our Silver, Gold and Diamond plans compare.",
     category: "Home Cleaning",
     date: "2026-09-05",
-    image: stock.blogDeepClean,
-    imageAlt: stock.blogDeepClean.alt,
+    image: jobs.blogDeepClean,
+    imageAlt: jobs.blogDeepClean.alt,
     body: [
       {
         type: "p",
@@ -279,8 +280,8 @@ const allPosts: Post[] = [
       "Renovation's done, but the dust isn't. Here's what a post-construction clean involves, why it's different from a regular clean, and when to book one.",
     category: "Home Cleaning",
     date: "2026-08-20",
-    image: stock.blogConstruction,
-    imageAlt: stock.blogConstruction.alt,
+    image: jobs.blogConstruction,
+    imageAlt: jobs.blogConstruction.alt,
     body: [
       {
         type: "p",

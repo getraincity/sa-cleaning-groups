@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/icons";
 import { Reveal } from "@/components/ui/reveal";
 import { SectionHeader, sectionSpacing } from "@/components/ui/section-header";
-import { stock } from "@/content/stock-photos";
+import { jobs } from "@/content/job-photos";
 import { productCategories, type ProductBrand, type ProductCategory } from "@/content/products";
 import { pageMetadata } from "@/lib/metadata";
 import { cn } from "@/lib/utils";
@@ -127,7 +127,7 @@ export default function ProductsWeTrustPage() {
         ])}
       />
       <PageHero
-        image={stock.productsSink}
+        image={jobs.productsSink}
         tagline="Good results start with good products."
         title="Products We Trust"
         description="The brands and tools our team relies on in homes and workplaces across Vancouver."

@@ -13,7 +13,7 @@ import { PricingSection } from "@/components/sections/pricing-section";
 import { AddOnsSection } from "@/components/sections/add-ons-section";
 import { homeCleaningAnswers } from "@/content/answers";
 import { homeCleaningPlans } from "@/content/pricing";
-import { stock } from "@/content/stock-photos";
+import { jobs } from "@/content/job-photos";
 import { pageMetadata } from "@/lib/metadata";
 import { bookingLinks } from "@/lib/site";
 import { JsonLd } from "@/components/seo/json-ld";
@@ -29,15 +29,15 @@ export const metadata = pageMetadata({
 // Every photo here appears nowhere else on the site (client feedback: the
 // home-cleaning pictures were too similar to the rest of the site).
 const gallery: GalleryImage[] = [
-  { image: stock.homeMicrowave, alt: stock.homeMicrowave.alt, span: 2 },
-  { image: stock.homeOven, alt: stock.homeOven.alt, span: 2 },
-  { image: stock.homeCooktop, alt: stock.homeCooktop.alt, span: 2 },
-  { image: stock.homeUnloading, alt: stock.homeUnloading.alt, span: 2 },
-  { image: stock.homeDishwasher, alt: stock.homeDishwasher.alt, span: 4 },
-  { image: stock.homeDrawers, alt: stock.homeDrawers.alt, span: 3, tabletSpan: 2 },
-  { image: stock.homeShowerHandle, alt: stock.homeShowerHandle.alt, span: 1, tabletSpan: 2 },
-  { image: stock.homeDoorFrame, alt: stock.homeDoorFrame.alt, span: 1, tabletSpan: 2 },
-  { image: stock.homeTable, alt: stock.homeTable.alt, span: 1, tabletSpan: 2 },
+  { image: jobs.homeMicrowave, alt: jobs.homeMicrowave.alt, span: 2 },
+  { image: jobs.homeOven, alt: jobs.homeOven.alt, span: 2 },
+  { image: jobs.homeCooktop, alt: jobs.homeCooktop.alt, span: 2 },
+  { image: jobs.homeUnloading, alt: jobs.homeUnloading.alt, span: 2 },
+  { image: jobs.homeDishwasher, alt: jobs.homeDishwasher.alt, span: 4 },
+  { image: jobs.homeDrawers, alt: jobs.homeDrawers.alt, span: 3, tabletSpan: 2 },
+  { image: jobs.homeShowerHandle, alt: jobs.homeShowerHandle.alt, span: 1, tabletSpan: 2 },
+  { image: jobs.homeDoorFrame, alt: jobs.homeDoorFrame.alt, span: 1, tabletSpan: 2 },
+  { image: jobs.homeTable, alt: jobs.homeTable.alt, span: 1, tabletSpan: 2 },
 ];
 
 // Room by room: what a clean covers in the spaces people care about most.
@@ -52,8 +52,8 @@ const roomRows: PhotoFeatureRow[] = [
       "Appliance fronts, stove top and oven front cleaned",
       "Cabinet fronts wiped, inside and out on Diamond",
     ],
-    image: stock.homeKitchenSink,
-    alt: stock.homeKitchenSink.alt,
+    image: jobs.homeKitchenSink,
+    alt: jobs.homeKitchenSink.alt,
   },
   {
     eyebrow: { icon: <HomeIcon />, label: "Living spaces & bedrooms" },
@@ -65,8 +65,8 @@ const roomRows: PhotoFeatureRow[] = [
       "Beds made and rooms organized",
       "Mirrors and glass cleaned streak-free",
     ],
-    image: stock.homeBedroom,
-    alt: stock.homeBedroom.alt,
+    image: jobs.homeBedroom,
+    alt: jobs.homeBedroom.alt,
   },
   {
     eyebrow: { icon: <SparklesIcon />, label: "Glass & windows" },
@@ -78,8 +78,8 @@ const roomRows: PhotoFeatureRow[] = [
       "Windows cleaned inside on Diamond",
       "Bathrooms disinfected top to bottom on every plan",
     ],
-    image: stock.homeWindowSpray,
-    alt: stock.homeWindowSpray.alt,
+    image: jobs.homeWindowSpray,
+    alt: jobs.homeWindowSpray.alt,
   },
 ];
 
@@ -198,7 +198,7 @@ export default function HomeCleaningPage() {
         })}
       />
       <PageHero
-        image={stock.homeHero}
+        image={jobs.homeHero}
         className="overflow-hidden pt-[200px] max-md:pt-[200px]"
         tagline="We value your time as much as you do."
         title={
@@ -237,9 +237,9 @@ export default function HomeCleaningPage() {
       <CareSection
         booking={{ href: bookingLinks.homeCleaning }}
         photos={{
-          ecoFriendly: { image: stock.homeStove, alt: stock.homeStove.alt },
-          professionals: { image: stock.homePro, alt: stock.homePro.alt },
-          petFriendly: { image: stock.homePets, alt: stock.homePets.alt },
+          ecoFriendly: { image: jobs.homeStove, alt: jobs.homeStove.alt },
+          professionals: { image: jobs.homePro, alt: jobs.homePro.alt },
+          petFriendly: { image: jobs.homePets, alt: jobs.homePets.alt },
         }}
       />
 

@@ -27,6 +27,7 @@ import westLighthouse from "@/assets/images/areas/west-lighthouse.jpg";
 import meetingRoom from "@/assets/images/commercial/meeting-room.jpg";
 import modernOffice from "@/assets/images/commercial/modern-office.jpg";
 import openOffice from "@/assets/images/commercial/open-office.jpg";
+import { jobs } from "@/content/job-photos";
 import { stock } from "@/content/stock-photos";
 import type { Faq } from "@/components/sections/faq-section";
 import {
@@ -141,15 +142,15 @@ export const locations: Location[] = [
     portfolio: [
       {
         tag: "Residential",
-        image: stock.locationsMop,
-        alt: stock.locationsMop.alt,
+        image: jobs.locationsMop,
+        alt: jobs.locationsMop.alt,
         title: "High-rise condos",
         text: "Suites in concierge and strata buildings.",
       },
       {
         tag: "Residential",
-        image: stock.downtownLofts,
-        alt: stock.downtownLofts.alt,
+        image: jobs.downtownLofts,
+        alt: jobs.downtownLofts.alt,
         title: "Lofts & townhomes",
         text: "Yaletown lofts and waterfront townhomes.",
       },
@@ -202,8 +203,8 @@ export const locations: Location[] = [
     tip: {
       title: "Balcony season, city-style",
       text: "Downtown balconies collect city dust and soot fast. Our Diamond plan includes sweeping the balcony and dusting the railings, so your outdoor space is as fresh as your living room.",
-      image: stock.downtownTip,
-      alt: stock.downtownTip.alt,
+      image: jobs.downtownTip,
+      alt: jobs.downtownTip.alt,
       position: "50% 20%",
     },
     services: {
@@ -311,15 +312,15 @@ export const locations: Location[] = [
     portfolio: [
       {
         tag: "Residential",
-        image: stock.northCondos,
-        alt: stock.northCondos.alt,
+        image: jobs.northCondos,
+        alt: jobs.northCondos.alt,
         title: "Lonsdale condos",
         text: "Waterfront and high-rise suites near the Quay.",
       },
       {
         tag: "Residential",
-        image: stock.locationsFloor,
-        alt: stock.locationsFloor.alt,
+        image: jobs.locationsFloor,
+        alt: jobs.locationsFloor.alt,
         title: "Family homes",
         text: "Detached homes in Lynn Valley and Edgemont.",
       },
@@ -372,8 +373,8 @@ export const locations: Location[] = [
     tip: {
       title: "Rainy-season tip",
       text: "From October to April, North Shore floors see a lot more mud. Consider booking more frequent cleans through the wet months, then easing off in summer. We're happy to adjust your plan by season.",
-      image: stock.northTip,
-      alt: stock.northTip.alt,
+      image: jobs.northTip,
+      alt: jobs.northTip.alt,
     },
     services: {
       home: "Recurring, deep and move-in/out cleans from Lonsdale to Deep Cove.",
@@ -467,15 +468,15 @@ export const locations: Location[] = [
     portfolio: [
       {
         tag: "Residential",
-        image: stock.eastCharacter,
-        alt: stock.eastCharacter.alt,
+        image: jobs.eastCharacter,
+        alt: jobs.eastCharacter.alt,
         title: "Character homes",
         text: "Heritage houses, suites and laneway homes.",
       },
       {
         tag: "Residential",
-        image: stock.eastFamily,
-        alt: stock.eastFamily.alt,
+        image: jobs.eastFamily,
+        alt: jobs.eastFamily.alt,
         title: "Family houses",
         text: "Detached homes with basement and garden suites.",
       },
@@ -525,8 +526,8 @@ export const locations: Location[] = [
     tip: {
       title: "Moving out of a rental?",
       text: "A move-out clean inside the oven, fridge, cabinets and closets makes the final walkthrough much smoother. Book it for after the movers leave, so every corner is empty and easy to reach.",
-      image: stock.eastTip,
-      alt: stock.eastTip.alt,
+      image: jobs.eastTip,
+      alt: jobs.eastTip.alt,
     },
     services: {
       home: "Deep and recurring cleans for character homes, suites and apartments.",
@@ -624,15 +625,15 @@ export const locations: Location[] = [
     portfolio: [
       {
         tag: "Residential",
-        image: stock.westHillside,
-        alt: stock.westHillside.alt,
+        image: jobs.westHillside,
+        alt: jobs.westHillside.alt,
         title: "Hillside view homes",
         text: "Large homes with lots of glass to keep clear.",
       },
       {
         tag: "Residential",
-        image: stock.westStreets,
-        alt: stock.westStreets.alt,
+        image: jobs.westStreets,
+        alt: jobs.westStreets.alt,
         title: "Quiet residential streets",
         text: "Family homes in British Properties and Caulfeild.",
       },
@@ -682,8 +683,8 @@ export const locations: Location[] = [
     tip: {
       title: "Salt air, clear views",
       text: "Living by the ocean means salt and moisture build up on glass and railings faster. Regular cleans keep that film from dulling your view.",
-      image: stock.westTip,
-      alt: stock.westTip.alt,
+      image: jobs.westTip,
+      alt: jobs.westTip.alt,
     },
     services: {
       home: "Deep and recurring cleans for view homes of every size.",
@@ -767,15 +768,15 @@ export const locations: Location[] = [
     portfolio: [
       {
         tag: "Residential",
-        image: stock.southFamily,
-        alt: stock.southFamily.alt,
+        image: jobs.southFamily,
+        alt: jobs.southFamily.alt,
         title: "Family homes",
         text: "Detached homes in Kerrisdale, Oakridge and Marpole.",
       },
       {
         tag: "Residential",
-        image: stock.southCondos,
-        alt: stock.southCondos.alt,
+        image: jobs.southCondos,
+        alt: jobs.southCondos.alt,
         title: "New condos",
         text: "New developments near the Canada Line.",
       },
@@ -825,8 +826,8 @@ export const locations: Location[] = [
     tip: {
       title: "Getting the keys to a new build?",
       text: "New homes come with construction dust in vents, cupboards and window tracks. Book a post-construction clean before your furniture arrives: it's far easier to reach every corner in an empty home.",
-      image: stock.southTip,
-      alt: stock.southTip.alt,
+      image: jobs.southTip,
+      alt: jobs.southTip.alt,
     },
     services: {
       home: "Recurring, deep and post-construction cleans for homes and condos.",

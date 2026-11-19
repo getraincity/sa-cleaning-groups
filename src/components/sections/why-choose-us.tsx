@@ -1,26 +1,26 @@
 import Image from "next/image";
 import { SectionHeader, sectionSpacing } from "@/components/ui/section-header";
 import { HeartIcon } from "@/components/ui/icons";
-import { stock } from "@/content/stock-photos";
+import { jobs } from "@/content/job-photos";
 import { Reveal } from "@/components/ui/reveal";
 import { cn } from "@/lib/utils";
 
 const reasons = [
   {
-    image: stock.aboutTeam,
-    alt: stock.aboutTeam.alt,
+    image: jobs.aboutTeam,
+    alt: jobs.aboutTeam.alt,
     title: "Our Team",
     text: "Our cleaners are fully trained, insured and background-checked, so you always know who's in your home. Friendly, reliable and proud of their work, they go the extra mile on every visit.",
   },
   {
-    image: stock.aboutCrew,
-    alt: stock.aboutCrew.alt,
+    image: jobs.aboutCrew,
+    alt: jobs.aboutCrew.alt,
     title: "Our Promise",
     text: "Quality, reliability and professionalism guide every job we take on. We aim to exceed expectations, not just meet them, and our 100% satisfaction guarantee means we're not done until you're happy.",
   },
   {
-    image: stock.aboutWorkplace,
-    alt: stock.aboutWorkplace.alt,
+    image: jobs.aboutWorkplace,
+    alt: jobs.aboutWorkplace.alt,
     title: "Homes & Workplaces",
     text: "From condos and family homes to offices, retail spaces and stratas, the same trained team and the same standards look after every space we clean.",
   },

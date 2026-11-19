@@ -1,4 +1,4 @@
-import { stock, type StockPhoto } from "@/content/stock-photos";
+import { jobs, type SitePhoto } from "@/content/job-photos";
 
 /**
  * Copy and photos for the six service pages added for SEO. The pages render
@@ -48,7 +48,7 @@ export type ServicePageData = {
   breadcrumbName: string;
   schema: { name: string; serviceType: string; description: string };
   hero: {
-    image: StockPhoto;
+    image: SitePhoto;
     /** Extra classes for the hero photo, e.g. to keep a face in frame. */
     imageClassName?: string;
     tagline: string;
@@ -69,7 +69,7 @@ export type ServicePageData = {
     title: string;
     text: string;
     points: string[];
-    image: StockPhoto;
+    image: SitePhoto;
   }[];
   audience: {
     title: string;
@@ -165,7 +165,7 @@ export const servicePages: Record<ServiceSlug, ServicePageData> = {
         "Top-to-bottom deep cleaning for homes, condos and apartments across Greater Vancouver, BC: baseboards, inside cabinets and appliances, bathrooms and kitchens, with eco-friendly, pet-friendly products.",
     },
     hero: {
-      image: stock.deepHero,
+      image: jobs.deepHero,
       tagline: "A fresh start for your whole home",
       title: ["Deep Cleaning Service", "in Vancouver, BC"],
       description:
@@ -195,7 +195,7 @@ export const servicePages: Record<ServiceSlug, ServicePageData> = {
           "Fridge, freezer and microwave cleaned inside",
           "Sinks, taps and backsplash scrubbed",
         ],
-        image: stock.deepKitchen,
+        image: jobs.deepKitchen,
       },
       {
         icon: "home",
@@ -208,7 +208,7 @@ export const servicePages: Record<ServiceSlug, ServicePageData> = {
           "Light switches and door handles cleaned",
           "Window ledges and sills dusted and wiped",
         ],
-        image: stock.deepOven,
+        image: jobs.deepOven,
       },
     ],
     audience: {
@@ -372,7 +372,7 @@ export const servicePages: Record<ServiceSlug, ServicePageData> = {
         "Move-out and move-in cleaning for apartments, condos and houses across Greater Vancouver, BC: an empty-home clean including inside cabinets, closets and appliances.",
     },
     hero: {
-      image: stock.moveOutHero,
+      image: jobs.moveOutHero,
       tagline: "Hand over the keys with confidence",
       title: ["Move-Out Cleaning", "in Vancouver, BC"],
       description:
@@ -402,7 +402,7 @@ export const servicePages: Record<ServiceSlug, ServicePageData> = {
           "Baseboards, door frames and light switches cleaned",
           "Window sills and tracks wiped",
         ],
-        image: stock.moveOutRug,
+        image: jobs.moveOutRug,
       },
       {
         icon: "sparkles",
@@ -415,7 +415,7 @@ export const servicePages: Record<ServiceSlug, ServicePageData> = {
           "Tubs, tiles, sinks and taps scrubbed",
           "Toilets cleaned inside and out",
         ],
-        image: stock.moveOutSweeping,
+        image: jobs.moveOutSweeping,
       },
     ],
     audience: {
@@ -576,7 +576,7 @@ export const servicePages: Record<ServiceSlug, ServicePageData> = {
         "Turnover cleaning between guests for Airbnb and vacation rental hosts across Greater Vancouver, BC, on a schedule that fits your bookings.",
     },
     hero: {
-      image: stock.airbnbHero,
+      image: jobs.airbnbHero,
       tagline: "Every guest arrives to a spotless home",
       title: ["Airbnb & Short-Term", "Rental Cleaning in Vancouver, BC"],
       description:
@@ -608,7 +608,7 @@ export const servicePages: Record<ServiceSlug, ServicePageData> = {
           "Floors vacuumed and mopped",
           "Mirrors and glass cleaned streak-free",
         ],
-        image: stock.airbnbSheet,
+        image: jobs.airbnbSheet,
       },
       {
         icon: "sparkles",
@@ -621,7 +621,7 @@ export const servicePages: Record<ServiceSlug, ServicePageData> = {
           "Toilets, tubs and showers cleaned",
           "Garbage and recycling emptied",
         ],
-        image: stock.airbnbKitchen,
+        image: jobs.airbnbKitchen,
       },
     ],
     audience: {
@@ -783,7 +783,7 @@ export const servicePages: Record<ServiceSlug, ServicePageData> = {
         "Post-construction and post-renovation cleaning for homes, new condos and commercial spaces across Greater Vancouver, BC: fine dust, debris and residue cleared so the space is ready to live in.",
     },
     hero: {
-      image: stock.postConstructionHero,
+      image: jobs.postConstructionHero,
       tagline: "From finished build to move-in ready",
       title: ["Post-Construction Cleaning", "in Vancouver, BC"],
       description:
@@ -813,7 +813,7 @@ export const servicePages: Record<ServiceSlug, ServicePageData> = {
           "Vents, light fixtures and switches wiped down",
           "Stickers, labels and residue removed from fixtures and appliances",
         ],
-        image: stock.postConstructionMop,
+        image: jobs.postConstructionMop,
       },
       {
         icon: "sparkles",
@@ -826,7 +826,7 @@ export const servicePages: Record<ServiceSlug, ServicePageData> = {
           "Kitchen and bathroom fixtures cleaned and polished",
           "Final wipe of surfaces before you move in",
         ],
-        image: stock.postConstructionKitchen,
+        image: jobs.postConstructionKitchen,
       },
     ],
     audience: {
@@ -987,7 +987,7 @@ export const servicePages: Record<ServiceSlug, ServicePageData> = {
         "Office cleaning across Greater Vancouver, BC: desks, meeting rooms, kitchens, washrooms and floors, on a daily, weekly or custom schedule, quoted for each space.",
     },
     hero: {
-      image: stock.officeHero,
+      image: jobs.officeHero,
       tagline: "Clean, healthy workplaces",
       title: ["Office Cleaning Services", "in Vancouver, BC"],
       description:
@@ -1017,7 +1017,7 @@ export const servicePages: Record<ServiceSlug, ServicePageData> = {
           "Garbage, recycling and compost emptied",
           "Carpets vacuumed and hard floors mopped",
         ],
-        image: stock.officeVacuum,
+        image: jobs.officeVacuum,
       },
       {
         icon: "sparkles",
@@ -1030,7 +1030,7 @@ export const servicePages: Record<ServiceSlug, ServicePageData> = {
           "Soap and paper supplies refilled",
           "High-touch surfaces disinfected",
         ],
-        image: stock.officeMop,
+        image: jobs.officeMop,
       },
     ],
     audience: {
@@ -1194,7 +1194,7 @@ export const servicePages: Record<ServiceSlug, ServicePageData> = {
         "Common-area cleaning for strata and condo buildings across Greater Vancouver, BC: lobbies, hallways, stairwells, elevators and amenity rooms, quoted for each building.",
     },
     hero: {
-      image: stock.strataHero,
+      image: jobs.strataHero,
       tagline: "Common property, kept clean",
       title: ["Strata & Condo Building", "Cleaning in Vancouver, BC"],
       description: "Lobbies, hallways, stairwells and amenity rooms that residents are proud of.",
@@ -1223,7 +1223,7 @@ export const servicePages: Record<ServiceSlug, ServicePageData> = {
           "Elevators, handrails and buttons wiped down",
           "Wet-floor signage used whenever floors are drying",
         ],
-        image: stock.strataFloor,
+        image: jobs.strataFloor,
       },
       {
         icon: "building",
@@ -1236,7 +1236,7 @@ export const servicePages: Record<ServiceSlug, ServicePageData> = {
           "Glass and mirrors cleaned",
           "Garbage and recycling emptied",
         ],
-        image: stock.strataVacuum,
+        image: jobs.strataVacuum,
       },
     ],
     audience: {

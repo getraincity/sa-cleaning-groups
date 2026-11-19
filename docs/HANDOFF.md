@@ -390,6 +390,30 @@ _Fix:_ slide-in overflow on phones.
   reset now and then: use `curl --retry 5 --retry-all-errors`. There was no Google Drive connector;
   the doc was read with `https://docs.google.com/document/d/<id>/export?format=zip`.
 
+**Real job photos from permitted companies (2026-11-19)**
+
+- The client rejected stock photos a third time and wants real job photos. The agency has
+  **permission** from 10 cleaning companies to use their photos, edited and with logos and
+  branding removed: `docs/image-permissions.md` (only those sources; no Pexels, Unsplash or AI).
+  This replaces the earlier "don't copy from oneprocleaning.ca" rule.
+- 84 slots now use photos from oneprocleaning.ca and detailsbyladyt.ca/residential, each once:
+  `src/content/job-photos.ts` (`jobs.*`), files in `src/assets/images/jobs/`. They are built by
+  `node scripts/photos/build-job-photos.mjs` from `scripts/photos/job-photos.json` (slot, source,
+  crop mode, alt). The script cuts the white frame, BEFORE/AFTER labels and the corner logo,
+  crops to the slot, applies one light grade and exports WebP. Raw files go in
+  `assets-incoming/raw/` (git-ignored); `assets-incoming/SOURCES.md` logs each file's source.
+  Full table: `docs/image-replacements.md`; the before-state inventory: `docs/image-inventory.md`.
+- Job photos aren't listed on Photo Credits. Alt text describes the room or task only; it never
+  says the photo shows S&A staff.
+- Skipped on purpose: photos with another company's staff in branded shirts, DeWalt-branded gear,
+  floor-protection board printed with a logo, appliance brand names, text overlays and screenshots.
+- Still stock (7): `productsLemon`, `custodianVacuum`, `custodianHallway`, `eastShops`,
+  `westClinics`, `blogOffice`, `blogCommercialCost`, plus `commercial/meeting-room`,
+  `open-office` and `modern-office` on area pages. All but the lemon are commercial: the two
+  websites had too few commercial shots. Fill them from the Instagram sources, which need a
+  logged-in browser (Claude in Chrome); the cloud sandbox can't log in to Instagram.
+- `node scripts/qa/slots.mjs` prints every photo slot (page, section, file, alt).
+
 ## 9. Waiting on the client (as of round 5)
 
 - **Photos:**

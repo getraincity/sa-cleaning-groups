@@ -12,7 +12,7 @@ import { TrustedPartners } from "@/components/sections/trusted-partners";
 import { WhyChooseUs } from "@/components/sections/why-choose-us";
 import { WorkGallery } from "@/components/sections/work-gallery";
 import { aboutAnswers } from "@/content/answers";
-import { stock } from "@/content/stock-photos";
+import { jobs } from "@/content/job-photos";
 import { pageMetadata } from "@/lib/metadata";
 import { embeds, siteConfig } from "@/lib/site";
 import { JsonLd } from "@/components/seo/json-ld";
@@ -69,7 +69,7 @@ export default function AboutPage() {
     <>
       <JsonLd data={breadcrumbJsonLd([{ name: "About Us", path: "/about-us" }])} />
       <PageHero
-        image={stock.aboutHero}
+        image={jobs.aboutHero}
         imageClassName="object-[center_25%]"
         tagline="We value your time as much as you do."
         title="About S&A Cleaning Group"

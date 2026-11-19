@@ -10,6 +10,7 @@ import bonaFloorCleaner from "@/assets/images/products/bona-hardwood-floor-clean
 import mrsMeyers from "@/assets/images/products/mrs-meyers-multi-surface.jpg";
 import natureClean from "@/assets/images/products/nature-clean-multi-surface.jpg";
 import ragCompany from "@/assets/images/products/rag-company-microfibre.jpg";
+import { jobs } from "@/content/job-photos";
 import { stock } from "@/content/stock-photos";
 
 export type ProductBrand = {
@@ -45,8 +46,8 @@ export const productCategories: ProductCategory[] = [
     description:
       "Natural, eco-friendly products that are tough on dirt and safe for families and pets.",
     service: "home",
-    image: stock.productsSpray,
-    alt: stock.productsSpray.alt,
+    image: jobs.productsSpray,
+    alt: jobs.productsSpray.alt,
     brands: [
       {
         name: "Nature Clean",
@@ -82,8 +83,8 @@ export const productCategories: ProductCategory[] = [
     title: "Tools & Equipment",
     description: "The equipment behind a deeper, healthier clean in every home and workplace.",
     service: "all",
-    image: stock.productsTools,
-    alt: stock.productsTools.alt,
+    image: jobs.productsTools,
+    alt: jobs.productsTools.alt,
     brands: [
       {
         name: "The Rag Company",

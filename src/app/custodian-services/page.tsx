@@ -1,5 +1,4 @@
 import Link from "next/link";
-import lobbyEntrance from "@/assets/images/commercial/lobby-wet-floor.jpg";
 import { AnswerBlocks } from "@/components/sections/answer-blocks";
 import { CtaBand } from "@/components/sections/cta-band";
 import { FaqSection, type Faq } from "@/components/sections/faq-section";
@@ -27,6 +26,7 @@ import {
 import { Reveal } from "@/components/ui/reveal";
 import { SectionHeader, sectionSpacing } from "@/components/ui/section-header";
 import { custodianAnswers } from "@/content/answers";
+import { jobs } from "@/content/job-photos";
 import { stock } from "@/content/stock-photos";
 import { pageMetadata } from "@/lib/metadata";
 import { siteConfig } from "@/lib/site";
@@ -188,8 +188,8 @@ const spaceRows: PhotoFeatureRow[] = [
       "Glass partitions and doors kept smudge-free",
       "Garbage, recycling and compost emptied",
     ],
-    image: stock.custodianTeam,
-    alt: stock.custodianTeam.alt,
+    image: jobs.custodianTeam,
+    alt: jobs.custodianTeam.alt,
   },
   {
     eyebrow: { icon: <KeyIcon />, label: "Lobbies & common areas" },
@@ -201,8 +201,8 @@ const spaceRows: PhotoFeatureRow[] = [
       "Elevators, handrails and buttons wiped down",
       "Wet-floor signage used whenever floors are drying",
     ],
-    image: lobbyEntrance,
-    alt: "A commercial building entrance being cleaned",
+    image: jobs.lobbyEntrance,
+    alt: jobs.lobbyEntrance.alt,
   },
   {
     eyebrow: { icon: <ShieldCheckIcon />, label: "High-touch surfaces" },
@@ -214,8 +214,8 @@ const spaceRows: PhotoFeatureRow[] = [
       "Washrooms cleaned and disinfected",
       "Soap and paper supplies refilled",
     ],
-    image: stock.custodianGlassWall,
-    alt: stock.custodianGlassWall.alt,
+    image: jobs.custodianGlassWall,
+    alt: jobs.custodianGlassWall.alt,
   },
 ];
 
@@ -240,11 +240,11 @@ const schedules = [
 // Pictures only (client feedback): the custodian team at work, none of
 // which appear anywhere else on the site.
 const gallery: GalleryImage[] = [
-  { image: stock.custodianScrubber, alt: stock.custodianScrubber.alt, span: 2 },
-  { image: stock.custodianCart, alt: stock.custodianCart.alt, span: 2 },
-  { image: stock.custodianSteps, alt: stock.custodianSteps.alt, span: 2 },
+  { image: jobs.custodianScrubber, alt: jobs.custodianScrubber.alt, span: 2 },
+  { image: jobs.custodianCart, alt: jobs.custodianCart.alt, span: 2 },
+  { image: jobs.custodianSteps, alt: jobs.custodianSteps.alt, span: 2 },
   { image: stock.custodianHallway, alt: stock.custodianHallway.alt, span: 4 },
-  { image: stock.custodianLadder, alt: stock.custodianLadder.alt, span: 2 },
+  { image: jobs.custodianLadder, alt: jobs.custodianLadder.alt, span: 2 },
 ];
 
 const faqs: Faq[] = [
@@ -324,7 +324,7 @@ export default function CustodianServicesPage() {
         })}
       />
       <PageHero
-        image={stock.custodianHero}
+        image={jobs.custodianHero}
         className="py-[200px] max-md:py-[100px]"
         tagline="Commercial & janitorial cleaning"
         title={
@@ -566,20 +566,20 @@ export default function CustodianServicesPage() {
             text: "Desks, chairs and floors ready for the next working day.",
           },
           {
-            image: stock.custodianWindows,
-            alt: stock.custodianWindows.alt,
+            image: jobs.custodianWindows,
+            alt: jobs.custodianWindows.alt,
             title: "Hallways & glass",
             text: "Glass walls and doors kept clear and bright.",
           },
           {
-            image: stock.custodianDusting,
-            alt: stock.custodianDusting.alt,
+            image: jobs.custodianDusting,
+            alt: jobs.custodianDusting.alt,
             title: "Workstations",
             text: "Desks and shared equipment dusted and wiped.",
           },
           {
-            image: stock.custodianEntrance,
-            alt: stock.custodianEntrance.alt,
+            image: jobs.custodianEntrance,
+            alt: jobs.custodianEntrance.alt,
             title: "Entrances",
             text: "Doors, mats and floors that welcome your visitors.",
           },
