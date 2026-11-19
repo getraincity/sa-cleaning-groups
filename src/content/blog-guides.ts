@@ -1,3 +1,4 @@
+import { jobs } from "@/content/job-photos";
 import { stock } from "@/content/stock-photos";
 import type { Post } from "@/content/blog";
 
@@ -15,8 +16,8 @@ export const guidePosts: Post[] = [
       "What decides the price of a house clean in Greater Vancouver, how monthly plans and hourly cleaning compare, our own prices, and the questions to ask before you book.",
     category: "Home Cleaning",
     date: "2026-11-03",
-    image: stock.blogCost,
-    imageAlt: stock.blogCost.alt,
+    image: jobs.blogCost,
+    imageAlt: jobs.blogCost.alt,
     body: [
       {
         type: "p",
@@ -162,8 +163,8 @@ export const guidePosts: Post[] = [
       "What BC tenants are expected to clean at the end of a tenancy, how the move-out inspection works, and when it makes sense to hire a cleaner. General information, not legal advice.",
     category: "Home Cleaning",
     date: "2026-10-30",
-    image: stock.blogDepositMoveOut,
-    imageAlt: stock.blogDepositMoveOut.alt,
+    image: jobs.blogDepositMoveOut,
+    imageAlt: jobs.blogDepositMoveOut.alt,
     body: [
       {
         type: "p",
@@ -308,8 +309,8 @@ export const guidePosts: Post[] = [
       "A practical guide for BC strata councils and managers: how to define the scope, set a schedule, ask for the right paperwork and compare quotes fairly.",
     category: "Commercial",
     date: "2026-10-26",
-    image: stock.blogStrata,
-    imageAlt: stock.blogStrata.alt,
+    image: jobs.blogStrata,
+    imageAlt: jobs.blogStrata.alt,
     body: [
       {
         type: "p",
@@ -459,8 +460,8 @@ export const guidePosts: Post[] = [
       "A room-by-room checklist for the gap between check-out and check-in, plus how to schedule cleans around bookings and what to check before you host.",
     category: "Home Cleaning",
     date: "2026-10-22",
-    image: stock.blogAirbnb,
-    imageAlt: stock.blogAirbnb.alt,
+    image: jobs.blogAirbnb,
+    imageAlt: jobs.blogAirbnb.alt,
     body: [
       {
         type: "p",
@@ -605,8 +606,8 @@ export const guidePosts: Post[] = [
       "What a deep clean covers, what sets the price, how it compares with a regular clean and how to get a fair quote for your home.",
     category: "Home Cleaning",
     date: "2026-10-19",
-    image: stock.blogDeepCost,
-    imageAlt: stock.blogDeepCost.alt,
+    image: jobs.blogDeepCost,
+    imageAlt: jobs.blogDeepCost.alt,
     body: [
       {
         type: "p",
@@ -721,8 +722,8 @@ export const guidePosts: Post[] = [
       "Wet autumns and winters make Greater Vancouver homes damp. A simple weekly routine, based on Health Canada's guidance, helps stop moisture problems before they start.",
     category: "Home Cleaning",
     date: "2026-10-15",
-    image: stock.blogDamp,
-    imageAlt: stock.blogDamp.alt,
+    image: jobs.blogDamp,
+    imageAlt: jobs.blogDamp.alt,
     body: [
       {
         type: "p",
@@ -857,8 +858,8 @@ export const guidePosts: Post[] = [
       "Licensing, insurance, background checks, products, pricing and cancellations: the ten questions that separate a reliable cleaning company from a risky one, and our own answers.",
     category: "Home Cleaning",
     date: "2026-10-11",
-    image: stock.blogChoose,
-    imageAlt: stock.blogChoose.alt,
+    image: jobs.blogChoose,
+    imageAlt: jobs.blogChoose.alt,
     body: [
       {
         type: "p",

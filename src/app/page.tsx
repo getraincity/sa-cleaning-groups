@@ -1,7 +1,7 @@
 import Image, { type StaticImageData } from "next/image";
 import Link from "next/link";
 import cleaningWindows from "@/assets/images/cleaning-windows.jpg";
-import officeHallway from "@/assets/images/commercial/glass-hallway.jpg";
+import { jobs } from "@/content/job-photos";
 import kitchenCounter from "@/assets/images/kitchen-counter-02.jpg";
 import { AboutSplit } from "@/components/sections/about-split";
 import { AnswerBlocks } from "@/components/sections/answer-blocks";
@@ -55,8 +55,8 @@ const services: Service[] = [
     theme: "theme-custodian",
     label: "Offices & stratas",
     Icon: BuildingIcon,
-    image: officeHallway,
-    alt: "A tidy, bright office corridor",
+    image: jobs.officeHallway,
+    alt: jobs.officeHallway.alt,
     text: "We keep offices, retail spaces, stratas and commercial buildings across Vancouver spotless with reliable custodial and janitorial cleaning. Our trained, background-checked team works around your schedule.",
     href: "/custodian-services",
   },

@@ -1,4 +1,12 @@
-# Stock photo sources
+# Photo sources
+
+**Real job photos (`jobs/`, 2026-11-19).** Most photos on the site are real job photos from cleaning
+companies that gave permission for them to be used on this site, edited and with their logos and
+branding removed. The permission list is in `docs/image-permissions.md`, and the post each photo came
+from is logged in `assets-incoming/SOURCES.md`. They are built by `scripts/photos/build-job-photos.mjs`
+and are not listed on the Photo Credits page.
+
+## Stock photos
 
 Most of the working photos (people cleaning homes and workplaces, and finished rooms) are not in this folder:
 they are served from Unsplash's and Pexels' CDNs (Pexels License: free for commercial use) and listed, with
@@ -39,8 +47,6 @@ listed so each one can be traced back to its source.
 | areas/south-porch-home.jpg       | photo-1714368694128-f88a12e08634 |
 | commercial/meeting-room.jpg      | photo-1497366811353-6870744d04b2 |
 | commercial/open-office.jpg       | photo-1577412647305-991150c7d163 |
-| commercial/lobby-wet-floor.jpg   | photo-1615003382357-4cb74b16a7ab |
-| commercial/glass-hallway.jpg     | photo-1497366754035-f200968a6e72 |
 | commercial/modern-office.jpg     | photo-1706074793638-da28b90ea8ae |
 
 Blog guides (Oct-Nov 2026): the eight photos for the new guide posts are Pexels photos listed in

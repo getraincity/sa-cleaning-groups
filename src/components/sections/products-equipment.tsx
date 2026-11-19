@@ -3,7 +3,7 @@ import Link from "next/link";
 import { SectionHeader, sectionSpacing } from "@/components/ui/section-header";
 import { ArrowRightIcon, CheckIcon, LeafIcon } from "@/components/ui/icons";
 import { Reveal } from "@/components/ui/reveal";
-import { stock } from "@/content/stock-photos";
+import { jobs } from "@/content/job-photos";
 import { cn } from "@/lib/utils";
 
 type Card = {
@@ -17,15 +17,15 @@ type Card = {
 const cards: Card[] = [
   {
     title: "Cleaning Products",
-    image: stock.aboutProducts,
-    alt: stock.aboutProducts.alt,
+    image: jobs.aboutProducts,
+    alt: jobs.aboutProducts.alt,
     text: "Our natural, eco-friendly disinfectants clean, disinfect and deodorize with a fresh scent. These hospital-grade solutions target bacteria and viruses such as E. coli, HIV-1, influenza and human coronavirus, for thorough protection on high-contact surfaces.",
     points: ["Eco-friendly", "Pet-friendly", "Hospital-grade"],
   },
   {
     title: "Cleaning Equipment",
-    image: stock.aboutVan,
-    alt: stock.aboutVan.alt,
+    image: jobs.aboutVan,
+    alt: jobs.aboutVan.alt,
     text: "Top-quality tools paired with careful technique, including premium microfibre cloths that trap dirt, dust and bacteria instead of spreading them. The result is a deeper, healthier clean for your home or business.",
     points: ["Premium microfibre", "Well-kept tools", "Homes & offices"],
   },

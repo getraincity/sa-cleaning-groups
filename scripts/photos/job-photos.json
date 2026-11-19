@@ -1,0 +1,792 @@
+{
+ "_doc": "Slot -> real job photo. src = file in assets-incoming/raw; mode: full | framed (white border + corner logo) | after | before | ba (before|after side by side, labels and logo cropped out). size = desktop slot box (w x h) used for the crop ratio. pos = sharp crop position. See scripts/photos/build-job-photos.mjs.",
+ "slots": [
+  {
+   "slot": "officeHallway",
+   "page": "/",
+   "section": "Our Cleaning Services: commercial card",
+   "old": "commercial/glass-hallway.jpg",
+   "src": "onepro-078.jpg",
+   "mode": "framed",
+   "size": "600x450",
+   "alt": "A bright, empty open-plan office with new carpet tiles after a commercial clean"
+  },
+  {
+   "slot": "homeHero",
+   "page": "/home-cleaning",
+   "section": "Hero",
+   "src": "onepro-029.jpg",
+   "mode": "full",
+   "size": "1440x764",
+   "hero": true,
+   "alt": "A bright living room with a stone fireplace, a sofa and a wall of windows after a deep clean"
+  },
+  {
+   "slot": "homeKitchenSink",
+   "page": "/home-cleaning",
+   "section": "Every Room: Kitchens",
+   "src": "onepro-094.jpg",
+   "mode": "framed",
+   "size": "588x470",
+   "alt": "A spotless white farmhouse sink and quartz counter, with the drawers open after cleaning"
+  },
+  {
+   "slot": "homeBedroom",
+   "page": "/home-cleaning",
+   "section": "Every Room: Living spaces & bedrooms",
+   "src": "onepro-050.jpg",
+   "mode": "framed",
+   "size": "588x470",
+   "alt": "A freshly cleaned bedroom with oak floors, grey walls and a console table under the TV"
+  },
+  {
+   "slot": "homeWindowSpray",
+   "page": "/home-cleaning",
+   "section": "Every Room: Glass & windows",
+   "src": "onepro-015.jpg",
+   "mode": "ba",
+   "size": "588x470",
+   "alt": "Before and after: a dusty window sill and track, then wiped clean"
+  },
+  {
+   "slot": "homeStove",
+   "page": "/home-cleaning",
+   "section": "Care: Eco-friendly",
+   "src": "onepro-007.jpg",
+   "mode": "full",
+   "size": "389x350",
+   "pos": "left",
+   "alt": "The polished stainless-steel front and control panel of a range after cleaning"
+  },
+  {
+   "slot": "homePro",
+   "page": "/home-cleaning",
+   "section": "Care: Professionals",
+   "src": "onepro-040.jpg",
+   "mode": "framed",
+   "size": "389x350",
+   "pos": "right",
+   "alt": "A cordless wet vacuum cleaning the tile floor of a bright condo with a balcony view"
+  },
+  {
+   "slot": "homePets",
+   "page": "/home-cleaning",
+   "section": "Care: Pet-friendly",
+   "src": "onepro-104.jpg",
+   "mode": "ba",
+   "size": "389x350",
+   "alt": "Before and after: a vacuum brush roll full of pet hair, then the bedroom carpet vacuumed clean"
+  },
+  {
+   "slot": "homeMicrowave",
+   "page": "/home-cleaning",
+   "section": "Gallery",
+   "src": "onepro-064.jpg",
+   "mode": "ba",
+   "size": "456x300",
+   "alt": "Before and after: a stained microwave interior, then degreased and wiped clean",
+   "trim": [
+    0,
+    0,
+    0.22,
+    0
+   ]
+  },
+  {
+   "slot": "homeOven",
+   "page": "/home-cleaning",
+   "section": "Gallery",
+   "src": "onepro-030.jpg",
+   "mode": "ba",
+   "size": "456x300",
+   "alt": "Before and after: a greasy oven interior and door glass, then cleaned to a shine"
+  },
+  {
+   "slot": "homeCooktop",
+   "page": "/home-cleaning",
+   "section": "Gallery",
+   "src": "onepro-101.jpg",
+   "mode": "ba",
+   "size": "456x300",
+   "alt": "Before and after: a cooktop edge streaked with grease, then wiped clean"
+  },
+  {
+   "slot": "homeUnloading",
+   "page": "/home-cleaning",
+   "section": "Gallery",
+   "src": "onepro-024.jpg",
+   "mode": "full",
+   "size": "456x300",
+   "alt": "A carpet cleaning machine working across a beige bedroom carpet"
+  },
+  {
+   "slot": "homeDishwasher",
+   "page": "/home-cleaning",
+   "section": "Gallery (wide)",
+   "src": "onepro-034.jpg",
+   "mode": "full",
+   "size": "928x300",
+   "pos": "centre",
+   "alt": "A clean modern kitchen with a long wood island, pendant lights and white cabinets"
+  },
+  {
+   "slot": "homeDrawers",
+   "page": "/home-cleaning",
+   "section": "Gallery (wide)",
+   "src": "onepro-049.jpg",
+   "mode": "framed",
+   "size": "692x300",
+   "pos": "centre",
+   "alt": "A built-in closet with shelves and drawers above a freshly vacuumed carpet"
+  },
+  {
+   "slot": "homeShowerHandle",
+   "page": "/home-cleaning",
+   "section": "Gallery (narrow)",
+   "src": "onepro-047.jpg",
+   "mode": "framed",
+   "size": "220x300",
+   "alt": "A clean walk-in shower with white tile, a black shower set and a wall-hung toilet"
+  },
+  {
+   "slot": "homeDoorFrame",
+   "page": "/home-cleaning",
+   "section": "Gallery (narrow)",
+   "src": "ladyt-131.jpg",
+   "mode": "full",
+   "size": "220x300",
+   "alt": "A wiped-clean double light switch on a white wall"
+  },
+  {
+   "slot": "homeTable",
+   "page": "/home-cleaning",
+   "section": "Gallery (narrow)",
+   "src": "ladyt-138.jpg",
+   "mode": "full",
+   "size": "220x300",
+   "alt": "A gloved hand wiping crumbs and dust off a counter with a green cloth"
+  },
+  {
+   "slot": "deepHero",
+   "page": "/deep-cleaning",
+   "section": "Hero",
+   "src": "onepro-111.jpg",
+   "mode": "full",
+   "size": "1440x686",
+   "hero": true,
+   "alt": "A living room with gleaming dark hardwood floors and a fireplace after a deep clean"
+  },
+  {
+   "slot": "deepKitchen",
+   "page": "/deep-cleaning",
+   "section": "The Hardest-Working Room",
+   "src": "onepro-086.jpg",
+   "mode": "ba",
+   "size": "588x470",
+   "alt": "Before and after: a dusty stainless gas range, then cleaned and polished"
+  },
+  {
+   "slot": "deepOven",
+   "page": "/deep-cleaning",
+   "section": "The Hardest-Working Room",
+   "src": "onepro-103.jpg",
+   "mode": "ba",
+   "size": "588x470",
+   "alt": "Before and after: grimy oven racks and floor, then deep cleaned"
+  },
+  {
+   "slot": "moveOutHero",
+   "page": "/move-out-cleaning",
+   "section": "Hero",
+   "src": "onepro-003.jpg",
+   "mode": "full",
+   "size": "1440x686",
+   "hero": true,
+   "alt": "An empty, freshly cleaned condo living room with floor-to-ceiling windows over the river"
+  },
+  {
+   "slot": "moveOutRug",
+   "page": "/move-out-cleaning",
+   "section": "Every Corner",
+   "src": "onepro-038.jpg",
+   "mode": "after",
+   "size": "588x470",
+   "alt": "A bedroom with freshly cleaned carpet showing neat vacuum lines"
+  },
+  {
+   "slot": "moveOutSweeping",
+   "page": "/move-out-cleaning",
+   "section": "Every Corner",
+   "src": "onepro-063.jpg",
+   "mode": "ba",
+   "size": "588x470",
+   "alt": "Before and after: a fridge with food spills on the shelves, then scrubbed clean"
+  },
+  {
+   "slot": "airbnbHero",
+   "page": "/airbnb-cleaning",
+   "section": "Hero",
+   "src": "onepro-107.jpg",
+   "mode": "full",
+   "size": "1440x766",
+   "hero": true,
+   "alt": "Cleaning gear set down in a high-rise condo with a view of downtown Vancouver and the mountains"
+  },
+  {
+   "slot": "airbnbSheet",
+   "page": "/airbnb-cleaning",
+   "section": "Fresh Rooms",
+   "src": "onepro-054.jpg",
+   "mode": "framed",
+   "size": "588x470",
+   "alt": "A media room with freshly groomed carpet and a wall-mounted TV"
+  },
+  {
+   "slot": "airbnbKitchen",
+   "page": "/airbnb-cleaning",
+   "section": "Fresh Rooms",
+   "src": "onepro-100.jpg",
+   "mode": "full",
+   "size": "588x470",
+   "alt": "A clean condo kitchen corner with a gas cooktop, a dish rack and under-cabinet lights"
+  },
+  {
+   "slot": "postConstructionHero",
+   "page": "/post-construction-cleaning",
+   "section": "Hero",
+   "src": "onepro-084.jpg",
+   "mode": "framed",
+   "size": "1440x686",
+   "hero": true,
+   "pos": "centre",
+   "alt": "A newly built white kitchen with a large island and pendant lights after a post-construction clean"
+  },
+  {
+   "slot": "postConstructionMop",
+   "page": "/post-construction-cleaning",
+   "section": "Fine Dust Gets Everywhere",
+   "src": "onepro-090.jpg",
+   "mode": "after",
+   "size": "588x470",
+   "alt": "A renovated room with clean hardwood floors after the floor protection came up"
+  },
+  {
+   "slot": "postConstructionKitchen",
+   "page": "/post-construction-cleaning",
+   "section": "Fine Dust Gets Everywhere",
+   "src": "onepro-089.jpg",
+   "mode": "ba",
+   "size": "588x470",
+   "alt": "Before and after: counters and drawers covered in renovation dust, then cleaned"
+  },
+  {
+   "slot": "officeHero",
+   "page": "/office-cleaning",
+   "section": "Hero",
+   "src": "onepro-069.jpg",
+   "mode": "full",
+   "size": "1440x686",
+   "hero": true,
+   "alt": "A bright open-plan office with carpet tiles and a row of windows after cleaning"
+  },
+  {
+   "slot": "officeVacuum",
+   "page": "/office-cleaning",
+   "section": "Workspaces Your Team Enjoys",
+   "src": "onepro-070.jpg",
+   "mode": "after",
+   "size": "588x470",
+   "alt": "A newly finished office corridor with glass-walled rooms, cleaned and ready for move-in"
+  },
+  {
+   "slot": "officeMop",
+   "page": "/office-cleaning",
+   "section": "Workspaces Your Team Enjoys",
+   "src": "onepro-073.jpg",
+   "mode": "ba",
+   "size": "588x470",
+   "alt": "Before and after: glue marks on a vinyl plank floor, then cleaned off"
+  },
+  {
+   "slot": "strataHero",
+   "page": "/strata-cleaning",
+   "section": "Hero",
+   "src": "onepro-052.jpg",
+   "mode": "framed",
+   "size": "1440x686",
+   "hero": true,
+   "pos": "centre",
+   "alt": "A bright stairwell with lit steps, a black railing and hanging pendant lights"
+  },
+  {
+   "slot": "strataFloor",
+   "page": "/strata-cleaning",
+   "section": "First Impressions",
+   "src": "onepro-008.jpg",
+   "mode": "full",
+   "size": "588x470",
+   "alt": "A condo building beside tall evergreen trees",
+   "pos": "bottom"
+  },
+  {
+   "slot": "strataVacuum",
+   "page": "/strata-cleaning",
+   "section": "First Impressions",
+   "src": "onepro-018.jpg",
+   "mode": "ba",
+   "size": "588x470",
+   "alt": "Before and after: a grimy condo balcony floor and railing glass, then cleaned"
+  },
+  {
+   "slot": "custodianHero",
+   "page": "/custodian-services",
+   "section": "Hero",
+   "src": "onepro-077.jpg",
+   "mode": "framed",
+   "size": "1440x794",
+   "hero": true,
+   "pos": "centre",
+   "alt": "A long office corridor with glass-walled rooms after a commercial clean"
+  },
+  {
+   "slot": "custodianTeam",
+   "page": "/custodian-services",
+   "section": "Care for Every Kind of Space: Offices",
+   "src": "onepro-071.jpg",
+   "mode": "after",
+   "size": "588x470",
+   "alt": "A bright open-plan office with new carpet tiles, cleared and vacuumed"
+  },
+  {
+   "slot": "lobbyEntrance",
+   "page": "/custodian-services",
+   "section": "Care for Every Kind of Space: Lobbies & common areas",
+   "old": "commercial/lobby-wet-floor.jpg",
+   "src": "onepro-076.jpg",
+   "mode": "framed",
+   "size": "588x470",
+   "alt": "A clean commercial stairwell with wood-look steps and a white handrail"
+  },
+  {
+   "slot": "custodianGlassWall",
+   "page": "/custodian-services",
+   "section": "Care for Every Kind of Space: High-touch surfaces",
+   "src": "onepro-072.jpg",
+   "mode": "ba",
+   "size": "588x470",
+   "alt": "Before and after: a stair handrail with black grime and fingerprints, then wiped clean"
+  },
+  {
+   "slot": "custodianWindows",
+   "page": "/custodian-services",
+   "section": "Clean Spaces, Ready for Business",
+   "src": "onepro-011.jpg",
+   "mode": "full",
+   "size": "335x251",
+   "alt": "A long, clean shop floor under a skylight"
+  },
+  {
+   "slot": "custodianEntrance",
+   "page": "/custodian-services",
+   "section": "Clean Spaces, Ready for Business",
+   "src": "onepro-079.jpg",
+   "mode": "framed",
+   "size": "335x251",
+   "alt": "A retail space with a blue wall and exposed ceiling pipes, dusted after construction",
+   "pos": "northeast"
+  },
+  {
+   "slot": "custodianDusting",
+   "page": "/custodian-services",
+   "section": "Clean Spaces, Ready for Business",
+   "src": "onepro-080.jpg",
+   "mode": "framed",
+   "size": "335x251",
+   "alt": "New fitting rooms with wood floors and mirrors in a cleaned retail store"
+  },
+  {
+   "slot": "custodianScrubber",
+   "page": "/custodian-services",
+   "section": "Gallery",
+   "src": "onepro-074.jpg",
+   "mode": "ba",
+   "size": "456x300",
+   "alt": "Before and after: drywall dust along a carpet edge, then vacuumed away"
+  },
+  {
+   "slot": "custodianCart",
+   "page": "/custodian-services",
+   "section": "Gallery",
+   "src": "onepro-075.jpg",
+   "mode": "ba",
+   "size": "456x300",
+   "alt": "Before and after: drywall mud on a vinyl floor, then removed"
+  },
+  {
+   "slot": "custodianSteps",
+   "page": "/custodian-services",
+   "section": "Gallery",
+   "src": "onepro-081.jpg",
+   "mode": "framed",
+   "size": "456x300",
+   "alt": "A clean retail corner with black shelving and white walls"
+  },
+  {
+   "slot": "custodianLadder",
+   "page": "/custodian-services",
+   "section": "Gallery",
+   "src": "onepro-068.jpg",
+   "mode": "full",
+   "size": "456x300",
+   "alt": "New wood cabinets with the drawers open, wiped down after installation"
+  },
+  {
+   "slot": "aboutHero",
+   "page": "/about-us",
+   "section": "Hero",
+   "src": "onepro-005.jpg",
+   "mode": "full",
+   "size": "1440x734",
+   "hero": true,
+   "alt": "A spotless modern kitchen with a white island, black cabinets and stainless appliances"
+  },
+  {
+   "slot": "aboutTeam",
+   "page": "/about-us",
+   "section": "Why Vancouver Chooses S&A: Our Team",
+   "src": "onepro-025.jpg",
+   "mode": "full",
+   "size": "451x451",
+   "alt": "A hand using an upholstery tool to clean a carpeted stair"
+  },
+  {
+   "slot": "aboutCrew",
+   "page": "/about-us",
+   "section": "Why Vancouver Chooses S&A: Our Promise",
+   "src": "onepro-096.jpg",
+   "mode": "ba",
+   "size": "451x451",
+   "alt": "Before and after: a dusty bathroom floor and toilet, then scrubbed clean"
+  },
+  {
+   "slot": "aboutWorkplace",
+   "page": "/about-us",
+   "section": "Why Vancouver Chooses S&A: Homes & Workplaces",
+   "src": "onepro-115.jpg",
+   "mode": "full",
+   "size": "451x451",
+   "alt": "An empty open-concept condo with a clean kitchen and wood floors"
+  },
+  {
+   "slot": "aboutProducts",
+   "page": "/about-us",
+   "section": "Products & Equipment: Cleaning Products",
+   "src": "ladyt-137.jpg",
+   "mode": "full",
+   "size": "608x380",
+   "alt": "A gloved hand holding a scrubbed-clean sink strainer beside a scrub brush"
+  },
+  {
+   "slot": "aboutVan",
+   "page": "/about-us",
+   "section": "Products & Equipment: Cleaning Equipment",
+   "src": "onepro-023.jpg",
+   "mode": "full",
+   "size": "608x380",
+   "alt": "A carpet cleaning machine in a bright, empty bedroom"
+  },
+  {
+   "slot": "gallerySofa",
+   "page": "/about-us",
+   "section": "Spotless Results gallery",
+   "src": "onepro-035.jpg",
+   "mode": "full",
+   "size": "694x432",
+   "alt": "A bright new bathroom with a freestanding tub and a glass shower"
+  },
+  {
+   "slot": "aboutSideboard",
+   "page": "/about-us",
+   "section": "Spotless Results gallery (wide)",
+   "src": "onepro-019.jpg",
+   "mode": "framed",
+   "size": "694x210",
+   "pos": "centre",
+   "alt": "A clean balcony with a black railing looking out over green trees"
+  },
+  {
+   "slot": "galleryMirror",
+   "page": "/about-us",
+   "section": "Spotless Results gallery (wide)",
+   "src": "onepro-041.jpg",
+   "mode": "framed",
+   "size": "694x210",
+   "pos": "bottom",
+   "alt": "A marble-look bathroom with clear shower glass and a tidy vanity"
+  },
+  {
+   "slot": "aboutSweeping",
+   "page": "/about-us",
+   "section": "Spotless Results gallery",
+   "src": "onepro-046.jpg",
+   "mode": "framed",
+   "size": "341x432",
+   "alt": "A bathroom vanity with white subway tile and a glass shower, wiped clean"
+  },
+  {
+   "slot": "aboutVacuuming",
+   "page": "/about-us",
+   "section": "Spotless Results gallery",
+   "src": "onepro-045.jpg",
+   "mode": "framed",
+   "size": "341x432",
+   "alt": "A bedroom corner with fresh vacuum lines on the carpet"
+  },
+  {
+   "slot": "productsSink",
+   "page": "/products-we-trust",
+   "section": "Hero",
+   "src": "onepro-032.jpg",
+   "mode": "ba",
+   "size": "1440x706",
+   "hero": true,
+   "alt": "Before and after: a greasy stainless gas cooktop, then polished clean"
+  },
+  {
+   "slot": "productsSpray",
+   "page": "/products-we-trust",
+   "section": "For Home Cleaning",
+   "src": "ladyt-129.jpg",
+   "mode": "full",
+   "size": "493x395",
+   "alt": "Clear, streak-free glass shower doors above a clean tub"
+  },
+  {
+   "slot": "productsTools",
+   "page": "/products-we-trust",
+   "section": "For Tools & Equipment",
+   "src": "ladyt-136.jpg",
+   "mode": "full",
+   "size": "493x395",
+   "alt": "A grimy sink strainer in a black kitchen sink, about to be scrubbed"
+  },
+  {
+   "slot": "downtownTip",
+   "page": "/locations/downtown-vancouver",
+   "section": "Made for Downtown Living (balcony tip)",
+   "src": "onepro-006.jpg",
+   "mode": "full",
+   "size": "583x260",
+   "alt": "A clean condo balcony with a glass railing high above the city"
+  },
+  {
+   "slot": "locationsMop",
+   "page": "/locations/downtown-vancouver",
+   "section": "Homes & Workplaces: High-rise condos",
+   "src": "onepro-059.jpg",
+   "mode": "ba",
+   "size": "453x340",
+   "alt": "Before and after: a dusty laminate floor in an empty condo bedroom, then cleaned"
+  },
+  {
+   "slot": "downtownLofts",
+   "page": "/locations/downtown-vancouver",
+   "section": "Homes & Workplaces",
+   "src": "onepro-110.jpg",
+   "mode": "full",
+   "size": "453x340",
+   "alt": "A clean, empty high-rise bedroom with wood floors and tower views"
+  },
+  {
+   "slot": "northTip",
+   "page": "/locations/north-vancouver",
+   "section": "Built for North Shore Life (rainy-season tip)",
+   "src": "onepro-102.jpg",
+   "mode": "ba",
+   "size": "583x260",
+   "alt": "Before and after: a grubby tile floor and grout, then brightened"
+  },
+  {
+   "slot": "northCondos",
+   "page": "/locations/north-vancouver",
+   "section": "Homes & Workplaces: Lonsdale condos",
+   "src": "onepro-017.jpg",
+   "mode": "full",
+   "size": "453x340",
+   "alt": "A clean curved condo balcony with a glass railing and a wide city view"
+  },
+  {
+   "slot": "locationsFloor",
+   "page": "/locations/north-vancouver",
+   "section": "Homes & Workplaces",
+   "src": "onepro-039.jpg",
+   "mode": "ba",
+   "size": "453x340",
+   "alt": "Before and after: a dusty hardwood floor by tall windows, then cleaned"
+  },
+  {
+   "slot": "eastTip",
+   "page": "/locations/east-vancouver",
+   "section": "Care for Character Homes (move-out tip)",
+   "src": "onepro-098.jpg",
+   "mode": "ba",
+   "size": "583x260",
+   "alt": "Before and after: paint drips and dust on a dark floor and baseboard, then cleaned"
+  },
+  {
+   "slot": "eastCharacter",
+   "page": "/locations/east-vancouver",
+   "section": "Homes & Workplaces: Character homes",
+   "src": "onepro-119.jpg",
+   "mode": "full",
+   "size": "453x340",
+   "alt": "A clean, empty room with wood floors and a large window"
+  },
+  {
+   "slot": "eastFamily",
+   "page": "/locations/east-vancouver",
+   "section": "Homes & Workplaces: Family houses",
+   "src": "onepro-051.jpg",
+   "mode": "framed",
+   "size": "453x340",
+   "alt": "A family kitchen with a large island, pendant lights and wood floors, freshly cleaned"
+  },
+  {
+   "slot": "westTip",
+   "page": "/locations/west-vancouver",
+   "section": "Care for View Homes (clear views tip)",
+   "src": "onepro-022.jpg",
+   "mode": "framed",
+   "size": "583x260",
+   "pos": "bottom",
+   "alt": "Clean glass balcony doors opening onto a wide view"
+  },
+  {
+   "slot": "westHillside",
+   "page": "/locations/west-vancouver",
+   "section": "Homes & Workplaces: Hillside view homes",
+   "src": "onepro-099.jpg",
+   "mode": "framed",
+   "size": "453x340",
+   "alt": "A kitchen with a granite island and cream cabinets after a full clean"
+  },
+  {
+   "slot": "westStreets",
+   "page": "/locations/west-vancouver",
+   "section": "Homes & Workplaces: Quiet residential streets",
+   "src": "onepro-087.jpg",
+   "mode": "ba",
+   "size": "453x340",
+   "alt": "Before and after: a staircase with protective covering and dust, then cleaned"
+  },
+  {
+   "slot": "southTip",
+   "page": "/locations/south-vancouver",
+   "section": "Helping Busy Households (new-build tip)",
+   "src": "onepro-033.jpg",
+   "mode": "full",
+   "size": "583x260",
+   "alt": "A newly built home with a wood staircase, hardwood floors and an open kitchen, ready to move in"
+  },
+  {
+   "slot": "southFamily",
+   "page": "/locations/south-vancouver",
+   "section": "Homes & Workplaces: Family homes",
+   "src": "onepro-091.jpg",
+   "mode": "after",
+   "size": "453x340",
+   "alt": "A room with white wainscoting and clean hardwood floors after a renovation clean"
+  },
+  {
+   "slot": "southCondos",
+   "page": "/locations/south-vancouver",
+   "section": "Homes & Workplaces",
+   "src": "onepro-058.jpg",
+   "mode": "full",
+   "size": "453x340",
+   "alt": "An empty, cleaned condo room with big windows over the city"
+  },
+  {
+   "slot": "blogCost",
+   "page": "/blog/house-cleaning-cost-vancouver",
+   "section": "Post cover",
+   "src": "onepro-013.jpg",
+   "mode": "ba",
+   "size": "1200x600",
+   "alt": "Before and after: a stained bathroom counter and sink, then cleaned"
+  },
+  {
+   "slot": "blogDepositMoveOut",
+   "page": "/blog/move-out-cleaning-damage-deposit-bc",
+   "section": "Post cover",
+   "src": "onepro-031.jpg",
+   "mode": "ba",
+   "size": "1200x600",
+   "alt": "Before and after: a dusty tile floor and baseboard heater, then wiped clean"
+  },
+  {
+   "slot": "blogStrata",
+   "page": "/blog/strata-cleaning-contract-bc",
+   "section": "Post cover",
+   "src": "onepro-020.jpg",
+   "mode": "ba",
+   "size": "1200x600",
+   "alt": "Before and after: a stained high-rise balcony floor, then cleaned"
+  },
+  {
+   "slot": "blogAirbnb",
+   "page": "/blog/airbnb-turnover-cleaning-checklist-vancouver",
+   "section": "Post cover",
+   "src": "onepro-053.jpg",
+   "mode": "framed",
+   "size": "1200x600",
+   "pos": "centre",
+   "alt": "An empty fridge with clean glass shelves and drawers"
+  },
+  {
+   "slot": "blogDeepCost",
+   "page": "/blog/deep-cleaning-cost-vancouver",
+   "section": "Post cover",
+   "src": "onepro-095.jpg",
+   "mode": "ba",
+   "size": "1200x600",
+   "alt": "Before and after: a grimy black gas range, then cleaned"
+  },
+  {
+   "slot": "blogDamp",
+   "page": "/blog/prevent-mould-damp-vancouver-winter",
+   "section": "Post cover",
+   "src": "onepro-085.jpg",
+   "mode": "ba",
+   "size": "1200x600",
+   "alt": "Before and after: grout haze and stickers in a bathtub, then scrubbed clean"
+  },
+  {
+   "slot": "blogChoose",
+   "page": "/blog/how-to-choose-a-cleaning-company-vancouver",
+   "section": "Post cover",
+   "src": "onepro-088.jpg",
+   "mode": "ba",
+   "size": "1200x600",
+   "alt": "Before and after: a dusty bathroom sink and toilet, then cleaned"
+  },
+  {
+   "slot": "blogConstruction",
+   "page": "/blog/post-construction-cleaning-guide",
+   "section": "Post cover",
+   "src": "onepro-092.jpg",
+   "mode": "ba",
+   "size": "1200x600",
+   "alt": "Before and after: a closet full of boxes and debris, then cleared and cleaned"
+  },
+  {
+   "slot": "blogDeepClean",
+   "page": "/blog/deep-clean-vs-regular-clean",
+   "section": "Post cover",
+   "src": "onepro-014.jpg",
+   "mode": "ba",
+   "size": "1200x600",
+   "alt": "Before and after: marks around a bathroom sink, then polished away"
+  }
+ ]
+}

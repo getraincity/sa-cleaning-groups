@@ -6,20 +6,21 @@ The companies below have given permission for their photos to be used on the S&A
 Group website, **edited, with their logos and branding removed**. For real job photos, use
 **only** these sources:
 
-| #   | Source                                            | Notes                                                         |
-| --- | ------------------------------------------------- | ------------------------------------------------------------- |
-| 1   | https://www.oneprocleaning.ca                     | Website                                                       |
-| 2   | https://detailsbyladyt.ca/residential             | Website, residential page                                     |
-| 3   | https://www.instagram.com/caliber_cleaning        | Instagram                                                     |
-| 4   | https://www.instagram.com/procarecleaning.service | Instagram                                                     |
-| 5   | https://www.instagram.com/cleaned.by.her          | Instagram                                                     |
-| 6   | https://www.instagram.com/cleaner_things          | Instagram                                                     |
-| 7   | https://www.instagram.com/acleanslateee           | Instagram                                                     |
-| 8   | https://www.instagram.com/emscleanco              | Instagram                                                     |
-| 9   | https://www.instagram.com/thecleanerdetail._      | Instagram                                                     |
-| 10  | https://www.instagram.com/cleaningsolutionltd     | Instagram                                                     |
-| 11  | https://www.instagram.com/splash.cleaning         | Instagram; also its Google profile (post-construction photos) |
-| 12  | https://maps.app.goo.gl/DNSuoPmLqL5GJVTG9         | Google Maps profile (commercial photos)                       |
+| #   | Source                                            | Notes                     |
+| --- | ------------------------------------------------- | ------------------------- |
+| 1   | https://www.oneprocleaning.ca                     | Website                   |
+| 2   | https://detailsbyladyt.ca/residential             | Website, residential page |
+| 3   | https://www.instagram.com/caliber_cleaning        | Instagram                 |
+| 4   | https://www.instagram.com/procarecleaning.service | Instagram                 |
+| 5   | https://www.instagram.com/cleaned.by.her          | Instagram                 |
+| 6   | https://www.instagram.com/cleaner_things          | Instagram                 |
+| 7   | https://www.instagram.com/acleanslateee           | Instagram                 |
+| 8   | https://www.instagram.com/emscleanco              | Instagram                 |
+| 9   | https://www.instagram.com/thecleanerdetail._      | Instagram                 |
+| 10  | https://www.instagram.com/cleaningsolutionltd     | Instagram                 |
+
+Updated 2026-11-19: the list was narrowed to the 10 sources above. `splash.cleaning` (Instagram and
+Google profile) and the Google Maps profile are **not** to be used.
 
 ## Conditions
 
