@@ -413,6 +413,23 @@ _Fix:_ slide-in overflow on phones.
   websites had too few commercial shots. Fill them from the Instagram sources, which need a
   logged-in browser (Claude in Chrome); the cloud sandbox can't log in to Instagram.
 - `node scripts/qa/slots.mjs` prints every photo slot (page, section, file, alt).
+- **Instagram review (2026-11-19, built-in browser, signed in, read-only):** all 8 Instagram
+  sources were looked through and **none of the 10 stock slots was filled**. The accounts are
+  almost entirely residential, and none has an office, meeting room, corridor, clinic, shopfront,
+  restaurant or lemon shot:
+  - `caliber_cleaning` (68 posts): carpet extraction in empty homes, ovens, cars, a branded van;
+  - `procarecleaning.service` (6): residential bathrooms;
+  - `cleaned.by.her` (12+): homes, a promo graphic, two staff in branded tops;
+  - `cleaner_things` (12): UK homes; one post (#8 on the grid) may be a salon;
+  - `acleanslateee` (174): UK homes, many text graphics;
+  - `emscleanco` (930): Melbourne end-of-lease homes;
+  - `thecleanerdetail._` (21): UK homes;
+  - `cleaningsolutionltd` (1,252; ~220 checked): serviced-apartment collages. The only
+    commercial post is a reel of steam-cleaning a commercial kitchen hood
+    (`/cleaningsolutionltd/reel/DS4_sOhiCqG/`): a blurry, grimy video frame, not usable as a hero.
+  - The cloud sandbox can't reach Instagram or its CDN (proxy 403), so any photo picked later has
+    to come through the user's computer (a connected folder) or be sent by the client.
+  - Those 10 slots stay stock until commercial job photos arrive (ask the client, §4.4).
 
 ## 9. Waiting on the client (as of round 5)
 
