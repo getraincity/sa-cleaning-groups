@@ -405,6 +405,8 @@ _Fix:_ slide-in overflow on phones.
   Full table: `docs/image-replacements.md`; the before-state inventory: `docs/image-inventory.md`.
 - Job photos aren't listed on Photo Credits. Alt text describes the room or task only; it never
   says the photo shows S&A staff.
+- The user confirmed (2026-11-19) that the client is fine with this: no credit to the source
+  companies anywhere on the site.
 - Skipped on purpose: photos with another company's staff in branded shirts, DeWalt-branded gear,
   floor-protection board printed with a logo, appliance brand names, text overlays and screenshots.
 - Still stock (7): `productsLemon`, `custodianVacuum`, `custodianHallway`, `eastShops`,
