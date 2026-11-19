@@ -23,6 +23,14 @@ const publicAssetCache = {
 const nextConfig: NextConfig = {
   poweredByHeader: false,
   images: {
+    // Serve every image as-is instead of through Vercel's Image Optimization (/_next/image).
+    // On 2026-11-19 the project ran out of its Vercel image-optimization quota and every image
+    // that wasn't already cached came back "402 OPTIMIZED_IMAGE_REQUEST_PAYMENT_REQUIRED", so
+    // most photos on the live site were blank. Images are therefore prepared at their final size
+    // ahead of time: job photos by scripts/photos/build-job-photos.mjs, the other local ones by
+    // scripts/photos/compress-images.mjs, and stock photos are requested from their CDN at a
+    // capped width (src/content/stock-photos.ts).
+    unoptimized: true,
     // Stock photos are served from Unsplash's and Pexels' CDNs (see src/content/stock-photos.ts).
     remotePatterns: [
       { protocol: "https", hostname: "images.unsplash.com", pathname: "/photo-*" },

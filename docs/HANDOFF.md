@@ -206,6 +206,7 @@ npx next build
 NODE_USE_ENV_PROXY=1 NODE_EXTRA_CA_CERTS=/root/.ccr/ca-bundle.crt npx next start -p 3000 &
 node scripts/qa/sweep.mjs                       # must print "no problems"
 node scripts/qa/inventory.mjs                   # must end "No photo appears on more than one page."
+node scripts/qa/images.mjs                      # must end "All N images load."
 node scripts/qa/sheet.mjs /about-us 1440 <scratchpad>/about-desktop
 node scripts/qa/sheet.mjs /about-us 390  <scratchpad>/about-mobile
 node scripts/qa/element.mjs / 1440 "section:has(h2:text('Give the Gift'))" <scratchpad>/gift.png
@@ -221,6 +222,9 @@ fuser -k 3000/tcp                               # stop the server afterwards
 - **`sheet.mjs`** cuts a full-page screenshot into side-by-side strips. Open each sheet with Read
   and actually look, at 1440, about 820 and 390 widths, for every page you changed.
 - **`element.mjs`** takes a full-resolution close-up of one section.
+- **`images.mjs`** checks that every image on every sitemap page actually loads. **Also run it
+  against the live site after each merge** (`BASE_URL=https://sacleaninggroup.ca`, plus the two
+  proxy variables above): some failures only happen on Vercel (see "Blank photos on the live site").
 - **`inventory.mjs`** lists the photos on every page and flags any photo used on more than one page
   (Photo Credits and a post's own blog cards are expected and ignored).
 - **`prettier --check`** warns about `src/assets/images/PHOTO-CREDITS.md`. That warning predates
@@ -432,6 +436,24 @@ _Fix:_ slide-in overflow on phones.
   - The cloud sandbox can't reach Instagram or its CDN (proxy 403), so any photo picked later has
     to come through the user's computer (a connected folder) or be sent by the client.
   - Those 10 slots stay stock until commercial job photos arrive (ask the client, §4.4).
+
+**Blank photos on the live site (2026-11-19)**
+
+- Right after the job photos went live, most photos on sacleaninggroup.ca were blank (147 of 349
+  images, on every page). Cause: Vercel's image optimizer (`/_next/image`) answered
+  `402 OPTIMIZED_IMAGE_REQUEST_PAYMENT_REQUIRED`. The project had used up its plan's
+  image-optimization quota, so only images optimized and cached earlier still showed. The files
+  themselves were fine.
+- Fix: `images.unoptimized: true` in `next.config.ts`. Images are now served as-is, so they are
+  prepared at their final size ahead of time:
+  - job photos by `scripts/photos/build-job-photos.mjs`;
+  - other local photos by `scripts/photos/compress-images.mjs`, which caps the long side and
+    recompresses;
+  - Unsplash and Pexels URLs are capped at 1920px (`sizeParam` in `stock-photos.ts`).
+  - The navbar logo and the Crystal Clear partner logo were resized to 3× their display size.
+- **Don't turn the optimizer back on** unless the Vercel plan includes enough image
+  optimization. Add new photos already sized (about 1600px, or 2400px for full-width heroes;
+  WebP or mozjpeg) and run `node scripts/qa/images.mjs` against the live site after deploying.
 
 ## 9. Waiting on the client (as of round 5)
 

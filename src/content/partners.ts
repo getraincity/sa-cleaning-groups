@@ -50,7 +50,7 @@ export const partners: Partner[] = [
     blurb:
       "Residential and commercial cleaning across Greater Vancouver, from Vancouver and Richmond out to Langley.",
     href: "https://crystalclearcleans.ca/",
-    logo: { src: "/partners/crystal-clear-cleans-logo.png", width: 725, height: 927 },
+    logo: { src: "/partners/crystal-clear-cleans-logo.png", width: 360, height: 460 },
   },
   {
     name: "RainCity Property Maintenance",
