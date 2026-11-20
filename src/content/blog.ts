@@ -2,7 +2,6 @@ import type { StaticImageData } from "next/image";
 import kitchenAppliances from "@/assets/images/kitchen-appliances.jpg";
 import { guidePosts } from "@/content/blog-guides";
 import { jobs } from "@/content/job-photos";
-import { stock } from "@/content/stock-photos";
 
 export const blogCategories = ["Home Cleaning", "Commercial"] as const;
 export type BlogCategory = (typeof blogCategories)[number];
@@ -44,8 +43,8 @@ const allPosts: Post[] = [
       "A clean workplace makes a better first impression and a healthier place to work. Here's what should be cleaned, and how often, to keep your office in shape.",
     category: "Commercial",
     date: "2026-09-22",
-    image: stock.blogOffice,
-    imageAlt: stock.blogOffice.alt,
+    image: jobs.blogOffice,
+    imageAlt: jobs.blogOffice.alt,
     body: [
       {
         type: "p",

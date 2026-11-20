@@ -81,18 +81,14 @@ The egress proxy blocks a lot:
 - Elfsight, so the Google Reviews widget is invisible locally;
 - Google Tag Manager.
 
-Don't burn time retrying. Google Fonts and npm work. An **Unsplash connector** may be available;
-earlier stock photos came from Unsplash and are listed in `src/assets/images/PHOTO-CREDITS.md`.
-Keep that file updated when you add stock photos.
+Don't burn time retrying. Google Fonts and npm work.
 
-- Most stock photos are served from `images.unsplash.com` (`src/content/stock-photos.ts`). If that
-  host is blocked, ask the user to add it under the environment's Allowed domains; never pick
-  photos you can't look at.
-- Locally, start the server with `NODE_USE_ENV_PROXY=1 NODE_EXTRA_CA_CERTS=/root/.ccr/ca-bundle.crt`
-  or every Unsplash photo renders blank (Next's image optimizer fetches from the Node process,
-  which ignores the proxy otherwise).
-- Large Unsplash search results are saved to a file; read them with a script, then build contact
-  sheets of the thumbnails and look at them before choosing.
+- **The site has no stock photos (2026-11-20)** and the client has rejected them three times: don't
+  add Unsplash, Pexels or AI images. New photos come from the client or the permitted sources in
+  `docs/image-permissions.md` (see "Real job photos" in §8).
+- Start the local server with `NODE_USE_ENV_PROXY=1 NODE_EXTRA_CA_CERTS=/root/.ccr/ca-bundle.crt`
+  so the QA scripts can reach outside hosts through the proxy.
+- When choosing photos, build contact sheets of the thumbnails and look at them before picking.
 
 ### 4.2 Processes and tools
 
@@ -181,8 +177,9 @@ The user forwards this to the client as-is:
   - `locations.ts`, `blog.ts`, `pricing.ts`, `products.ts`, `partners.ts`, `contact.ts`;
   - social URLs are in `socialLinks` in `src/lib/site.ts`. They're empty until the client gives
     them, and every social button stays hidden while they are.
-- **Images:** client job photos and Unsplash stock live in `src/assets/images/`, imported so
-  `next/image` optimises them. Partner logos go in `public/partners/`.
+- **Images:** the client's own photos live in `src/assets/images/` and the permitted job photos in
+  `src/assets/images/jobs/` (via `src/content/job-photos.ts`), imported with `next/image`, which
+  serves them as-is (see "Blank photos on the live site"). Partner logos go in `public/partners/`.
 - **SEO:** use `pageMetadata()` for every page, add new routes to `src/app/sitemap.ts`, and
   escape `<` in JSON-LD (`JsonLd` already does).
 
@@ -226,7 +223,7 @@ fuser -k 3000/tcp                               # stop the server afterwards
   against the live site after each merge** (`BASE_URL=https://sacleaninggroup.ca`, plus the two
   proxy variables above): some failures only happen on Vercel (see "Blank photos on the live site").
 - **`inventory.mjs`** lists the photos on every page and flags any photo used on more than one page
-  (Photo Credits and a post's own blog cards are expected and ignored).
+  (a post's own blog cards are expected and ignored).
 - **`prettier --check`** warns about `src/assets/images/PHOTO-CREDITS.md`. That warning predates
   round 3 and you can ignore it.
 
@@ -407,17 +404,13 @@ _Fix:_ slide-in overflow on phones.
   crops to the slot, applies one light grade and exports WebP. Raw files go in
   `assets-incoming/raw/` (git-ignored); `assets-incoming/SOURCES.md` logs each file's source.
   Full table: `docs/image-replacements.md`; the before-state inventory: `docs/image-inventory.md`.
-- Job photos aren't listed on Photo Credits. Alt text describes the room or task only; it never
+- Job photos aren't credited anywhere. Alt text describes the room or task only; it never
   says the photo shows S&A staff.
 - The user confirmed (2026-11-19) that the client is fine with this: no credit to the source
   companies anywhere on the site.
 - Skipped on purpose: photos with another company's staff in branded shirts, DeWalt-branded gear,
   floor-protection board printed with a logo, appliance brand names, text overlays and screenshots.
-- Still stock (7): `productsLemon`, `custodianVacuum`, `custodianHallway`, `eastShops`,
-  `westClinics`, `blogOffice`, `blogCommercialCost`, plus `commercial/meeting-room`,
-  `open-office` and `modern-office` on area pages. All but the lemon are commercial: the two
-  websites had too few commercial shots. Fill them from the Instagram sources, which need a
-  logged-in browser (Claude in Chrome); the cloud sandbox can't log in to Instagram.
+- The 10 slots left on stock then were all replaced on 2026-11-20 (see "No stock photos left").
 - `node scripts/qa/slots.mjs` prints every photo slot (page, section, file, alt).
 - **Instagram review (2026-11-19, built-in browser, signed in, read-only):** all 8 Instagram
   sources were looked through and **none of the 10 stock slots was filled**. The accounts are
@@ -435,7 +428,7 @@ _Fix:_ slide-in overflow on phones.
     (`/cleaningsolutionltd/reel/DS4_sOhiCqG/`): a blurry, grimy video frame, not usable as a hero.
   - The cloud sandbox can't reach Instagram or its CDN (proxy 403), so any photo picked later has
     to come through the user's computer (a connected folder) or be sent by the client.
-  - Those 10 slots stay stock until commercial job photos arrive (ask the client, §4.4).
+  - Those 10 slots were filled from oneprocleaning.ca's blog on 2026-11-20 (below).
 
 **Blank photos on the live site (2026-11-19)**
 
@@ -449,11 +442,32 @@ _Fix:_ slide-in overflow on phones.
   - job photos by `scripts/photos/build-job-photos.mjs`;
   - other local photos by `scripts/photos/compress-images.mjs`, which caps the long side and
     recompresses;
-  - Unsplash and Pexels URLs are capped at 1920px (`sizeParam` in `stock-photos.ts`).
   - The navbar logo and the Crystal Clear partner logo were resized to 3× their display size.
 - **Don't turn the optimizer back on** unless the Vercel plan includes enough image
   optimization. Add new photos already sized (about 1600px, or 2400px for full-width heroes;
   WebP or mozjpeg) and run `node scripts/qa/images.mjs` against the live site after deploying.
+
+**No stock photos left (2026-11-20)**
+
+- The audit found 34 stock photos still live: 24 neighbourhood scenery shots on the area pages and
+  10 cleaning/commercial ones. The user asked for all of them to be real job photos.
+- oneprocleaning.ca's **blog** (about 50 case-study posts, `/post/...`) holds ~740 job photos the
+  first round never looked at. All 34 slots came from there (`onepro-x###.jpg` in `raw/`, logged
+  in `assets-incoming/SOURCES.md` and `docs/image-replacements.md`).
+- **Check for re-uploads before picking:** OnePro posts the same photo on several pages under
+  different media IDs, so an "unused" ID can be a photo already on the site (e.g. the Airbnb and
+  Home Cleaning heroes). Compare candidates against the `jobs/` contact sheet by eye.
+- Area pages: hero, hub card and the room-by-room gallery (was the "Life in …" landmark gallery,
+  now "Every Room, Cleaned Top to Bottom") are job photos; the hero captions describe the clean,
+  never the place. The community section still names local spots in text.
+- **Commercial photos are used up.** OnePro's one office job (5,000 sq ft, Burnaby) is on the site
+  8 times; the other sources have none. So, as the user chose, Custodian "Open offices" became
+  "Rental suites", the office-checklist cover is a compact kitchen, and the Downtown, North, East
+  and West commercial tiles became furnished suites, townhouses, basement & laneway suites and
+  condos (South keeps an office). When the client sends commercial job photos, put offices back.
+- The Fresh Lemon card on Products We Trust shows a clean sink (no source has a lemon photo).
+- `stock-photos.ts`, the Photo Credits page and the Unsplash/Pexels image hosts were removed;
+  `/photo-credits` redirects home.
 
 ## 9. Waiting on the client (as of round 5)
 

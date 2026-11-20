@@ -211,9 +211,9 @@ export default async function LocationPage({ params }: Props) {
 
       <PhotoGrid
         className="bg-[#f7f5f4]"
-        eyebrow={{ icon: <MapPinIcon />, label: `Around ${location.short}` }}
-        title={`Life in ${location.name}`}
-        description={`Some of the places that make ${location.short} home for the people we clean for.`}
+        eyebrow={{ icon: <HomeIcon />, label: "Room by room" }}
+        title="Every Room, Cleaned Top to Bottom"
+        description={`Kitchens, bathrooms and living spaces in ${location.short} homes all get the same detailed care.`}
         items={location.gallery}
       />
 

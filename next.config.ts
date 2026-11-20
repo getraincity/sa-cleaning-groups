@@ -27,15 +27,9 @@ const nextConfig: NextConfig = {
     // On 2026-11-19 the project ran out of its Vercel image-optimization quota and every image
     // that wasn't already cached came back "402 OPTIMIZED_IMAGE_REQUEST_PAYMENT_REQUIRED", so
     // most photos on the live site were blank. Images are therefore prepared at their final size
-    // ahead of time: job photos by scripts/photos/build-job-photos.mjs, the other local ones by
-    // scripts/photos/compress-images.mjs, and stock photos are requested from their CDN at a
-    // capped width (src/content/stock-photos.ts).
+    // ahead of time: job photos by scripts/photos/build-job-photos.mjs and the other local ones
+    // by scripts/photos/compress-images.mjs.
     unoptimized: true,
-    // Stock photos are served from Unsplash's and Pexels' CDNs (see src/content/stock-photos.ts).
-    remotePatterns: [
-      { protocol: "https", hostname: "images.unsplash.com", pathname: "/photo-*" },
-      { protocol: "https", hostname: "images.pexels.com", pathname: "/photos/**" },
-    ],
   },
   async headers() {
     return [
@@ -68,6 +62,8 @@ const nextConfig: NextConfig = {
         destination: "/blog",
         permanent: true,
       })),
+      // The Photo Credits page listed stock photos; the site has none left (2026-11-20).
+      { source: "/photo-credits", destination: "/", permanent: true },
       // The old Launch27 booking page; bookings now start at the contact form.
       {
         source: "/book-home-cleaning",

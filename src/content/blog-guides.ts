@@ -1,5 +1,4 @@
 import { jobs } from "@/content/job-photos";
-import { stock } from "@/content/stock-photos";
 import type { Post } from "@/content/blog";
 
 /**
@@ -990,8 +989,8 @@ export const guidePosts: Post[] = [
       "Why two quotes for the same office can be so different, what a clear commercial cleaning quote should list, and how to compare providers fairly.",
     category: "Commercial",
     date: "2026-10-07",
-    image: stock.blogCommercialCost,
-    imageAlt: stock.blogCommercialCost.alt,
+    image: jobs.blogCommercialCost,
+    imageAlt: jobs.blogCommercialCost.alt,
     body: [
       {
         type: "p",

@@ -6,60 +6,23 @@ branding removed. The permission list is in `docs/image-permissions.md`, and the
 from is logged in `assets-incoming/SOURCES.md`. They are built by `scripts/photos/build-job-photos.mjs`
 and are not listed on the Photo Credits page.
 
-## Stock photos
+## No stock photos (2026-11-20)
 
-Most of the working photos (people cleaning homes and workplaces, and finished rooms) are not in this folder:
-they are served from Unsplash's and Pexels' CDNs (Pexels License: free for commercial use) and listed, with
-photographer and photo ID, in
-`src/content/stock-photos.ts`. The site's Photo Credits page (`/photo-credits`) is built from that
-list. Each of those photos is used in exactly one place on the site.
+The site has no stock photos left: the last 34 (Unsplash and Pexels, including the neighbourhood
+scenery on the area pages and the files that were in `areas/` and `commercial/`) were replaced with
+real job photos, so the Photo Credits page was removed and `/photo-credits` redirects home.
 
-The photos in `areas/` and `commercial/` are from [Unsplash](https://unsplash.com)
-and used under the [Unsplash License](https://unsplash.com/license) (free for commercial use, no
-attribution required). They were resized to 1400px and recompressed. The Unsplash photo IDs are
-listed so each one can be traced back to its source.
-
-| File                             | Unsplash photo                   |
-| -------------------------------- | -------------------------------- |
-| areas/downtown-skyline.jpg       | photo-1730661906876-18bfc6e95f2f |
-| areas/downtown-coal-harbour.jpg  | photo-1609825569040-3e351dd7b0da |
-| areas/downtown-false-creek.jpg   | photo-1586718340067-c81cd831811e |
-| areas/downtown-towers.jpg        | photo-1608151599832-443c06f6df08 |
-| areas/north-lonsdale-quay.jpg    | photo-1674892806803-354eebf6bf3f |
-| areas/north-deep-cove.jpg        | photo-1591620922485-9b02e20d94e3 |
-| areas/north-capilano-bridge.jpg  | photo-1515022614687-234cd10406dd |
-| areas/north-shore-view.jpg       | photo-1693251368019-aeee9c88da92 |
-| areas/north-lower-lonsdale.jpg   | photo-1676269230149-f70dec3bddc1 |
-| areas/west-lighthouse.jpg        | photo-1660575144644-90d3bbbac282 |
-| areas/west-ambleside.jpg         | photo-1555910893-87bc18a56207    |
-| areas/west-horseshoe-bay.jpg     | photo-1716183591853-35681eeb1dd3 |
-| areas/west-howe-sound-sunset.jpg | photo-1526268072039-3e33e8f0e379 |
-| areas/west-hillside-homes.jpg    | photo-1586931213005-7cd37c9f6253 |
-| areas/east-van-sign.jpg          | photo-1519715740-0d298503cc82    |
-| areas/east-second-narrows.jpg    | photo-1574966448428-a2c7e6e4060e |
-| areas/east-city-view.jpg         | photo-1553855804-5ccc88ae0a2b    |
-| areas/east-character-house.jpg   | photo-1656665456938-ccf87ad2892f |
-| areas/east-blossom-house.jpg     | photo-1681320855712-d158b9f9da00 |
-| areas/south-qe-park-view.jpg     | photo-1592838918087-5d4d31e32204 |
-| areas/south-conservatory.jpg     | photo-1710719774522-e68a62c5e2ba |
-| areas/south-city-view.jpg        | photo-1623125456909-ae1b8f37bd5f |
-| areas/south-family-home.jpg      | photo-1656665456926-63dfa5b77403 |
-| areas/south-porch-home.jpg       | photo-1714368694128-f88a12e08634 |
-| commercial/meeting-room.jpg      | photo-1497366811353-6870744d04b2 |
-| commercial/open-office.jpg       | photo-1577412647305-991150c7d163 |
-| commercial/modern-office.jpg     | photo-1706074793638-da28b90ea8ae |
-
-Blog guides (Oct-Nov 2026): the eight photos for the new guide posts are Pexels photos listed in
-`src/content/stock-photos.ts` (keys starting `blog`), each used on its own post only.
+The other photos in this folder (kitchens, living room, windows, `car-before-after-*`) are the
+client's own job photos.
 
 Product pictures (Nov 2026): the photos in `products/` show the products named on the Products We
 Trust page, as the client asked ("pictures of the product"). Each is the maker's own product
 picture, resized to 800px, and each card links to the brand's site where one is known.
 
-| File                                     | Source                                                        |
-| ---------------------------------------- | ------------------------------------------------------------- |
-| products/nature-clean-multi-surface.jpg  | natureclean.ca (Multi-Surface Spray Cleaner, Lemon Verbena)   |
-| products/mrs-meyers-multi-surface.jpg    | mrsmeyers.com (Lavender Multi-Surface Everyday Cleaner)       |
-| products/bona-hardwood-floor-cleaner.jpg | bona.com (Hardwood Floor Cleaner article photo, cropped)      |
-| products/rag-company-microfibre.jpg      | theragcompany.com (Wrinkle Glass Towel)                       |
-| products/allens-cleaning-vinegar.jpg     | The sample page the client sent (detailsbyladyt.ca)           |
+| File                                     | Source                                                      |
+| ---------------------------------------- | ----------------------------------------------------------- |
+| products/nature-clean-multi-surface.jpg  | natureclean.ca (Multi-Surface Spray Cleaner, Lemon Verbena) |
+| products/mrs-meyers-multi-surface.jpg    | mrsmeyers.com (Lavender Multi-Surface Everyday Cleaner)     |
+| products/bona-hardwood-floor-cleaner.jpg | bona.com (Hardwood Floor Cleaner article photo, cropped)    |
+| products/rag-company-microfibre.jpg      | theragcompany.com (Wrinkle Glass Towel)                     |
+| products/allens-cleaning-vinegar.jpg     | The sample page the client sent (detailsbyladyt.ca)         |

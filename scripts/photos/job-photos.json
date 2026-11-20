@@ -787,6 +787,318 @@
    "mode": "ba",
    "size": "1200x600",
    "alt": "Before and after: marks around a bathroom sink, then polished away"
+  },
+  {
+   "slot": "downtownArea",
+   "page": "/locations/downtown-vancouver",
+   "section": "Hero photo",
+   "src": "onepro-x728.jpg",
+   "mode": "full",
+   "size": "480x600",
+   "alt": "A bright condo room with clean floors and a balcony door looking out at a tower"
+  },
+  {
+   "slot": "downtownCard",
+   "page": "/locations",
+   "section": "Area card: Downtown Vancouver",
+   "src": "onepro-x624.jpg",
+   "mode": "full",
+   "size": "700x400",
+   "alt": "A sleek white condo kitchen with a quartz island and a gas cooktop, wiped down and empty"
+  },
+  {
+   "slot": "downtownKitchen",
+   "page": "/locations/downtown-vancouver",
+   "section": "Room by room: kitchens",
+   "src": "onepro-x557.jpg",
+   "mode": "full",
+   "size": "453x340",
+   "alt": "A condo kitchen with a black marble backsplash and white quartz counters after cleaning"
+  },
+  {
+   "slot": "downtownBath",
+   "page": "/locations/downtown-vancouver",
+   "section": "Room by room: bathrooms",
+   "src": "onepro-x459.jpg",
+   "mode": "full",
+   "size": "453x340",
+   "alt": "A marble-tiled bathroom with a glass shower and a lit mirror, freshly cleaned"
+  },
+  {
+   "slot": "downtownView",
+   "page": "/locations/downtown-vancouver",
+   "section": "Room by room: suites with a view",
+   "src": "onepro-x532.jpg",
+   "mode": "full",
+   "size": "453x340",
+   "alt": "City lights at dusk through the balcony door of a freshly cleaned high-rise suite"
+  },
+  {
+   "slot": "northArea",
+   "page": "/locations/north-vancouver",
+   "section": "Hero photo",
+   "src": "onepro-x353.jpg",
+   "mode": "full",
+   "size": "480x600",
+   "alt": "Sunlight across clean floors in an empty room with a tall window"
+  },
+  {
+   "slot": "northCard",
+   "page": "/locations",
+   "section": "Area card: North Vancouver",
+   "src": "onepro-x441.jpg",
+   "mode": "full",
+   "size": "700x400",
+   "alt": "A bright corner room with clean floors and big windows over a leafy neighbourhood"
+  },
+  {
+   "slot": "northKitchen",
+   "page": "/locations/north-vancouver",
+   "section": "Room by room: kitchens",
+   "src": "onepro-x705.jpg",
+   "mode": "full",
+   "size": "453x340",
+   "alt": "A white quartz kitchen counter and sink with pale wood cabinets, wiped clean"
+  },
+  {
+   "slot": "northBath",
+   "page": "/locations/north-vancouver",
+   "section": "Room by room: bathrooms",
+   "src": "onepro-x697.jpg",
+   "mode": "full",
+   "size": "453x340",
+   "alt": "A clean bathroom with a bathtub, a wall-hung vanity and a white toilet"
+  },
+  {
+   "slot": "northLiving",
+   "page": "/locations/north-vancouver",
+   "section": "Room by room: living spaces",
+   "src": "onepro-x309.jpg",
+   "mode": "full",
+   "size": "453x340",
+   "alt": "An empty living room with clean floors and sliding doors to the balcony"
+  },
+  {
+   "slot": "eastArea",
+   "page": "/locations/east-vancouver",
+   "section": "Hero photo",
+   "src": "onepro-x741.jpg",
+   "mode": "full",
+   "size": "480x600",
+   "alt": "A living room with hardwood floors, a stone-tiled fireplace and a modern chandelier after a move-out clean"
+  },
+  {
+   "slot": "eastCard",
+   "page": "/locations",
+   "section": "Area card: East Vancouver",
+   "src": "onepro-x486.jpg",
+   "mode": "full",
+   "size": "700x400",
+   "alt": "A white kitchen with shaker cabinets and a stainless range, cleaned and ready for move-in"
+  },
+  {
+   "slot": "eastKitchen",
+   "page": "/locations/east-vancouver",
+   "section": "Room by room: kitchens",
+   "src": "onepro-x494.jpg",
+   "mode": "full",
+   "size": "453x340",
+   "alt": "A white kitchen with shaker cabinets, a white range and a clean sink"
+  },
+  {
+   "slot": "eastBath",
+   "page": "/locations/east-vancouver",
+   "section": "Room by room: bathrooms",
+   "src": "onepro-x699.jpg",
+   "mode": "full",
+   "size": "453x340",
+   "alt": "A double vanity with two sinks and a lit mirror cabinet in a marble bathroom"
+  },
+  {
+   "slot": "westArea",
+   "page": "/locations/west-vancouver",
+   "section": "Hero photo",
+   "src": "onepro-x368.jpg",
+   "mode": "full",
+   "size": "480x600",
+   "alt": "A bright room with oak floors, white wainscoting and a stone fireplace"
+  },
+  {
+   "slot": "westCard",
+   "page": "/locations",
+   "section": "Area card: West Vancouver",
+   "src": "onepro-x092.jpg",
+   "mode": "full",
+   "size": "700x400",
+   "alt": "A spacious living room with polished wood floors and a bay window"
+  },
+  {
+   "slot": "westKitchen",
+   "page": "/locations/west-vancouver",
+   "section": "Room by room: kitchens",
+   "src": "onepro-x226.jpg",
+   "mode": "full",
+   "size": "453x340",
+   "alt": "A condo kitchen with a long quartz island and integrated appliances, cleaned"
+  },
+  {
+   "slot": "westBath",
+   "page": "/locations/west-vancouver",
+   "section": "Room by room: bathrooms",
+   "src": "onepro-x282.jpg",
+   "mode": "full",
+   "size": "453x340",
+   "alt": "A clean bathroom with a white vanity, a tub and grey tile"
+  },
+  {
+   "slot": "westBright",
+   "page": "/locations/west-vancouver",
+   "section": "Room by room: living spaces",
+   "src": "onepro-x345.jpg",
+   "mode": "full",
+   "size": "453x340",
+   "alt": "A sunny, empty room with clean floors and a tall window"
+  },
+  {
+   "slot": "southArea",
+   "page": "/locations/south-vancouver",
+   "section": "Hero photo",
+   "src": "onepro-x325.jpg",
+   "mode": "full",
+   "size": "480x600",
+   "alt": "An empty room with a pendant light, clean floors and a tall window"
+  },
+  {
+   "slot": "southCard",
+   "page": "/locations",
+   "section": "Area card: South Vancouver",
+   "src": "onepro-x456.jpg",
+   "mode": "full",
+   "size": "700x400",
+   "alt": "An L-shaped kitchen with wood cabinets, a gas range and a clean double sink"
+  },
+  {
+   "slot": "southKitchen",
+   "page": "/locations/south-vancouver",
+   "section": "Room by room: kitchens",
+   "src": "onepro-x228.jpg",
+   "mode": "full",
+   "size": "453x340",
+   "alt": "A compact condo kitchen with a gas cooktop and a wall oven, wiped clean"
+  },
+  {
+   "slot": "southBath",
+   "page": "/locations/south-vancouver",
+   "section": "Room by room: bathrooms",
+   "src": "onepro-x342.jpg",
+   "mode": "full",
+   "size": "453x340",
+   "alt": "A white double vanity with black faucets and a large mirror"
+  },
+  {
+   "slot": "southView",
+   "page": "/locations/south-vancouver",
+   "section": "Room by room: living spaces",
+   "src": "onepro-x433.jpg",
+   "mode": "full",
+   "size": "453x340",
+   "alt": "A long modern kitchen with built-in ovens beside a wall of windows"
+  },
+  {
+   "slot": "southOffice",
+   "page": "/locations/south-vancouver",
+   "section": "Homes & Workplaces: office spaces",
+   "src": "onepro-x431.jpg",
+   "mode": "full",
+   "size": "453x340",
+   "alt": "A bright, empty open-plan office with new carpet and a row of windows"
+  },
+  {
+   "slot": "productsLemon",
+   "page": "/products-we-trust",
+   "section": "Natural Products: Fresh Lemon card",
+   "src": "onepro-x099.jpg",
+   "mode": "full",
+   "size": "400x300",
+   "alt": "A spotless white undermount sink and quartz counter"
+  },
+  {
+   "slot": "blogCommercialCost",
+   "page": "/blog/commercial-cleaning-cost-vancouver",
+   "section": "Post cover",
+   "src": "onepro-x417.jpg",
+   "mode": "full",
+   "size": "1200x600",
+   "alt": "An office building stairwell with clean wood-look treads and a white handrail, seen from above"
+  },
+  {
+   "slot": "custodianSuites",
+   "page": "/custodian-services",
+   "section": "Spaces we care for: rental suites",
+   "src": "onepro-x533.jpg",
+   "mode": "full",
+   "size": "453x340",
+   "alt": "An open-plan condo suite with a white kitchen island, cleaned between tenants"
+  },
+  {
+   "slot": "custodianVacuuming",
+   "page": "/custodian-services",
+   "section": "Gallery (wide)",
+   "src": "onepro-x489.jpg",
+   "mode": "full",
+   "size": "928x300",
+   "alt": "A floor cleaner on clean oak floors in a sunlit room with covered furniture",
+   "crop": [
+    0,
+    0.3,
+    1,
+    0.5
+   ]
+  },
+  {
+   "slot": "blogOffice",
+   "page": "/blog/office-cleaning-checklist",
+   "section": "Post cover",
+   "src": "onepro-x198.jpg",
+   "mode": "full",
+   "size": "1200x600",
+   "alt": "A compact kitchen with white cabinets and stainless appliances, wiped clean"
+  },
+  {
+   "slot": "downtownSuites",
+   "page": "/locations/downtown-vancouver",
+   "section": "Homes & Workplaces: furnished suites",
+   "src": "onepro-x529.jpg",
+   "mode": "full",
+   "size": "453x340",
+   "alt": "A furnished condo living room with a sofa, a round coffee table and a TV unit"
+  },
+  {
+   "slot": "northTownhouses",
+   "page": "/locations/north-vancouver",
+   "section": "Homes & Workplaces: townhouses",
+   "src": "onepro-x358.jpg",
+   "mode": "full",
+   "size": "453x340",
+   "alt": "A freshly vacuumed carpeted staircase in a townhouse"
+  },
+  {
+   "slot": "eastSuites",
+   "page": "/locations/east-vancouver",
+   "section": "Homes & Workplaces: basement suites",
+   "src": "onepro-x240.jpg",
+   "mode": "full",
+   "size": "453x340",
+   "alt": "A bright basement-suite kitchen with white cabinets, a fridge and a small table"
+  },
+  {
+   "slot": "westCondos",
+   "page": "/locations/west-vancouver",
+   "section": "Homes & Workplaces: condos",
+   "src": "onepro-x440.jpg",
+   "mode": "full",
+   "size": "453x340",
+   "alt": "An open condo kitchen with a white island and stainless appliances, with cleaning gear by the wall"
   }
  ]
 }

@@ -11,7 +11,6 @@ import mrsMeyers from "@/assets/images/products/mrs-meyers-multi-surface.jpg";
 import natureClean from "@/assets/images/products/nature-clean-multi-surface.jpg";
 import ragCompany from "@/assets/images/products/rag-company-microfibre.jpg";
 import { jobs } from "@/content/job-photos";
-import { stock } from "@/content/stock-photos";
 
 export type ProductBrand = {
   name: string;
@@ -72,8 +71,8 @@ export const productCategories: ProductCategory[] = [
       {
         name: "Fresh Lemon",
         text: "Real lemons: a natural way to cut grease, lift stains and leave a fresh scent.",
-        image: stock.productsLemon,
-        imageAlt: stock.productsLemon.alt,
+        image: jobs.productsLemon,
+        imageAlt: jobs.productsLemon.alt,
         imageFit: "cover",
       },
     ],
