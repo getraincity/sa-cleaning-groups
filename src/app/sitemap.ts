@@ -18,7 +18,6 @@ const pages: { path: string; priority: number }[] = [
   ...locations.map((location) => ({ path: `/locations/${location.slug}`, priority: 0.8 })),
   { path: "/products-we-trust", priority: 0.5 },
   { path: "/blog", priority: 0.6 },
-  { path: "/photo-credits", priority: 0.1 },
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

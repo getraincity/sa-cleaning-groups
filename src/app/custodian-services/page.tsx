@@ -27,7 +27,6 @@ import { Reveal } from "@/components/ui/reveal";
 import { SectionHeader, sectionSpacing } from "@/components/ui/section-header";
 import { custodianAnswers } from "@/content/answers";
 import { jobs } from "@/content/job-photos";
-import { stock } from "@/content/stock-photos";
 import { pageMetadata } from "@/lib/metadata";
 import { siteConfig } from "@/lib/site";
 import { cn } from "@/lib/utils";
@@ -243,7 +242,7 @@ const gallery: GalleryImage[] = [
   { image: jobs.custodianScrubber, alt: jobs.custodianScrubber.alt, span: 2 },
   { image: jobs.custodianCart, alt: jobs.custodianCart.alt, span: 2 },
   { image: jobs.custodianSteps, alt: jobs.custodianSteps.alt, span: 2 },
-  { image: stock.custodianHallway, alt: stock.custodianHallway.alt, span: 4 },
+  { image: jobs.custodianVacuuming, alt: jobs.custodianVacuuming.alt, span: 4 },
   { image: jobs.custodianLadder, alt: jobs.custodianLadder.alt, span: 2 },
 ];
 
@@ -560,10 +559,10 @@ export default function CustodianServicesPage() {
         title="Clean Spaces, Ready for Business"
         items={[
           {
-            image: stock.custodianVacuum,
-            alt: stock.custodianVacuum.alt,
-            title: "Open offices",
-            text: "Desks, chairs and floors ready for the next working day.",
+            image: jobs.custodianSuites,
+            alt: jobs.custodianSuites.alt,
+            title: "Rental suites",
+            text: "Suites turned over between tenants for owners and property managers.",
           },
           {
             image: jobs.custodianWindows,

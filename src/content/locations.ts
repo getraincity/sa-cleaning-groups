@@ -1,34 +1,6 @@
 import type { StaticImageData } from "next/image";
 import type { ComponentType, SVGProps } from "react";
-import downtownCoalHarbour from "@/assets/images/areas/downtown-coal-harbour.jpg";
-import downtownFalseCreek from "@/assets/images/areas/downtown-false-creek.jpg";
-import downtownSkyline from "@/assets/images/areas/downtown-skyline.jpg";
-import downtownTowers from "@/assets/images/areas/downtown-towers.jpg";
-import eastBlossomHouse from "@/assets/images/areas/east-blossom-house.jpg";
-import eastCharacterHouse from "@/assets/images/areas/east-character-house.jpg";
-import eastCityView from "@/assets/images/areas/east-city-view.jpg";
-import eastSecondNarrows from "@/assets/images/areas/east-second-narrows.jpg";
-import eastVanSign from "@/assets/images/areas/east-van-sign.jpg";
-import northCapilano from "@/assets/images/areas/north-capilano-bridge.jpg";
-import northDeepCove from "@/assets/images/areas/north-deep-cove.jpg";
-import northLonsdaleQuay from "@/assets/images/areas/north-lonsdale-quay.jpg";
-import northLowerLonsdale from "@/assets/images/areas/north-lower-lonsdale.jpg";
-import northShoreView from "@/assets/images/areas/north-shore-view.jpg";
-import southCityView from "@/assets/images/areas/south-city-view.jpg";
-import southConservatory from "@/assets/images/areas/south-conservatory.jpg";
-import southFamilyHome from "@/assets/images/areas/south-family-home.jpg";
-import southPorchHome from "@/assets/images/areas/south-porch-home.jpg";
-import southQePark from "@/assets/images/areas/south-qe-park-view.jpg";
-import westAmbleside from "@/assets/images/areas/west-ambleside.jpg";
-import westHillsideHomes from "@/assets/images/areas/west-hillside-homes.jpg";
-import westHorseshoeBay from "@/assets/images/areas/west-horseshoe-bay.jpg";
-import westHoweSound from "@/assets/images/areas/west-howe-sound-sunset.jpg";
-import westLighthouse from "@/assets/images/areas/west-lighthouse.jpg";
-import meetingRoom from "@/assets/images/commercial/meeting-room.jpg";
-import modernOffice from "@/assets/images/commercial/modern-office.jpg";
-import openOffice from "@/assets/images/commercial/open-office.jpg";
 import { jobs } from "@/content/job-photos";
-import { stock } from "@/content/stock-photos";
 import type { Faq } from "@/components/sections/faq-section";
 import {
   BuildingIcon,
@@ -65,12 +37,12 @@ export type Location = {
   neighbourhoods: string[];
   /** Soft background tint that gives each area page its own mood. */
   tint: string;
-  /** A recognisable photo of the area itself, shown on its page. */
+  /** The page's hero photo: a real job photo, with a short caption. */
   area: { image: StaticImageData; alt: string; caption: string };
-  /** A different photo of the area for its card on the hub and service pages,
-   *  so the card never repeats a photo on the page it links to. */
+  /** A different photo for the area's card on the hub, so the card never repeats a
+   *  photo on the page it links to. */
   card: { image: StaticImageData; alt: string };
-  /** More pictures of the area: landmarks and views. */
+  /** Room-by-room job photos (kitchens, bathrooms, living spaces). */
   gallery: AreaPhoto[];
   /** The kinds of homes and workplaces we clean here. */
   portfolio: (AreaPhoto & { tag: "Residential" | "Commercial" })[];
@@ -111,32 +83,29 @@ export const locations: Location[] = [
     ],
     tint: "#f6f4f2",
     area: {
-      image: downtownSkyline,
-      alt: "The Downtown Vancouver skyline with the North Shore mountains behind",
-      caption: "The downtown peninsula from across False Creek",
+      image: jobs.downtownArea,
+      alt: jobs.downtownArea.alt,
+      caption: "A condo suite, cleaned top to bottom",
     },
-    card: {
-      image: downtownTowers,
-      alt: "Residential towers near False Creek in Downtown Vancouver",
-    },
+    card: { image: jobs.downtownCard, alt: jobs.downtownCard.alt },
     gallery: [
       {
-        image: downtownCoalHarbour,
-        alt: "Coal Harbour towers and marina from above",
-        title: "Coal Harbour",
-        text: "Waterfront towers, the marina and the seawall.",
+        image: jobs.downtownKitchen,
+        alt: jobs.downtownKitchen.alt,
+        title: "Condo kitchens",
+        text: "Counters, backsplashes and appliances wiped spotless.",
       },
       {
-        image: downtownFalseCreek,
-        alt: "High-rise condos along False Creek",
-        title: "False Creek & Yaletown",
-        text: "Glass towers and lofts along the water.",
+        image: jobs.downtownBath,
+        alt: jobs.downtownBath.alt,
+        title: "Bathrooms",
+        text: "Glass showers, tile and fixtures polished.",
       },
       {
-        image: eastCityView,
-        alt: "Downtown Vancouver towers in front of the mountains",
-        title: "The downtown core",
-        text: "Offices, condos and shops in the heart of the city.",
+        image: jobs.downtownView,
+        alt: jobs.downtownView.alt,
+        title: "Suites with a view",
+        text: "Windows, sills and balcony doors left streak-free.",
       },
     ],
     portfolio: [
@@ -155,11 +124,11 @@ export const locations: Location[] = [
         text: "Yaletown lofts and waterfront townhomes.",
       },
       {
-        tag: "Commercial",
-        image: meetingRoom,
-        alt: "A clean downtown meeting room",
-        title: "Office suites",
-        text: "Meeting rooms, reception areas and workspaces.",
+        tag: "Residential",
+        image: jobs.downtownSuites,
+        alt: jobs.downtownSuites.alt,
+        title: "Furnished suites",
+        text: "Furnished condos and short-term rentals, cleaned between stays.",
       },
     ],
     community: {
@@ -281,32 +250,29 @@ export const locations: Location[] = [
     ],
     tint: "#f1f5f2",
     area: {
-      image: northLonsdaleQuay,
-      alt: "Lonsdale Quay on the North Vancouver waterfront",
-      caption: "Lonsdale Quay on the North Vancouver waterfront",
+      image: jobs.northArea,
+      alt: jobs.northArea.alt,
+      caption: "Sunlight on freshly cleaned floors",
     },
-    card: {
-      image: northLowerLonsdale,
-      alt: "Condo towers in Lower Lonsdale, North Vancouver",
-    },
+    card: { image: jobs.northCard, alt: jobs.northCard.alt },
     gallery: [
       {
-        image: northDeepCove,
-        alt: "Boats in Deep Cove with forested mountains behind",
-        title: "Deep Cove",
-        text: "Kayaks, marinas and forested mountains.",
+        image: jobs.northKitchen,
+        alt: jobs.northKitchen.alt,
+        title: "Kitchens",
+        text: "Quartz, cabinets and sinks cleaned and shined.",
       },
       {
-        image: northCapilano,
-        alt: "A suspension bridge through tall rainforest trees",
-        title: "Canyons & rainforest",
-        text: "Suspension bridges and trails through the trees.",
+        image: jobs.northBath,
+        alt: jobs.northBath.alt,
+        title: "Bathrooms",
+        text: "Tubs, vanities and toilets scrubbed and disinfected.",
       },
       {
-        image: northShoreView,
-        alt: "The city and mountains seen from the North Shore",
-        title: "North Shore views",
-        text: "City, harbour and mountain views from the slopes.",
+        image: jobs.northLiving,
+        alt: jobs.northLiving.alt,
+        title: "Living spaces",
+        text: "Floors, baseboards and glass doors done right.",
       },
     ],
     portfolio: [
@@ -325,11 +291,11 @@ export const locations: Location[] = [
         text: "Detached homes in Lynn Valley and Edgemont.",
       },
       {
-        tag: "Commercial",
-        image: openOffice,
-        alt: "A clean open-plan office",
-        title: "Offices & studios",
-        text: "Workspaces along Lonsdale and in the business parks.",
+        tag: "Residential",
+        image: jobs.northTownhouses,
+        alt: jobs.northTownhouses.alt,
+        title: "Townhouses",
+        text: "Multi-level homes, stairs and all, from Lynn Valley to Deep Cove.",
       },
     ],
     community: {
@@ -443,26 +409,23 @@ export const locations: Location[] = [
     ],
     tint: "#f8f4ee",
     area: {
-      image: eastVanSign,
-      alt: "The East Van cross sign lit up at dusk",
-      caption: "The East Van cross, a neighbourhood landmark",
+      image: jobs.eastArea,
+      alt: jobs.eastArea.alt,
+      caption: "A living room after a move-out clean",
     },
-    card: {
-      image: eastCharacterHouse,
-      alt: "A character home among the trees in East Vancouver",
-    },
+    card: { image: jobs.eastCard, alt: jobs.eastCard.alt },
     gallery: [
       {
-        image: eastSecondNarrows,
-        alt: "The Second Narrows bridge seen from the East Vancouver shoreline",
-        title: "New Brighton shoreline",
-        text: "Parks and views along Burrard Inlet.",
+        image: jobs.eastKitchen,
+        alt: jobs.eastKitchen.alt,
+        title: "Kitchens in older homes",
+        text: "Classic cabinets, ranges and sinks brought back to bright.",
       },
       {
-        image: eastBlossomHouse,
-        alt: "A cherry tree in bloom in front of an East Vancouver house",
-        title: "Blossom-lined streets",
-        text: "Spring cherry blossoms on residential blocks.",
+        image: jobs.eastBath,
+        alt: jobs.eastBath.alt,
+        title: "Bathrooms",
+        text: "Vanities, mirrors and floors cleaned top to bottom.",
       },
     ],
     portfolio: [
@@ -481,11 +444,11 @@ export const locations: Location[] = [
         text: "Detached homes with basement and garden suites.",
       },
       {
-        tag: "Commercial",
-        image: stock.eastShops,
-        alt: stock.eastShops.alt,
-        title: "Shops & studios",
-        text: "Storefronts, studios and small offices.",
+        tag: "Residential",
+        image: jobs.eastSuites,
+        alt: jobs.eastSuites.alt,
+        title: "Basement & laneway suites",
+        text: "Rental suites cleaned between tenants.",
       },
     ],
     community: {
@@ -594,32 +557,29 @@ export const locations: Location[] = [
     neighbourhoods: ["Ambleside", "Dundarave", "British Properties", "Caulfeild", "Horseshoe Bay"],
     tint: "#eef3f6",
     area: {
-      image: westLighthouse,
-      alt: "The lighthouse at Point Atkinson in West Vancouver",
-      caption: "Point Atkinson Lighthouse in Lighthouse Park",
+      image: jobs.westArea,
+      alt: jobs.westArea.alt,
+      caption: "A bright family room, freshly cleaned",
     },
-    card: {
-      image: westHillsideHomes,
-      alt: "Homes on a forested West Vancouver hillside",
-    },
+    card: { image: jobs.westCard, alt: jobs.westCard.alt },
     gallery: [
       {
-        image: westAmbleside,
-        alt: "Ambleside waterfront with homes on the hillside behind",
-        title: "Ambleside & Dundarave",
-        text: "The seawalk, beaches and village shops.",
+        image: jobs.westKitchen,
+        alt: jobs.westKitchen.alt,
+        title: "Kitchens",
+        text: "Islands, counters and appliances wiped spotless.",
       },
       {
-        image: westHorseshoeBay,
-        alt: "Horseshoe Bay marina and village",
-        title: "Horseshoe Bay",
-        text: "A seaside village at the edge of Howe Sound.",
+        image: jobs.westBath,
+        alt: jobs.westBath.alt,
+        title: "Bathrooms",
+        text: "Tubs, tile and vanities scrubbed clean.",
       },
       {
-        image: westHoweSound,
-        alt: "Sunset over Howe Sound through the trees",
-        title: "Howe Sound views",
-        text: "Ocean and island views from the shore.",
+        image: jobs.westBright,
+        alt: jobs.westBright.alt,
+        title: "Bright, open rooms",
+        text: "Floors and windows that make the most of the light.",
       },
     ],
     portfolio: [
@@ -638,11 +598,11 @@ export const locations: Location[] = [
         text: "Family homes in British Properties and Caulfeild.",
       },
       {
-        tag: "Commercial",
-        image: stock.westClinics,
-        alt: stock.westClinics.alt,
-        title: "Offices & clinics",
-        text: "Professional offices and wellness spaces.",
+        tag: "Residential",
+        image: jobs.westCondos,
+        alt: jobs.westCondos.alt,
+        title: "Condos & apartments",
+        text: "Suites in Ambleside and Dundarave buildings.",
       },
     ],
     community: {
@@ -737,32 +697,29 @@ export const locations: Location[] = [
     neighbourhoods: ["Marpole", "Oakridge", "Sunset", "Victoria-Fraserview", "Killarney"],
     tint: "#f5f3f7",
     area: {
-      image: southQePark,
-      alt: "Downtown Vancouver and the mountains seen from Queen Elizabeth Park",
-      caption: "The view from Queen Elizabeth Park",
+      image: jobs.southArea,
+      alt: jobs.southArea.alt,
+      caption: "A townhouse room after a move-out clean",
     },
-    card: {
-      image: southFamilyHome,
-      alt: "A family home with a hedge and garden in South Vancouver",
-    },
+    card: { image: jobs.southCard, alt: jobs.southCard.alt },
     gallery: [
       {
-        image: southConservatory,
-        alt: "Tropical plants inside a domed conservatory",
-        title: "Bloedel Conservatory",
-        text: "The tropical garden under the dome at Queen Elizabeth Park.",
+        image: jobs.southKitchen,
+        alt: jobs.southKitchen.alt,
+        title: "Condo kitchens",
+        text: "Cooktops, ovens and counters degreased and shined.",
       },
       {
-        image: southCityView,
-        alt: "The city and North Shore mountains seen from the south",
-        title: "Views to the mountains",
-        text: "Leafy streets with the North Shore on the horizon.",
+        image: jobs.southBath,
+        alt: jobs.southBath.alt,
+        title: "Bathrooms",
+        text: "Double vanities, mirrors and fixtures polished.",
       },
       {
-        image: southPorchHome,
-        alt: "A classic Vancouver house with a porch",
-        title: "Classic Vancouver homes",
-        text: "Tree-lined blocks of family houses.",
+        image: jobs.southView,
+        alt: jobs.southView.alt,
+        title: "Open-plan living",
+        text: "Kitchens and living areas cleaned as one space.",
       },
     ],
     portfolio: [
@@ -782,8 +739,8 @@ export const locations: Location[] = [
       },
       {
         tag: "Commercial",
-        image: modernOffice,
-        alt: "A clean, modern open-plan office",
+        image: jobs.southOffice,
+        alt: jobs.southOffice.alt,
         title: "Offices & clinics",
         text: "Professional offices and medical clinics.",
       },

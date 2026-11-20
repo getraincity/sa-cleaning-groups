@@ -84,6 +84,40 @@ import blogDampImg from "@/assets/images/jobs/blogDamp.webp";
 import blogChooseImg from "@/assets/images/jobs/blogChoose.webp";
 import blogConstructionImg from "@/assets/images/jobs/blogConstruction.webp";
 import blogDeepCleanImg from "@/assets/images/jobs/blogDeepClean.webp";
+import downtownAreaImg from "@/assets/images/jobs/downtownArea.webp";
+import downtownCardImg from "@/assets/images/jobs/downtownCard.webp";
+import downtownKitchenImg from "@/assets/images/jobs/downtownKitchen.webp";
+import downtownBathImg from "@/assets/images/jobs/downtownBath.webp";
+import downtownViewImg from "@/assets/images/jobs/downtownView.webp";
+import northAreaImg from "@/assets/images/jobs/northArea.webp";
+import northCardImg from "@/assets/images/jobs/northCard.webp";
+import northKitchenImg from "@/assets/images/jobs/northKitchen.webp";
+import northBathImg from "@/assets/images/jobs/northBath.webp";
+import northLivingImg from "@/assets/images/jobs/northLiving.webp";
+import eastAreaImg from "@/assets/images/jobs/eastArea.webp";
+import eastCardImg from "@/assets/images/jobs/eastCard.webp";
+import eastKitchenImg from "@/assets/images/jobs/eastKitchen.webp";
+import eastBathImg from "@/assets/images/jobs/eastBath.webp";
+import westAreaImg from "@/assets/images/jobs/westArea.webp";
+import westCardImg from "@/assets/images/jobs/westCard.webp";
+import westKitchenImg from "@/assets/images/jobs/westKitchen.webp";
+import westBathImg from "@/assets/images/jobs/westBath.webp";
+import westBrightImg from "@/assets/images/jobs/westBright.webp";
+import southAreaImg from "@/assets/images/jobs/southArea.webp";
+import southCardImg from "@/assets/images/jobs/southCard.webp";
+import southKitchenImg from "@/assets/images/jobs/southKitchen.webp";
+import southBathImg from "@/assets/images/jobs/southBath.webp";
+import southViewImg from "@/assets/images/jobs/southView.webp";
+import southOfficeImg from "@/assets/images/jobs/southOffice.webp";
+import productsLemonImg from "@/assets/images/jobs/productsLemon.webp";
+import blogCommercialCostImg from "@/assets/images/jobs/blogCommercialCost.webp";
+import custodianSuitesImg from "@/assets/images/jobs/custodianSuites.webp";
+import custodianVacuumingImg from "@/assets/images/jobs/custodianVacuuming.webp";
+import blogOfficeImg from "@/assets/images/jobs/blogOffice.webp";
+import downtownSuitesImg from "@/assets/images/jobs/downtownSuites.webp";
+import northTownhousesImg from "@/assets/images/jobs/northTownhouses.webp";
+import eastSuitesImg from "@/assets/images/jobs/eastSuites.webp";
+import westCondosImg from "@/assets/images/jobs/westCondos.webp";
 
 /** A photo with its alt text, as the pages use it. */
 export type SitePhoto = StaticImageData & { alt: string };
@@ -394,5 +428,126 @@ export const jobs = {
   blogDeepClean: photo(
     blogDeepCleanImg,
     "Before and after: marks around a bathroom sink, then polished away",
+  ),
+  downtownArea: photo(
+    downtownAreaImg,
+    "A bright condo room with clean floors and a balcony door looking out at a tower",
+  ),
+  downtownCard: photo(
+    downtownCardImg,
+    "A sleek white condo kitchen with a quartz island and a gas cooktop, wiped down and empty",
+  ),
+  downtownKitchen: photo(
+    downtownKitchenImg,
+    "A condo kitchen with a black marble backsplash and white quartz counters after cleaning",
+  ),
+  downtownBath: photo(
+    downtownBathImg,
+    "A marble-tiled bathroom with a glass shower and a lit mirror, freshly cleaned",
+  ),
+  downtownView: photo(
+    downtownViewImg,
+    "City lights at dusk through the balcony door of a freshly cleaned high-rise suite",
+  ),
+  northArea: photo(
+    northAreaImg,
+    "Sunlight across clean floors in an empty room with a tall window",
+  ),
+  northCard: photo(
+    northCardImg,
+    "A bright corner room with clean floors and big windows over a leafy neighbourhood",
+  ),
+  northKitchen: photo(
+    northKitchenImg,
+    "A white quartz kitchen counter and sink with pale wood cabinets, wiped clean",
+  ),
+  northBath: photo(
+    northBathImg,
+    "A clean bathroom with a bathtub, a wall-hung vanity and a white toilet",
+  ),
+  northLiving: photo(
+    northLivingImg,
+    "An empty living room with clean floors and sliding doors to the balcony",
+  ),
+  eastArea: photo(
+    eastAreaImg,
+    "A living room with hardwood floors, a stone-tiled fireplace and a modern chandelier after a move-out clean",
+  ),
+  eastCard: photo(
+    eastCardImg,
+    "A white kitchen with shaker cabinets and a stainless range, cleaned and ready for move-in",
+  ),
+  eastKitchen: photo(
+    eastKitchenImg,
+    "A white kitchen with shaker cabinets, a white range and a clean sink",
+  ),
+  eastBath: photo(
+    eastBathImg,
+    "A double vanity with two sinks and a lit mirror cabinet in a marble bathroom",
+  ),
+  westArea: photo(
+    westAreaImg,
+    "A bright room with oak floors, white wainscoting and a stone fireplace",
+  ),
+  westCard: photo(westCardImg, "A spacious living room with polished wood floors and a bay window"),
+  westKitchen: photo(
+    westKitchenImg,
+    "A condo kitchen with a long quartz island and integrated appliances, cleaned",
+  ),
+  westBath: photo(westBathImg, "A clean bathroom with a white vanity, a tub and grey tile"),
+  westBright: photo(westBrightImg, "A sunny, empty room with clean floors and a tall window"),
+  southArea: photo(
+    southAreaImg,
+    "An empty room with a pendant light, clean floors and a tall window",
+  ),
+  southCard: photo(
+    southCardImg,
+    "An L-shaped kitchen with wood cabinets, a gas range and a clean double sink",
+  ),
+  southKitchen: photo(
+    southKitchenImg,
+    "A compact condo kitchen with a gas cooktop and a wall oven, wiped clean",
+  ),
+  southBath: photo(southBathImg, "A white double vanity with black faucets and a large mirror"),
+  southView: photo(
+    southViewImg,
+    "A long modern kitchen with built-in ovens beside a wall of windows",
+  ),
+  southOffice: photo(
+    southOfficeImg,
+    "A bright, empty open-plan office with new carpet and a row of windows",
+  ),
+  productsLemon: photo(productsLemonImg, "A spotless white undermount sink and quartz counter"),
+  blogCommercialCost: photo(
+    blogCommercialCostImg,
+    "An office building stairwell with clean wood-look treads and a white handrail, seen from above",
+  ),
+  custodianSuites: photo(
+    custodianSuitesImg,
+    "An open-plan condo suite with a white kitchen island, cleaned between tenants",
+  ),
+  custodianVacuuming: photo(
+    custodianVacuumingImg,
+    "A floor cleaner on clean oak floors in a sunlit room with covered furniture",
+  ),
+  blogOffice: photo(
+    blogOfficeImg,
+    "A compact kitchen with white cabinets and stainless appliances, wiped clean",
+  ),
+  downtownSuites: photo(
+    downtownSuitesImg,
+    "A furnished condo living room with a sofa, a round coffee table and a TV unit",
+  ),
+  northTownhouses: photo(
+    northTownhousesImg,
+    "A freshly vacuumed carpeted staircase in a townhouse",
+  ),
+  eastSuites: photo(
+    eastSuitesImg,
+    "A bright basement-suite kitchen with white cabinets, a fridge and a small table",
+  ),
+  westCondos: photo(
+    westCondosImg,
+    "An open condo kitchen with a white island and stainless appliances, with cleaning gear by the wall",
   ),
 } satisfies Record<string, SitePhoto>;
