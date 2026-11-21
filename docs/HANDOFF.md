@@ -3,6 +3,31 @@
 Read this before doing anything. It records how the earlier Claude sessions worked on this site,
 so a new session (or a new account) carries on in exactly the same way.
 
+## 0. Start here: where things stand (2026-11-21)
+
+- **Live site:** https://sacleaninggroup.ca, deployed by Vercel from `main` about a minute after
+  each merge. The last feature merge was PR #21 (2026-11-20). All work is on `main`.
+- **Photos:** the site has **no stock photos left**. Every photo is either the client's own or a
+  permitted job photo (`src/content/job-photos.ts`, 118 slots, each photo used once). Don't
+  add Unsplash, Pexels or AI images; only the sources in `docs/image-permissions.md`.
+- **Images are served unoptimized** (`images.unoptimized: true`) because the Vercel image
+  quota ran out. Don't turn the optimizer back on; prepare photos at final size (§8, "Blank
+  photos on the live site").
+- **Last checks (2026-11-20, after the merge):** tsc, eslint, prettier (src), build, sweep
+  ("no problems", 31 pages × 7 widths), inventory, and `images.mjs` both locally and on the
+  live site ("All 328 images load").
+- **Most recent asks from the user, in order:** fix blank live photos (PR #20) → audit how many
+  stock photos were left (34) → replace all 34 with real job photos (PR #21) → "push and merge
+  as main".
+- **Waiting on the client:** §9. The main photo gap is **commercial/office job photos**: the
+  permitted sources are used up, so some commercial tiles were reworded to show homes (§8, "No
+  stock photos left").
+- **How the user works:** they say "merge" (or "push and merge as main") when they want a PR
+  merged; until then, leave it as a draft PR. After a merge, check the live site (§7).
+- **First steps in a new session:** read this file, then run
+  `git fetch origin && git log --oneline -10 origin/main`, check the doc for new feedback (§2),
+  and report before building (§3).
+
 ---
 
 ## 1. The project and the people
@@ -88,7 +113,19 @@ Don't burn time retrying. Google Fonts and npm work.
   `docs/image-permissions.md` (see "Real job photos" in §8).
 - Start the local server with `NODE_USE_ENV_PROXY=1 NODE_EXTRA_CA_CERTS=/root/.ccr/ca-bundle.crt`
   so the QA scripts can reach outside hosts through the proxy.
-- When choosing photos, build contact sheets of the thumbnails and look at them before picking.
+- When choosing photos, build contact sheets of the thumbnails and look at them before picking:
+  `node scripts/photos/contact-sheet.mjs <dir> <scratchpad>/sheets` (then open each sheet with
+  Read). `node scripts/photos/find-dupes.mjs <candidates-dir>` flags straight re-uploads of
+  photos already used (it compares against `assets-incoming/raw/`, which is git-ignored, so in a
+  fresh checkout re-download the originals listed in `assets-incoming/SOURCES.md` first, or
+  compare against `src/assets/images/jobs/` by eye).
+- **Adding a job photo:** download the original into `assets-incoming/raw/`, add a slot to
+  `scripts/photos/job-photos.json` (`slot`, `page`, `section`, `src`, `mode`
+  `full`/`framed`/`ba`, `size` `WxH`, `alt`, optional `crop` `[x, y, w, h]` as fractions, `pos`,
+  `hero`), run `node scripts/photos/build-job-photos.mjs`, import the WebP in
+  `src/content/job-photos.ts`, and log it in `assets-incoming/SOURCES.md`,
+  `scripts/photos/sources.json` and `docs/image-replacements.md`. Wix originals are
+  `https://static.wixstatic.com/media/<id>`; thumbnails `…/<id>/v1/fit/w_300,h_300,q_70/a.jpg`.
 
 ### 4.2 Processes and tools
 
@@ -224,8 +261,13 @@ fuser -k 3000/tcp                               # stop the server afterwards
   proxy variables above): some failures only happen on Vercel (see "Blank photos on the live site").
 - **`inventory.mjs`** lists the photos on every page and flags any photo used on more than one page
   (a post's own blog cards are expected and ignored).
-- **`prettier --check`** warns about `src/assets/images/PHOTO-CREDITS.md`. That warning predates
-  round 3 and you can ignore it.
+- **`prettier --check src`** should pass cleanly. `prettier --check docs` warns about
+  `docs/SEO-PLAN.md`, `docs/seo/blog-notes.md` and `docs/seo/keywords.md`; those warnings
+  predate the photo rounds and can be ignored.
+- **Live check after a merge** (wait about a minute for the Vercel deploy):
+  ```bash
+  BASE_URL=https://sacleaninggroup.ca NODE_USE_ENV_PROXY=1 NODE_EXTRA_CA_CERTS=/root/.ccr/ca-bundle.crt node scripts/qa/images.mjs
+  ```
 
 ## 8. Round history
 
@@ -282,7 +324,7 @@ _Products We Trust:_ photos and brand links.
 
 _Fix:_ slide-in overflow on phones.
 
-**Round 4 (PR #4, branch `claude/elegant-bell-ezj610`, open as of 2026-10-06)**
+**Round 4 (PR #4, branch `claude/elegant-bell-ezj610`, merged)**
 
 - Home Cleaning: checklist section removed; Airbnb, organizing and specialized cleaning added;
   Google Reviews replaced by an Add-Ons section.
@@ -391,7 +433,7 @@ _Fix:_ slide-in overflow on phones.
   reset now and then: use `curl --retry 5 --retry-all-errors`. There was no Google Drive connector;
   the doc was read with `https://docs.google.com/document/d/<id>/export?format=zip`.
 
-**Real job photos from permitted companies (2026-11-19)**
+**Real job photos from permitted companies (2026-11-19, PRs #16, #17, #19; Instagram review #18)**
 
 - The client rejected stock photos a third time and wants real job photos. The agency has
   **permission** from 10 cleaning companies to use their photos, edited and with logos and
@@ -430,7 +472,7 @@ _Fix:_ slide-in overflow on phones.
     to come through the user's computer (a connected folder) or be sent by the client.
   - Those 10 slots were filled from oneprocleaning.ca's blog on 2026-11-20 (below).
 
-**Blank photos on the live site (2026-11-19)**
+**Blank photos on the live site (2026-11-19, PR #20)**
 
 - Right after the job photos went live, most photos on sacleaninggroup.ca were blank (147 of 349
   images, on every page). Cause: Vercel's image optimizer (`/_next/image`) answered
@@ -447,7 +489,7 @@ _Fix:_ slide-in overflow on phones.
   optimization. Add new photos already sized (about 1600px, or 2400px for full-width heroes;
   WebP or mozjpeg) and run `node scripts/qa/images.mjs` against the live site after deploying.
 
-**No stock photos left (2026-11-20)**
+**No stock photos left (2026-11-20, PR #21)**
 
 - The audit found 34 stock photos still live: 24 neighbourhood scenery shots on the area pages and
   10 cleaning/commercial ones. The user asked for all of them to be real job photos.
@@ -469,24 +511,34 @@ _Fix:_ slide-in overflow on phones.
 - `stock-photos.ts`, the Photo Credits page and the Unsplash/Pexels image hosts were removed;
   `/photo-credits` redirects home.
 
-## 9. Waiting on the client (as of round 5)
+## 9. Waiting on the client (as of 2026-11-21)
 
 - **Photos:**
+  - **commercial job photos** (offices, meeting rooms, corridors, washrooms, clinics). The
+    permitted sources have none left, so Custodian "Open offices" shows "Rental suites", the
+    office-checklist blog cover is a compact kitchen, and the Downtown, North, East and West
+    commercial tiles show homes. Put offices back when these arrive;
   - Alex & Shaida, for the About founder intro (`src/components/sections/founder-intro.tsx`);
     the client will send it later;
   - a cleaner in a bright condo, for the home hero. The old Webflow site has exactly this
     (`legacy/asset-library/66e19b5fd546081a57b50bcc_Group 162769.png`, an S&A-shirt cleaner by a
     yellow chair) but only ~300px wide; the full-size original was requested;
-  - buses, trailers and work vehicles; everyday cars; custodian jobs; home jobs that aren't
-    kitchens (round 4 photo items above).
+  - their Instagram pictures for Home "Follow our journey" (`social-section.tsx`); the sandbox
+    can't read Instagram;
+  - a real lemon/product photo for the Fresh Lemon card (it shows a clean sink for now).
+  - (Car, bus and trailer photos are no longer needed: S&A doesn't offer car detailing.)
+- **Review by the client:** the reworded commercial tiles and area-page galleries from PR #21,
+  and the sink photo on the Fresh Lemon card.
 - **Add-ons:** whether to show prices.
 - **Products We Trust:** the real brand list (client will send later). `src/content/products.ts`
   is a placeholder modelled on a sample page the client sent.
 - **Reviews:** approval to show 4–6 real Google reviews in our own layout instead of the Elfsight
   widget, which the client finds messy.
 - **Locations:** which collabs go with each area.
+- **SEO:** Google Business Profile, reviews, citations, extra suburbs, privacy/terms text and
+  "free quote" wording (see "SEO growth round").
 - **Copy review:**
   - the founder intro, Custodian page, blog posts (and their dates) and area pages;
-  - round 4's service, add-on and vehicle blurbs;
+  - round 4's service and add-on blurbs;
   - the doc lists a second set of areas; only the first set (Downtown, North, East, West and
     South Vancouver) was built.
