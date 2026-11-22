@@ -1,5 +1,6 @@
 import type { StaticImageData } from "next/image";
 import type { ComponentType, SVGProps } from "react";
+import { areaScenes } from "@/content/area-photos";
 import { jobs } from "@/content/job-photos";
 import type { Faq } from "@/components/sections/faq-section";
 import {
@@ -37,7 +38,7 @@ export type Location = {
   neighbourhoods: string[];
   /** Soft background tint that gives each area page its own mood. */
   tint: string;
-  /** The page's hero photo: a real job photo, with a short caption. */
+  /** The page's hero photo: neighbourhood scenery, with a short caption naming the place. */
   area: { image: StaticImageData; alt: string; caption: string };
   /** A different photo for the area's card on the hub, so the card never repeats a
    *  photo on the page it links to. */
@@ -83,11 +84,11 @@ export const locations: Location[] = [
     ],
     tint: "#f6f4f2",
     area: {
-      image: jobs.downtownArea,
-      alt: jobs.downtownArea.alt,
-      caption: "A condo suite, cleaned top to bottom",
+      image: areaScenes.downtownHero,
+      alt: areaScenes.downtownHero.alt,
+      caption: "Downtown, seen from Stanley Park",
     },
-    card: { image: jobs.downtownCard, alt: jobs.downtownCard.alt },
+    card: { image: areaScenes.downtownCard, alt: areaScenes.downtownCard.alt },
     gallery: [
       {
         image: jobs.downtownKitchen,
@@ -250,11 +251,11 @@ export const locations: Location[] = [
     ],
     tint: "#f1f5f2",
     area: {
-      image: jobs.northArea,
-      alt: jobs.northArea.alt,
-      caption: "Sunlight on freshly cleaned floors",
+      image: areaScenes.northHero,
+      alt: areaScenes.northHero.alt,
+      caption: "Lonsdale Quay, North Vancouver",
     },
-    card: { image: jobs.northCard, alt: jobs.northCard.alt },
+    card: { image: areaScenes.northCard, alt: areaScenes.northCard.alt },
     gallery: [
       {
         image: jobs.northKitchen,
@@ -409,11 +410,11 @@ export const locations: Location[] = [
     ],
     tint: "#f8f4ee",
     area: {
-      image: jobs.eastArea,
-      alt: jobs.eastArea.alt,
-      caption: "A living room after a move-out clean",
+      image: areaScenes.eastHero,
+      alt: areaScenes.eastHero.alt,
+      caption: "Neighbourhoods below the North Shore mountains",
     },
-    card: { image: jobs.eastCard, alt: jobs.eastCard.alt },
+    card: { image: areaScenes.eastCard, alt: areaScenes.eastCard.alt },
     gallery: [
       {
         image: jobs.eastKitchen,
@@ -557,11 +558,11 @@ export const locations: Location[] = [
     neighbourhoods: ["Ambleside", "Dundarave", "British Properties", "Caulfeild", "Horseshoe Bay"],
     tint: "#eef3f6",
     area: {
-      image: jobs.westArea,
-      alt: jobs.westArea.alt,
-      caption: "A bright family room, freshly cleaned",
+      image: areaScenes.westHero,
+      alt: areaScenes.westHero.alt,
+      caption: "Ambleside Beach, West Vancouver",
     },
-    card: { image: jobs.westCard, alt: jobs.westCard.alt },
+    card: { image: areaScenes.westCard, alt: areaScenes.westCard.alt },
     gallery: [
       {
         image: jobs.westKitchen,
@@ -697,11 +698,11 @@ export const locations: Location[] = [
     neighbourhoods: ["Marpole", "Oakridge", "Sunset", "Victoria-Fraserview", "Killarney"],
     tint: "#f5f3f7",
     area: {
-      image: jobs.southArea,
-      alt: jobs.southArea.alt,
-      caption: "A townhouse room after a move-out clean",
+      image: areaScenes.southHero,
+      alt: areaScenes.southHero.alt,
+      caption: "South Vancouver, looking north",
     },
-    card: { image: jobs.southCard, alt: jobs.southCard.alt },
+    card: { image: areaScenes.southCard, alt: areaScenes.southCard.alt },
     gallery: [
       {
         image: jobs.southKitchen,

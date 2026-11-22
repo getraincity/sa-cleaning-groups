@@ -40,7 +40,6 @@ import custodianTeamImg from "@/assets/images/jobs/custodianTeam.webp";
 import lobbyEntranceImg from "@/assets/images/jobs/lobbyEntrance.webp";
 import custodianGlassWallImg from "@/assets/images/jobs/custodianGlassWall.webp";
 import custodianWindowsImg from "@/assets/images/jobs/custodianWindows.webp";
-import custodianEntranceImg from "@/assets/images/jobs/custodianEntrance.webp";
 import custodianDustingImg from "@/assets/images/jobs/custodianDusting.webp";
 import custodianScrubberImg from "@/assets/images/jobs/custodianScrubber.webp";
 import custodianCartImg from "@/assets/images/jobs/custodianCart.webp";
@@ -280,10 +279,6 @@ export const jobs = {
     "Before and after: a stair handrail with black grime and fingerprints, then wiped clean",
   ),
   custodianWindows: photo(custodianWindowsImg, "A long, clean shop floor under a skylight"),
-  custodianEntrance: photo(
-    custodianEntranceImg,
-    "A retail space with a blue wall and exposed ceiling pipes, dusted after construction",
-  ),
   custodianDusting: photo(
     custodianDustingImg,
     "New fitting rooms with wood floors and mirrors in a cleaned retail store",

@@ -17,6 +17,7 @@ const pages: { path: string; priority: number }[] = [
   { path: "/locations", priority: 0.8 },
   ...locations.map((location) => ({ path: `/locations/${location.slug}`, priority: 0.8 })),
   { path: "/products-we-trust", priority: 0.5 },
+  { path: "/our-work", priority: 0.5 },
   { path: "/blog", priority: 0.6 },
 ];
 

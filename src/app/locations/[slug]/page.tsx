@@ -215,6 +215,7 @@ export default async function LocationPage({ params }: Props) {
         title="Every Room, Cleaned Top to Bottom"
         description={`Kitchens, bathrooms and living spaces in ${location.short} homes all get the same detailed care.`}
         items={location.gallery}
+        showAllWork
       />
 
       {/* Local know-how, then a local tip. */}

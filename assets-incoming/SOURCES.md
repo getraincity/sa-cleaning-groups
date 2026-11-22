@@ -127,3 +127,20 @@ Real job photos used on the site (2026-11-19). Raw downloads are in `raw/` (not 
 | `raw/onepro-x358.jpg` | `jobs/northTownhouses.webp`    | `/locations/north-vancouver` Homes & Workplaces: townhouses          | https://www.oneprocleaning.ca/post/3-bedroom-townhouse-move-out-on-university-crescent                               | https://static.wixstatic.com/media/4d9094_84328a70228c4d3993532f2818e5519c~mv2.jpg | crop to slot               |
 | `raw/onepro-x240.jpg` | `jobs/eastSuites.webp`         | `/locations/east-vancouver` Homes & Workplaces: basement suites      | https://www.oneprocleaning.ca/post/breathing-new-life-into-a-victoria-fraserview-home-a-1-900-sq-ft-transformation   | https://static.wixstatic.com/media/4d9094_124397a9224e4c2ca1474e8b78c722bb~mv2.jpg | crop to slot               |
 | `raw/onepro-x440.jpg` | `jobs/westCondos.webp`         | `/locations/west-vancouver` Homes & Workplaces: condos               | https://www.oneprocleaning.ca/post/move-out-cleaning-in-coquitlam-901-lougheed-hwy-project                           | https://static.wixstatic.com/media/4d9094_0b916143e6af40fb88790abc5dade59c~mv2.jpg | crop to slot               |
+
+## Neighbourhood scenery (Unsplash, 2026-11-22)
+
+Unsplash License (no credit required). Cropped with sharp to 1400x800 (cards) or 960x1200 (heroes), WebP q80.
+
+| File                       | Slot                                 | Unsplash photo                          | Photographer      |
+| -------------------------- | ------------------------------------ | --------------------------------------- | ----------------- |
+| `areas/downtown-card.webp` | `/locations Area card: Downtown`     | https://unsplash.com/photos/rEDvog99iro | Luke Lawreszuk    |
+| `areas/downtown-hero.webp` | `/locations/downtown-vancouver Hero` | https://unsplash.com/photos/EMjo0f9U-88 | Prince Deol       |
+| `areas/north-card.webp`    | `/locations Area card: North`        | https://unsplash.com/photos/GXrokNj_HK0 | Nara S            |
+| `areas/north-hero.webp`    | `/locations/north-vancouver Hero`    | https://unsplash.com/photos/RuZyXuTcxjU | Farnaz Kohankhaki |
+| `areas/east-card.webp`     | `/locations Area card: East`         | https://unsplash.com/photos/wPt7NEEohF4 | Itsuka Iwaki      |
+| `areas/east-hero.webp`     | `/locations/east-vancouver Hero`     | https://unsplash.com/photos/5nuRRWZ96eI | Aditya Chinchure  |
+| `areas/west-card.webp`     | `/locations Area card: West`         | https://unsplash.com/photos/XxhXGh7AbqE | Masaru Suzuki     |
+| `areas/west-hero.webp`     | `/locations/west-vancouver Hero`     | https://unsplash.com/photos/h5NqsNmzIug | Trish Reader      |
+| `areas/south-card.webp`    | `/locations Area card: South`        | https://unsplash.com/photos/7MZ50zlodxM | Alex (@gasstan)   |
+| `areas/south-hero.webp`    | `/locations/south-vancouver Hero`    | https://unsplash.com/photos/w6jlN-4Xg5k | Ibrahim Zada      |

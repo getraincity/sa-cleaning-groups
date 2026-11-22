@@ -1,6 +1,6 @@
 // Which photo appears on which page, and any photo that appears on more than one.
 // Unsplash photos are keyed by their photo ID, local images by their file name.
-// Logos, icons and partner logos are left out. Photo Credits shows every photo, and a
+// Logos, icons and partner logos are left out. Our Work (/our-work) shows every photo, and a
 // post's photo also appears on its blog cards, so those count as one "page" each.
 // Usage: node scripts/qa/inventory.mjs            (pages come from /sitemap.xml)
 import { BASE, launch, revealAll } from "./browser.mjs";
@@ -29,7 +29,7 @@ for (const p of pages) {
   console.log(`${p}  (${photos.length})`);
   for (const photo of photos) {
     console.log(`  ${photo}`);
-    if (p === "/photo-credits") continue;
+    if (p === "/our-work") continue;
     const group = p.startsWith("/blog") ? "/blog" : p;
     if (!seen.has(photo)) seen.set(photo, new Set());
     seen.get(photo).add(group);
