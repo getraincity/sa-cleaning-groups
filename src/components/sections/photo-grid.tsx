@@ -1,5 +1,6 @@
 import Image, { type StaticImageData } from "next/image";
 import type { ReactNode } from "react";
+import { OurWorkLink } from "@/components/ui/our-work-link";
 import { Reveal } from "@/components/ui/reveal";
 import { SectionHeader, sectionSpacing } from "@/components/ui/section-header";
 import { cn } from "@/lib/utils";
@@ -21,10 +22,19 @@ type PhotoGridProps = {
   items: PhotoGridItem[];
   /** Section background. */
   className?: string;
+  /** Show the "See all our work" button under the grid. */
+  showAllWork?: boolean;
 };
 
 /** A row of captioned photos: places, spaces or work, three or four across. */
-export function PhotoGrid({ eyebrow, title, description, items, className }: PhotoGridProps) {
+export function PhotoGrid({
+  eyebrow,
+  title,
+  description,
+  items,
+  className,
+  showAllWork = false,
+}: PhotoGridProps) {
   return (
     <section className={cn("px-5", sectionSpacing.y, className)}>
       <div className="mx-auto max-w-[1440px]">
@@ -70,6 +80,7 @@ export function PhotoGrid({ eyebrow, title, description, items, className }: Pho
             </Reveal>
           ))}
         </div>
+        {showAllWork && <OurWorkLink className="mt-12" />}
       </div>
     </section>
   );

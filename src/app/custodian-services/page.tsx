@@ -239,11 +239,10 @@ const schedules = [
 // Pictures only (client feedback): the custodian team at work, none of
 // which appear anywhere else on the site.
 const gallery: GalleryImage[] = [
-  { image: jobs.custodianScrubber, alt: jobs.custodianScrubber.alt, span: 2 },
-  { image: jobs.custodianCart, alt: jobs.custodianCart.alt, span: 2 },
-  { image: jobs.custodianSteps, alt: jobs.custodianSteps.alt, span: 2 },
+  { image: jobs.custodianScrubber, alt: jobs.custodianScrubber.alt, span: 3, tabletSpan: 2 },
+  { image: jobs.custodianCart, alt: jobs.custodianCart.alt, span: 3, tabletSpan: 2 },
   { image: jobs.custodianVacuuming, alt: jobs.custodianVacuuming.alt, span: 4 },
-  { image: jobs.custodianLadder, alt: jobs.custodianLadder.alt, span: 2 },
+  { image: jobs.custodianLadder, alt: jobs.custodianLadder.alt, span: 2, tabletSpan: 4 },
 ];
 
 const faqs: Faq[] = [
@@ -567,20 +566,20 @@ export default function CustodianServicesPage() {
           {
             image: jobs.custodianWindows,
             alt: jobs.custodianWindows.alt,
-            title: "Hallways & glass",
-            text: "Glass walls and doors kept clear and bright.",
+            title: "Shop floors",
+            text: "Long retail floors swept, mopped and ready for opening.",
           },
           {
             image: jobs.custodianDusting,
             alt: jobs.custodianDusting.alt,
-            title: "Workstations",
-            text: "Desks and shared equipment dusted and wiped.",
+            title: "Fitting rooms",
+            text: "Mirrors, floors and change rooms left spotless for customers.",
           },
           {
-            image: jobs.custodianEntrance,
-            alt: jobs.custodianEntrance.alt,
-            title: "Entrances",
-            text: "Doors, mats and floors that welcome your visitors.",
+            image: jobs.custodianSteps,
+            alt: jobs.custodianSteps.alt,
+            title: "Back rooms & storage",
+            text: "Stockrooms and staff areas cleared, wiped and tidy.",
           },
         ]}
       />

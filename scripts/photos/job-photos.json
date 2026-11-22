@@ -386,16 +386,6 @@
    "alt": "A long, clean shop floor under a skylight"
   },
   {
-   "slot": "custodianEntrance",
-   "page": "/custodian-services",
-   "section": "Clean Spaces, Ready for Business",
-   "src": "onepro-079.jpg",
-   "mode": "framed",
-   "size": "335x251",
-   "alt": "A retail space with a blue wall and exposed ceiling pipes, dusted after construction",
-   "pos": "northeast"
-  },
-  {
    "slot": "custodianDusting",
    "page": "/custodian-services",
    "section": "Clean Spaces, Ready for Business",

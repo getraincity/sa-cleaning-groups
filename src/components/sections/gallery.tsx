@@ -1,4 +1,5 @@
 import Image, { type StaticImageData } from "next/image";
+import { OurWorkLink } from "@/components/ui/our-work-link";
 import { cn } from "@/lib/utils";
 
 type Span = 1 | 2 | 3 | 4;
@@ -26,7 +27,14 @@ const tabletSpan: Record<Span, string> = {
   4: "max-md:col-span-4",
 };
 
-export function Gallery({ images }: { images: GalleryImage[] }) {
+export function Gallery({
+  images,
+  showAllWork = true,
+}: {
+  images: GalleryImage[];
+  /** Show the "See all our work" button under the photos. */
+  showAllWork?: boolean;
+}) {
   return (
     <section className="mt-[120px] overflow-hidden px-5 pb-[60px]">
       <div className="mx-auto max-w-[1440px]">
@@ -48,6 +56,7 @@ export function Gallery({ images }: { images: GalleryImage[] }) {
             />
           ))}
         </div>
+        {showAllWork && <OurWorkLink className="mt-10" />}
       </div>
     </section>
   );

@@ -3,13 +3,18 @@
 Read this before doing anything. It records how the earlier Claude sessions worked on this site,
 so a new session (or a new account) carries on in exactly the same way.
 
-## 0. Start here: where things stand (2026-11-21)
+## 0. Start here: where things stand (2026-11-22)
 
 - **Live site:** https://sacleaninggroup.ca, deployed by Vercel from `main` about a minute after
   each merge. The last feature merge was PR #21 (2026-11-20). All work is on `main`.
-- **Photos:** the site has **no stock photos left**. Every photo is either the client's own or a
-  permitted job photo (`src/content/job-photos.ts`, 118 slots, each photo used once). Don't
-  add Unsplash, Pexels or AI images; only the sources in `docs/image-permissions.md`.
+- **Photos:** every cleaning photo is the client's own or a permitted job photo
+  (`src/content/job-photos.ts`, 117 slots, each used once outside `/our-work`). Don't add
+  Unsplash, Pexels or AI _cleaning_ photos; only the sources in `docs/image-permissions.md`.
+  The one exception: neighbourhood scenery on the Locations cards and area heroes is Unsplash
+  (`src/content/area-photos.ts`, 2026-11-22, the user's choice).
+- **Our Work page (`/our-work`, 2026-11-22):** every photo, grouped by room/type
+  (`src/content/portfolio.ts`). Not in the menus; reached from "See all our work" buttons under
+  the galleries. Indexed. Add every new job photo to it too.
 - **Images are served unoptimized** (`images.unoptimized: true`) because the Vercel image
   quota ran out. Don't turn the optimizer back on; prepare photos at final size (§8, "Blank
   photos on the live site").
@@ -489,6 +494,25 @@ _Fix:_ slide-in overflow on phones.
   optimization. Add new photos already sized (about 1600px, or 2400px for full-width heroes;
   WebP or mozjpeg) and run `node scripts/qa/images.mjs` against the live site after deploying.
 
+**Matthew's WhatsApp feedback (2026-11-22)**
+
+- The client contact (Matthew Cheah, on WhatsApp) said the pictures are "much much better" and
+  more feedback will go in the doc. Three asks, all done:
+  - Custodian "Clean Spaces, Ready for Business": the labels didn't match the photos
+    ("Workstations" showed fitting rooms, "Entrances" showed a ceiling). The ceiling photo was
+    removed from the site; the cards now read Rental suites, Shop floors, Fitting rooms, Back
+    rooms & storage, matching their photos. Put Workstations/Entrances back when commercial photos
+    arrive.
+  - Locations: "these are locations so can't put cleaning pics". Hub cards and area heroes now
+    show neighbourhood scenery from Unsplash (user's choice), `src/content/area-photos.ts`. The
+    room-by-room galleries on the area pages keep job photos.
+  - A page with all our work, organised by area of the home, commercial, etc.: `/our-work`, with a
+    "See all our work" button under the About gallery, Home Cleaning and Custodian galleries and
+    the area-page room grids. `inventory.mjs` skips `/our-work` (it repeats photos on purpose).
+- For commercial photos the user gave four new sources (3 Instagram accounts and a Google Maps
+  profile, `docs/image-permissions.md` 11–14). The sandbox can't reach Instagram or Google Maps,
+  so they still need to be looked through, from the user's computer or downloaded by the user.
+
 **No stock photos left (2026-11-20, PR #21)**
 
 - The audit found 34 stock photos still live: 24 neighbourhood scenery shots on the area pages and
@@ -511,9 +535,12 @@ _Fix:_ slide-in overflow on phones.
 - `stock-photos.ts`, the Photo Credits page and the Unsplash/Pexels image hosts were removed;
   `/photo-credits` redirects home.
 
-## 9. Waiting on the client (as of 2026-11-21)
+## 9. Waiting on the client (as of 2026-11-22)
 
 - **Photos:**
+  - **photos from the four new commercial sources** (image-permissions 11–14): blocked in the
+    sandbox. Use them for the Custodian "Clean Spaces" cards (workstations, entrances, hallways),
+    the office-checklist cover and the commercial area tiles, and add them to `/our-work`;
   - **commercial job photos** (offices, meeting rooms, corridors, washrooms, clinics). The
     permitted sources have none left, so Custodian "Open offices" shows "Rental suites", the
     office-checklist blog cover is a compact kitchen, and the Downtown, North, East and West

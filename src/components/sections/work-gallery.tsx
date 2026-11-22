@@ -1,6 +1,7 @@
 import Image, { type StaticImageData } from "next/image";
 import { SectionHeader, sectionSpacing } from "@/components/ui/section-header";
 import { SparklesIcon } from "@/components/ui/icons";
+import { OurWorkLink } from "@/components/ui/our-work-link";
 import { Reveal } from "@/components/ui/reveal";
 import { jobs } from "@/content/job-photos";
 import { cn } from "@/lib/utils";
@@ -88,6 +89,7 @@ export function WorkGallery() {
             </figure>
           ))}
         </Reveal>
+        <OurWorkLink className="mt-10" />
       </div>
     </section>
   );
