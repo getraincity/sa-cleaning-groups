@@ -3,6 +3,7 @@ import Link from "next/link";
 import { SectionHeader, sectionSpacing } from "@/components/ui/section-header";
 import { ArrowRightIcon, CheckIcon, LeafIcon } from "@/components/ui/icons";
 import { Reveal } from "@/components/ui/reveal";
+import cleaningProductsLineup from "@/assets/images/products/cleaning-products-lineup.jpg";
 import { jobs } from "@/content/job-photos";
 import { cn } from "@/lib/utils";
 
@@ -17,8 +18,9 @@ type Card = {
 const cards: Card[] = [
   {
     title: "Cleaning Products",
-    image: jobs.aboutProducts,
-    alt: jobs.aboutProducts.alt,
+    // Client feedback (2026-11-22): show the products themselves.
+    image: cleaningProductsLineup,
+    alt: "Bottles of Dawn dish soap, Pine-Sol and Lysol bathroom cleaner, three of the products we use",
     text: "Our natural, eco-friendly disinfectants clean, disinfect and deodorize with a fresh scent. These hospital-grade solutions target bacteria and viruses such as E. coli, HIV-1, influenza and human coronavirus, for thorough protection on high-contact surfaces.",
     points: ["Eco-friendly", "Pet-friendly", "Hospital-grade"],
   },

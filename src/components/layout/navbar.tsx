@@ -9,6 +9,7 @@ import {
   ArrowRightIcon,
   BuildingIcon,
   ChevronDownIcon,
+  GiftIcon,
   HomeIcon,
   LeafIcon,
   MapPinIcon,
@@ -53,6 +54,12 @@ const about: DropdownItem[] = [
     href: "/products-we-trust",
     description: "The brands and tools we use",
     Icon: LeafIcon,
+  },
+  {
+    label: "Discounts & Promotions",
+    href: "/discounts",
+    description: "Seniors, students, first responders and more",
+    Icon: GiftIcon,
   },
 ];
 

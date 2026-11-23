@@ -32,8 +32,8 @@
   },
   {
    "slot": "homeBedroom",
-   "page": "/home-cleaning",
-   "section": "Every Room: Living spaces & bedrooms",
+   "page": "/our-work",
+   "section": "Our Work gallery (moved off its page 2026-11-22)",
    "src": "onepro-050.jpg",
    "mode": "framed",
    "size": "588x470",
@@ -41,8 +41,8 @@
   },
   {
    "slot": "homeWindowSpray",
-   "page": "/home-cleaning",
-   "section": "Every Room: Glass & windows",
+   "page": "/our-work",
+   "section": "Our Work gallery (moved off its page 2026-11-22)",
    "src": "onepro-015.jpg",
    "mode": "ba",
    "size": "588x470",
@@ -350,8 +350,8 @@
   },
   {
    "slot": "custodianTeam",
-   "page": "/custodian-services",
-   "section": "Care for Every Kind of Space: Offices",
+   "page": "/our-work",
+   "section": "Our Work gallery (moved off its page 2026-11-22)",
    "src": "onepro-071.jpg",
    "mode": "after",
    "size": "588x470",
@@ -360,7 +360,7 @@
   {
    "slot": "lobbyEntrance",
    "page": "/custodian-services",
-   "section": "Care for Every Kind of Space: Lobbies & common areas",
+   "section": "Clean Spaces, Ready for Business: stairwells",
    "old": "commercial/lobby-wet-floor.jpg",
    "src": "onepro-076.jpg",
    "mode": "framed",
@@ -414,8 +414,8 @@
   },
   {
    "slot": "custodianSteps",
-   "page": "/custodian-services",
-   "section": "Gallery",
+   "page": "/our-work",
+   "section": "Our Work gallery (moved off its page 2026-11-22)",
    "src": "onepro-081.jpg",
    "mode": "framed",
    "size": "456x300",
@@ -1023,8 +1023,8 @@
   },
   {
    "slot": "custodianSuites",
-   "page": "/custodian-services",
-   "section": "Spaces we care for: rental suites",
+   "page": "/our-work",
+   "section": "Our Work gallery (moved off its page 2026-11-22)",
    "src": "onepro-x533.jpg",
    "mode": "full",
    "size": "453x340",
@@ -1089,6 +1089,53 @@
    "mode": "full",
    "size": "453x340",
    "alt": "An open condo kitchen with a white island and stainless appliances, with cleaning gear by the wall"
+  },
+  {
+   "slot": "homeBedroomMade",
+   "page": "/home-cleaning",
+   "section": "Every Room: Living spaces & bedrooms",
+   "src": "onepro-y01.jpg",
+   "mode": "full",
+   "size": "588x470",
+   "pos": "top",
+   "alt": "A bedroom with a freshly made bed and a vacuumed carpet"
+  },
+  {
+   "slot": "homeWindowGlass",
+   "page": "/home-cleaning",
+   "section": "Every Room: Glass & windows",
+   "src": "onepro-y02.jpg",
+   "mode": "full",
+   "size": "588x470",
+   "alt": "Clear, streak-free window glass and a wiped sill, looking out over the trees",
+   "pos": "top"
+  },
+  {
+   "slot": "custodianOpenOffice",
+   "page": "/custodian-services",
+   "section": "Clean Spaces, Ready for Business: open offices",
+   "src": "onepro-y03.jpg",
+   "mode": "full",
+   "size": "335x251",
+   "alt": "An open-plan office with carpet tiles and corner windows, vacuumed and cleared"
+  },
+  {
+   "slot": "custodianHallway",
+   "page": "/custodian-services",
+   "section": "Care for Every Kind of Space: Lobbies & common areas",
+   "src": "onepro-y04.jpg",
+   "mode": "full",
+   "size": "588x470",
+   "alt": "A bright office hallway lined with glass-walled rooms, floors cleaned"
+  },
+  {
+   "slot": "custodianMeetingRooms",
+   "page": "/custodian-services",
+   "section": "Care for Every Kind of Space: Offices",
+   "src": "onepro-y05.jpg",
+   "mode": "full",
+   "size": "588x470",
+   "alt": "Glass-walled offices and meeting rooms beside a workstation partition, cleaned"
   }
  ]
 }

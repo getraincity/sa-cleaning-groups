@@ -47,6 +47,7 @@ ${catalogServices.map((service) => `- [${service.name}](${url(service.path)})`).
 - [Service areas](${url("/locations")}): the neighbourhoods served across Greater Vancouver
 - [About us](${url("/about-us")}): company history (${siteConfig.formerName} to ${siteConfig.brandName}), team, safety and partners
 - [Products we trust](${url("/products-we-trust")}): the products and equipment the team uses
+- [Discounts & promotions](${url("/discounts")}): better prices for seniors, military, students, first responders, healthcare workers, bundles, friends and family, and recurring customers
 - [Our work](${url("/our-work")}): photos of finished jobs, grouped by room and type of space
 - [Contact and booking](${url("/contact-us")}): book online, request a quote, phone and email
 - [Full details for AI assistants](${url("/llms-full.txt")}): services, prices, FAQs, areas and policies in one Markdown file

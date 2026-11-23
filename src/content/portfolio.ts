@@ -75,8 +75,9 @@ export type PortfolioCategory = {
  * The Our Work page (client feedback, WhatsApp 2026-11-21): every photo we have, grouped by
  * room or type of space. Unlike the rest of the site, photos here repeat the ones on other
  * pages on purpose, so scripts/qa/inventory.mjs skips /our-work. New job photos go here too.
- * Add a category (hotels, clinics, restaurants...) once there are photos for it.
+ * Add a category (gyms, restaurants, daycares, hotels...) once there are photos for it.
  */
+/** Homes and condos, room by room. */
 export const portfolio: PortfolioCategory[] = [
   {
     id: "kitchens",
@@ -162,6 +163,7 @@ export const portfolio: PortfolioCategory[] = [
     description: "Living rooms, bedrooms, closets and the little details in between.",
     photos: [
       jobs.homeHero,
+      jobs.homeBedroomMade,
       ownPhotos.livingRoom,
       jobs.deepHero,
       ownPhotos.cleaningLivingRoom,
@@ -218,6 +220,7 @@ export const portfolio: PortfolioCategory[] = [
     description: "Windows, glass doors, railings and balconies, streak-free.",
     photos: [
       ownPhotos.cleaningWindows,
+      jobs.homeWindowGlass,
       ownPhotos.cleaningWindowView,
       jobs.airbnbHero,
       jobs.downtownView,
@@ -230,31 +233,76 @@ export const portfolio: PortfolioCategory[] = [
       jobs.blogStrata,
     ],
   },
+];
+
+/** Commercial work, by type of space (client feedback doc, 2026-11-22). */
+export const commercialPortfolio: PortfolioCategory[] = [
   {
-    id: "commercial",
-    title: "Offices, Shops & Common Areas",
-    description: "Offices, retail spaces, stairwells and building common areas.",
+    id: "offices",
+    title: "Offices",
+    description: "Open-plan floors, private offices, meeting rooms and hallways.",
     photos: [
+      jobs.custodianMeetingRooms,
+      jobs.custodianOpenOffice,
+      jobs.custodianHallway,
       jobs.custodianHero,
       jobs.officeHero,
       jobs.officeVacuum,
       jobs.custodianTeam,
       jobs.officeHallway,
       jobs.southOffice,
-      jobs.officeMop,
-      jobs.custodianWindows,
-      jobs.custodianDusting,
-      jobs.custodianSteps,
-      jobs.custodianLadder,
-      jobs.custodianScrubber,
-      jobs.custodianCart,
+    ],
+  },
+  {
+    id: "retail",
+    title: "Shops & Retail",
+    description: "Shop floors, fitting rooms and stockrooms, ready for opening.",
+    photos: [jobs.custodianWindows, jobs.custodianDusting, jobs.custodianSteps],
+  },
+  {
+    id: "common-areas",
+    title: "Stairwells & Common Areas",
+    description: "Stairwells, handrails, entrances and building common areas.",
+    photos: [
       jobs.strataHero,
       jobs.lobbyEntrance,
-      jobs.blogCommercialCost,
       jobs.custodianGlassWall,
+      jobs.blogCommercialCost,
       jobs.strataFloor,
     ],
   },
+  {
+    id: "fit-outs",
+    title: "New Builds & Fit-Outs",
+    description: "Drywall dust, glue and construction mess cleared before move-in.",
+    photos: [jobs.custodianScrubber, jobs.officeMop, jobs.custodianCart, jobs.custodianLadder],
+  },
 ];
 
-export const portfolioPhotoCount = portfolio.reduce((n, c) => n + c.photos.length, 0);
+export type PortfolioGroup = {
+  id: string;
+  title: string;
+  description: string;
+  categories: PortfolioCategory[];
+};
+
+/** The Our Work page: homes room by room, then commercial spaces by type. */
+export const portfolioGroups: PortfolioGroup[] = [
+  {
+    id: "homes",
+    title: "Homes & Condos",
+    description: "Houses, townhouses, condos and suites, room by room.",
+    categories: portfolio,
+  },
+  {
+    id: "commercial",
+    title: "Commercial Spaces",
+    description: "Offices, shops and buildings, by type of space.",
+    categories: commercialPortfolio,
+  },
+];
+
+export const portfolioPhotoCount = portfolioGroups.reduce(
+  (n, group) => n + group.categories.reduce((m, c) => m + c.photos.length, 0),
+  0,
+);

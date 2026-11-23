@@ -19,10 +19,22 @@ Product pictures (Nov 2026): the photos in `products/` show the products named o
 Trust page, as the client asked ("pictures of the product"). Each is the maker's own product
 picture, resized to 800px, and each card links to the brand's site where one is known.
 
-| File                                     | Source                                                      |
-| ---------------------------------------- | ----------------------------------------------------------- |
-| products/nature-clean-multi-surface.jpg  | natureclean.ca (Multi-Surface Spray Cleaner, Lemon Verbena) |
-| products/mrs-meyers-multi-surface.jpg    | mrsmeyers.com (Lavender Multi-Surface Everyday Cleaner)     |
-| products/bona-hardwood-floor-cleaner.jpg | bona.com (Hardwood Floor Cleaner article photo, cropped)    |
-| products/rag-company-microfibre.jpg      | theragcompany.com (Wrinkle Glass Towel)                     |
-| products/allens-cleaning-vinegar.jpg     | The sample page the client sent (detailsbyladyt.ca)         |
+| File                                    | Source                                                         |
+| --------------------------------------- | -------------------------------------------------------------- |
+| products/nature-clean-multi-surface.jpg | natureclean.ca (Multi-Surface Spray Cleaner, Lemon Verbena)    |
+| products/mrs-meyers-multi-surface.jpg   | mrsmeyers.com (Lavender Multi-Surface Everyday Cleaner)        |
+| products/rag-company-microfibre.jpg     | theragcompany.com (Wrinkle Glass Towel)                        |
+| products/allens-cleaning-vinegar.jpg    | The sample page the client sent (detailsbyladyt.ca)            |
+| products/dawn-dish-soap.jpg             | dawn-dish.com (Dawn Ultra Original, product page)              |
+| products/lysol-bathroom-cleaner.jpg     | lysol.com (Lysol Power Bathroom Cleaner, product page)         |
+| products/pine-sol-original.jpg          | pinesol.com (Pine-Sol Original, product page)                  |
+| products/shark-navigator-vacuum.jpg     | sharkninja.ca (Shark Navigator Lift-Away NV380C)               |
+| products/atrix-backpack-vacuum.jpg      | atrix.com (Ergo Pro Cordless Backpack Vacuum)                  |
+| products/vileda-mop-bucket.jpg          | vileda.ca (EasyWring Spin Mop & Bucket System)                 |
+| products/products-lineup-hero.jpg       | The pictures above, lined up on white (Products We Trust hero) |
+| products/cleaning-products-lineup.jpg   | Dawn, Pine-Sol and Lysol pictures above, lined up (About page) |
+
+Added 2026-11-22 (client feedback doc): Dawn, Lysol bathroom cleaner, Windex, Pine-Sol, a Shark
+vacuum, an Atrix backpack vacuum and a Vileda mop and bucket; Bona removed. Windex has no picture
+yet: windex.com blocks automated downloads, so its card shows the brand name until the client
+sends a photo of the bottle they use.

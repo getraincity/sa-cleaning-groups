@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/icons";
 import { Reveal } from "@/components/ui/reveal";
 import { SectionHeader, sectionSpacing } from "@/components/ui/section-header";
-import { jobs } from "@/content/job-photos";
+import productsLineup from "@/assets/images/products/products-lineup-hero.jpg";
 import { productCategories, type ProductBrand, type ProductCategory } from "@/content/products";
 import { pageMetadata } from "@/lib/metadata";
 import { cn } from "@/lib/utils";
@@ -69,8 +69,8 @@ function hostname(href: string) {
 function BrandCard({ brand }: { brand: ProductBrand }) {
   const body = (
     <>
-      {brand.image && (
-        <span className="relative mb-5 block aspect-[4/3] overflow-hidden rounded-[14px] bg-white ring-1 ring-black/[0.06]">
+      <span className="relative mb-5 block aspect-[4/3] overflow-hidden rounded-[14px] bg-white ring-1 ring-black/[0.06]">
+        {brand.image ? (
           <Image
             src={brand.image}
             alt={brand.imageAlt ?? brand.name}
@@ -78,19 +78,17 @@ function BrandCard({ brand }: { brand: ProductBrand }) {
             sizes="(max-width: 767px) 100vw, (max-width: 991px) 50vw, 25vw"
             className={brand.imageFit === "cover" ? "object-cover" : "object-contain p-3"}
           />
-        </span>
-      )}
-      <div className="flex items-center gap-4">
-        {!brand.image && (
+        ) : (
+          // No product picture yet: the brand's initials keep the cards in line.
           <span
             aria-hidden
-            className="flex size-12 min-w-12 items-center justify-center rounded-full bg-white font-heading text-[16px] font-bold text-brand ring-1 ring-brand/25"
+            className="absolute inset-0 flex items-center justify-center bg-brand-wash font-heading text-[40px] font-bold tracking-[2px] text-brand"
           >
             {initials(brand.name)}
           </span>
         )}
-        <h3 className="my-0 font-heading text-[18px] leading-6 text-ink-soft">{brand.name}</h3>
-      </div>
+      </span>
+      <h3 className="my-0 font-heading text-[18px] leading-6 text-ink-soft">{brand.name}</h3>
       <p className="mt-4 mb-0 font-text text-[14px] leading-[22px] text-muted">{brand.text}</p>
       {brand.href && (
         <span className="mt-auto inline-flex items-center gap-1.5 pt-5 font-text text-[14px] font-semibold text-brand">
@@ -127,7 +125,8 @@ export default function ProductsWeTrustPage() {
         ])}
       />
       <PageHero
-        image={jobs.productsSink}
+        image={productsLineup}
+        overlayClassName="bg-[#000000a6]"
         tagline="Good results start with good products."
         title="Products We Trust"
         description="The brands and tools our team relies on in homes and workplaces across Vancouver."

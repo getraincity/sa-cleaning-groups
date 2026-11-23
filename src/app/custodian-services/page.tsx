@@ -187,11 +187,11 @@ const spaceRows: PhotoFeatureRow[] = [
       "Glass partitions and doors kept smudge-free",
       "Garbage, recycling and compost emptied",
     ],
-    image: jobs.custodianTeam,
-    alt: jobs.custodianTeam.alt,
+    image: jobs.custodianMeetingRooms,
+    alt: jobs.custodianMeetingRooms.alt,
   },
   {
-    eyebrow: { icon: <KeyIcon />, label: "Lobbies & common areas" },
+    eyebrow: { icon: <KeyIcon />, label: "Lobbies, hallways & common areas" },
     title: "First Impressions That Last",
     text: "Entrances, lobbies and hallways are the first thing visitors and residents see. We keep them clean, safe and welcoming, every visit.",
     points: [
@@ -200,8 +200,8 @@ const spaceRows: PhotoFeatureRow[] = [
       "Elevators, handrails and buttons wiped down",
       "Wet-floor signage used whenever floors are drying",
     ],
-    image: jobs.lobbyEntrance,
-    alt: jobs.lobbyEntrance.alt,
+    image: jobs.custodianHallway,
+    alt: jobs.custodianHallway.alt,
   },
   {
     eyebrow: { icon: <ShieldCheckIcon />, label: "High-touch surfaces" },
@@ -558,10 +558,10 @@ export default function CustodianServicesPage() {
         title="Clean Spaces, Ready for Business"
         items={[
           {
-            image: jobs.custodianSuites,
-            alt: jobs.custodianSuites.alt,
-            title: "Rental suites",
-            text: "Suites turned over between tenants for owners and property managers.",
+            image: jobs.custodianOpenOffice,
+            alt: jobs.custodianOpenOffice.alt,
+            title: "Open offices",
+            text: "Open-plan floors vacuumed, wiped down and ready for the workday.",
           },
           {
             image: jobs.custodianWindows,
@@ -576,10 +576,10 @@ export default function CustodianServicesPage() {
             text: "Mirrors, floors and change rooms left spotless for customers.",
           },
           {
-            image: jobs.custodianSteps,
-            alt: jobs.custodianSteps.alt,
-            title: "Back rooms & storage",
-            text: "Stockrooms and staff areas cleared, wiped and tidy.",
+            image: jobs.lobbyEntrance,
+            alt: jobs.lobbyEntrance.alt,
+            title: "Stairwells",
+            text: "Steps vacuumed or mopped and handrails wiped down.",
           },
         ]}
       />

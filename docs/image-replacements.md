@@ -261,3 +261,17 @@ landmark gallery became "Every Room, Cleaned Top to Bottom". Photo Credits was r
 | `/locations/west-vancouver`                | Homes & Workplaces: condos           | Unsplash TpNA_02AzXY (westClinics) → `jobs/westCondos.webp`              | https://www.oneprocleaning.ca/post/move-out-cleaning-in-coquitlam-901-lougheed-hwy-project (`onepro-x440.jpg`)                           |
 
 **Total updated: 118** (84 + 34). No stock photos remain.
+
+## 2026-11-22: client feedback doc
+
+| Page                  | Slot                   | Before → after                                                                                  | Source           |
+| --------------------- | ---------------------- | ----------------------------------------------------------------------------------------------- | ---------------- |
+| `/home-cleaning`      | Rooms You Can Relax In | `jobs/homeBedroom.webp` (TV room) → `jobs/homeBedroomMade.webp` (a made bed)                    | onepro-y01.jpg   |
+| `/home-cleaning`      | Let the Light In       | `jobs/homeWindowSpray.webp` (window sill) → `jobs/homeWindowGlass.webp` (window glass)          | onepro-y02.jpg   |
+| `/custodian-services` | Offices row            | `jobs/custodianTeam.webp` (empty room) → `jobs/custodianMeetingRooms.webp`                      | onepro-y05.jpg   |
+| `/custodian-services` | Lobbies row            | `jobs/lobbyEntrance.webp` (stairs) → `jobs/custodianHallway.webp`                               | onepro-y04.jpg   |
+| `/custodian-services` | Clean Spaces cards     | Rental suites → Open offices (`custodianOpenOffice`); Back rooms → Stairwells (`lobbyEntrance`) | onepro-y03.jpg   |
+| `/products-we-trust`  | Hero                   | `jobs/productsSink.webp` → `products/products-lineup-hero.jpg` (brands' own product pictures)   | PHOTO-CREDITS.md |
+| `/about-us`           | Cleaning Products card | `jobs/aboutProducts.webp` → `products/cleaning-products-lineup.jpg`                             | PHOTO-CREDITS.md |
+
+The photos taken off these slots stay on `/our-work`.
