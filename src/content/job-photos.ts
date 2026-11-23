@@ -117,6 +117,11 @@ import downtownSuitesImg from "@/assets/images/jobs/downtownSuites.webp";
 import northTownhousesImg from "@/assets/images/jobs/northTownhouses.webp";
 import eastSuitesImg from "@/assets/images/jobs/eastSuites.webp";
 import westCondosImg from "@/assets/images/jobs/westCondos.webp";
+import homeBedroomMadeImg from "@/assets/images/jobs/homeBedroomMade.webp";
+import homeWindowGlassImg from "@/assets/images/jobs/homeWindowGlass.webp";
+import custodianOpenOfficeImg from "@/assets/images/jobs/custodianOpenOffice.webp";
+import custodianHallwayImg from "@/assets/images/jobs/custodianHallway.webp";
+import custodianMeetingRoomsImg from "@/assets/images/jobs/custodianMeetingRooms.webp";
 
 /** A photo with its alt text, as the pages use it. */
 export type SitePhoto = StaticImageData & { alt: string };
@@ -544,5 +549,26 @@ export const jobs = {
   westCondos: photo(
     westCondosImg,
     "An open condo kitchen with a white island and stainless appliances, with cleaning gear by the wall",
+  ),
+  // Client feedback doc (2026-11-22): a real bedroom, real window glass, and offices on Custodian.
+  homeBedroomMade: photo(
+    homeBedroomMadeImg,
+    "A bedroom with a freshly made bed and a vacuumed carpet",
+  ),
+  homeWindowGlass: photo(
+    homeWindowGlassImg,
+    "Clear, streak-free window glass and a wiped sill, looking out over the trees",
+  ),
+  custodianOpenOffice: photo(
+    custodianOpenOfficeImg,
+    "An open-plan office with carpet tiles and corner windows, vacuumed and cleared",
+  ),
+  custodianHallway: photo(
+    custodianHallwayImg,
+    "A bright office hallway lined with glass-walled rooms, floors cleaned",
+  ),
+  custodianMeetingRooms: photo(
+    custodianMeetingRoomsImg,
+    "Glass-walled offices and meeting rooms beside a workstation partition, cleaned",
   ),
 } satisfies Record<string, SitePhoto>;

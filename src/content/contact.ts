@@ -3,6 +3,7 @@ export const contactTopics = [
   { value: "home-cleaning", label: "Home cleaning" },
   { value: "custodian", label: "Custodian services" },
   { value: "gift-card", label: "Gift card" },
+  { value: "discount", label: "Discounts & promotions" },
   { value: "other", label: "Something else" },
 ] as const;
 

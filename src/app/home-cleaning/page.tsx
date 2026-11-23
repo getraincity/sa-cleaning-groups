@@ -65,8 +65,8 @@ const roomRows: PhotoFeatureRow[] = [
       "Beds made and rooms organized",
       "Mirrors and glass cleaned streak-free",
     ],
-    image: jobs.homeBedroom,
-    alt: jobs.homeBedroom.alt,
+    image: jobs.homeBedroomMade,
+    alt: jobs.homeBedroomMade.alt,
   },
   {
     eyebrow: { icon: <SparklesIcon />, label: "Glass & windows" },
@@ -78,8 +78,8 @@ const roomRows: PhotoFeatureRow[] = [
       "Windows cleaned inside on Diamond",
       "Bathrooms disinfected top to bottom on every plan",
     ],
-    image: jobs.homeWindowSpray,
-    alt: jobs.homeWindowSpray.alt,
+    image: jobs.homeWindowGlass,
+    alt: jobs.homeWindowGlass.alt,
   },
 ];
 

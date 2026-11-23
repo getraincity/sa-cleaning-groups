@@ -32,7 +32,7 @@ export function Gallery({
   showAllWork = true,
 }: {
   images: GalleryImage[];
-  /** Show the "See all our work" button under the photos. */
+  /** Show the "Come see spaces we've worked on" button under the photos. */
   showAllWork?: boolean;
 }) {
   return (

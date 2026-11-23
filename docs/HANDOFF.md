@@ -3,18 +3,24 @@
 Read this before doing anything. It records how the earlier Claude sessions worked on this site,
 so a new session (or a new account) carries on in exactly the same way.
 
-## 0. Start here: where things stand (2026-11-22)
+## 0. Start here: where things stand (2026-11-23)
 
 - **Live site:** https://sacleaninggroup.ca, deployed by Vercel from `main` about a minute after
   each merge. The last feature merge was PR #21 (2026-11-20). All work is on `main`.
 - **Photos:** every cleaning photo is the client's own or a permitted job photo
-  (`src/content/job-photos.ts`, 117 slots, each used once outside `/our-work`). Don't add
+  (`src/content/job-photos.ts`, 122 slots, each used at most once outside `/our-work`). Don't add
   Unsplash, Pexels or AI _cleaning_ photos; only the sources in `docs/image-permissions.md`.
   The one exception: neighbourhood scenery on the Locations cards and area heroes is Unsplash
   (`src/content/area-photos.ts`, 2026-11-22, the user's choice).
-- **Our Work page (`/our-work`, 2026-11-22):** every photo, grouped by room/type
-  (`src/content/portfolio.ts`). Not in the menus; reached from "See all our work" buttons under
-  the galleries. Indexed. Add every new job photo to it too.
+- **Our Work page (`/our-work`, 2026-11-22):** every photo: Homes & Condos room by room, then
+  Commercial Spaces by type (offices, shops, stairwells & common areas, new builds)
+  (`src/content/portfolio.ts`). Not in the menus; reached from "Come see spaces we've worked on"
+  buttons under the galleries. Indexed. Add every new job photo to it too.
+- **Discounts page (`/discounts`, 2026-11-23):** under About. Seven groups, **no amounts** (the
+  client's rule): visitors mention it and get a better price. Content in `src/content/discounts.ts`.
+- **Network:** this repo has its own cloud environment, "sa-cleaning-groups", which allows
+  docs.google.com (+ its export host), sacleaninggroup.ca, OnePro/Wix and the product brands'
+  sites. The feedback doc can be read with `curl -L .../export?format=zip` (§2).
 - **Images are served unoptimized** (`images.unoptimized: true`) because the Vercel image
   quota ran out. Don't turn the optimizer back on; prepare photos at final size (§8, "Blank
   photos on the live site").
@@ -513,6 +519,26 @@ _Fix:_ slide-in overflow on phones.
   profile, `docs/image-permissions.md` 11–14). The sandbox can't reach Instagram or Google Maps,
   so they still need to be looked through, from the user's computer or downloaded by the user.
 
+**Feedback doc round (2026-11-23)**
+
+- Read from the doc with the zip export (the environment now allows it). Done:
+  - About "Cleaning Products" card and the Products We Trust hero show the products themselves
+    (line-ups of the makers' own product pictures, `src/assets/images/products/`).
+  - Products: added Dawn, Lysol bathroom cleaner, Windex, Pine-Sol, a Shark vacuum, an Atrix
+    backpack vacuum and a Vileda mop & bucket; removed Bona. Windex has no picture (windex.com
+    has a bot checkpoint; don't try to get around it), so its card shows a "W" tile.
+  - New `/discounts` page (menu: About → Discounts & Promotions; footer; contact topic
+    `discount`).
+  - Home Cleaning: "Rooms You Can Relax In" shows a made bed; "Let the Light In" shows window
+    glass (OnePro blog photos; a mattress brand tag was cloned out).
+  - Custodian: the Offices and Lobbies rows and the Clean Spaces cards now show offices, a
+    hallway, shop floors, fitting rooms and a stairwell (unused photos from OnePro's Burnaby
+    office post). Nothing residential is left in those sections.
+  - Our Work regrouped by type of space; the button now says "Come see spaces we've worked on".
+- Not done, needs photos: About "Our Team" card with people cleaning (no permitted source has
+  any, and Instagram can't be read from the cloud sandbox); gyms, restaurants and daycares for
+  Our Work; a Windex photo.
+
 **No stock photos left (2026-11-20, PR #21)**
 
 - The audit found 34 stock photos still live: 24 neighbourhood scenery shots on the area pages and
@@ -535,9 +561,13 @@ _Fix:_ slide-in overflow on phones.
 - `stock-photos.ts`, the Photo Credits page and the Unsplash/Pexels image hosts were removed;
   `/photo-credits` redirects home.
 
-## 9. Waiting on the client (as of 2026-11-22)
+## 9. Waiting on the client (as of 2026-11-23)
 
 - **Photos:**
+  - **people cleaning** (black shirts, not looking at the camera) for the About "Our Team" card,
+    from the client or the Instagram sources (the sandbox can't read Instagram);
+  - **gyms, restaurants, daycares, hotels** jobs, to add those types to `/our-work`;
+  - a **Windex** bottle photo for Products We Trust;
   - **photos from the four new commercial sources** (image-permissions 11–14): blocked in the
     sandbox. Use them for the Custodian "Clean Spaces" cards (workstations, entrances, hallways),
     the office-checklist cover and the commercial area tiles, and add them to `/our-work`;

@@ -22,7 +22,7 @@ type PhotoGridProps = {
   items: PhotoGridItem[];
   /** Section background. */
   className?: string;
-  /** Show the "See all our work" button under the grid. */
+  /** Show the "Come see spaces we've worked on" button under the grid. */
   showAllWork?: boolean;
 };
 
